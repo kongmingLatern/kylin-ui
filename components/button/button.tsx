@@ -4,11 +4,11 @@ import { ButtonProps, CompoundedComponent } from './type';
 
 
 const InternalButton: React.ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = (props, ref) => {
-  const { type, children, htmlType } = props
+  const { type, className, children, htmlType = 'button' } = props
 
   const classes = classNames('btn', {
     [`kylin-btn-${type}`]: type,
-  })
+  }, className)
 
 
   let buttonNode = (
