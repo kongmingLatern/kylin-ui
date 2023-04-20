@@ -9,7 +9,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      'components': resolve(__dirname, 'components')
+      'components': resolve(__dirname, 'packages/components')
     }
   }
 })
