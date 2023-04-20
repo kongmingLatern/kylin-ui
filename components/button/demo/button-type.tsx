@@ -1,11 +1,6 @@
-import React, { FunctionComponent } from "react";
 import Button from "../button";
 
-interface ButtonTypeProps {
-
-}
-
-const ButtonType: FunctionComponent<ButtonTypeProps> = () => {
+const ButtonType = () => {
   return (
     <Button type="primary">123123</Button>
   );

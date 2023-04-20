@@ -6,6 +6,7 @@ test('render button', () => {
   expect(container.firstChild).toMatchInlineSnapshot(`
     <button
       class="btn"
+      type="button"
     >
       This is a primary button
     </button>
