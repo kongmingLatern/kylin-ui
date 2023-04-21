@@ -1,6 +1,6 @@
 export const themeConfig = {
   colors: {
-    primary: '#ff0000',
+    primary: 'var(--primary-color)',
     secondary: '#0000ff',
   },
   fonts: {
