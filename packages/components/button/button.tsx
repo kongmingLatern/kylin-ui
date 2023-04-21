@@ -7,25 +7,18 @@ const InternalButton: React.ForwardRefRenderFunction<
 	ButtonProps
 > = (props, ref) => {
 	const {
-		type,
+		type = "default",
 		className,
 		children,
 		htmlType = 'button',
 		...rest
 	} = props
 
-	// 通过 rest 获取key => value
-	// const getStyle = () => {
-	//   const style: string[] = []
-	//   Object.keys(rest).forEach(key => {
-	//     style.push(`${key}-${rest[key]}`)
-	//   })
-	//   return style
-	// }
-	// console.log(getStyle());
-
 	const classes = classNames(
 		'btn',
+		// TODO: 判断 type 是否在预期之内
+		// type 为 true 时，添加 kylin-btn-type
+		// type 为 false 时，不添加 kylin-btn-type
 		{
 			[`kylin-btn-${type}`]: type,
 		},
