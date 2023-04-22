@@ -19,6 +19,7 @@
 	}
 
 	&-primary {
+		@extend .kylin-btn;
 		background-color: $primary-color;
 		color: #fff;
 
