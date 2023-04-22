@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import ButtonType from '../packages/components/button/demo/button-type'
+import App from './App'
 import '@unocss/reset/normalize.css'
-import '../packages/theme/src/common/var.css'
+import '../packages/theme/src/style/index.scss'
 import 'uno.css'
 
-
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(
+	document.getElementById('root') as HTMLElement
+).render(
 	<React.StrictMode>
-		<ButtonType />
+		<App />
 	</React.StrictMode>
 )

@@ -1,18 +1,21 @@
 import React from 'react'
 import classNames from 'classnames'
 import { ButtonProps, CompoundedComponent } from './type'
-
 const InternalButton: React.ForwardRefRenderFunction<
 	HTMLButtonElement,
 	ButtonProps
 > = (props, ref) => {
+	/**============================= 设置 props ============================= */
 	const {
-		type = "default",
+		type = 'default',
 		className,
 		children,
 		htmlType = 'button',
 		...rest
 	} = props
+
+	/**============================= 设置 className ============================= */
+	// const style = useStyle()
 
 	const classes = classNames(
 		'btn',
@@ -23,17 +26,17 @@ const InternalButton: React.ForwardRefRenderFunction<
 			[`kylin-btn-${type}`]: type,
 		},
 		className
+		// style
 	)
-
+	// Rendering the button node
 	let buttonNode = (
 		<button type={htmlType} className={classes} {...rest}>
 			{children}
 		</button>
 	)
-
 	return buttonNode
 }
-
+/**============================= 设置 Button ============================= */
 const Button = React.forwardRef<
 	HTMLButtonElement | HTMLAnchorElement,
 	ButtonProps
