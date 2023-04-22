@@ -9,9 +9,7 @@ const ThemeContext = createContext<ThemeContextProps>(
 	{} as ThemeContextProps
 )
 
-export const ThemeProvider: React.FC = ({
-	children,
-}: any) => {
+export const ThemeProvider = ({ children }: any) => {
 	const [theme, setTheme] = useState('default')
 
 	return (
