@@ -13,6 +13,7 @@ importers:
       '@typescript-eslint/parser': ^5.59.0
       '@unocss/reset': ^0.51.5
       '@vitejs/plugin-react': ^3.1.0
+      '@vitejs/plugin-react-refresh': ^1.3.6
       classnames: ^2.3.2
       commitlint: ^17.6.1
       eslint: ^8.38.0
@@ -27,7 +28,8 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       sass: ^1.62.0
-      scss: ^0.2.4
+      sass-loader: ^13.2.2
+      style-loader: ^3.3.2
       typescript: ^4.9.3
       unocss: ^0.51.5
       vite: ^4.2.0
@@ -46,6 +48,7 @@ importers:
       '@typescript-eslint/parser': registry.npmmirror.com/@typescript-eslint/parser/5.59.0_ze6bmax3gcsfve3yrzu6npguhe
       '@unocss/reset': registry.npmmirror.com/@unocss/reset/0.51.5
       '@vitejs/plugin-react': registry.npmmirror.com/@vitejs/plugin-react/3.1.0_vite@4.2.2
+      '@vitejs/plugin-react-refresh': registry.npmmirror.com/@vitejs/plugin-react-refresh/1.3.6
       classnames: registry.npmmirror.com/classnames/2.3.2
       commitlint: registry.npmmirror.com/commitlint/17.6.1
       eslint: registry.npmmirror.com/eslint/8.38.0
@@ -57,11 +60,18 @@ importers:
       jsdom: registry.npmmirror.com/jsdom/21.1.1
       prettier: registry.npmmirror.com/prettier/2.8.7
       sass: registry.npmmirror.com/sass/1.62.0
-      scss: registry.npmmirror.com/scss/0.2.4
+      sass-loader: registry.npmmirror.com/sass-loader/13.2.2_sass@1.62.0
+      style-loader: registry.npmmirror.com/style-loader/3.3.2
       typescript: registry.npmmirror.com/typescript/4.9.5
       unocss: registry.npmmirror.com/unocss/0.51.5_vite@4.2.2
       vite: registry.npmmirror.com/vite/4.2.2_sass@1.62.0
       vitest: registry.npmmirror.com/vitest/0.30.1_jsdom@21.1.1+sass@1.62.0
+
+  packages/theme:
+    specifiers: {}
+
+  src/assets/theme:
+    specifiers: {}
 
 packages:
 
@@ -1022,6 +1032,16 @@ packages:
     version: 1.0.0-next.21
     dev: true
 
+  registry.npmmirror.com/@rollup/pluginutils/4.2.1:
+    resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/pluginutils/-/pluginutils-4.2.1.tgz}
+    name: '@rollup/pluginutils'
+    version: 4.2.1
+    engines: {node: '>= 8.0.0'}
+    dependencies:
+      estree-walker: registry.npmmirror.com/estree-walker/2.0.2
+      picomatch: registry.npmmirror.com/picomatch/2.3.1
+    dev: true
+
   registry.npmmirror.com/@rollup/pluginutils/5.0.2:
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/pluginutils/-/pluginutils-5.0.2.tgz}
     name: '@rollup/pluginutils'
@@ -1572,6 +1592,22 @@ packages:
       vite: registry.npmmirror.com/vite/4.2.2_sass@1.62.0
     transitivePeerDependencies:
       - rollup
+    dev: true
+
+  registry.npmmirror.com/@vitejs/plugin-react-refresh/1.3.6:
+    resolution: {integrity: sha512-iNR/UqhUOmFFxiezt0em9CgmiJBdWR+5jGxB2FihaoJfqGt76kiwaKoVOJVU5NYcDWMdN06LbyN2VIGIoYdsEA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vitejs/plugin-react-refresh/-/plugin-react-refresh-1.3.6.tgz}
+    name: '@vitejs/plugin-react-refresh'
+    version: 1.3.6
+    engines: {node: '>=12.0.0'}
+    deprecated: This package has been deprecated in favor of @vitejs/plugin-react
+    dependencies:
+      '@babel/core': registry.npmmirror.com/@babel/core/7.21.4
+      '@babel/plugin-transform-react-jsx-self': registry.npmmirror.com/@babel/plugin-transform-react-jsx-self/7.21.0_@babel+core@7.21.4
+      '@babel/plugin-transform-react-jsx-source': registry.npmmirror.com/@babel/plugin-transform-react-jsx-source/7.19.6_@babel+core@7.21.4
+      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils/4.2.1
+      react-refresh: registry.npmmirror.com/react-refresh/0.10.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   registry.npmmirror.com/@vitejs/plugin-react/3.1.0_vite@4.2.2:
@@ -3963,6 +3999,13 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  registry.npmmirror.com/klona/2.0.6:
+    resolution: {integrity: sha512-dhG34DXATL5hSxJbIexCft8FChFXtmskoZYnoPWjXQuebWYCNkVeV3KkGegCK9CP1oswI/vQibS2GY7Em/sJJA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/klona/-/klona-2.0.6.tgz}
+    name: klona
+    version: 2.0.6
+    engines: {node: '>= 8'}
+    dev: true
+
   registry.npmmirror.com/kolorist/1.7.0:
     resolution: {integrity: sha512-ymToLHqL02udwVdbkowNpzjFd6UzozMtshPQKVi5k1EjKRqKqBrOnE9QbLEb0/pV76SAiIT13hdL8R6suc+f3g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/kolorist/-/kolorist-1.7.0.tgz}
     name: kolorist
@@ -4320,6 +4363,12 @@ packages:
     version: 1.4.0
     dev: true
 
+  registry.npmmirror.com/neo-async/2.6.2:
+    resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/neo-async/-/neo-async-2.6.2.tgz}
+    name: neo-async
+    version: 2.6.2
+    dev: true
+
   registry.npmmirror.com/node-fetch-native/1.1.0:
     resolution: {integrity: sha512-nl5goFCig93JZ9FIV8GHT9xpNqXbxQUzkOmKIMKmncsBH9jhg7qKex8hirpymkBFmNQ114chEEG5lS4wgK2I+Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/node-fetch-native/-/node-fetch-native-1.1.0.tgz}
     name: node-fetch-native
@@ -4475,13 +4524,6 @@ packages:
       destr: registry.npmmirror.com/destr/1.2.2
       node-fetch-native: registry.npmmirror.com/node-fetch-native/1.1.0
       ufo: registry.npmmirror.com/ufo/1.1.1
-    dev: true
-
-  registry.npmmirror.com/ometa/0.2.2:
-    resolution: {integrity: sha512-LZuoK/yjU3FvrxPjUXUlZ1bavCfBPqauA7fsNdwi+AVhRdyk2IzgP3JRnevvjzQ6fKHdUw8YISshf53FmpHrng==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ometa/-/ometa-0.2.2.tgz}
-    name: ometa
-    version: 0.2.2
-    engines: {node: '>= 0.2.0'}
     dev: true
 
   registry.npmmirror.com/once/1.4.0:
@@ -4817,6 +4859,13 @@ packages:
     version: 17.0.2
     dev: true
 
+  registry.npmmirror.com/react-refresh/0.10.0:
+    resolution: {integrity: sha512-PgidR3wST3dDYKr6b4pJoqQFpPGNKDSCDx4cZoshjXipw3LzO7mG1My2pwEzz2JVkF+inx3xRpDeQLFQGH/hsQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react-refresh/-/react-refresh-0.10.0.tgz}
+    name: react-refresh
+    version: 0.10.0
+    engines: {node: '>=0.10.0'}
+    dev: true
+
   registry.npmmirror.com/react-refresh/0.14.0:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react-refresh/-/react-refresh-0.14.0.tgz}
     name: react-refresh
@@ -5029,6 +5078,33 @@ packages:
     version: 2.1.2
     dev: true
 
+  registry.npmmirror.com/sass-loader/13.2.2_sass@1.62.0:
+    resolution: {integrity: sha512-nrIdVAAte3B9icfBiGWvmMhT/D+eCDwnk+yA7VE/76dp/WkHX+i44Q/pfo71NYbwj0Ap+PGsn0ekOuU1WFJ2AA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/sass-loader/-/sass-loader-13.2.2.tgz}
+    id: registry.npmmirror.com/sass-loader/13.2.2
+    name: sass-loader
+    version: 13.2.2
+    engines: {node: '>= 14.15.0'}
+    peerDependencies:
+      fibers: '>= 3.1.0'
+      node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
+      sass: ^1.3.0
+      sass-embedded: '*'
+      webpack: ^5.0.0
+    peerDependenciesMeta:
+      fibers:
+        optional: true
+      node-sass:
+        optional: true
+      sass:
+        optional: true
+      sass-embedded:
+        optional: true
+    dependencies:
+      klona: registry.npmmirror.com/klona/2.0.6
+      neo-async: registry.npmmirror.com/neo-async/2.6.2
+      sass: registry.npmmirror.com/sass/1.62.0
+    dev: true
+
   registry.npmmirror.com/sass/1.62.0:
     resolution: {integrity: sha512-Q4USplo4pLYgCi+XlipZCWUQz5pkg/ruSSgJ0WRDSb/+3z9tXUOkQ7QPYn4XrhZKYAK4HlpaQecRwKLJX6+DBg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/sass/-/sass-1.62.0.tgz}
     name: sass
@@ -5065,15 +5141,6 @@ packages:
     version: 0.23.0
     dependencies:
       loose-envify: registry.npmmirror.com/loose-envify/1.4.0
-
-  registry.npmmirror.com/scss/0.2.4:
-    resolution: {integrity: sha512-4u8V87F+Q/upVhUmhPnB4C1R11xojkRkWjExL2v0CX2EXTg18VrKd+9JWoeyCp2VEMdSpJsyAvVU+rVjogh51A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/scss/-/scss-0.2.4.tgz}
-    name: scss
-    version: 0.2.4
-    engines: {node: '>= 0.2.0'}
-    dependencies:
-      ometa: registry.npmmirror.com/ometa/0.2.2
-    dev: true
 
   registry.npmmirror.com/semver/5.7.1:
     resolution: {integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/semver/-/semver-5.7.1.tgz}
@@ -5342,6 +5409,15 @@ packages:
     version: 1.0.1
     dependencies:
       acorn: registry.npmmirror.com/acorn/8.8.2
+    dev: true
+
+  registry.npmmirror.com/style-loader/3.3.2:
+    resolution: {integrity: sha512-RHs/vcrKdQK8wZliteNK4NKzxvLBzpuHMqYmUVWeKa6MkaIQ97ZTOS0b+zapZhy6GcrgWnvWYCMHRirC3FsUmw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/style-loader/-/style-loader-3.3.2.tgz}
+    name: style-loader
+    version: 3.3.2
+    engines: {node: '>= 12.13.0'}
+    peerDependencies:
+      webpack: ^5.0.0
     dev: true
 
   registry.npmmirror.com/supports-color/5.5.0:

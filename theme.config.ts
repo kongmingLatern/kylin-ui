@@ -1,3 +1,4 @@
+
 export const themeConfig = {
   colors: {
     primary: 'var(--primary-color)',
