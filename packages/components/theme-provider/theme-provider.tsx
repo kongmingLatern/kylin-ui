@@ -18,6 +18,7 @@ export const ThemeProvider = ({
 }: Partial<ThemeProviderProps>) => {
 	const [th, setTh] = useState(theme)
 
+	// 主题切换
 	const haneleThemeChange = useCallback(
 		theme => {
 			if (theme === 'light') {

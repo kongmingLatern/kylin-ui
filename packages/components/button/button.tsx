@@ -17,7 +17,16 @@ const InternalButton: React.ForwardRefRenderFunction<
 	} = props
 
 	/**============================= 获取 当前主题色  ============================= */
-	const { haneleThemeChange } = useContext(ThemeContext)
+	const { th = {}, haneleThemeChange } =
+		useContext(ThemeContext)
+	// 若 th 提供了值，则使用 th，否则使用默认值
+	const theme = th
+	Object.entries(theme).forEach(([key, value]) => {
+		document.documentElement.style.setProperty(
+			`--${key}`,
+			value
+		)
+	})
 	/**============================= 设置 className ============================= */
 	// console.log('theme', haneleThemeChange)
 
