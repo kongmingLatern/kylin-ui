@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ButtonProps, CompoundedComponent } from './type'
 import { ThemeContext } from '../theme-provider/theme-provider'
+import { camel2kebab_string } from '../shared'
 
 const InternalButton: React.ForwardRefRenderFunction<
 	HTMLButtonElement,
@@ -19,11 +20,11 @@ const InternalButton: React.ForwardRefRenderFunction<
 	/**============================= 获取 当前主题色  ============================= */
 	const { th = {}, haneleThemeChange } =
 		useContext(ThemeContext)
-	// 若 th 提供了值，则使用 th，否则使用默认值
-	const theme = th
-	Object.entries(theme).forEach(([key, value]) => {
+
+	// 设置主题
+	Object.entries(th).forEach(([key, value]) => {
 		document.documentElement.style.setProperty(
-			`--${key}`,
+			`--${camel2kebab_string(key)}`,
 			value
 		)
 	})

@@ -1,6 +1,14 @@
 import { describe, it, expect } from 'vitest'
-import { camel2kebab } from '..'
-describe('camel2kebab', () => {
+import { camel2kebab, camel2kebab_string } from '..'
+describe('camel2kebab_string', () => {
+	it('camel2kebab', () => {
+		const str = 'primaryColor'
+
+		expect(camel2kebab_string(str)).toBe('primary-color')
+	})
+})
+
+describe('camel2kebab_object', () => {
 	it('camel2kebab', () => {
 		const obj = {
 			primaryColor: '#333',
