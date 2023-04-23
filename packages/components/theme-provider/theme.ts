@@ -1,18 +1,13 @@
-// theme.ts
 export interface Theme {
-  primaryColor: string;
-  secondaryColor: string;
-  successColor: string;
-  dangerColor: string;
-  warningColor: string;
-  infoColor: string;
+	colors: {
+		primary: string
+		secondary: string
+	}
 }
 
-export const defaultTheme: Theme = {
-  primaryColor: '#007aff',
-  secondaryColor: '#6c757d',
-  successColor: '#28a745',
-  dangerColor: '#dc3545',
-  warningColor: '#ffc107',
-  infoColor: '#17a2b8',
-};
+export const theme: Theme = {
+	colors: {
+		primary: '#4F46E5',
+		secondary: '#AEB3CB',
+	},
+}

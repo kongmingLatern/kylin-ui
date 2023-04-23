@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ButtonProps, CompoundedComponent } from './type'
+import { ThemeContext } from '../theme-provider/theme-provider'
+
 const InternalButton: React.ForwardRefRenderFunction<
 	HTMLButtonElement,
 	ButtonProps
@@ -14,22 +16,31 @@ const InternalButton: React.ForwardRefRenderFunction<
 		...rest
 	} = props
 
+	/**============================= 获取 当前主题色  ============================= */
+	const { haneleThemeChange } = useContext(ThemeContext)
 	/**============================= 设置 className ============================= */
-	// const style = useStyle()
+	// console.log('theme', haneleThemeChange)
 
 	const classes = classNames(
 		// TODO: 判断 type 是否在预期之内
-		// type 为 true 时，添加 kylin-btn-type
-		// type 为 false 时，不添加 kylin-btn-type
+		// 允许用户使用 ThemeProvider 集中处理样式
 		{
 			[`kylin-btn-${type}`]: type,
 		},
+		// `bg-${type}`,
+		// `text-${type}`,
 		className
 		// style
 	)
 	// Rendering the button node
 	let buttonNode = (
-		<button type={htmlType} className={classes} {...rest}>
+		<button
+			type={htmlType}
+			className={classes}
+			{...rest}
+			onClick={() => haneleThemeChange('dark')}
+			// onClick={haneleThemeChange('dark')}
+		>
 			{children}
 		</button>
 	)

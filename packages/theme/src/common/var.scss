@@ -1,5 +1,14 @@
-$primary-color: #1890ff;
-$secondary-color: #f0f2f5;
+// @import './global.css';
+:root {
+	--primary-color: #1890ff;
+	--primary-text-color: #fff;
+	--secondary-color: #28a745;
+}
+// #1890ff
+$primary-color: var(--primary-color);
+// #28a745
+$secondary-color: var(--secondary-color);
+
 $border-color: #d9d9d9;
 $border-radius: 4px;
 $text-color: #333;

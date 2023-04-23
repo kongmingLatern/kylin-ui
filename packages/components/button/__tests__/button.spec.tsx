@@ -7,7 +7,7 @@ test('render button', () => {
 	)
 	expect(container.firstChild).toMatchInlineSnapshot(`
 		<button
-		  class="btn kylin-btn-default"
+		  class="kylin-btn-default"
 		  type="button"
 		>
 		  This is a primary button
@@ -16,11 +16,11 @@ test('render button', () => {
 })
 test("button's type", () => {
 	const { container } = render(
-		<Button type="default">This is a primary button</Button>
+		<Button type="primary">This is a primary button</Button>
 	)
 	expect(container.firstChild).toMatchInlineSnapshot(`
 		<button
-		  class="btn kylin-btn-default"
+		  class="kylin-btn-primary"
 		  type="button"
 		>
 		  This is a primary button
@@ -37,7 +37,7 @@ test("button's other props", () => {
 	expect(container.firstChild).toMatchInlineSnapshot(`
 		<button
 		  bg="blue-500"
-		  class="btn kylin-btn-default"
+		  class="kylin-btn-default"
 		  type="button"
 		>
 		  This is a primary button
