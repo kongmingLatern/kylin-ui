@@ -1,14 +1,13 @@
 import { Dispatch, SetStateAction } from 'react'
 
 export interface ThemeContextProps {
-	th: Record<string, any> | undefined
-	setTh: Dispatch<
-		SetStateAction<ThemeProviderProps['theme']>
+	theme: Record<string, any> | undefined
+	setTheme: Dispatch<
+		SetStateAction<ThemeProviderProps['themeConfig']>
 	>
-	haneleThemeChange: (theme: string) => any
 }
 
 export interface ThemeProviderProps {
-	theme: Record<string, any> | undefined
+	themeConfig: ThemeContextProps['theme']
 	children: any
 }

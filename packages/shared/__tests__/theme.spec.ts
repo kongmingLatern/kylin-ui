@@ -15,13 +15,7 @@ describe('test themeConfig', () => {
 		}
 		expect(
 			extractThemeConfig(themeConfig, 'button', 'primary')
-		).toMatchInlineSnapshot(`
-			{
-			  "bg": "#180234",
-			  "color": "#fff",
-			  "px": "2",
-			}
-		`)
+		).toMatchInlineSnapshot('"color-#fff px-2 bg-#180234"')
 	})
 	it('extract secondary button', () => {
 		const themeConfig = {
@@ -37,11 +31,6 @@ describe('test themeConfig', () => {
 		}
 		expect(
 			extractThemeConfig(themeConfig, 'button', 'secondary')
-		).toMatchInlineSnapshot(`
-			{
-			  "color": "#fff",
-			  "px": "2",
-			}
-		`)
+		).toMatchInlineSnapshot('"color-#fff px-2"')
 	})
 })

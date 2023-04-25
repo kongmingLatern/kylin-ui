@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ButtonProps, CompoundedComponent } from './type'
 import { ThemeContext } from '../theme-provider/theme-provider'
-import { camel2kebab_string } from '../shared'
+import { extractThemeConfig } from '../../shared'
 
 const InternalButton: React.ForwardRefRenderFunction<
 	HTMLButtonElement,
@@ -18,16 +18,17 @@ const InternalButton: React.ForwardRefRenderFunction<
 	} = props
 
 	/**============================= 获取 当前主题色 | 自定义主题  ============================= */
-	const { th = {}, haneleThemeChange } =
-		useContext(ThemeContext)
+	const { theme = {} } = useContext(ThemeContext)
 
-	// 设置主题
-	Object.entries(th).forEach(([key, value]) => {
-		document.documentElement.style.setProperty(
-			`--${camel2kebab_string(key)}`,
-			value
-		)
-	})
+	const result = extractThemeConfig(theme, 'button', type)
+
+	// // 设置主题
+	// Object.entries(th).forEach(([key, value]) => {
+	// 	document.documentElement.style.setProperty(
+	// 		`--${camel2kebab_string(key)}`,
+	// 		value
+	// 	)
+	// })
 	/**============================= 设置 className ============================= */
 
 	const classes = classNames(
@@ -35,15 +36,11 @@ const InternalButton: React.ForwardRefRenderFunction<
 		{
 			[`kylin-btn-${type}`]: type,
 		},
-		className
+		className,
+		result
 	)
 	let buttonNode = (
-		<button
-			type={htmlType}
-			className={classes}
-			{...rest}
-			onClick={() => haneleThemeChange('dark')}
-		>
+		<button type={htmlType} className={classes} {...rest}>
 			{children}
 		</button>
 	)

@@ -4,11 +4,11 @@ export function extractThemeConfig(
 	componentName,
 	themeType
 ) {
-	return {
+	let str = ''
+	const res = {
 		...extractValueByType('common'),
 		...extractValueByType(themeType),
 	}
-
 	function extractValueByType(type: string) {
 		// const result: string[] = []
 		const result = {}
@@ -29,4 +29,10 @@ export function extractThemeConfig(
 		}
 		return result
 	}
+
+	Object.entries(res).forEach(([key, value]) => {
+		str += `${key}-${value} `
+	})
+
+	return str.trim()
 }
