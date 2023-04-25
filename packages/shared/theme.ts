@@ -1,22 +1,26 @@
+//@unocss-include
 export function extractThemeConfig(
 	themeConfig,
 	componentName,
 	themeType
 ) {
 	return {
-		[componentName]: {
-			...extractValueByType('common'),
-			...extractValueByType(themeType),
-		},
+		...extractValueByType('common'),
+		...extractValueByType(themeType),
 	}
 
 	function extractValueByType(type: string) {
+		// const result: string[] = []
 		const result = {}
-		if (themeConfig[componentName][type]) {
+		if (
+			componentName in themeConfig &&
+			themeConfig[componentName][type]
+		) {
 			for (const [key, value] of Object.entries(
 				themeConfig[componentName][type]
 			)) {
-				result[`${key}`] = value
+				// result.push(`${key}="${value}"`)
+				result[key] = value
 			}
 		} else {
 			console.warn(
