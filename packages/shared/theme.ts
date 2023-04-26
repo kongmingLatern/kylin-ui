@@ -1,14 +1,8 @@
-//@unocss-include
 export function extractThemeConfig(
 	themeConfig,
 	componentName,
 	themeType
 ) {
-	let str = ''
-	const res = {
-		...extractValueByType('common'),
-		...extractValueByType(themeType),
-	}
 	function extractValueByType(type: string) {
 		// const result: string[] = []
 		const result = {}
@@ -30,6 +24,11 @@ export function extractThemeConfig(
 		return result
 	}
 
+	let str = ''
+	const res = {
+		...extractValueByType('common'),
+		...extractValueByType(themeType),
+	}
 	Object.entries(res).forEach(([key, value]) => {
 		str += `${key}-${value} `
 	})

@@ -20,6 +20,7 @@ const InternalButton: React.ForwardRefRenderFunction<
 	/**============================= 获取 当前主题色 | 自定义主题  ============================= */
 	const { theme = {} } = useContext(ThemeContext)
 
+	// Get User Config
 	const result = extractThemeConfig(theme, 'button', type)
 
 	// // 设置主题
