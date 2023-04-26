@@ -3,24 +3,32 @@ import { ThemeProvider } from '../theme-provider'
 
 const theme = {
 	button: {
+		common: {
+			px: 2,
+			py: 2,
+		},
 		primary: {
 			bg: 'purple-500',
 			color: '#fff',
 		},
 		secondary: {
-			bg: 'red-500',
+			bg: 'green-500',
 			color: '#fff',
 		},
 	},
 }
 const theme_secondary = {
 	button: {
+		common: {
+			px: 2,
+			py: 2,
+		},
 		secondary: {
-			bg: 'pink-500',
+			bg: 'purple-500',
 			color: '#fff',
 		},
 		custmer: {
-			bg: 'purple-500',
+			bg: 'red-500',
 			color: 'green',
 		},
 	},
@@ -37,6 +45,14 @@ const ButtonType = () => {
 					color="blue"
 				>
 					123123
+				</Button>
+				<Button
+					type="secondary"
+					color="black"
+					px={10}
+					py={20}
+				>
+					Blue
 				</Button>
 				<ThemeProvider themeConfig={theme_secondary}>
 					<Button type="custmer">123123</Button>

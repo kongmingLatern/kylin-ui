@@ -2,6 +2,7 @@ import {
 	createContext,
 	useCallback,
 	useContext,
+	useEffect,
 	useState,
 } from 'react'
 import type {
@@ -18,6 +19,11 @@ export const ThemeProvider = ({
 }: Partial<ThemeProviderProps>) => {
 	const [theme, setTheme] = useState(themeConfig)
 	// 1. 读取用户传递的配置
+
+	// 监听用户传递的配置
+	useEffect(() => {
+		setTheme(themeConfig)
+	}, [themeConfig])
 
 	return (
 		<ThemeContext.Provider value={{ theme, setTheme }}>

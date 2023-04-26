@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useMemo } from 'react'
 import classNames from 'classnames'
 import { ButtonProps, CompoundedComponent } from './type'
 import { ThemeContext } from '../theme-provider/theme-provider'
@@ -20,8 +20,10 @@ const InternalButton: React.ForwardRefRenderFunction<
 	/**============================= 获取 当前主题色 | 自定义主题  ============================= */
 	const { theme = {} } = useContext(ThemeContext)
 
-	// Get User Config
-	const result = extractThemeConfig(theme, 'button', type)
+	const result = useMemo(
+		() => extractThemeConfig(theme, 'button', type),
+		[theme]
+	)
 
 	// // 设置主题
 	// Object.entries(th).forEach(([key, value]) => {
