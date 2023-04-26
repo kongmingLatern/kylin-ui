@@ -4,7 +4,6 @@ import {
 	presetIcons,
 	presetAttributify,
 } from 'unocss'
-// import { themeConfig } from './theme.config'
 
 export default defineConfig({
 	presets: [
@@ -12,5 +11,5 @@ export default defineConfig({
 		presetIcons(),
 		presetAttributify(),
 	],
-	safelist: ['bg-purple-500', 'bg-pink-500'],
+	safelist: ['bg-purple-500', 'bg-pink-500', 'color-green'],
 })
