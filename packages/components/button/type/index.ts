@@ -1,5 +1,6 @@
 import { AnchorButtonProps } from './AnchorButtonProps'
 import { NativeButtonProps } from './NativeButtonProps'
+import { AttributifyAttributes } from '@unocss/preset-attributify'
 
 const ButtonTypes = [
 	'default',
@@ -26,7 +27,9 @@ export type ButtonProps = Partial<
 
 export type CompoundedComponent =
 	React.ForwardRefExoticComponent<
-		ButtonProps & React.RefAttributes<HTMLElement>
+		ButtonProps &
+			React.RefAttributes<HTMLElement> &
+			AttributifyAttributes
 	> & {
 		/** @internal */
 		__KYLIN_BUTTON: boolean

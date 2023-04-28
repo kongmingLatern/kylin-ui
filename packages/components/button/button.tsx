@@ -1,4 +1,8 @@
-import React, { useContext, useMemo } from 'react'
+import React, {
+	HTMLAttributes,
+	useContext,
+	useMemo,
+} from 'react'
 import classNames from 'classnames'
 import { ButtonProps, CompoundedComponent } from './type'
 import { ThemeContext } from '../theme-provider/theme-provider'
@@ -51,7 +55,7 @@ const InternalButton: React.ForwardRefRenderFunction<
 }
 /**============================= 设置 Button ============================= */
 const Button = React.forwardRef<
-	HTMLButtonElement | HTMLAnchorElement,
+	HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>,
 	ButtonProps
 >(InternalButton) as CompoundedComponent
 
