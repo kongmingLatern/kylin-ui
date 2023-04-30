@@ -1,5 +1,7 @@
 # Kylin-UI Component
 
+[![CI](https://github.com/kongmingLatern/kylin-ui/actions/workflows/main.yml/badge.svg)](https://github.com/kongmingLatern/kylin-ui/actions/workflows/main.yml)
+
 ## What's this?
 
 > A high-level UI React components library for Kylin-UI.
