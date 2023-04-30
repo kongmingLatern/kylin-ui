@@ -26,7 +26,7 @@ If you choose New component, please describe your component's effect that you ad
 4. Props
    Table of props
 
-Please describe your changes in detail or you fix problem's name.
+If you choose New component feature, you can describe your changes in detail and this can bring something.
 
 ### Related Issue
 
