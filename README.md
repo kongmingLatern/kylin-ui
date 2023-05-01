@@ -72,6 +72,6 @@ Please follow these commit message guidelines:
 
 If you have any questions, suggestions, or need help, feel free to reach out to us:
 
-Email 邮箱: 1577310506@qq.com
+Email 邮箱: 1577310596@qq.com
 
 Thank you for your contribution to Kylin-UI!
