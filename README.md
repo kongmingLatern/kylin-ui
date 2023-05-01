@@ -62,11 +62,11 @@ We will review your pull request as soon as possible. If there are any issues or
 
 Please follow these commit message guidelines:
 
-Use the present tense ("Add feature" not "Added feature")
-Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
-Limit the first line to 60 characters or less
-Reference issues and pull requests liberally
-Consider starting the commit message with an applicable emoji
+1. Use the present tense ("Add feature" not "Added feature")
+2. Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
+3. Limit the first line to 60 characters or less
+4. Reference issues and pull requests liberally
+5. Consider starting the commit message with an applicable emoji
 
 ## Contact Us
 
