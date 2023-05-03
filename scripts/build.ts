@@ -6,33 +6,33 @@ import resolve from '@rollup/plugin-node-resolve'
 import json from '@rollup/plugin-json'
 
 export function BuildPlugins() {
-	return [
-		reactRefresh(),
-		tsconfigPaths(),
-		peerDepsExternal(),
-		commonjs(),
-		resolve(),
-		json(),
-	]
+  return [
+    reactRefresh(),
+    tsconfigPaths(),
+    peerDepsExternal(),
+    commonjs(),
+    resolve(),
+    json(),
+  ]
 }
 
 export function BuildLib() {
-	return {
-		entry: 'packages/components/button/button.tsx',
-		formats: ['es', 'umd', 'iife'],
-		name: 'KylinUI',
-		fileName: format => `index.${format}.js`,
-	}
+  return {
+    entry: 'packages/components/button/button.tsx',
+    formats: ['es', 'umd', 'iife'],
+    name: 'KylinUI',
+    fileName: format => `index.${format}.js`,
+  }
 }
 
 export function rollupOptions() {
-	return {
-		external: ['react', 'react-dom'],
-		output: {
-			globals: {
-				react: 'React',
-				'react-dom': 'ReactDOM',
-			},
-		},
-	}
+  return {
+    external: ['react', 'react-dom'],
+    output: {
+      globals: {
+        react: 'React',
+        'react-dom': 'ReactDOM',
+      },
+    },
+  }
 }
