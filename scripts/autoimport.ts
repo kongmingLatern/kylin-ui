@@ -8,8 +8,6 @@ import {
   UserConfig,
 } from 'vite'
 
-console.log('config', config)
-
 const buildAll = async () => {
   // 全量打包
   await build(
@@ -25,9 +23,6 @@ const buildAll = async () => {
   const object = fs
     .readdirSync(componentSrc)
     .filter(name => {
-      // 只要目录不要文件，且里面包含index.ts
-      console.log('name', name)
-
       const componentDir = path.resolve(componentSrc, name)
       const isDir = fs.lstatSync(componentDir).isDirectory()
       return (
@@ -35,8 +30,6 @@ const buildAll = async () => {
         fs.readdirSync(componentDir).includes('index.tsx')
       )
     })
-
-  console.log('object', object)
 
   for (const name of object) {
     const outDir = path.resolve(__dirname, './dist', name)
@@ -52,8 +45,6 @@ const buildAll = async () => {
       },
       outDir,
     }
-
-    console.log('custom', custom)
 
     Object.assign((config as any).build, custom)
     await build(
