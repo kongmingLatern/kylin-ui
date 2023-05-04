@@ -5,8 +5,8 @@ import React, {
 } from 'react'
 import classNames from 'classnames'
 import { ButtonProps, CompoundedComponent } from './type'
-import { ThemeContext } from '../theme-provider/theme-provider'
 import { extractThemeConfig } from '../../shared'
+import { ThemeContext } from '../ThemeProvider'
 
 const InternalButton: React.ForwardRefRenderFunction<
 	HTMLButtonElement,

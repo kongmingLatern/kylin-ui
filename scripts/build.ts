@@ -8,7 +8,7 @@ import json from '@rollup/plugin-json'
 export function BuildPlugins() {
   return [
     reactRefresh(),
-    tsconfigPaths(),
+    // tsconfigPaths(),
     peerDepsExternal(),
     commonjs(),
     resolve(),
@@ -18,7 +18,7 @@ export function BuildPlugins() {
 
 export function BuildLib() {
   return {
-    entry: 'packages/components/button/index.tsx',
+    entry: 'packages/components/index.ts',
     formats: ['es', 'umd', 'iife'],
     name: 'KylinUI',
     fileName: format => `index.${format}.js`,

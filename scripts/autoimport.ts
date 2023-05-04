@@ -36,11 +36,10 @@ const buildAll = async () => {
       )
     })
 
+  console.log('object', object)
+
   for (const name of object) {
-    const outDir = path.resolve(
-      (config as any).build.outDir,
-      name
-    )
+    const outDir = path.resolve(__dirname, './dist', name)
     const custom = {
       lib: {
         entry: `${path.resolve(
