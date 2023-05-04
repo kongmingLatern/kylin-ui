@@ -1,8 +1,8 @@
 {
   "name": "@kylin-ui/button",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "index.umd.js",
+  "module": "index.umd.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

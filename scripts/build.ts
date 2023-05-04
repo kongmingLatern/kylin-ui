@@ -18,7 +18,7 @@ export function BuildPlugins() {
 
 export function BuildLib() {
   return {
-    entry: 'packages/components/button/button.tsx',
+    entry: 'packages/components/button/index.tsx',
     formats: ['es', 'umd', 'iife'],
     name: 'KylinUI',
     fileName: format => `index.${format}.js`,

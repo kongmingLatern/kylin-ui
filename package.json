@@ -2,10 +2,18 @@
   "name": "kylin-ui",
   "private": true,
   "version": "0.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "require": "./dist/index.js",
+    "import": "./dist/index.es.js"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:components": "esno ./scripts/autoimport.ts",
     "preview": "vite preview",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --fix",
     "prepare": "husky install",
@@ -38,6 +46,8 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
+    "esno": "^0.16.3",
+    "fs-extra": "^11.1.1",
     "husky": "^8.0.3",
     "iconify": "^1.4.0",
     "jsdom": "^21.1.1",
