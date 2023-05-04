@@ -19,12 +19,31 @@ yargs(hideBin(process.argv))
     },
     async argv => {
       try {
-        const componentName = argv.name
+        const questions = [
+          {
+            type: 'input',
+            name: 'componentName',
+            message: 'What is the name of the component?',
+            default: argv.name || 'MyComponent',
+          },
+          {
+            type: 'list',
+            name: 'includeStyles',
+            message: 'What css type do you want to use?',
+            choices: [
+              { name: 'CSS', value: 'css' },
+              { name: 'SCSS', value: 'scss' },
+              { name: 'LESS', value: 'less' },
+            ],
+          },
+        ]
 
-        // 获取模板文件内容
-        const template = `
-import React from 'react';
+        const answers = await inquirer.prompt(questions)
 
+        const componentName = answers.componentName
+        const cssType = answers.includeStyles
+
+        const componentContent = `
 const ${componentName} = () => {
   return (
     <div>
@@ -36,17 +55,30 @@ const ${componentName} = () => {
 export default ${componentName};
 `
 
-        // 创建文件夹
-        await fs.outputFile(
-          `./${componentName}/${componentName}.tsx`,
-          template.trim()
+        // 判断文件夹是否重名
+        if (isDirExisted(componentName)) {
+          throw new Error(
+            `Component ${componentName} already exists.`
+          )
+        }
+
+        // 根据文件内容创建文件
+        await createComponentFile(
+          componentName,
+          componentContent
         )
 
-        console.log(
-          chalk.bgBlue(
-            `Component ${componentName} created successfully in ${componentName}/${componentName}.tsx`
+        await createComponentTest(componentName)
+
+        // If need css, create css file
+        if (isStyleExists(answers)) {
+          const cssTemplate = ` {\n /* Add your styles here */\n}`
+          await createComponentStyle(
+            componentName,
+            cssType,
+            cssTemplate
           )
-        )
+        }
       } catch (err) {
         console.error(
           chalk.red('Error creating component:', err)
@@ -55,3 +87,63 @@ export default ${componentName};
     }
   )
   .parse()
+
+async function createComponentTest(componentName) {
+  const testTemplate = `
+import { render, screen } from '@testing-library/react';
+import ${componentName} from '../${componentName}';
+test('renders ${componentName} component', () => {
+  render(<${componentName} />);
+  const linkElement = screen.getByText(/${componentName} Component/i);
+expect(linkElement.firstChild).toMatchInlineSnapshot('${componentName} Component')
+});
+`
+  await fs.outputFile(
+    `./${componentName}/__tests__/${componentName}.spec.tsx`,
+    testTemplate.trim()
+  )
+  console.log(
+    chalk.bgGreen(
+      `Test for ${componentName}/__tests__/${componentName} created successfully in ${componentName}/__tests__/${componentName}.spec.tsx`
+    )
+  )
+}
+
+async function createComponentStyle(
+  componentName,
+  cssType,
+  cssTemplate
+) {
+  await fs.outputFile(
+    `./${componentName}/${componentName}.${cssType}`,
+    cssTemplate
+  )
+  console.log(
+    chalk.bgYellow(
+      `Styles for ${componentName}/${componentName} created successfully in ${componentName}/index.${cssType}`
+    )
+  )
+}
+
+async function createComponentFile(
+  componentName,
+  template
+) {
+  await fs.outputFile(
+    `./${componentName}/${componentName}.tsx`,
+    template.trim()
+  )
+  console.log(
+    chalk.bgBlue(
+      `Component ${componentName} created successfully in ${componentName}/${componentName}.tsx`
+    )
+  )
+}
+
+function isDirExisted(componentName) {
+  return fs.existsSync(`./${componentName}`)
+}
+
+function isStyleExists(answers) {
+  return answers.includeStyles
+}
