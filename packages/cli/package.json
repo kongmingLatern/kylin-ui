@@ -1,14 +1,15 @@
 {
-  "name": "@kylin/cli",
+  "name": "kylin-ui-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "A custom Cli tools for kylin-UI",
+  "private": false,
   "type": "module",
   "main": "index.mjs",
   "scripts": {
     "test": "vitest"
   },
   "bin": {
-    "pnpm": "./index.mjs"
+    "kylin": "./index.mjs"
   },
   "keywords": [],
   "author": "",
