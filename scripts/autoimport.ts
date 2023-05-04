@@ -20,7 +20,7 @@ const buildAll = async () => {
     './packages/components'
   )
 
-  const object = fs
+  const componentNameList = fs
     .readdirSync(componentSrc)
     .filter(name => {
       const componentDir = path.resolve(componentSrc, name)
@@ -31,7 +31,7 @@ const buildAll = async () => {
       )
     })
 
-  for (const name of object) {
+  for (const name of componentNameList) {
     const outDir = path.resolve(__dirname, './dist', name)
     const custom = {
       lib: {
