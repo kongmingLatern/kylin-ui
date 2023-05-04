@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { LibraryOptions, defineConfig } from 'vite'
 
 import Unocss from 'unocss/vite'
 import react from '@vitejs/plugin-react'
@@ -30,7 +30,7 @@ export default defineConfig({
     minify: 'esbuild',
     lib: {
       ...BuildLib(),
-    },
+    } as LibraryOptions,
     rollupOptions: {
       ...rollupOptions(),
     },
