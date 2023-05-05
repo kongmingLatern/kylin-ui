@@ -1,7 +1,7 @@
 {
   "name": "kylin-ui-cli",
-  "version": "1.0.0",
-  "description": "A custom Cli tools for kylin-UI",
+  "version": "1.0.2",
+  "description": "A custom Cli tools for kylin-UI to setup components",
   "private": false,
   "type": "module",
   "main": "index.mjs",
@@ -9,7 +9,7 @@
     "test": "vitest"
   },
   "bin": {
-    "demo": "./index.mjs"
+    "kylin": "./index.mjs"
   },
   "keywords": [],
   "author": "",
