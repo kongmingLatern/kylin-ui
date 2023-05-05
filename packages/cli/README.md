@@ -15,5 +15,7 @@ This is a CLI tool for Kylin UI to generate component's template.
 ### Create a component
 
 ```bash
-  kylin-ui-cli create <component-name>
+  kylin-ui-cli create component <component-name>
 ```
+
+And then, you will see the component's template in the `packages/components/<component-name>/<component-name>.tsx` file and test or css file.
