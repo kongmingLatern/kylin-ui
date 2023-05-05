@@ -6,6 +6,33 @@
 
 > A high-level UI React components library for Kylin-UI.
 
+## Directory Structure
+
+```bash
+├── README.md               # README
+├── commitlint.config.cjs   # Commlint config
+├── docs                    # Vitepress address
+├── index.html
+├── package.json
+├── packages                # Monorepo
+    ├── cli                 # Command line tool
+    ├── components          # All components
+    ├── hooks               # Hooks
+    ├── shared              # Utils / helpers
+    └── theme               # Style Folder
+├── pnpm-lock.yaml
+├── pnpm-workspace.yaml
+├── public
+├── scripts                 # Build cli helper
+├── shims.d.ts              # Declaration File
+├── src
+├── tsconfig.json
+├── tsconfig.node.json
+├── uno.config.ts
+├── vite.config.ts
+└── vitest.config.ts
+```
+
 ## Current progress
 
 ### Component
