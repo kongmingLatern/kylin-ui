@@ -9,7 +9,7 @@
     "test": "vitest"
   },
   "bin": {
-    "kylin": "./index.mjs"
+    "demo": "./index.mjs"
   },
   "keywords": [],
   "author": "",

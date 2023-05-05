@@ -3,6 +3,7 @@
 import yargs from 'yargs/yargs'
 import { hideBin } from 'yargs/helpers'
 import chalk from 'chalk'
+import * as path from 'path'
 import inquirer from 'inquirer'
 import fs from 'fs-extra'
 
@@ -19,41 +20,12 @@ yargs(hideBin(process.argv))
     },
     async argv => {
       try {
-        const questions = [
-          {
-            type: 'input',
-            name: 'componentName',
-            message: 'What is the name of the component?',
-            default: argv.name || 'MyComponent',
-          },
-          {
-            type: 'list',
-            name: 'includeStyles',
-            message: 'What css type do you want to use?',
-            choices: [
-              { name: 'CSS', value: 'css' },
-              { name: 'SCSS', value: 'scss' },
-              { name: 'LESS', value: 'less' },
-            ],
-          },
-        ]
+        const questions = initQuestion(argv)
 
         const answers = await inquirer.prompt(questions)
 
-        const componentName = answers.componentName
-        const cssType = answers.includeStyles
-
-        const componentContent = `
-const ${componentName} = () => {
-  return (
-    <div>
-      <h1>${componentName} Component</h1>
-    </div>
-  );
-};
-
-export default ${componentName};
-`
+        const { componentName, includeStyles: cssType } =
+          answers
 
         // 判断文件夹是否重名
         if (isDirExisted(componentName)) {
@@ -62,22 +34,16 @@ export default ${componentName};
           )
         }
 
-        // 根据文件内容创建文件
-        await createComponentFile(
-          componentName,
-          componentContent
-        )
+        const res = await Promise.all([
+          createComponentFile(componentName),
+          createComponentTestFile(componentName),
+          createComponentStyle(componentName, cssType),
+        ])
 
-        await createComponentTest(componentName)
-
-        // If need css, create css file
-        if (isStyleExists(answers)) {
-          const cssTemplate = ` {\n /* Add your styles here */\n}`
-          await createComponentStyle(
-            componentName,
-            cssType,
-            cssTemplate
-          )
+        if (res.filter(Boolean).length === 3) {
+          console.log(chalk.green(`Successfully created!`))
+        } else {
+          console.log(chalk.red(`Failed to create!`))
         }
       } catch (err) {
         console.error(
@@ -88,7 +54,64 @@ export default ${componentName};
   )
   .parse()
 
-async function createComponentTest(componentName) {
+function getComponentTemplate(componentName) {
+  return `
+    const ${componentName} = () => {
+      return (
+        <div>
+          <h1>${componentName} Component</h1>
+        </div>
+      );
+    };
+
+    export default ${componentName};
+`
+}
+
+function initQuestion(argv) {
+  return [
+    {
+      type: 'input',
+      name: 'componentName',
+      message: 'What is the name of the component?',
+      default: argv.name || 'MyComponent',
+    },
+    {
+      type: 'list',
+      name: 'includeStyles',
+      message: 'What css type do you want to use?',
+      choices: [
+        { name: 'CSS', value: 'css' },
+        { name: 'SCSS', value: 'scss' },
+        { name: 'LESS', value: 'less' },
+        { name: 'None', value: 'none' },
+      ],
+    },
+  ]
+}
+
+function getCommonPath(componentName) {
+  return `${resolvePath()}${componentName}/${componentName}`
+}
+
+async function createComponentFile(componentName) {
+  const template = getComponentTemplate(componentName)
+  await fs.outputFile(
+    `${getCommonPath(componentName)}.tsx`,
+    template.trim()
+  )
+  console.log(
+    chalk.green(
+      `Component ${componentName} created successfully in ${chalk.bgYellow(
+        `${resolvePath()}${componentName}/${componentName}.tsx`
+      )} `
+    )
+  )
+
+  return true
+}
+
+async function createComponentTestFile(componentName) {
   const testTemplate = `
 import { render, screen } from '@testing-library/react';
 import ${componentName} from '../${componentName}';
@@ -99,51 +122,53 @@ expect(linkElement.firstChild).toMatchInlineSnapshot('${componentName} Component
 });
 `
   await fs.outputFile(
-    `./${componentName}/__tests__/${componentName}.spec.tsx`,
+    `${resolvePath()}${componentName}/__tests__/${componentName}.spec.tsx`,
     testTemplate.trim()
   )
   console.log(
-    chalk.bgGreen(
-      `Test for ${componentName}/__tests__/${componentName} created successfully in ${componentName}/__tests__/${componentName}.spec.tsx`
+    chalk.green(
+      `Test for ${componentName}/__tests__/${componentName} created successfully in ${chalk.bgYellow(
+        `${resolvePath()}${componentName}/__tests__/${componentName}.spec.tsx`
+      )}`
     )
   )
+
+  return true
 }
 
 async function createComponentStyle(
   componentName,
-  cssType,
-  cssTemplate
+  cssType
 ) {
-  await fs.outputFile(
-    `./${componentName}/${componentName}.${cssType}`,
-    cssTemplate
-  )
-  console.log(
-    chalk.bgYellow(
-      `Styles for ${componentName}/${componentName} created successfully in ${componentName}/index.${cssType}`
+  if (isEffective(cssType)) {
+    const cssTemplate = `/* Add your styles here */\n`
+    await fs.outputFile(
+      `${getCommonPath(componentName)}.${cssType}`,
+      cssTemplate
     )
-  )
-}
-
-async function createComponentFile(
-  componentName,
-  template
-) {
-  await fs.outputFile(
-    `./${componentName}/${componentName}.tsx`,
-    template.trim()
-  )
-  console.log(
-    chalk.bgBlue(
-      `Component ${componentName} created successfully in ${componentName}/${componentName}.tsx`
+    console.log(
+      chalk.green(
+        `Styles for ${componentName} created successfully in ${chalk.bgYellow(
+          `${resolvePath()}${componentName}/${componentName}.${cssType}`
+        )}`
+      )
     )
-  )
+    return true
+  } else {
+    return false
+  }
 }
 
 function isDirExisted(componentName) {
-  return fs.existsSync(`./${componentName}`)
+  return fs.existsSync(`${resolvePath()}./${componentName}`)
 }
 
-function isStyleExists(answers) {
-  return answers.includeStyles
+function isEffective(cssType) {
+  return cssType !== 'none'
+}
+
+function resolvePath() {
+  return (
+    path.resolve(process.cwd()) + '/packages/components/'
+  )
 }
