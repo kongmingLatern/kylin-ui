@@ -52,7 +52,7 @@ describe('test themeConfig', () => {
     expect(
       extractThemeConfig(themeConfig, 'button', 'primary')
     ).toMatchInlineSnapshot(
-      '"color-#fff px-2 hover-color-#000 bg-#180234"'
+      '"color-#fff px-2 hover:color-#000 bg-#180234"'
     )
   })
   it('extract special class', () => {
@@ -74,7 +74,7 @@ describe('test themeConfig', () => {
     expect(
       extractThemeConfig(themeConfig, 'button', 'primary')
     ).toMatchInlineSnapshot(
-      '"color-#fff px-2 hover-color-#000 hover-px-3 bg-#180234"'
+      '"color-#fff px-2 hover:color-#000 hover:px-3 bg-#180234"'
     )
   })
 })
