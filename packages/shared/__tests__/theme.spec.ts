@@ -1,7 +1,7 @@
 import { extractThemeConfig } from '..'
 
 describe('test themeConfig', () => {
-  it('extract primary button', () => {
+  it('shoule support extract primary button', () => {
     const themeConfig = {
       button: {
         common: {
@@ -17,7 +17,7 @@ describe('test themeConfig', () => {
       extractThemeConfig(themeConfig, 'button', 'primary')
     ).toMatchInlineSnapshot('"color-#fff px-2 bg-#180234"')
   })
-  it('extract secondary button', () => {
+  it('shoule support extract secondary button', () => {
     const themeConfig = {
       button: {
         common: {
@@ -34,7 +34,7 @@ describe('test themeConfig', () => {
     ).toMatchInlineSnapshot('"color-#fff px-2"')
   })
 
-  it('extract special class', () => {
+  it('shoule support extract special class', () => {
     const themeConfig = {
       button: {
         common: {
@@ -55,7 +55,7 @@ describe('test themeConfig', () => {
       '"color-#fff px-2 hover:color-#000 bg-#180234"'
     )
   })
-  it('extract special class', () => {
+  it('shoule support extract special class with some props', () => {
     const themeConfig = {
       button: {
         common: {
