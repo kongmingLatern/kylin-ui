@@ -6,15 +6,8 @@ const theme = {
     common: {
       px: 2,
       py: 2,
-      hover: {
-        bg: 'purple-500',
-      },
     },
     primary: {
-      bg: 'green-500',
-      color: '#fff',
-    },
-    secondary: {
       bg: 'green-500',
       color: '#fff',
       hover: {

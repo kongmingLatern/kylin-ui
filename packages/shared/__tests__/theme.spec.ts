@@ -33,7 +33,6 @@ describe('test themeConfig', () => {
       extractThemeConfig(themeConfig, 'button', 'secondary')
     ).toMatchInlineSnapshot('"color-#fff px-2"')
   })
-
   it('shoule support extract special class', () => {
     const themeConfig = {
       button: {
