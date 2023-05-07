@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import Button from '../../button/button'
 import { ThemeProvider } from '../theme-provider'
+import { useTheme } from '../../../hooks'
 
 const theme = {
   button: {
@@ -34,6 +36,8 @@ const theme_secondary = {
 }
 
 const ButtonType = () => {
+  const [themeMode, setThemeMode] = useTheme('light')
+
   return (
     <>
       {/* <ThemeProvider themeConfig={theme}>
@@ -62,6 +66,11 @@ const ButtonType = () => {
         type="primary"
         className="font-bold"
         color="blue"
+        onClick={() =>
+          setThemeMode(
+            themeMode === 'light' ? 'dark' : 'light'
+          )
+        }
       >
         123123
       </Button>

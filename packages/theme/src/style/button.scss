@@ -18,7 +18,7 @@
     background-color: var(--primary-color);
     color: #fff;
     &:hover {
-      background-color: rgba(var(--primary-color), 0.9);
+      opacity: 0.9;
     }
   }
 
@@ -27,7 +27,7 @@
     background-color: var(--secondary-color);
     color: #fff;
     &:hover {
-      background-color: rgba(var(--secondary-color), 0.9);
+      opacity: 0.9;
     }
   }
 }

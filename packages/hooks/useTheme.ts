@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default function useTheme(theme: 'light' | 'dark') {
+export function useTheme(theme: 'light' | 'dark') {
   const [themeMode, setThemeMode] = useState<
     'light' | 'dark'
   >(theme)
@@ -33,5 +33,5 @@ export default function useTheme(theme: 'light' | 'dark') {
     }
   }, [themeMode])
 
-  return [themeMode, setThemeMode]
+  return [themeMode, setThemeMode] as const
 }
