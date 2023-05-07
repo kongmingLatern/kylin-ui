@@ -15,9 +15,7 @@ export function extractThemeConfig(
         result[key] = value
       }
     } else {
-      console.warn(
-        `type ${type} not exists in ${componentName}, please check your themeConfig`
-      )
+      return
     }
     return result
   }
