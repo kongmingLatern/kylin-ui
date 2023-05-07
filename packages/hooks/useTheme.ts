@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { darkTheme, lightTheme } from './../theme/src'
 
 export function useTheme(
   theme: 'light' | 'dark' = 'light'
@@ -15,31 +16,20 @@ export function useTheme(
     // Setup theme mode
     localStorage.setItem('theme', themeMode)
     if (themeMode === 'light') {
-      const lightTheme = {
-        '--primary-color': '#3498db',
-        '--text-color': '#2c3e50',
-        '--border-color': '#bdc3c7',
-      }
-      Object.entries(lightTheme).forEach(([key, value]) => {
-        document.documentElement.style.setProperty(
-          key,
-          value
-        )
-      })
+      updateThemeMode(lightTheme)
     } else if (themeMode === 'dark') {
-      const darkTheme = {
-        '--primary-color': '#2c3e50',
-        '--text-color': '#ecf0f1',
-        '--border-color': '#34495e',
-      }
-      Object.entries(darkTheme).forEach(([key, value]) => {
-        document.documentElement.style.setProperty(
-          key,
-          value
-        )
-      })
+      updateThemeMode(darkTheme)
     }
   }, [themeMode])
 
   return [themeMode, setThemeMode] as const
+}
+function updateThemeMode(lightTheme: {
+  '--primary-color': string
+  '--text-color': string
+  '--border-color': string
+}) {
+  Object.entries(lightTheme).forEach(([key, value]) => {
+    document.documentElement.style.setProperty(key, value)
+  })
 }
