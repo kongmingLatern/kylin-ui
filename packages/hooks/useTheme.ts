@@ -1,11 +1,19 @@
 import { useEffect, useState } from 'react'
 
-export function useTheme(theme: 'light' | 'dark') {
+export function useTheme(
+  theme: 'light' | 'dark' = 'light'
+) {
   const [themeMode, setThemeMode] = useState<
     'light' | 'dark'
-  >(theme)
+  >(
+    (localStorage.getItem('theme') as 'light' | 'dark') ??
+      theme
+  )
 
+  // Change theme mode
   useEffect(() => {
+    // Setup theme mode
+    localStorage.setItem('theme', themeMode)
     if (themeMode === 'light') {
       const lightTheme = {
         '--primary-color': '#3498db',

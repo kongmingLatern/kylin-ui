@@ -36,7 +36,7 @@ const theme_secondary = {
 }
 
 const ButtonType = () => {
-  const [themeMode, setThemeMode] = useTheme('light')
+  const [themeMode, setThemeMode] = useTheme()
 
   return (
     <>
