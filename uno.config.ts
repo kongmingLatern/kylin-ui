@@ -10,7 +10,7 @@ export default defineConfig({
     presetUno(),
     presetIcons(),
     presetAttributify(),
-  ],
+  ] as any,
   safelist: [
     'bg-purple-500',
     'bg-red-500',

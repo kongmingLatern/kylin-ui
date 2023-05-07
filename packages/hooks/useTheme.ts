@@ -1,34 +1,37 @@
-import { useCallback } from 'react'
+import { useEffect, useState } from 'react'
 
-export default function useTheme(theme: string) {
-	// TODO: 用户可以自定义主题（light，dark, ...）
-	// 主题切换
-	const haneleThemeChange = useCallback(
-		theme => {
-			if (theme === 'light') {
-				document.documentElement.style.setProperty(
-					'--primary-color',
-					'#1890ff'
-				)
-				document.documentElement.style.setProperty(
-					'--secondary-color',
-					'#6c757d'
-				)
-				document.documentElement.style.setProperty(
-					'--text-color',
-					'#000'
-				)
-			} else {
-				document.documentElement.style.setProperty(
-					'--primary-color',
-					'#343a40'
-				)
-				document.documentElement.style.setProperty(
-					'--secondary-color',
-					'#495057'
-				)
-			}
-		},
-		[theme]
-	)
+export default function useTheme(theme: 'light' | 'dark') {
+  const [themeMode, setThemeMode] = useState<
+    'light' | 'dark'
+  >(theme)
+
+  useEffect(() => {
+    if (themeMode === 'light') {
+      const lightTheme = {
+        '--primary-color': '#3498db',
+        '--text-color': '#2c3e50',
+        '--border-color': '#bdc3c7',
+      }
+      Object.entries(lightTheme).forEach(([key, value]) => {
+        document.documentElement.style.setProperty(
+          key,
+          value
+        )
+      })
+    } else if (themeMode === 'dark') {
+      const darkTheme = {
+        '--primary-color': '#2c3e50',
+        '--text-color': '#ecf0f1',
+        '--border-color': '#34495e',
+      }
+      Object.entries(darkTheme).forEach(([key, value]) => {
+        document.documentElement.style.setProperty(
+          key,
+          value
+        )
+      })
+    }
+  }, [themeMode])
+
+  return [themeMode, setThemeMode]
 }

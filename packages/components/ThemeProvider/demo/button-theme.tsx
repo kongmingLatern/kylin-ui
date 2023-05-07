@@ -36,7 +36,7 @@ const theme_secondary = {
 const ButtonType = () => {
   return (
     <>
-      <ThemeProvider themeConfig={theme}>
+      {/* <ThemeProvider themeConfig={theme}>
         <Button
           type="primary"
           className="font-bold"
@@ -56,7 +56,16 @@ const ButtonType = () => {
           <Button type="custmer">123123</Button>
           <Button type="secondary">123123</Button>
         </ThemeProvider>
-      </ThemeProvider>
+      </ThemeProvider> */}
+      {/* <ThemeProvider> */}
+      <Button
+        type="primary"
+        className="font-bold"
+        color="blue"
+      >
+        123123
+      </Button>
+      {/* </ThemeProvider> */}
     </>
   )
 }
