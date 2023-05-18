@@ -17,7 +17,8 @@
     "preview": "vite preview",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --fix",
     "prepare": "husky install",
-    "test": "vitest"
+    "test": "vitest",
+    "test:run": "vitest run"
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
