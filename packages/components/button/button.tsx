@@ -60,4 +60,4 @@ const Button = React.forwardRef<
 
 // Button.__KYLIN_BUTTON = true
 
-export default Button
+export { Button }
