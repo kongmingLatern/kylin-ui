@@ -1,0 +1,39 @@
+// 默认颜色
+$default-color: #34495e;
+// 主要颜色
+$primary-color: #3498db;
+
+// 辅助颜色
+$secondary-color: #f1c40f;
+$success-color: #2ecc71;
+$info-color: #9b59b6;
+$warning-color: #e67e22;
+$danger-color: #e74c3c;
+
+// 背景颜色
+$background-color: #ecf0f1;
+
+// 文字颜色
+$text-color: #2c3e50;
+$text-color-light: #ffffff;
+
+// 边框颜色
+$border-color: #bdc3c7;
+$border-radius: 4px;
+
+$font-size-base: 14px;
+
+// 色彩变量
+:root {
+  --default-color: #{$default-color};
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --success-color: #{$success-color};
+  --info-color: #{$info-color};
+  --warning-color: #{$warning-color};
+  --danger-color: #{$danger-color};
+  --background-color: #{$background-color};
+  --text-color: #{$text-color};
+  --text-color-light: #{$text-color-light};
+  --border-color: #{$border-color};
+}
