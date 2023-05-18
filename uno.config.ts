@@ -19,5 +19,6 @@ export default defineConfig({
     'px-2',
     'py-2',
     'hover:bg-purple-500',
+    'hover:color-green',
   ],
 })

@@ -30,4 +30,22 @@
       opacity: 0.9;
     }
   }
+
+  &-success {
+    @extend .kylin-btn;
+    background-color: var(--success-color);
+    color: #fff;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &-info {
+    @extend .kylin-btn;
+    background-color: var(--info-color);
+    color: #fff;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
 }

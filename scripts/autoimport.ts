@@ -56,7 +56,7 @@ const buildAll = async () => {
       `{
           "name": "kylin-ui/${name}",
           "main": "index.umd.js",
-          "module": "index.umd.js",
+          "module": "index.umd.js"
         }`,
       `utf-8`
     )
