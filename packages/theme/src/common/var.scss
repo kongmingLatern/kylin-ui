@@ -1,3 +1,5 @@
+// 默认颜色
+$default-color: #34495e;
 // 主要颜色
 $primary-color: #3498db;
 
@@ -23,6 +25,7 @@ $font-size-base: 14px;
 
 // 色彩变量
 :root {
+  --default-color: #{$default-color};
   --primary-color: #{$primary-color};
   --secondary-color: #{$secondary-color};
   --success-color: #{$success-color};

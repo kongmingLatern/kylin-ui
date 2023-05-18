@@ -13,6 +13,15 @@
   cursor: pointer;
   transition: all 0.3s;
 
+  &-default {
+    @extend .kylin-btn;
+    background-color: var(--default-color);
+    color: #fff;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
   &-primary {
     @extend .kylin-btn;
     background-color: var(--primary-color);
