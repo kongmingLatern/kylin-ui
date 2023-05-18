@@ -25,18 +25,11 @@ const InternalButton: React.ForwardRefRenderFunction<
   /**============================= 获取 当前主题色 | 自定义主题  ============================= */
   const { theme = {} } = useContext(ThemeContext)
 
-  const result = useMemo(
+  const shortcuts = useMemo(
     () => extractThemeConfig(theme, 'button', type),
     [theme]
   )
 
-  // // 设置主题
-  // Object.entries(th).forEach(([key, value]) => {
-  // 	document.documentElement.style.setProperty(
-  // 		`--${camel2kebab_string(key)}`,
-  // 		value
-  // 	)
-  // })
   /**============================= 设置 className ============================= */
 
   const classes = classNames(
@@ -45,7 +38,7 @@ const InternalButton: React.ForwardRefRenderFunction<
       [`kylin-btn-${type}`]: type,
     },
     className,
-    result
+    shortcuts
   )
   let buttonNode = (
     <button
