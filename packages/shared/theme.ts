@@ -24,7 +24,6 @@ export function extractThemeConfig(
     return key === 'hover' || key === 'active'
   }
 
-  let str = ''
   const res = {
     ...extractValueByType('common'),
     ...extractValueByType(themeType),
