@@ -1,3 +1,11 @@
+# Button
+
+```jsx
+import { Button } from '../packages/components/button/index.tsx'
+
+<Button>123123</Button>
+```
+
 # Markdown Extension Examples
 
 This page demonstrates some of the built-in markdown extensions provided by VitePress.
