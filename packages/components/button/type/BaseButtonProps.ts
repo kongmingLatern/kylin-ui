@@ -16,6 +16,8 @@ const colors = [
 export interface BaseButtonProps {
   type?: ButtonType
   color?: (typeof colors)[number]
+  bg?: (typeof colors)[number]
+  hover?: (typeof colors)[number]
   // icon?: React.ReactNode;
   // shape?: ButtonShape;
   // size?: SizeType;

@@ -17,6 +17,8 @@ const InternalButton: React.ForwardRefRenderFunction<
   const {
     type = 'default',
     color,
+    bg,
+    hover,
     className,
     children,
     htmlType = 'button',
@@ -38,7 +40,9 @@ const InternalButton: React.ForwardRefRenderFunction<
     // TODO: 判断 type 是否在预期之内
     {
       [`kylin-btn-${type}`]: type,
-      [`color-${color}`]: color,
+      [`text-${color}-500`]: color,
+      [`bg-${bg}-500`]: bg,
+      [`hover:bg-${hover}-700`]: hover || bg,
     },
     className,
     shortcuts ? shortcuts : ''

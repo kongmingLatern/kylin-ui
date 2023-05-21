@@ -25,6 +25,7 @@ export default defineConfig({
     presetAttributify(),
   ] as any,
   safelist: [
+    ...colors.map(c => `text-${c}-500`),
     ...colors.map(c => `bg-${c}-500`),
     ...colors.map(c => `hover:bg-${c}-700`),
   ],
