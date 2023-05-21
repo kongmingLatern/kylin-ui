@@ -7,7 +7,6 @@ import classNames from 'classnames'
 import { ButtonProps, CompoundedComponent } from './type'
 import { extractThemeConfig } from '../../shared'
 import { ThemeContext } from '../ThemeProvider'
-import config from '../../../uno.config'
 
 const InternalButton: React.ForwardRefRenderFunction<
   HTMLButtonElement,
@@ -29,6 +28,10 @@ const InternalButton: React.ForwardRefRenderFunction<
   /**============================= 获取 当前主题色 | 自定义主题  ============================= */
   const { theme = {} } = useContext(ThemeContext)
 
+  // TODO: You can use different scheme about user's choose
+  // 1. startdard: user can only use the theme which is defined by uno.css(Less css user can use)
+  // 2. medium: user can use the theme which is defined by uno.css(More css user can use)
+  // 3. large: user can use the theme which is defined by uno.css(All css user can use)
   const shortcuts = useMemo(
     () => extractThemeConfig(theme, 'button', type),
     [theme]
