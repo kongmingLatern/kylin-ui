@@ -13,7 +13,7 @@ const theme = {
       bg: 'green-500',
       color: '#fff',
       hover: {
-        bg: 'purple-500',
+        bg: 'blue-500',
       },
     },
   },
@@ -40,27 +40,27 @@ const ButtonType = () => {
 
   return (
     <>
-      {/* <ThemeProvider themeConfig={theme}>
-        <Button
-          type="primary"
-          className="font-bold"
-          color="blue"
-        >
-          123123
-        </Button>
-        <Button
-          type="secondary"
-          color="black"
-          px={10}
-          py={20}
-        >
-          Blue
-        </Button>
-        <ThemeProvider themeConfig={theme_secondary}>
-          <Button type="custmer">123123</Button>
-          <Button type="secondary">123123</Button>
-        </ThemeProvider>
+      {/* <ThemeProvider themeConfig={theme}> */}
+      {/* <Button
+        type="primary"
+        className="font-bold"
+        color="blue"
+      >
+        123123
+      </Button>
+      <Button
+        type="secondary"
+        bg="blue-300"
+        px={10}
+        py={20}
+      >
+        Blue
+      </Button>
+      <ThemeProvider themeConfig={theme_secondary}>
+        <Button type="custmer">123123</Button>
+        <Button type="secondary">123123</Button>
       </ThemeProvider> */}
+      {/* </ThemeProvider> */}
       {/* <ThemeProvider> */}
       <Button
         type="primary"

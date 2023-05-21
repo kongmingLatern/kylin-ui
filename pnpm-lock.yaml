@@ -161,6 +161,8 @@ importers:
 
   packages/theme: {}
 
+  packages/unocss: {}
+
 packages:
 
   registry.npmmirror.com/@algolia/autocomplete-core@1.8.2:

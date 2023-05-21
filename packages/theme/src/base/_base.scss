@@ -1,0 +1,13 @@
+:root {
+  --default-color: #{$default-color};
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --success-color: #{$success-color};
+  --info-color: #{$info-color};
+  --warning-color: #{$warning-color};
+  --danger-color: #{$danger-color};
+  --background-color: #{$background-color};
+  --text-color: #{$text-color};
+  --text-color-light: #{$text-color-light};
+  --border-color: #{$border-color};
+}

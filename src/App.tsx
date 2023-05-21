@@ -11,9 +11,7 @@ const App = () => {
 			<br />
 			<ThemeButton />
 
-			<Button bg="red-500">123</Button>
-			<Button bg="blue-500">123</Button>
-			<Button bg="green-500">123</Button>
+			<Button color="green">123</Button>
 		</div>
 	)
 }

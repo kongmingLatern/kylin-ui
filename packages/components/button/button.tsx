@@ -7,6 +7,7 @@ import classNames from 'classnames'
 import { ButtonProps, CompoundedComponent } from './type'
 import { extractThemeConfig } from '../../shared'
 import { ThemeContext } from '../ThemeProvider'
+import config from '../../../uno.config'
 
 const InternalButton: React.ForwardRefRenderFunction<
   HTMLButtonElement,
@@ -15,6 +16,7 @@ const InternalButton: React.ForwardRefRenderFunction<
   /**============================= 设置 props ============================= */
   const {
     type = 'default',
+    color,
     className,
     children,
     htmlType = 'button',
@@ -36,16 +38,17 @@ const InternalButton: React.ForwardRefRenderFunction<
     // TODO: 判断 type 是否在预期之内
     {
       [`kylin-btn-${type}`]: type,
+      [`color-${color}`]: color,
     },
     className,
-    shortcuts
+    shortcuts ? shortcuts : ''
   )
   let buttonNode = (
     <button
       type={htmlType}
       className={classes}
-      {...rest}
       onClick={onClick}
+      {...rest}
     >
       {children}
     </button>

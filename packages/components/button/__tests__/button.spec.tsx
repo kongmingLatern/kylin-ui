@@ -44,3 +44,17 @@ test("button's other props", () => {
 		</button>
 	`)
 })
+
+test("button's color", () => {
+  const { container } = render(
+    <Button color="green">This is a primary button</Button>
+  )
+  expect(container.firstChild).toMatchInlineSnapshot(`
+    <button
+      class="kylin-btn-default color-green"
+      type="button"
+    >
+      This is a primary button
+    </button>
+  `)
+})

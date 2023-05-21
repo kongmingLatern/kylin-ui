@@ -5,6 +5,19 @@ import {
   presetAttributify,
 } from 'unocss'
 
+const colors = [
+  'green',
+  'red',
+  'purple',
+  'yellow',
+  'blue',
+  'indigo',
+  'pink',
+  'gray',
+  'black',
+  'white',
+]
+
 export default defineConfig({
   presets: [
     presetUno(),
@@ -12,13 +25,7 @@ export default defineConfig({
     presetAttributify(),
   ] as any,
   safelist: [
-    'bg-purple-500',
-    'bg-red-500',
-    'bg-green-500',
-    'color-green',
-    'px-2',
-    'py-2',
-    'hover:bg-purple-500',
-    'hover:color-green',
+    ...colors.map(c => `bg-${c}-500`),
+    ...colors.map(c => `hover:bg-${c}-700`),
   ],
 })
