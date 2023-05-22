@@ -46,7 +46,7 @@ const InternalButton: React.ForwardRefRenderFunction<
     [theme]
   )
 
-  const style = useStyle('preset', { color, bg, hover })
+  const style = useStyle('preset', { color, bg, hover, pl, pr, p, ml, mr, m })
 
   /**============================= 设置 className ============================= */
 

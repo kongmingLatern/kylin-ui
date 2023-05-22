@@ -1,4 +1,5 @@
 import { presetColors } from '../base/color'
+import { generatePaddingOrMargin } from '../helpers'
 
 const colorModule = [
   ...presetColors.map(c => `text-${c}-500`),
@@ -8,17 +9,16 @@ const colorModule = [
 
 const paddingOrMarginModule = generatePaddingOrMargin('p')
   .concat(generatePaddingOrMargin('pl'))
+  .concat(generatePaddingOrMargin('px'))
+  .concat(generatePaddingOrMargin('py'))
   .concat(generatePaddingOrMargin('pr'))
   .concat(generatePaddingOrMargin('m'))
   .concat(generatePaddingOrMargin('ml'))
   .concat(generatePaddingOrMargin('mr'))
+  .concat(generatePaddingOrMargin('mx'))
+  .concat(generatePaddingOrMargin('my'))
 
 export const presetSafelist = [
   ...colorModule,
   ...paddingOrMarginModule,
 ]
-function generatePaddingOrMargin(target): string[] {
-  return Array.from({ length: 10 }, (_, i) => i + 1).map(
-    item => `${target}-${item}`
-  )
-}
