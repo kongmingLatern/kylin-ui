@@ -77,7 +77,9 @@ describe("button's props", () => {
   })
   test("button's hover", () => {
     const { container } = render(
-      <Button hover="green">This is a primary button</Button>
+      <Button hover="green">
+        This is a primary button
+      </Button>
     )
     expect(container.firstChild).toMatchInlineSnapshot(`
       <button
@@ -90,11 +92,41 @@ describe("button's props", () => {
   })
   test("button's bg and hover", () => {
     const { container } = render(
-      <Button hover="green" bg='blue'>This is a primary button</Button>
+      <Button hover="green" bg="blue">
+        This is a primary button
+      </Button>
     )
     expect(container.firstChild).toMatchInlineSnapshot(`
       <button
         class="kylin-btn-default bg-blue-500 hover:bg-green-700"
+        type="button"
+      >
+        This is a primary button
+      </button>
+    `)
+  })
+  test("button's padding", () => {
+    const { container } = render(
+      <Button p={1} pl={2}>
+        This is a primary button
+      </Button>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      <button
+        class="kylin-btn-default p-1 pl-2"
+        type="button"
+      >
+        This is a primary button
+      </button>
+    `)
+  })
+  test("button's margin", () => {
+    const { container } = render(
+      <Button m={1}>This is a primary button</Button>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      <button
+        class="kylin-btn-default m-1"
         type="button"
       >
         This is a primary button
