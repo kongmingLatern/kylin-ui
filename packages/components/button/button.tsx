@@ -16,9 +16,17 @@ const InternalButton: React.ForwardRefRenderFunction<
   /**============================= 设置 props ============================= */
   const {
     type = 'default',
+    // FLAG: WHETHER TO USE THE DEFAULT COLOR
     color,
-    bg,
     hover,
+    bg,
+    p,
+    pl,
+    pr,
+    m,
+    ml,
+    mr,
+    // NOTE COMMON PROPS
     className,
     children,
     htmlType = 'button',
@@ -38,15 +46,15 @@ const InternalButton: React.ForwardRefRenderFunction<
     [theme]
   )
 
-  /**============================= 设置 className ============================= */
-
   const style = useStyle('preset', { color, bg, hover })
+
+  /**============================= 设置 className ============================= */
 
   const classes = classNames(
     // TODO: 判断 type 是否在预期之内
     {
       [`kylin-btn-${type}`]: type,
-      // REFACTOR: 优化 color bg hover 的判断
+      // FLAG: 优化 color bg hover 的判断
       ...style,
     },
     className,
