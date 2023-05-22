@@ -5,7 +5,7 @@ import CommonButton from '../packages/components/button/demo/type'
 const App = () => {
   return (
     <div>
-      {/* <h1>Type Button</h1>
+      <h1>Type Button</h1>
       <CommonButton />
       <h1>Theme Button</h1>
       <br />
@@ -16,7 +16,7 @@ const App = () => {
         123
       </Button>
 
-      <Button pl={2}>123</Button> */}
+      <Button pl={2}>123</Button>
       <Button py={5}>123</Button>
     </div>
   )

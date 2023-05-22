@@ -157,7 +157,11 @@ importers:
         specifier: link:../hooks
         version: link:../hooks
 
-  packages/hooks: {}
+  packages/hooks:
+    dependencies:
+      '@kylin-ui/shared':
+        specifier: link:../shared
+        version: link:../shared
 
   packages/icon: {}
 

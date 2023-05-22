@@ -46,7 +46,6 @@ const InternalButton: React.ForwardRefRenderFunction<
     ...colorModule(rest),
     ...paddingOrMarginModule(rest),
   })
-  console.log(style)
 
   const restProps = omit(rest, [
     ...presetPaddingOrMarginOption,

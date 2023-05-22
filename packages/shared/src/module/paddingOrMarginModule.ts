@@ -35,3 +35,23 @@ export function paddingOrMarginModule({
     px,
   }
 }
+
+export function dealPaddingModule({ p, pl, py, pr, px }) {
+  return {
+    [`p-${p}`]: p,
+    [`pl-${pl}`]: pl,
+    [`pr-${pr}`]: pr,
+    [`px-${px}`]: px,
+    [`py-${py}`]: py,
+  }
+}
+
+export function dealMarginModule({ m, ml, my, mr, mx }) {
+  return {
+    [`m-${m}`]: m,
+    [`ml-${ml}`]: ml,
+    [`mr-${mr}`]: mr,
+    [`mx-${mx}`]: mx,
+    [`my-${my}`]: my,
+  }
+}
