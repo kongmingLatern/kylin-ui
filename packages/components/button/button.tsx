@@ -5,9 +5,16 @@ import React, {
 } from 'react'
 import classNames from 'classnames'
 import { ButtonProps, CompoundedComponent } from './type'
-import { extractThemeConfig } from '../../shared'
 import { ThemeContext } from '../ThemeProvider'
 import { useStyle } from '@kylin/hooks'
+import {
+  colorModule,
+  extractThemeConfig,
+  paddingOrMarginModule,
+  presetPaddingOrMarginOption,
+  presetColorOption,
+} from '@kylin-ui/shared'
+import omit from '@kylin-ui/shared/src/omit'
 
 const InternalButton: React.ForwardRefRenderFunction<
   HTMLButtonElement,
@@ -17,15 +24,6 @@ const InternalButton: React.ForwardRefRenderFunction<
   const {
     type = 'default',
     // FLAG: WHETHER TO USE THE DEFAULT COLOR
-    color,
-    hover,
-    bg,
-    p,
-    pl,
-    pr,
-    m,
-    ml,
-    mr,
     // NOTE COMMON PROPS
     className,
     children,
@@ -46,7 +44,15 @@ const InternalButton: React.ForwardRefRenderFunction<
     [theme]
   )
 
-  const style = useStyle('preset', { color, bg, hover, pl, pr, p, ml, mr, m })
+  const style = useStyle('preset', {
+    ...colorModule(props),
+    ...paddingOrMarginModule(props),
+  })
+
+  const restProps = omit(props, [
+    ...presetPaddingOrMarginOption,
+    ...presetColorOption,
+  ])
 
   /**============================= 设置 className ============================= */
 
@@ -60,16 +66,21 @@ const InternalButton: React.ForwardRefRenderFunction<
     className,
     shortcuts ? shortcuts : ''
   )
+  console.log(classes)
+
   let buttonNode = (
     <button
+      // BUG: 需要去除重复参数
+      {...restProps}
       type={htmlType}
       className={classes}
       onClick={onClick}
-      {...rest}
     >
       {children}
     </button>
   )
+  console.log(buttonNode)
+
   return buttonNode
 }
 /**============================= 设置 Button ============================= */
