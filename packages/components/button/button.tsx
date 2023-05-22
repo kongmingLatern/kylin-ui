@@ -9,10 +9,12 @@ import { ThemeContext } from '../ThemeProvider'
 import { useStyle } from '@kylin/hooks'
 import {
   colorModule,
+  paddingModule,
+  marginModule,
   extractThemeConfig,
-  paddingOrMarginModule,
-  presetPaddingOrMarginOption,
   presetColorOption,
+  presetPaddingOption,
+  presetMarginOption,
 } from '@kylin-ui/shared'
 import omit from '@kylin-ui/shared/src/omit'
 
@@ -44,11 +46,13 @@ const InternalButton: React.ForwardRefRenderFunction<
 
   const style = useStyle('preset', {
     ...colorModule(rest),
-    ...paddingOrMarginModule(rest),
+    ...paddingModule(rest),
+    ...marginModule(rest),
   })
 
   const restProps = omit(rest, [
-    ...presetPaddingOrMarginOption,
+    ...presetPaddingOption,
+    ...presetMarginOption,
     ...presetColorOption,
   ])
 

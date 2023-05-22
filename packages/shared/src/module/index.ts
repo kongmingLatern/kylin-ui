@@ -1,2 +1,3 @@
 export * from './color'
-export * from './paddingOrMarginModule'
+export * from './padding'
+export * from './margin'
