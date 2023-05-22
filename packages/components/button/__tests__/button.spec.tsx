@@ -40,7 +40,7 @@ describe("button's props", () => {
     )
     expect(container.firstChild).toMatchInlineSnapshot(`
       <button
-        class="kylin-btn-default bg-blue-500-500 hover:bg-undefined-700"
+        class="kylin-btn-default bg-blue-500-500"
         type="button"
       >
         This is a primary button
@@ -68,7 +68,7 @@ describe("button's props", () => {
     )
     expect(container.firstChild).toMatchInlineSnapshot(`
       <button
-        class="kylin-btn-default bg-green-500 hover:bg-undefined-700"
+        class="kylin-btn-default bg-green-500"
         type="button"
       >
         This is a primary button

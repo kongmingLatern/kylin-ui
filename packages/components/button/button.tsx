@@ -7,6 +7,7 @@ import classNames from 'classnames'
 import { ButtonProps, CompoundedComponent } from './type'
 import { extractThemeConfig } from '../../shared'
 import { ThemeContext } from '../ThemeProvider'
+import { useStyle } from '../../hooks/src/useStyle'
 
 const InternalButton: React.ForwardRefRenderFunction<
   HTMLButtonElement,
@@ -39,13 +40,18 @@ const InternalButton: React.ForwardRefRenderFunction<
 
   /**============================= 设置 className ============================= */
 
+  const style = useStyle('preset', { color, bg, hover })
+
   const classes = classNames(
     // TODO: 判断 type 是否在预期之内
     {
       [`kylin-btn-${type}`]: type,
-      [`text-${color}-500`]: color,
-      [`bg-${bg}-500`]: bg,
-      [`hover:bg-${hover}-700`]: hover || bg,
+      // REFACTOR: 优化 color bg hover 的判断
+      // 1. 可以通过封装【注册】逻辑，来实现自定义主题色
+      ...style,
+      // [`text-${color}-500`]: color,
+      // [`bg-${bg}-500`]: bg,
+      // [`hover:bg-${hover}-700`]: hover || bg,
     },
     className,
     shortcuts ? shortcuts : ''
