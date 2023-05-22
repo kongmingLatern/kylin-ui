@@ -23,8 +23,6 @@ const InternalButton: React.ForwardRefRenderFunction<
   /**============================= 设置 props ============================= */
   const {
     type = 'default',
-    // FLAG: WHETHER TO USE THE DEFAULT COLOR
-    // NOTE COMMON PROPS
     className,
     children,
     htmlType = 'button',
@@ -45,11 +43,12 @@ const InternalButton: React.ForwardRefRenderFunction<
   )
 
   const style = useStyle('preset', {
-    ...colorModule(props),
-    ...paddingOrMarginModule(props),
+    ...colorModule(rest),
+    ...paddingOrMarginModule(rest),
   })
+  console.log(style)
 
-  const restProps = omit(props, [
+  const restProps = omit(rest, [
     ...presetPaddingOrMarginOption,
     ...presetColorOption,
   ])
@@ -66,20 +65,18 @@ const InternalButton: React.ForwardRefRenderFunction<
     className,
     shortcuts ? shortcuts : ''
   )
-  console.log(classes)
 
   let buttonNode = (
     <button
       // BUG: 需要去除重复参数
-      {...restProps}
       type={htmlType}
       className={classes}
       onClick={onClick}
+      {...restProps}
     >
       {children}
     </button>
   )
-  console.log(buttonNode)
 
   return buttonNode
 }

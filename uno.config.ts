@@ -6,8 +6,6 @@ import {
 } from 'unocss'
 import { dynamicSafelistPlugin } from './scripts/unocss/dynamicSafelistPlugin'
 
-console.log(dynamicSafelistPlugin())
-
 export default defineConfig({
   presets: [
     presetUno(),
