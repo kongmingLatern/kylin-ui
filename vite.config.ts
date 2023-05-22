@@ -9,7 +9,7 @@ import {
   BuildLib,
   BuildPlugins,
   rollupOptions,
-} from './scripts/build'
+} from './scripts/rollup/build.config'
 
 export default defineConfig({
   plugins: [
