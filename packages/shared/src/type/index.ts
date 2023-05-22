@@ -25,7 +25,11 @@ export type PaddingOrMarginProps = {
   p?: range
   pl?: range
   pr?: range
+  px?: range
+  py?: range
   m?: range
   ml?: range
   mr?: range
+  mx?: range
+  my?: range
 }

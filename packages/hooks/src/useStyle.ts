@@ -10,9 +10,13 @@ export function useStyle(name: styleName, options) {
       [`p-${p}`]: p,
       [`pl-${pl}`]: pl,
       [`pr-${pr}`]: pr,
+      [`px-${pr}`]: pr,
+      [`py-${pr}`]: pr,
       [`m-${m}`]: m,
       [`ml-${ml}`]: ml,
       [`mr-${mr}`]: mr,
+      [`mx-${mr}`]: mr,
+      [`my-${mr}`]: mr,
     }
   }
 }
