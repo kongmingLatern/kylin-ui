@@ -7,7 +7,7 @@ import classNames from 'classnames'
 import { ButtonProps, CompoundedComponent } from './type'
 import { extractThemeConfig } from '../../shared'
 import { ThemeContext } from '../ThemeProvider'
-import { useStyle } from '../../hooks/src/useStyle'
+import { useStyle } from '@kylin/hooks'
 
 const InternalButton: React.ForwardRefRenderFunction<
   HTMLButtonElement,
@@ -30,7 +30,7 @@ const InternalButton: React.ForwardRefRenderFunction<
   const { theme = {} } = useContext(ThemeContext)
 
   // TODO: You can use different scheme about user's choose
-  // 1. startdard: user can only use the theme which is defined by uno.css(Less css user can use)
+  // 1. preset: user can only use the theme which is defined by uno.css(Less css user can use)
   // 2. medium: user can use the theme which is defined by uno.css(More css user can use)
   // 3. large: user can use the theme which is defined by uno.css(All css user can use)
   const shortcuts = useMemo(
@@ -47,11 +47,7 @@ const InternalButton: React.ForwardRefRenderFunction<
     {
       [`kylin-btn-${type}`]: type,
       // REFACTOR: 优化 color bg hover 的判断
-      // 1. 可以通过封装【注册】逻辑，来实现自定义主题色
       ...style,
-      // [`text-${color}-500`]: color,
-      // [`bg-${bg}-500`]: bg,
-      // [`hover:bg-${hover}-700`]: hover || bg,
     },
     className,
     shortcuts ? shortcuts : ''

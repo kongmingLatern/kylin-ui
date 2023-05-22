@@ -12,7 +12,7 @@ const App = () => {
       <ThemeButton />
 
       <Button color="green">123</Button>
-      <Button color="green" bg="blue">
+      <Button color="green" bg="blue" hover="yellow">
         123
       </Button>
     </div>

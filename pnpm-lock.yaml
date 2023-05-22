@@ -148,7 +148,11 @@ importers:
         specifier: ^17.7.2
         version: registry.npmmirror.com/yargs@17.7.2
 
-  packages/components: {}
+  packages/components:
+    dependencies:
+      '@kylin/hooks':
+        specifier: link:../hooks
+        version: link:../hooks
 
   packages/hooks: {}
 
