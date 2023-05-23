@@ -1,5 +1,5 @@
 {
-  "name": "@kylin/hooks",
+  "name": "@kylin-ui/preset",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,9 +8,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@kylin-ui/preset": "link:../preset",
-    "@kylin-ui/shared": "link:../shared"
-  }
+  "license": "ISC"
 }

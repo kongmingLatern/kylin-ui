@@ -3,7 +3,7 @@ import {
   registerMarginModule,
   registerPaddingModule,
   registerPseudoModule,
-} from '@kylin-ui/shared'
+} from '@kylin-ui/preset'
 type styleName = 'preset' | 'medium' | 'large'
 export function useStyle(name: styleName, options) {
   if (name === 'preset') {

@@ -7,18 +7,17 @@ import classNames from 'classnames'
 import { ButtonProps, CompoundedComponent } from './type'
 import { ThemeContext } from '../ThemeProvider'
 import { useStyle } from '@kylin/hooks'
+import { extractThemeConfig, omit } from '@kylin-ui/shared'
 import {
   colorModule,
   paddingModule,
   marginModule,
-  extractThemeConfig,
   presetColorOption,
   presetPaddingOption,
   presetMarginOption,
   pseudoModule,
   presetPseudoOption,
-  omit,
-} from '@kylin-ui/shared'
+} from '@kylin-ui/preset'
 
 const InternalButton: React.ForwardRefRenderFunction<
   HTMLButtonElement,
@@ -53,8 +52,6 @@ const InternalButton: React.ForwardRefRenderFunction<
     ...marginModule(rest),
     ...pseudoModule(rest),
   })
-
-  console.log(style)
 
   // Omit the props which is not needed
   const restProps = omit(rest, [

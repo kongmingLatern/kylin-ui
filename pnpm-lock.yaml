@@ -150,6 +150,9 @@ importers:
 
   packages/components:
     dependencies:
+      '@kylin-ui/preset':
+        specifier: link:../preset
+        version: link:../preset
       '@kylin-ui/shared':
         specifier: link:../shared
         version: link:../shared
@@ -159,11 +162,16 @@ importers:
 
   packages/hooks:
     dependencies:
+      '@kylin-ui/preset':
+        specifier: link:../preset
+        version: link:../preset
       '@kylin-ui/shared':
         specifier: link:../shared
         version: link:../shared
 
   packages/icon: {}
+
+  packages/preset: {}
 
   packages/shared: {}
 
