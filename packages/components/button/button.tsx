@@ -15,8 +15,10 @@ import {
   presetColorOption,
   presetPaddingOption,
   presetMarginOption,
+  pseudoModule,
+  presetPseudoOption,
+  omit,
 } from '@kylin-ui/shared'
-import omit from '@kylin-ui/shared/src/omit'
 
 const InternalButton: React.ForwardRefRenderFunction<
   HTMLButtonElement,
@@ -43,17 +45,23 @@ const InternalButton: React.ForwardRefRenderFunction<
     () => extractThemeConfig(theme, 'button', type),
     [theme]
   )
+  /**============================= 注入预设(preset)配置  ============================= */
 
   const style = useStyle('preset', {
     ...colorModule(rest),
     ...paddingModule(rest),
     ...marginModule(rest),
+    ...pseudoModule(rest),
   })
 
+  console.log(style)
+
+  // Omit the props which is not needed
   const restProps = omit(rest, [
     ...presetPaddingOption,
     ...presetMarginOption,
     ...presetColorOption,
+    ...presetPseudoOption,
   ])
 
   /**============================= 设置 className ============================= */
@@ -71,7 +79,6 @@ const InternalButton: React.ForwardRefRenderFunction<
 
   let buttonNode = (
     <button
-      // BUG: 需要去除重复参数
       type={htmlType}
       className={classes}
       onClick={onClick}

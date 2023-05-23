@@ -2,6 +2,7 @@ import {
   dealColorModule,
   dealMarginModule,
   dealPaddingModule,
+  dealPseudoModule,
 } from '@kylin-ui/shared'
 type styleName = 'preset' | 'medium' | 'large'
 export function useStyle(name: styleName, options) {
@@ -10,6 +11,7 @@ export function useStyle(name: styleName, options) {
       ...dealColorModule(options),
       ...dealPaddingModule(options),
       ...dealMarginModule(options),
+      ...dealPseudoModule(options),
     }
   }
 }
