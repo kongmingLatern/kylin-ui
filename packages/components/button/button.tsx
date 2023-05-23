@@ -47,8 +47,7 @@ const InternalButton: React.ForwardRefRenderFunction<
   /**============================= 注入预设(preset)配置  ============================= */
   // TODO: Distinguish the preset and custom
   const style = useStyle(
-    (process.env.KYLIN_CONFIG?.preset ??
-      'base') as presetMode,
+    process.env.KYLIN_CONFIG?.preset ?? 'base',
     {
       ...colorModule(rest),
       ...paddingModule(rest),
