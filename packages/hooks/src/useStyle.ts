@@ -4,9 +4,10 @@ import {
   registerPaddingModule,
   registerPseudoModule,
 } from '@kylin-ui/preset'
-export type styleName = 'base' | 'medium' | 'large'
 
-export function useStyle(name: styleName, options) {
+import type { presetMode } from '@kylin-ui/shared'
+
+export function useStyle(name: presetMode, options) {
   if (name === 'base') {
     return registerBasePreset(options)
   }
