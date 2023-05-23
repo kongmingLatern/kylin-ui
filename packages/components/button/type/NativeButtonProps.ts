@@ -3,6 +3,7 @@ import { BaseButtonProps } from './BaseButtonProps'
 import {
   ColorProps,
   PaddingOrMarginProps,
+  PseudoProps,
 } from '@kylin-ui/shared'
 
 export type NativeButtonProps = {
@@ -14,4 +15,5 @@ export type NativeButtonProps = {
     'type' | 'onClick'
   > &
   ColorProps &
-  PaddingOrMarginProps
+  PaddingOrMarginProps &
+  PseudoProps
