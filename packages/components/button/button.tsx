@@ -46,7 +46,7 @@ const InternalButton: React.ForwardRefRenderFunction<
   )
   /**============================= 注入预设(preset)配置  ============================= */
 
-  const style = useStyle('preset', {
+  const style = useStyle('base', {
     ...colorModule(rest),
     ...paddingModule(rest),
     ...marginModule(rest),
