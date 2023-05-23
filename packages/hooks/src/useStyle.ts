@@ -4,14 +4,19 @@ import {
   registerPaddingModule,
   registerPseudoModule,
 } from '@kylin-ui/preset'
-type styleName = 'preset' | 'medium' | 'large'
+type styleName = 'base' | 'medium' | 'large'
+
 export function useStyle(name: styleName, options) {
-  if (name === 'preset') {
-    return {
-      ...registerColorModule(options),
-      ...registerPaddingModule(options),
-      ...registerMarginModule(options),
-      ...registerPseudoModule(options),
-    }
+  if (name === 'base') {
+    return registerBasePreset(options)
+  }
+}
+
+function registerBasePreset(options: any) {
+  return {
+    ...registerColorModule(options),
+    ...registerPaddingModule(options),
+    ...registerMarginModule(options),
+    ...registerPseudoModule(options),
   }
 }
