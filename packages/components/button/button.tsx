@@ -36,15 +36,12 @@ const InternalButton: React.ForwardRefRenderFunction<
   /**============================= 获取 当前主题色 | 自定义主题  ============================= */
   const { theme = {} } = useContext(ThemeContext)
 
-  // TODO: You can use different scheme about user's choose
-  // 1. preset: user can only use the theme which is defined by uno.css(Less css user can use)
-  // 2. medium: user can use the theme which is defined by uno.css(More css user can use)
-  // 3. large: user can use the theme which is defined by uno.css(All css user can use)
   const shortcuts = useMemo(
     () => extractThemeConfig(theme, 'button', type),
     [theme]
   )
   /**============================= 注入预设(preset)配置  ============================= */
+  // TODO: Distinguish the preset and custom
   const style = useStyle(
     (process.env.KYLIN_CONFIG ?? 'base') as styleName,
     {

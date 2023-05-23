@@ -1,9 +1,4 @@
 import { LibraryOptions, defineConfig } from 'vite'
-
-import Unocss from 'unocss/vite'
-import react from '@vitejs/plugin-react'
-
-import dts from 'vite-plugin-dts'
 import { loadKylinConfig } from './scripts/config'
 
 import {
@@ -18,6 +13,11 @@ import {
   presetAttributify,
 } from 'unocss'
 import { dynamicSafelistPlugin } from './scripts/unocss/dynamicSafelistPlugin'
+
+import Unocss from 'unocss/vite'
+import react from '@vitejs/plugin-react'
+
+import dts from 'vite-plugin-dts'
 
 export default async () => {
   const kylinConfig = await loadKylinConfig()
