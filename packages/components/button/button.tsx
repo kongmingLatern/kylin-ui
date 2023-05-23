@@ -45,19 +45,15 @@ const InternalButton: React.ForwardRefRenderFunction<
     [theme]
   )
   /**============================= 注入预设(preset)配置  ============================= */
-  let preset: styleName = 'base'
-
-  if (process.env.KYLIN_CONFIG) {
-    const { preset: config } = process.env
-      .KYLIN_CONFIG as any
-    preset = config
-  }
-  const style = useStyle(preset, {
-    ...colorModule(rest),
-    ...paddingModule(rest),
-    ...marginModule(rest),
-    ...pseudoModule(rest),
-  })
+  const style = useStyle(
+    (process.env.KYLIN_CONFIG ?? 'base') as styleName,
+    {
+      ...colorModule(rest),
+      ...paddingModule(rest),
+      ...marginModule(rest),
+      ...pseudoModule(rest),
+    }
+  )
 
   // Omit the props which is not needed
   const restProps = omit(rest, [
