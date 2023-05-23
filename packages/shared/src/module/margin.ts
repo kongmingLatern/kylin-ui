@@ -21,7 +21,7 @@ export function marginModule({
   }
 }
 
-export function dealMarginModule({ m, ml, my, mr, mx }) {
+export function registerMarginModule({ m, ml, my, mr, mx }) {
   return {
     [`m-${m}`]: m,
     [`ml-${ml}`]: ml,

@@ -6,7 +6,7 @@ export function pseudoModule({ hover }: Partial<any>) {
   }
 }
 
-export function dealPseudoModule({ hover }) {
+export function registerPseudoModule({ hover }) {
   return {
     [`hover:bg-${hover}-700`]: hover,
   }

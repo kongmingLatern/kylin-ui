@@ -21,7 +21,7 @@ export function paddingModule({
   }
 }
 
-export function dealPaddingModule({ p, pl, py, pr, px }) {
+export function registerPaddingModule({ p, pl, py, pr, px }) {
   return {
     [`p-${p}`]: p,
     [`pl-${pl}`]: pl,
