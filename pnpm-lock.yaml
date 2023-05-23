@@ -150,15 +150,15 @@ importers:
 
   packages/components:
     dependencies:
+      '@kylin-ui/hooks':
+        specifier: link:../hooks
+        version: link:../hooks
       '@kylin-ui/preset':
         specifier: link:../preset
         version: link:../preset
       '@kylin-ui/shared':
         specifier: link:../shared
         version: link:../shared
-      '@kylin/hooks':
-        specifier: link:../hooks
-        version: link:../hooks
 
   packages/hooks:
     dependencies:

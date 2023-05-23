@@ -14,6 +14,7 @@ export type NativeButtonProps = {
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     'type' | 'onClick'
   > &
+  // FLAG: Neet to combine to a integration type
   ColorProps &
   PaddingOrMarginProps &
   PseudoProps

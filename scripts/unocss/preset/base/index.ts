@@ -1,3 +1,5 @@
+// FLAG: Neet to move to packages/preset
+// => @kylin/preset/base ...
 import { presetColors } from './color'
 import { generatePaddingOrMargin } from '../../helpers'
 

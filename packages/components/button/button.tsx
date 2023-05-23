@@ -6,7 +6,7 @@ import React, {
 import classNames from 'classnames'
 import { ButtonProps, CompoundedComponent } from './type'
 import { ThemeContext } from '../ThemeProvider'
-import { useStyle } from '@kylin/hooks'
+import { useStyle } from '@kylin-ui/hooks'
 import {
   extractThemeConfig,
   omit,
