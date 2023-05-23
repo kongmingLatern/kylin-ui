@@ -6,7 +6,7 @@ import React, {
 import classNames from 'classnames'
 import { ButtonProps, CompoundedComponent } from './type'
 import { ThemeContext } from '../ThemeProvider'
-import { useStyle } from '@kylin/hooks'
+import { useStyle, styleName } from '@kylin/hooks'
 import { extractThemeConfig, omit } from '@kylin-ui/shared'
 import {
   colorModule,
@@ -45,8 +45,14 @@ const InternalButton: React.ForwardRefRenderFunction<
     [theme]
   )
   /**============================= 注入预设(preset)配置  ============================= */
+  let preset: styleName = 'base'
 
-  const style = useStyle('base', {
+  if (process.env.KYLIN_CONFIG) {
+    const { preset: config } = process.env
+      .KYLIN_CONFIG as any
+    preset = config
+  }
+  const style = useStyle(preset, {
     ...colorModule(rest),
     ...paddingModule(rest),
     ...marginModule(rest),
