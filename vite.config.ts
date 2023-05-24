@@ -65,7 +65,7 @@ export default async () => {
         '@components': '/packages/components/',
         '@shared': '/packages/shared',
         '@preset': '/packages/preset',
-        '@icon': '/packages/icons',
+        '@icon': '/packages/icon',
       },
     },
   })
