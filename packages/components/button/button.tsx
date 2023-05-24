@@ -8,12 +8,7 @@ import { ButtonProps, CompoundedComponent } from './type'
 import { ThemeContext } from '../ThemeProvider'
 import { useStyle } from '@kylin-ui/hooks'
 import { extractThemeConfig, omit } from '@kylin-ui/shared'
-import {
-  presetColorOption,
-  presetPaddingOption,
-  presetMarginOption,
-  presetPseudoOption,
-} from '@kylin-ui/preset'
+import { excludePreset } from '@packages/preset/helpers'
 
 const InternalButton: React.ForwardRefRenderFunction<
   HTMLButtonElement,
@@ -37,19 +32,12 @@ const InternalButton: React.ForwardRefRenderFunction<
     [theme]
   )
   /**============================= 注入预设(preset)配置  ============================= */
+  const preset = process.env.KYLIN_CONFIG?.preset
   // TODO: Distinguish the preset and custom
-  const style = useStyle(
-    process.env.KYLIN_CONFIG?.preset ?? 'base',
-    rest
-  )
+  const style = useStyle(preset ?? 'base', rest)
 
   // Omit the props which is not needed
-  const restProps = omit(rest, [
-    ...presetPaddingOption,
-    ...presetMarginOption,
-    ...presetColorOption,
-    ...presetPseudoOption,
-  ])
+  const restProps = omit(rest, excludePreset(preset))
 
   /**============================= 设置 className ============================= */
 
