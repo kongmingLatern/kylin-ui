@@ -7,7 +7,10 @@ import {
 
 import type { presetMode } from '@kylin-ui/shared'
 
-export function useStyle(name: presetMode, options) {
+export function useStyle(
+  name: presetMode = 'base',
+  options
+) {
   if (name === 'base') {
     return registerBasePreset(options)
   }

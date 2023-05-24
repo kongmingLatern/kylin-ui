@@ -1,5 +1,5 @@
+import { presetSafelist } from '../../packages/preset'
 import { UserConfig } from '@packages/shared/'
-import { presetSafelist } from '@packages/preset'
 
 // TODO: 提供三种预设的动态白名单
 // 开发者可以导入其中一种，也可以自定义

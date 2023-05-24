@@ -16,6 +16,7 @@ import { dynamicSafelistPlugin } from './scripts/unocss/dynamicSafelistPlugin'
 
 import Unocss from 'unocss/vite'
 import react from '@vitejs/plugin-react'
+import path from 'path'
 
 import dts from 'vite-plugin-dts'
 
@@ -60,12 +61,25 @@ export default async () => {
     },
     resolve: {
       alias: {
-        '@': '/src',
-        '@packages': '/packages',
-        '@components': '/packages/components/',
-        '@shared': '/packages/shared',
-        '@preset': '/packages/preset',
-        '@icon': '/packages/icon',
+        '@': path.resolve(__dirname, '/src'),
+        '@packages': path.resolve(__dirname, '/packages'),
+        '@components': path.resolve(
+          __dirname,
+          '/packages/components/'
+        ),
+        '@shared': path.resolve(
+          __dirname,
+          '/packages/shared/'
+        ),
+        '@hooks': path.resolve(
+          __dirname,
+          '/packages/hooks/'
+        ),
+        '@preset': path.resolve(
+          __dirname,
+          '/packages/preset/'
+        ),
+        '@icon': path.resolve(__dirname, '/packages/icon/'),
       },
     },
   })

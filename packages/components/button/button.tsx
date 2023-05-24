@@ -9,13 +9,9 @@ import { ThemeContext } from '../ThemeProvider'
 import { useStyle } from '@kylin-ui/hooks'
 import { extractThemeConfig, omit } from '@kylin-ui/shared'
 import {
-  colorModule,
-  paddingModule,
-  marginModule,
   presetColorOption,
   presetPaddingOption,
   presetMarginOption,
-  pseudoModule,
   presetPseudoOption,
 } from '@kylin-ui/preset'
 
@@ -44,12 +40,7 @@ const InternalButton: React.ForwardRefRenderFunction<
   // TODO: Distinguish the preset and custom
   const style = useStyle(
     process.env.KYLIN_CONFIG?.preset ?? 'base',
-    {
-      ...colorModule(rest),
-      ...paddingModule(rest),
-      ...marginModule(rest),
-      ...pseudoModule(rest),
-    }
+    rest
   )
 
   // Omit the props which is not needed
