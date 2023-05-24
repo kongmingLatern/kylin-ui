@@ -173,7 +173,11 @@ importers:
 
   packages/preset: {}
 
-  packages/shared: {}
+  packages/shared:
+    dependencies:
+      '@kylin-ui/preset':
+        specifier: link:../preset
+        version: link:../preset
 
   packages/theme: {}
 

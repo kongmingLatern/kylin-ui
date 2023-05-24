@@ -7,8 +7,11 @@ import classNames from 'classnames'
 import { ButtonProps, CompoundedComponent } from './type'
 import { ThemeContext } from '../ThemeProvider'
 import { useStyle } from '@kylin-ui/hooks'
-import { extractThemeConfig, omit } from '@kylin-ui/shared'
-import { excludePreset } from '@packages/preset/helpers'
+import {
+  extractThemeConfig,
+  omit,
+  excludePreset,
+} from '@kylin-ui/shared'
 
 const InternalButton: React.ForwardRefRenderFunction<
   HTMLButtonElement,
