@@ -5,21 +5,6 @@ export const presetPaddingOption: any = [
   'pr',
   'px',
 ]
-export function paddingModule({
-  p,
-  pl,
-  py,
-  pr,
-  px,
-}: Partial<any>) {
-  return {
-    p,
-    pl,
-    py,
-    pr,
-    px,
-  }
-}
 
 export function registerPaddingModule({ p, pl, py, pr, px }) {
   return {

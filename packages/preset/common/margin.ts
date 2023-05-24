@@ -5,22 +5,6 @@ export const presetMarginOption: any = [
   'mr',
   'mx',
 ]
-export function marginModule({
-  m,
-  ml,
-  my,
-  mr,
-  mx,
-}: Partial<any>) {
-  return {
-    m,
-    ml,
-    my,
-    mr,
-    mx,
-  }
-}
-
 export function registerMarginModule({ m, ml, my, mr, mx }) {
   return {
     [`m-${m}`]: m,
