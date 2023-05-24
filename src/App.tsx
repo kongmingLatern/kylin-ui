@@ -1,6 +1,6 @@
-import { Button } from '../packages/components'
-import ThemeButton from '../packages/components/ThemeProvider/demo/button-theme'
-import CommonButton from '../packages/components/button/demo/type'
+import { Button } from '@packages/components'
+import ThemeButton from '@packages/components/ThemeProvider/demo/button-theme'
+import CommonButton from '@packages/components/button/demo/type'
 
 const App = () => {
 	return (

@@ -58,5 +58,15 @@ export default async () => {
       'process.env.KYLIN_CONFIG':
         JSON.stringify(kylinConfig),
     },
+    resolve: {
+      alias: {
+        '@': '/src',
+        '@packages': '/packages',
+        '@components': '/packages/components/',
+        '@shared': '/packages/shared',
+        '@preset': '/packages/preset',
+        '@icon': '/packages/icons',
+      },
+    },
   })
 }

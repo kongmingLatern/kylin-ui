@@ -17,7 +17,19 @@
     "noEmit": true,
     "noImplicitAny": false,
     "jsx": "react-jsx",
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals"],
+    // 配置别名
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@components/*": ["packages/components/*"],
+      "@packages/*": ["packages/*"],
+      "@icon/*": ["packages/icon/*"],
+      "@shared/*": ["packages/shared/*"],
+      "@preset/*": ["packages/preset/*"],
+      "@test/*": ["packages/test/*"],
+      "@hooks/*": ["packages/hooks/*"]
+    }
   },
   "include": [
     "src",
