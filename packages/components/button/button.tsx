@@ -37,7 +37,7 @@ const InternalButton: React.ForwardRefRenderFunction<
   /**============================= 注入预设(preset)配置  ============================= */
   const preset = process.env.KYLIN_CONFIG?.preset
   // TODO: Distinguish the preset and custom
-  const style = useStyle(preset ?? 'base', rest)
+  const presetClass = useStyle(preset, rest)
 
   // Omit the props which is not needed
   const restProps = omit(rest, excludePreset(preset))
@@ -49,7 +49,7 @@ const InternalButton: React.ForwardRefRenderFunction<
     {
       [`kylin-btn-${type}`]: type,
       // FLAG: 优化 color bg hover 的判断
-      ...style,
+      ...presetClass,
     },
     className,
     shortcuts ? shortcuts : ''
