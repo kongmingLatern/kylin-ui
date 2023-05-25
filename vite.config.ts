@@ -12,7 +12,7 @@ import {
   presetIcons,
   presetAttributify,
 } from 'unocss'
-import { dynamicSafelistPlugin } from './scripts/unocss/dynamicSafelistPlugin'
+// import { dynamicSafelistPlugin } from './scripts/unocss/dynamicSafelistPlugin'
 
 import Unocss from 'unocss/vite'
 import react from '@vitejs/plugin-react'
@@ -34,7 +34,7 @@ export default async () => {
         ],
         safelist: [
           // FLAG: 根据 开发者传入的 preset 进行 safelist 的配置
-          ...dynamicSafelistPlugin(kylinConfig),
+          // ...dynamicSafelistPlugin(kylinConfig),
         ],
       }),
       ...BuildPlugins(),
@@ -61,25 +61,31 @@ export default async () => {
     },
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '/src'),
-        '@packages': path.resolve(__dirname, '/packages'),
+        '@': path.resolve(path.resolve(), '/src'),
+        '@packages': path.resolve(
+          path.resolve(),
+          '/packages'
+        ),
         '@components': path.resolve(
-          __dirname,
+          path.resolve(),
           '/packages/components/'
         ),
         '@shared': path.resolve(
-          __dirname,
+          path.resolve(),
           '/packages/shared/'
         ),
         '@hooks': path.resolve(
-          __dirname,
+          path.resolve(),
           '/packages/hooks/'
         ),
         '@preset': path.resolve(
-          __dirname,
+          path.resolve(),
           '/packages/preset/'
         ),
-        '@icon': path.resolve(__dirname, '/packages/icon/'),
+        '@icon': path.resolve(
+          path.resolve(),
+          '/packages/icon/'
+        ),
       },
     },
   })

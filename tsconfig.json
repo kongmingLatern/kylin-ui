@@ -31,6 +31,11 @@
       "@hooks/*": ["packages/hooks/*"]
     }
   },
-  "include": ["src", "packages/**/*", "packages/shared/"],
+  "include": [
+    "src",
+    "packages/**/*",
+    "packages/shared/",
+    "scripts/**/*"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -17,5 +17,5 @@
       "@hooks/*": ["packages/hooks/*"]
     }
   },
-  "include": ["vite.config.ts", "scripts/**/*.ts"]
+  "include": ["vite.config.ts", "scripts/**/*"]
 }

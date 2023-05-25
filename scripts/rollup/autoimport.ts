@@ -1,6 +1,5 @@
 import fs from 'fs-extra'
 import path from 'path'
-import config from '../../vite.config'
 import {
   build,
   InlineConfig,
@@ -10,6 +9,7 @@ import {
 
 const buildAll = async () => {
   // 全量打包
+  const config = await import('../../vite.config')
   await build(
     defineConfig(config as UserConfig) as InlineConfig
   )
@@ -46,10 +46,20 @@ const buildAll = async () => {
       outDir,
     }
 
-    Object.assign((config as any).build, custom)
-    await build(
-      defineConfig(config as UserConfig) as InlineConfig
-    )
+    // 获取默认配置
+    const defaultConfig = await config.default()
+
+    // 合并 custom 配置到 config.build 中
+    const mergedConfig = {
+      ...defaultConfig,
+      build: {
+        ...(defaultConfig as any).build,
+        ...custom,
+      },
+    }
+
+    // 调用 build 函数，传入合并后的配置
+    await build(defineConfig(mergedConfig) as InlineConfig)
 
     fs.outputFile(
       path.resolve(outDir, `package.json`),
