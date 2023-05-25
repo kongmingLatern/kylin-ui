@@ -48,7 +48,7 @@ const InternalButton: React.ForwardRefRenderFunction<
     // TODO: 判断 type 是否在预期之内
     {
       [`kylin-btn-${type}`]: type,
-      // FLAG: 优化 color bg hover 的判断
+      // FLAG: 经过处理后的 Unocss 样式
       ...presetClass,
     },
     className,

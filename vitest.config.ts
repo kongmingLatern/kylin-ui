@@ -11,5 +11,5 @@ export default defineConfig({
     alias: {
       'components': resolve(__dirname, 'packages/components')
     }
-  }
+  },
 })
