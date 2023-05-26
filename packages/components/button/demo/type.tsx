@@ -19,6 +19,8 @@ const ButtonType = () => {
       <Button ghost>12313</Button>
       <h1>Size</h1>
       <Button size={'small'}>123</Button>
+      <h1>loading</h1>
+      <Button loading>123</Button>
 
       {/* ==================== Props ==================== */}
       {/* TODO: */}

@@ -187,4 +187,21 @@ describe("button's props", () => {
       </button>
     `)
   })
+  test("button's loading", () => {
+    const { container } = render(
+      <Button loading>This is a loading button</Button>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      <button
+        class="kylin-btn-default kylin-btn-disabled"
+        disabled=""
+        type="button"
+      >
+        <span
+          class="kylin-btn-loading"
+        />
+        This is a loading button
+      </button>
+    `)
+  })
 })

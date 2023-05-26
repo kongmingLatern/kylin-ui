@@ -24,6 +24,7 @@ const InternalButton: React.ForwardRefRenderFunction<
     block,
     size,
     ghost = false,
+    loading = false,
     className,
     children,
     htmlType = 'button',
@@ -56,6 +57,7 @@ const InternalButton: React.ForwardRefRenderFunction<
       [`kylin-btn-size-${size}`]: size,
       [`kylin-btn-block`]: block,
       [`kylin-btn-ghost`]: ghost,
+      [`kylin-btn-disabled`]: loading,
       // FLAG: 经过处理后的 Unocss 样式
       ...presetClass,
     },
@@ -63,13 +65,19 @@ const InternalButton: React.ForwardRefRenderFunction<
     shortcuts ? shortcuts : ''
   )
 
+  const loadingNode = loading && (
+    <span className="kylin-btn-loading"></span>
+  )
+
   let buttonNode = (
     <button
       type={htmlType}
       className={classes}
       onClick={onClick}
+      disabled={!!loading}
       {...restProps}
     >
+      {loadingNode}
       {children}
     </button>
   )

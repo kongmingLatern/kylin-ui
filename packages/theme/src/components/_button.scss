@@ -40,6 +40,28 @@
     }
   }
 
+  &-loading {
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    pointer-events: none;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 60%;
+      height: 60%;
+      margin-top: -0.75rem;
+      margin-left: -0.75rem;
+      margin-right: auto;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      border-color: #fff transparent #fff transparent;
+      animation: spin 0.6s linear infinite;
+    }
+  }
+
   &-block {
     display: block;
     width: 100%;
@@ -103,6 +125,16 @@
     &:hover {
       background-color: var(--primary-color);
       color: #fff;
+    }
+  }
+
+  &-disabled {
+    @extend .kylin-btn;
+    background-color: var(--disabled-color);
+    color: #fff;
+    cursor: not-allowed;
+    &:hover {
+      opacity: 1;
     }
   }
 }

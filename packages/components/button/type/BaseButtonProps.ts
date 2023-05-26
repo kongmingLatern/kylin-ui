@@ -6,11 +6,12 @@ import {
 
 export interface BaseButtonProps {
   type?: ButtonType
-  // icon?: React.ReactNode;
+  // beforeIcon?: React.ReactNode;
+  // afterIcon?: React.ReactNode;
   shape?: ButtonShapeType
   size?: ButtonSizeType
   // disabled?: boolean;
-  // loading?: boolean | { delay?: number };
+  loading?: boolean | { delay?: number }
   // prefixCls?: string;
   // rootClassName?: string;
   ghost?: boolean
