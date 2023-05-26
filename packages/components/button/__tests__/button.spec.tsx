@@ -133,4 +133,58 @@ describe("button's props", () => {
       </button>
     `)
   })
+  test("button's shape", () => {
+    const { container } = render(
+      <Button shape="round">
+        This is a primary button
+      </Button>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      <button
+        class="kylin-btn-default kylin-btn-shape-round"
+        type="button"
+      >
+        This is a primary button
+      </button>
+    `)
+  })
+  test("button's block", () => {
+    const { container } = render(
+      <Button block>This is a block button</Button>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      <button
+        class="kylin-btn-default kylin-btn-block"
+        type="button"
+      >
+        This is a block button
+      </button>
+    `)
+  })
+  test("button's ghost", () => {
+    const { container } = render(
+      <Button ghost>This is a ghost button</Button>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      <button
+        class="kylin-btn-ghost"
+        type="button"
+      >
+        This is a ghost button
+      </button>
+    `)
+  })
+  test("button's size", () => {
+    const { container } = render(
+      <Button size={'large'}>This is a size button</Button>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      <button
+        class="kylin-btn-default kylin-btn-size-large"
+        type="button"
+      >
+        This is a size button
+      </button>
+    `)
+  })
 })
