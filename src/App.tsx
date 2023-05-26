@@ -10,20 +10,7 @@ const App = () => {
       <h1>Theme Button</h1>
       <br />
       <ThemeButton />
-
-      <Button color="green">123</Button>
-      <Button color="green" bg="blue" hover="yellow">
-        123
-      </Button>
-
-      <Button pl={2}>123</Button>
       <br />
-      <h1>block</h1>
-      <Button p={5} block>
-        123
-      </Button>
-      <h1>ghost</h1>
-      <Button ghost>12313</Button>
     </div>
   )
 }

@@ -25,6 +25,21 @@
     }
   }
 
+  &-size {
+    &-small {
+      font-size: calc(#{$font-size-base} * 1.2);
+      padding: 0.4rem 0.8rem;
+    }
+    &-medium {
+      font-size: calc(#{$font-size-base} * 1.6);
+      padding: 0.6rem 1.2rem;
+    }
+    &-large {
+      font-size: calc(#{$font-size-base} * 1.8);
+      padding: 0.8rem 1.6rem;
+    }
+  }
+
   &-block {
     display: block;
     width: 100%;
