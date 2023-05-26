@@ -13,6 +13,9 @@ const ButtonTypes = [
 ] as const
 export type ButtonType = (typeof ButtonTypes)[number]
 
+const ButtonShape = ['circle', 'square', 'round'] as const
+export type ButtonShapeType = (typeof ButtonShape)[number]
+
 const ButtonHTMLTypes = [
   'submit',
   'button',

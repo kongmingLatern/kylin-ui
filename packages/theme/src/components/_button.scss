@@ -13,6 +13,18 @@
   position: relative;
   transition: all 0.3s;
 
+  &-shape {
+    &-circle {
+      border-radius: 50%;
+    }
+    &-round {
+      border-radius: 0.5rem;
+    }
+    &-square {
+      border-radius: 0;
+    }
+  }
+
   &-default {
     @extend .kylin-btn;
     background-color: var(--default-color);

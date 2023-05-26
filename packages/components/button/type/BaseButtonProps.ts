@@ -1,11 +1,9 @@
-import { ButtonType } from '.'
-
+import { ButtonShapeType, ButtonType } from '.'
 
 export interface BaseButtonProps {
   type?: ButtonType
-
   // icon?: React.ReactNode;
-  // shape?: ButtonShape;
+  shape?: ButtonShapeType
   // size?: SizeType;
   // disabled?: boolean;
   // loading?: boolean | { delay?: number };
