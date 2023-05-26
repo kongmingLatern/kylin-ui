@@ -171,7 +171,11 @@ importers:
 
   packages/icon: {}
 
-  packages/preset: {}
+  packages/preset:
+    dependencies:
+      '@kylin-ui/shared':
+        specifier: link:../shared
+        version: link:../shared
 
   packages/shared:
     dependencies:

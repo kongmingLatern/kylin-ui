@@ -19,9 +19,9 @@ const paddingOrMarginModule = generatePaddingOrMargin('p')
   .concat(generatePaddingOrMargin('mx'))
   .concat(generatePaddingOrMargin('my'))
 
+export * from '../common'
+
 export const presetSafelist = [
   ...colorModule,
   ...paddingOrMarginModule,
 ]
-
-export * from '../common'

@@ -12,7 +12,6 @@ import {
   presetIcons,
   presetAttributify,
 } from 'unocss'
-// import { dynamicSafelistPlugin } from './scripts/unocss/dynamicSafelistPlugin'
 
 import Unocss from 'unocss/vite'
 import react from '@vitejs/plugin-react'
@@ -22,6 +21,12 @@ import dts from 'vite-plugin-dts'
 
 export default async () => {
   const kylinConfig = await loadKylinConfig()
+  console.log('kylinConfig', kylinConfig)
+  const dynamicSafelist = await import(
+    './packages/preset/dynamicSafelist'
+  )
+  const safelist = dynamicSafelist.default(kylinConfig)
+  console.log('safeList')
 
   return await defineConfig({
     plugins: [
@@ -34,7 +39,7 @@ export default async () => {
         ],
         safelist: [
           // FLAG: 根据 开发者传入的 preset 进行 safelist 的配置
-          // ...dynamicSafelistPlugin(kylinConfig),
+          ...safelist,
         ],
       }),
       ...BuildPlugins(),

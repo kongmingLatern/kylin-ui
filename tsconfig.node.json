@@ -17,5 +17,9 @@
       "@hooks/*": ["packages/hooks/*"]
     }
   },
-  "include": ["vite.config.ts", "scripts/**/*"]
+  "include": [
+    "vite.config.ts",
+    "scripts/**/*",
+    "packages/preset/dynamicSafelist.ts"
+  ]
 }
