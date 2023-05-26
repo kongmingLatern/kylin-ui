@@ -9,7 +9,7 @@ export interface BaseButtonProps {
   // loading?: boolean | { delay?: number };
   // prefixCls?: string;
   // rootClassName?: string;
-  // ghost?: boolean;
+  ghost?: boolean
   // danger?: boolean;
   block?: boolean
   children?: React.ReactNode

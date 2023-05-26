@@ -17,13 +17,13 @@ const App = () => {
       </Button>
 
       <Button pl={2}>123</Button>
-      <Button py={5} shape={'circle'} block>
-        123
-      </Button>
       <br />
-      <Button py={5} shape={'circle'} block>
+      <h1>block</h1>
+      <Button p={5} block>
         123
       </Button>
+      <h1>ghost</h1>
+      <Button ghost>12313</Button>
     </div>
   )
 }

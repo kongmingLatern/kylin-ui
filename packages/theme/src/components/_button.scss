@@ -79,4 +79,15 @@
       opacity: 0.9;
     }
   }
+
+  &-ghost {
+    @extend .kylin-btn;
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--primary-color);
+    &:hover {
+      background-color: var(--primary-color);
+      color: #fff;
+    }
+  }
 }
