@@ -21,6 +21,7 @@ const InternalButton: React.ForwardRefRenderFunction<
   const {
     type = 'default',
     shape,
+    block,
     className,
     children,
     htmlType = 'button',
@@ -50,6 +51,7 @@ const InternalButton: React.ForwardRefRenderFunction<
     {
       [`kylin-btn-${type}`]: type,
       [`kylin-btn-shape-${shape}`]: shape,
+      [`kylin-btn-block`]: block,
       // FLAG: 经过处理后的 Unocss 样式
       ...presetClass,
     },

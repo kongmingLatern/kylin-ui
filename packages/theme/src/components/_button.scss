@@ -25,6 +25,11 @@
     }
   }
 
+  &-block {
+    display: block;
+    width: 100%;
+  }
+
   &-default {
     @extend .kylin-btn;
     background-color: var(--default-color);
