@@ -23,6 +23,7 @@ const InternalButton: React.ForwardRefRenderFunction<
     shape,
     block,
     size,
+    disabled = false,
     ghost = false,
     loading = false,
     className,
@@ -57,7 +58,7 @@ const InternalButton: React.ForwardRefRenderFunction<
       [`kylin-btn-size-${size}`]: size,
       [`kylin-btn-block`]: block,
       [`kylin-btn-ghost`]: ghost,
-      [`kylin-btn-disabled`]: loading,
+      [`kylin-btn-disabled`]: disabled || loading,
       // FLAG: 经过处理后的 Unocss 样式
       ...presetClass,
     },

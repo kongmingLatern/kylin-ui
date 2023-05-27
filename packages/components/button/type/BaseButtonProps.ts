@@ -10,7 +10,7 @@ export interface BaseButtonProps {
   // afterIcon?: React.ReactNode;
   shape?: ButtonShapeType
   size?: ButtonSizeType
-  // disabled?: boolean;
+  disabled?: boolean
   loading?: boolean | { delay?: number }
   // prefixCls?: string;
   // rootClassName?: string;
