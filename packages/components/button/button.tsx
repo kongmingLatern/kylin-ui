@@ -1,7 +1,9 @@
 import React, {
   HTMLAttributes,
   useContext,
+  useEffect,
   useMemo,
+  useState,
 } from 'react'
 import classNames from 'classnames'
 import { ButtonProps, CompoundedComponent } from './type'
@@ -12,7 +14,34 @@ import {
   omit,
   excludePreset,
 } from '@kylin-ui/shared'
+import { BaseButtonProps } from './type/BaseButtonProps'
+import LoadingIcon from './LoadingIcon'
 
+type LoadingConfigType = {
+  loading: boolean
+  delay: number
+}
+
+type Loading = number | boolean
+
+function getLoadingConfig(
+  loading: BaseButtonProps['loading']
+): LoadingConfigType {
+  if (typeof loading === 'object' && loading) {
+    const delay = loading?.delay
+    const isDelay =
+      !Number.isNaN(delay) && typeof delay === 'number'
+    return {
+      loading: true,
+      delay: isDelay ? delay : 0,
+    }
+  }
+
+  return {
+    loading: !!loading,
+    delay: 0,
+  }
+}
 const InternalButton: React.ForwardRefRenderFunction<
   HTMLButtonElement,
   ButtonProps
@@ -35,6 +64,14 @@ const InternalButton: React.ForwardRefRenderFunction<
     ...rest
   } = props
 
+  const loadingOrDelay = useMemo<LoadingConfigType>(
+    () => getLoadingConfig(loading),
+    [loading]
+  )
+
+  const [innerLoading, setLoading] = useState<Loading>(
+    loadingOrDelay.loading
+  )
   /**============================= 获取 当前主题色 | 自定义主题  ============================= */
   const { theme = {} } = useContext(ThemeContext)
 
@@ -60,13 +97,35 @@ const InternalButton: React.ForwardRefRenderFunction<
       [`kylin-btn-size-${size}`]: size,
       [`kylin-btn-block`]: block,
       [`kylin-btn-ghost`]: ghost,
-      [`kylin-btn-disabled`]: disabled || loading,
+      [`kylin-btn-loading`]: innerLoading,
+      [`kylin-btn-disabled`]: disabled || innerLoading,
       // FLAG: 经过处理后的 Unocss 样式
       ...presetClass,
     },
     className,
     shortcuts ? shortcuts : ''
   )
+
+  useEffect(() => {
+    let delayTimer: NodeJS.Timer | null = null
+    if (loadingOrDelay.delay > 0) {
+      delayTimer = setTimeout(() => {
+        delayTimer = null
+        setLoading(false)
+      }, loadingOrDelay.delay)
+    } else {
+      setLoading(loadingOrDelay.loading)
+    }
+
+    function cleanupTimer() {
+      if (delayTimer) {
+        clearTimeout(delayTimer)
+        delayTimer = null
+      }
+    }
+
+    return cleanupTimer
+  }, [loadingOrDelay])
 
   const BeforeIcon = () =>
     beforeIcon ? (
@@ -82,37 +141,50 @@ const InternalButton: React.ForwardRefRenderFunction<
       </span>
     ) : null
 
-  const LoadingIcon = () => {
-    return loading ? (
-      <span className="kylin-btn-loading"></span>
-    ) : null
-  }
-
-  const IconNode = ({ loading = false, children }) => {
+  const IconNode = ({ children }) => {
     return (
       <>
-        {beforeIcon ? <BeforeIcon /> : null}
-        {loading ? <LoadingIcon /> : null}
+        <BeforeIcon />
+        <LoadingIcon loading={!!innerLoading} />
         {children}
-        {afterIcon ? <AfterIcon /> : null}
+        <AfterIcon />
       </>
     )
+  }
+
+  const handleClick = (
+    e: React.MouseEvent<
+      HTMLButtonElement | HTMLAnchorElement,
+      MouseEvent
+    >
+  ) => {
+    const { onClick } = props
+    if (innerLoading || disabled) {
+      e.preventDefault()
+      return
+    }
+    ;(
+      onClick as React.MouseEventHandler<
+        HTMLButtonElement | HTMLAnchorElement
+      >
+    )?.(e)
   }
 
   let buttonNode = (
     <button
       type={htmlType}
       className={classes}
-      onClick={onClick}
+      onClick={handleClick}
       disabled={!!loading}
       {...restProps}
     >
-      <IconNode loading={!!loading}>{children}</IconNode>
+      <IconNode>{children}</IconNode>
     </button>
   )
 
   return buttonNode
-} /**============================= 设置 Button ============================= */
+}
+/**============================= 设置 Button ============================= */
 const Button = React.forwardRef<
   HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>,
   ButtonProps

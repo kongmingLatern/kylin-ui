@@ -6,6 +6,16 @@ const ButtonType = () => {
       <Button type="primary">123123</Button>
       <Button type="secondary">123123</Button>
 
+      <Button loading>123</Button>
+
+      <Button
+        loading={{
+          delay: 2000,
+        }}
+      >
+        loading 2s
+      </Button>
+
       <Button color="green">123</Button>
       <Button color="green" bg="blue" hover="yellow">
         123

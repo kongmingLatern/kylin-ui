@@ -16,7 +16,7 @@ export type ButtonType = (typeof ButtonTypes)[number]
 const ButtonShape = ['circle', 'square', 'round'] as const
 export type ButtonShapeType = (typeof ButtonShape)[number]
 
-const SizeType = ['large', 'medium', 'small'] as const
+const SizeType = ['large', 'middle', 'small'] as const
 export type ButtonSizeType = (typeof SizeType)[number]
 
 const ButtonHTMLTypes = [
