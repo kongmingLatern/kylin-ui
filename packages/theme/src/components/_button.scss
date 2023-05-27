@@ -62,6 +62,15 @@
     }
   }
 
+  &-icon {
+    &-before {
+      margin-right: 0.5rem;
+    }
+    &-after {
+      margin-left: 0.5rem;
+    }
+  }
+
   &-block {
     display: block;
     width: 100%;

@@ -20,6 +20,12 @@ const ButtonType = () => {
       <h1>Size</h1>
       <Button size={'small'}>123</Button>
       <h1>loading</h1>
+      <Button
+        beforeIcon={<div>BeforeIcon</div>}
+        afterIcon={<a className="color-green">RightIcon</a>}
+      >
+        123123
+      </Button>
       <Button loading>123</Button>
 
       {/* ==================== Props ==================== */}

@@ -65,7 +65,6 @@ const ButtonType = () => {
       <Button
         type="primary"
         className="font-bold"
-        color="blue"
         onClick={() =>
           setThemeMode(
             themeMode === 'light' ? 'dark' : 'light'

@@ -6,8 +6,8 @@ import {
 
 export interface BaseButtonProps {
   type?: ButtonType
-  // beforeIcon?: React.ReactNode;
-  // afterIcon?: React.ReactNode;
+  beforeIcon?: React.ReactNode
+  afterIcon?: React.ReactNode
   shape?: ButtonShapeType
   size?: ButtonSizeType
   disabled?: boolean

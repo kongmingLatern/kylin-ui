@@ -23,6 +23,8 @@ const InternalButton: React.ForwardRefRenderFunction<
     shape,
     block,
     size,
+    beforeIcon,
+    afterIcon,
     disabled = false,
     ghost = false,
     loading = false,
@@ -66,9 +68,36 @@ const InternalButton: React.ForwardRefRenderFunction<
     shortcuts ? shortcuts : ''
   )
 
-  const loadingNode = loading && (
-    <span className="kylin-btn-loading"></span>
-  )
+  const BeforeIcon = () =>
+    beforeIcon ? (
+      <span className="kylin-btn-icon-before">
+        {beforeIcon}
+      </span>
+    ) : null
+
+  const AfterIcon = () =>
+    beforeIcon ? (
+      <span className="kylin-btn-icon-after">
+        {afterIcon}
+      </span>
+    ) : null
+
+  const LoadingIcon = () => {
+    return loading ? (
+      <span className="kylin-btn-loading"></span>
+    ) : null
+  }
+
+  const IconNode = ({ loading = false, children }) => {
+    return (
+      <>
+        {beforeIcon ? <BeforeIcon /> : null}
+        {loading ? <LoadingIcon /> : null}
+        {children}
+        {afterIcon ? <AfterIcon /> : null}
+      </>
+    )
+  }
 
   let buttonNode = (
     <button
@@ -78,14 +107,12 @@ const InternalButton: React.ForwardRefRenderFunction<
       disabled={!!loading}
       {...restProps}
     >
-      {loadingNode}
-      {children}
+      <IconNode loading={!!loading}>{children}</IconNode>
     </button>
   )
 
   return buttonNode
-}
-/**============================= 设置 Button ============================= */
+} /**============================= 设置 Button ============================= */
 const Button = React.forwardRef<
   HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>,
   ButtonProps
