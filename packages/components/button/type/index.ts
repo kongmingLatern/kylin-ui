@@ -58,3 +58,13 @@ export type CompoundedComponent =
     /** @internal */
     __KYLIN_BUTTON: boolean
   }
+
+export type LoadingConfigType = {
+  loading: boolean
+  delay: number
+}
+
+export type Loading = number | boolean
+
+
+export * from './BaseButtonProps'

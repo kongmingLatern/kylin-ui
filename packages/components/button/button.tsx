@@ -6,7 +6,12 @@ import React, {
   useState,
 } from 'react'
 import classNames from 'classnames'
-import { ButtonProps, CompoundedComponent } from './type'
+import {
+  ButtonProps,
+  CompoundedComponent,
+  Loading,
+  LoadingConfigType,
+} from './type'
 import { ThemeContext } from '../ThemeProvider'
 import { useStyle } from '@kylin-ui/hooks'
 import {
@@ -14,34 +19,9 @@ import {
   omit,
   excludePreset,
 } from '@kylin-ui/shared'
-import { BaseButtonProps } from './type/BaseButtonProps'
 import LoadingIcon from './LoadingIcon'
+import { getLoadingConfig } from './getLoadingConfig'
 
-type LoadingConfigType = {
-  loading: boolean
-  delay: number
-}
-
-type Loading = number | boolean
-
-function getLoadingConfig(
-  loading: BaseButtonProps['loading']
-): LoadingConfigType {
-  if (typeof loading === 'object' && loading) {
-    const delay = loading?.delay
-    const isDelay =
-      !Number.isNaN(delay) && typeof delay === 'number'
-    return {
-      loading: true,
-      delay: isDelay ? delay : 0,
-    }
-  }
-
-  return {
-    loading: !!loading,
-    delay: 0,
-  }
-}
 const InternalButton: React.ForwardRefRenderFunction<
   HTMLButtonElement,
   ButtonProps
