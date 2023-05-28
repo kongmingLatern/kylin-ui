@@ -53,6 +53,7 @@ export default async () => {
       outDir: 'dist',
       sourcemap: true,
       minify: 'esbuild',
+      cssCodeSplit: true,
       lib: {
         ...BuildLib(),
       } as LibraryOptions,

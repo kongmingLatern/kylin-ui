@@ -274,9 +274,6 @@ describe("button's props", () => {
           </div>
         </span>
         beforeIcon
-        <span
-          class="kylin-btn-icon-after"
-        />
       </button>
     `)
   })
@@ -292,6 +289,13 @@ describe("button's props", () => {
         type="button"
       >
         afterIcon
+        <span
+          class="kylin-btn-icon-after"
+        >
+          <div>
+            AfterIcon
+          </div>
+        </span>
       </button>
     `)
   })

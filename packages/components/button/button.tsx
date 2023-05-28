@@ -115,7 +115,7 @@ const InternalButton: React.ForwardRefRenderFunction<
     ) : null
 
   const AfterIcon = () =>
-    beforeIcon ? (
+    afterIcon ? (
       <span className="kylin-btn-icon-after">
         {afterIcon}
       </span>
