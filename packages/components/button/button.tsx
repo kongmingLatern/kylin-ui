@@ -155,7 +155,7 @@ const InternalButton: React.ForwardRefRenderFunction<
       type={htmlType}
       className={classes}
       onClick={handleClick}
-      disabled={!!loading}
+      disabled={!!innerLoading}
       {...restProps}
     >
       <IconNode>{children}</IconNode>
