@@ -40,6 +40,7 @@ const ButtonType = () => {
 
   return (
     <>
+      <h1>ThemeProvider</h1>
       {/* <ThemeProvider themeConfig={theme}> */}
       {/* <Button
         type="primary"
