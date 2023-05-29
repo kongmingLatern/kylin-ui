@@ -1,6 +1,17 @@
+import { useState } from 'react'
 import { Button } from '../button'
 
 const ButtonType = () => {
+  const [loading, setLoading] = useState({
+    delay: 0,
+  })
+
+  const handleClick = () => {
+    setLoading({
+      delay: 2000,
+    })
+  }
+
   return (
     <>
       <h1>Type</h1>
@@ -79,17 +90,14 @@ const ButtonType = () => {
         123123
       </Button>
 
-      {/* ==================== Props ==================== */}
-      {/* TODO: */}
-      {/* <Button
-        type="primary"
-        disabled
-        icon={'icon'}
-        loading={true}
-        href={'www.baidu.com'}
-        shape='circle'
-        value={'value'}
-      /> */}
+      <h1>onClick</h1>
+
+      <Button
+        onClick={() => handleClick()}
+        loading={loading}
+      >
+        click me to load 2s
+      </Button>
     </>
   )
 }

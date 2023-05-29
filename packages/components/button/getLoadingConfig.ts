@@ -7,8 +7,9 @@ export function getLoadingConfig(
     const delay = loading?.delay
     const isDelay =
       !Number.isNaN(delay) && typeof delay === 'number'
+
     return {
-      loading: true,
+      loading: false,
       delay: isDelay ? delay : 0,
     }
   }
