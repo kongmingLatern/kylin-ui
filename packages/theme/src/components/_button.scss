@@ -29,29 +29,7 @@
   }
 
   &-loading {
-    opacity: 0.65;
-    cursor: default;
-    // display: inline-block;
-    // height: 10%;
-    // position: relative;
-    // pointer-events: none;
-    // padding-left: 1rem;
-    // margin-right: 0.3rem;
-    // &::after {
-    //   content: '';
-    //   position: absolute;
-    //   width: 0.5rem;
-    //   height: 0.5rem;
-    //   top: 50%;
-    //   left: 50%;
-    //   margin-top: -0.75rem;
-    //   margin-left: -0.75rem;
-    //   margin-right: auto;
-    //   border-radius: 50%;
-    //   border: 2px solid #fff;
-    //   border-color: #fff transparent #fff transparent;
-    //   animation: spin 0.6s linear infinite;
-    // }
+    @include disabled;
   }
 
   &-icon {
@@ -74,62 +52,41 @@
     color: #fff;
     font-weight: 700;
     text-transform: uppercase;
-    font-size: #{$font-size-base * 1.4};
-  
-    &:hover {
-      opacity: 0.9;
-    }
-
-    @include wave;
   }
 
   &-primary {
     @extend .kylin-btn;
     background-color: var(--primary-color);
     color: #fff;
-    &:hover {
-      opacity: 0.9;
-    }
-    @include wave;
   }
 
   &-secondary {
     @extend .kylin-btn;
     background-color: var(--secondary-color);
     color: #fff;
-    &:hover {
-      opacity: 0.9;
-    }
-    @include wave;
   }
 
   &-success {
     @extend .kylin-btn;
     background-color: var(--success-color);
     color: #fff;
-    &:hover {
-      opacity: 0.9;
-    }
-    @include wave;
   }
 
   &-info {
     @extend .kylin-btn;
     background-color: var(--info-color);
     color: #fff;
-    &:hover {
-      opacity: 0.9;
-    }
-    @include wave;
   }
 
   &-ghost {
     @extend .kylin-btn;
     background-color: transparent;
     border-color: transparent;
-    color: var(--primary-color);
+    color: currentColor;
+    border: 1px solid currentColor;
     &:hover {
-      background-color: var(--primary-color);
+      background-color: var(--default-color);
+      opacity: 1;
       color: #fff;
     }
   }
@@ -138,10 +95,6 @@
     @extend .kylin-btn;
     background-color: var(--disabled-color);
     color: #fff;
-    cursor: not-allowed;
-    &:hover {
-      opacity: 1;
-    }
-    @include wave;
+    @include disabled;
   }
 }

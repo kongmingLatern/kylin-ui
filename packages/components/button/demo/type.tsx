@@ -41,11 +41,14 @@ const ButtonType = () => {
 
       <h1>block</h1>
       <Button p={3} block>
-        123
+        block
       </Button>
 
       <h1>ghost</h1>
       <Button ghost>ghost</Button>
+
+      <h1>disabled</h1>
+      <Button disabled>disabled</Button>
 
       <h1>Size</h1>
       <Button size={'small'} mr={2}>

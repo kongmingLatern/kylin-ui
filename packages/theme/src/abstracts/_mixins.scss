@@ -24,6 +24,23 @@
   }
 }
 
+@mixin disabled {
+  cursor: not-allowed;
+  &:hover {
+    opacity: 1;
+  }
+  // 去除点击效果
+  &:active {
+    transform: scale(1);
+  }
+  // 去除动画
+  &::after {
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0s;
+  }
+}
+
 @mixin button-base {
   display: inline-flex;
   justify-content: center;
@@ -42,4 +59,9 @@
     background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
+  @include wave;
 }
