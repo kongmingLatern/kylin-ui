@@ -6,6 +6,9 @@ const ButtonTypes = [
   'default',
   'primary',
   'secondary',
+  'success',
+  'info',
+  'error',
   'ghost',
   'dashed',
   'link',
@@ -65,6 +68,5 @@ export type LoadingConfigType = {
 }
 
 export type Loading = number | boolean
-
 
 export * from './BaseButtonProps'

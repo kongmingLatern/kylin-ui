@@ -71,7 +71,7 @@ const ButtonType = () => {
           )
         }
       >
-        123123
+        SetTheme
       </Button>
       {/* </ThemeProvider> */}
     </>

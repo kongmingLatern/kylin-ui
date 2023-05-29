@@ -1,17 +1,5 @@
 .kylin-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(#{$font-size-base} * 1.6);
-  font-weight: 500;
-  color: $text-color;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
-  padding: 0.6rem 1.2rem;
-  cursor: pointer;
-  overflow: hidden;
-  position: relative;
-  transition: all 0.3s;
+  @include button-base;
 
   &-shape {
     &-circle {
@@ -84,9 +72,10 @@
     @extend .kylin-btn;
     background-color: var(--default-color);
     color: #fff;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
-      0 3px 6px rgba(0, 0, 0, 0.23);
-
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: #{$font-size-base * 1.4};
+  
     &:hover {
       opacity: 0.9;
     }
@@ -101,6 +90,7 @@
     &:hover {
       opacity: 0.9;
     }
+    @include wave;
   }
 
   &-secondary {
@@ -110,6 +100,7 @@
     &:hover {
       opacity: 0.9;
     }
+    @include wave;
   }
 
   &-success {
@@ -119,6 +110,7 @@
     &:hover {
       opacity: 0.9;
     }
+    @include wave;
   }
 
   &-info {
@@ -128,6 +120,7 @@
     &:hover {
       opacity: 0.9;
     }
+    @include wave;
   }
 
   &-ghost {
@@ -149,5 +142,6 @@
     &:hover {
       opacity: 1;
     }
+    @include wave;
   }
 }

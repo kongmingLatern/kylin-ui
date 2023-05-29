@@ -1,5 +1,5 @@
 export const darkTheme = {
-  '--primary-color': '#2c3e50',
+  '--primary-color': '#3498db',
   '--text-color': '#ecf0f1',
   '--border-color': '#34495e',
 }

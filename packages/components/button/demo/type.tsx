@@ -3,11 +3,63 @@ import { Button } from '../button'
 const ButtonType = () => {
   return (
     <>
-      <Button type="primary">123123</Button>
-      <Button type="secondary">123123</Button>
+      <h1>Type</h1>
+      <Button
+        mr={2}
+        className="font-bold uppercase text-sm"
+      >
+        Default
+      </Button>
+      <Button
+        type="primary"
+        mr={2}
+        className="font-bold uppercase text-sm"
+      >
+        Primary
+      </Button>
+      <Button
+        type="secondary"
+        mr={2}
+        className="font-bold uppercase text-sm"
+      >
+        Secondary
+      </Button>
+      <Button
+        type="success"
+        mr={2}
+        className="font-bold uppercase text-sm"
+      >
+        Success
+      </Button>
+      <Button
+        type="info"
+        mr={2}
+        className="font-bold uppercase text-sm"
+      >
+        Info
+      </Button>
 
+      <h1>block</h1>
+      <Button p={3} block>
+        123
+      </Button>
+
+      <h1>ghost</h1>
+      <Button ghost>ghost</Button>
+
+      <h1>Size</h1>
+      <Button size={'small'} mr={2}>
+        small
+      </Button>
+      <Button size={'middle'} mr={2}>
+        middle
+      </Button>
+      <Button size={'large'} mr={2}>
+        large
+      </Button>
+
+      <h1>loading</h1>
       <Button loading>123</Button>
-
       <Button
         loading={{
           delay: 2000,
@@ -16,27 +68,13 @@ const ButtonType = () => {
         loading 2s
       </Button>
 
-      <Button color="green">123</Button>
-      <Button color="green" bg="blue" hover="yellow">
-        123
-      </Button>
-
-      <h1>block</h1>
-      <Button p={5} block>
-        123
-      </Button>
-      <h1>ghost</h1>
-      <Button ghost>12313</Button>
-      <h1>Size</h1>
-      <Button size={'small'}>123</Button>
-      <h1>loading</h1>
+      <h1>Icon</h1>
       <Button
         beforeIcon={<div>BeforeIcon</div>}
         afterIcon={<a className="color-green">RightIcon</a>}
       >
         123123
       </Button>
-      <Button loading>123</Button>
 
       {/* ==================== Props ==================== */}
       {/* TODO: */}
