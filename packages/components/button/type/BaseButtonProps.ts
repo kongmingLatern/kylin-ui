@@ -2,7 +2,7 @@ import {
   ButtonShapeType,
   ButtonSizeType,
   ButtonType,
-} from '.'
+} from './ButtonProps'
 
 export interface BaseButtonProps {
   type?: ButtonType
