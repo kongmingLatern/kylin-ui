@@ -21,6 +21,7 @@ import {
 } from '@kylin-ui/shared'
 import LoadingIcon from './LoadingIcon'
 import { getLoadingConfig } from './getLoadingConfig'
+import { GroupSizeContext } from './button-group'
 
 const InternalButton: React.ForwardRefRenderFunction<
   HTMLButtonElement,
@@ -31,7 +32,7 @@ const InternalButton: React.ForwardRefRenderFunction<
     type = 'default',
     shape,
     block,
-    size,
+    size = useContext(GroupSizeContext),
     beforeIcon,
     afterIcon,
     disabled = false,
