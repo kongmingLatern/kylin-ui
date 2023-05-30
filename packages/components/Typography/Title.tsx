@@ -1,8 +1,25 @@
 import { TypographyTitleProps } from './type'
 
 const Title: React.FC<TypographyTitleProps> = props => {
-  const { level, children } = props
+  return <RenderTitle {...props} />
+}
 
+function RenderTitle(
+  props: TypographyTitleProps
+): JSX.Element | null {
+  const { code, level, children } = props
+  if (code) {
+    return (
+      <code className="kylin-typography-code">
+        {children}
+      </code>
+    )
+  }
+  const TitleNode = renderTitleElement(level, children)
+  return TitleNode
+}
+
+function renderTitleElement(level = 1, children) {
   // 根据 level 渲染不同的标签
   switch (level) {
     case 1:
@@ -20,8 +37,7 @@ const Title: React.FC<TypographyTitleProps> = props => {
     default:
       console.warn(`The level ${level} is not supported.`)
   }
-
-  return <h1>{children}</h1>
+  return null
 }
 
 export { Title }

@@ -1,1 +1,13 @@
-/* Add your styles here */
+.kylin-typography {
+  &-code {
+    margin: 0 0.2em;
+    padding-inline: 0.4em;
+    padding-block: 0.2em 0.1em;
+    font-size: 85%;
+    font-family: sfmono-regular, Consolas, liberation mono,
+      Menlo, Courier, monospace;
+    background: rgba(254, 228, 228, 0.45);
+    border: 1px solid rgba(100, 100, 100, 0.2);
+    border-radius: 3px;
+  }
+}
