@@ -18,4 +18,16 @@
   &-deleteLine {
     text-decoration: line-through;
   }
+
+  &-underline {
+    text-decoration: underline;
+  }
+
+  &-italic {
+    font-style: italic;
+  }
+
+  &-strong {
+    font-weight: 700;
+  }
 }

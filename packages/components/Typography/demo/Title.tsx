@@ -15,7 +15,24 @@ export const TitleDemo = () => {
       <Title code>This is Code Title</Title>
 
       <Title>DeleteLine</Title>
-      <Title deleteLine>This is DeleteLine Text</Title>
+      <Title level={4} deleteLine>
+        This is DeleteLine Text
+      </Title>
+
+      <Title>Underline</Title>
+      <Title level={4} underline>
+        This is Underline Text
+      </Title>
+
+      <Title>Italic</Title>
+      <Title level={4} italic>
+        This is Italic Text
+      </Title>
+
+      <Title>Strong</Title>
+      <Title level={4} strong>
+        This is Strong Text
+      </Title>
     </>
   )
 }

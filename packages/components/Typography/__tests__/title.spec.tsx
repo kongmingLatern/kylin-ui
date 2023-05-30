@@ -64,4 +64,47 @@ describe('TypographyTitle', () => {
       </h2>
     `)
   })
+
+  test('props -> underline', () => {
+    const { container } = render(
+      <Title level={2} underline>
+        Title2
+      </Title>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      <h2
+        class="kylin-typography-title-h2 kylin-typography-underline"
+      >
+        Title2
+      </h2>
+    `)
+  })
+  test('props -> italic', () => {
+    const { container } = render(
+      <Title level={2} italic>
+        Title2
+      </Title>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      <h2
+        class="kylin-typography-title-h2 kylin-typography-italic"
+      >
+        Title2
+      </h2>
+    `)
+  })
+  test('props -> strong', () => {
+    const { container } = render(
+      <Title level={2} strong>
+        Title2
+      </Title>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      <h2
+        class="kylin-typography-title-h2 kylin-typography-strong"
+      >
+        Title2
+      </h2>
+    `)
+  })
 })
