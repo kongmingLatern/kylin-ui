@@ -3,16 +3,16 @@ import CommonButton from '@components/Button/demo/button'
 import { ButtonGroupDemo } from '@components/Button/demo/button-group'
 
 const App = () => {
-  return (
-    <>
-      <CommonButton />
-      <br />
-      <ButtonGroupDemo />
-      <br />
-      <ThemeButton />
-      <br />
-    </>
-  )
+	return (
+		<>
+			<CommonButton />
+			<br />
+			<ButtonGroupDemo />
+			<br />
+			<ThemeButton />
+			<br />
+		</>
+	)
 }
 
 export default App

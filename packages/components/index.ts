@@ -3,6 +3,5 @@ import 'uno.css'
 import '@packages/theme/src/style/index.scss'
 
 export * from './Button'
-// export * from './button'
-
+export * from './Typography'
 export * from './ThemeProvider'
