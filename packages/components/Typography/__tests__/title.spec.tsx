@@ -107,4 +107,47 @@ describe('TypographyTitle', () => {
       </h2>
     `)
   })
+  test('props -> mark', () => {
+    const { container } = render(
+      <Title level={2} mark>
+        Title2
+      </Title>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      <h2
+        class="kylin-typography-title-h2 kylin-typography-mark"
+      >
+        Title2
+      </h2>
+    `)
+  })
+  test('props -> disabled', () => {
+    const { container } = render(
+      <Title level={2} disabled>
+        Title2
+      </Title>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      <h2
+        class="kylin-typography-title-h2 kylin-typography-disabled"
+      >
+        Title2
+      </h2>
+    `)
+  })
+
+  test('props -> ellipsis', () => {
+    const { container } = render(
+      <Title level={2} ellipsis>
+        Title2
+      </Title>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      <h2
+        class="kylin-typography-title-h2 kylin-typography-ellipsis"
+      >
+        Title2
+      </h2>
+    `)
+  })
 })

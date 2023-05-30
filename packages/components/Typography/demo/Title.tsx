@@ -33,6 +33,21 @@ export const TitleDemo = () => {
       <Title level={4} strong>
         This is Strong Text
       </Title>
+
+      <Title>Mark</Title>
+      <Title level={4} mark>
+        This is Mark Text
+      </Title>
+
+      <Title>Ellipsis</Title>
+      <Title level={4} ellipsis>
+        This is Ellipsis Text
+      </Title>
+
+      <Title>disabled</Title>
+      <Title level={4} disabled>
+        This is Disabled Text
+      </Title>
     </>
   )
 }

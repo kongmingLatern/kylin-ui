@@ -22,13 +22,22 @@ function renderCodeElement(
   props: TypographyTitleProps,
   children
 ): JSX.Element | null {
-  const { deleteLine, underline, italic, strong } = props
+  const {
+    deleteLine,
+    disabled,
+    underline,
+    italic,
+    strong,
+    ellipsis,
+  } = props
   return (
     <code
       className={classNames({
         ['kylin-typography-code']: true,
         ['kylin-typography-deleteLine']: deleteLine,
         ['kylin-typography-underline']: underline,
+        ['kylin-typography-disabled']: disabled,
+        ['kylin-typography-ellipsis']: ellipsis,
         ['kylin-typography-italic']: italic,
         ['kylin-typography-strong']: strong,
       })}
@@ -44,10 +53,13 @@ function renderTitleElement(
 ) {
   const {
     level = 1,
+    disabled,
     deleteLine,
     underline,
     italic,
+    ellipsis,
     strong,
+    mark,
   } = props
 
   const TitleNode = createElement(
@@ -57,6 +69,9 @@ function renderTitleElement(
         [`kylin-typography-title-h${level}`]: level,
         ['kylin-typography-deleteLine']: deleteLine,
         ['kylin-typography-underline']: underline,
+        ['kylin-typography-ellipsis']: ellipsis,
+        ['kylin-typography-disabled']: disabled,
+        ['kylin-typography-mark']: mark,
         ['kylin-typography-italic']: italic,
         ['kylin-typography-strong']: strong,
       }),

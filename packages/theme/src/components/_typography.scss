@@ -30,4 +30,22 @@
   &-strong {
     font-weight: 700;
   }
+
+  &-disabled {
+    color: var(--disabled-color);
+    cursor: not-allowed;
+    user-select: none;
+  }
+
+  &-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &-mark {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.2em;
+  }
 }
