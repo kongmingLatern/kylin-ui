@@ -89,7 +89,6 @@ const InternalButton: React.ForwardRefRenderFunction<
 
   useEffect(() => {
     let delayTimer: NodeJS.Timer | null = null
-    console.log('useEffect', loadingOrDelay)
     if (loadingOrDelay.delay > 0) {
       delayTimer = setTimeout(() => {
         delayTimer = null
