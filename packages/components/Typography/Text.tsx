@@ -8,4 +8,6 @@ const Text: React.FC<TypographyTextProps> = props => {
   )
 }
 
-export default Text
+export {
+  Text
+}

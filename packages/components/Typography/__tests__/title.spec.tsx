@@ -1,12 +1,23 @@
 import { render } from '@testing-library/react'
-import Title from '../Title'
+import { Title } from '../Title'
 test('renders Title component', () => {
   const { container } = render(<Title />)
-  expect(container.firstChild).toMatchInlineSnapshot(`
-    <div>
-      <h1>
-        Title Component
-      </h1>
-    </div>
-  `)
+  expect(container.firstChild).toMatchInlineSnapshot(
+    '<h1 />'
+  )
+})
+
+describe('TypographyTitle', () => {
+  test('props -> level', () => {
+    const { container } = render(
+      <Title level={2}>Title2</Title>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(
+      `
+      <h2>
+        Title2
+      </h2>
+    `
+    )
+  })
 })

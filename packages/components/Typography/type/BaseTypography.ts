@@ -1,5 +1,11 @@
 export interface BaseTypographyProps {
   /**
+   * @description 子元素
+   * @default -
+   * @type React.ReactNode
+   */
+  children?: React.ReactNode
+  /**
    * @description 添加代码样式
    * @default false
    * @type boolean
