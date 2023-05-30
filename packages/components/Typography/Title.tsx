@@ -47,12 +47,28 @@ function renderCodeElement(
   )
 }
 
+function handleClick(callback) {
+  return (e: React.MouseEvent<HTMLHeadingElement>) => {
+    const textContent = e.currentTarget.textContent
+    const textarea = document.createElement(
+      'textarea'
+    ) as any
+    textarea.value = textContent
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand('copy')
+    document.body.removeChild(textarea)
+    callback?.(e)
+  }
+}
+
 function renderTitleElement(
   props: TypographyTitleProps,
   children
 ) {
   const {
     level = 1,
+    copyable,
     disabled,
     deleteLine,
     underline,
@@ -60,6 +76,7 @@ function renderTitleElement(
     ellipsis,
     strong,
     mark,
+    onClick,
   } = props
 
   const TitleNode = createElement(
@@ -75,6 +92,7 @@ function renderTitleElement(
         ['kylin-typography-italic']: italic,
         ['kylin-typography-strong']: strong,
       }),
+      onClick: copyable ? handleClick(onClick) : onClick,
     },
     children
   )

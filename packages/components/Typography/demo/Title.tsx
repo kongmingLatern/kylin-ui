@@ -48,6 +48,15 @@ export const TitleDemo = () => {
       <Title level={4} disabled>
         This is Disabled Text
       </Title>
+
+      <Title>copyable</Title>
+      <Title
+        level={4}
+        copyable
+        onClick={e => console.log(e)}
+      >
+        This is Copy Text
+      </Title>
     </>
   )
 }
