@@ -48,16 +48,13 @@ function renderCodeElement(
 }
 
 function handleClick(callback) {
-  return (e: React.MouseEvent<HTMLHeadingElement>) => {
+  return async (
+    e: React.MouseEvent<HTMLHeadingElement>
+  ) => {
     const textContent = e.currentTarget.textContent
-    const textarea = document.createElement(
-      'textarea'
-    ) as any
-    textarea.value = textContent
-    document.body.appendChild(textarea)
-    textarea.select()
-    document.execCommand('copy')
-    document.body.removeChild(textarea)
+    await navigator.clipboard.writeText(
+      textContent as string
+    )
     callback?.(e)
   }
 }
