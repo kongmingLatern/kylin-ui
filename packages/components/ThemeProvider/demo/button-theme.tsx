@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { Button } from '../../button/Button'
 import { ThemeProvider } from '../theme-provider'
 import { useTheme } from '../../../hooks'
+import { Button } from '@components/button'
 
 const theme = {
   button: {
