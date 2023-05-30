@@ -1,9 +1,11 @@
-const Typography = () => {
+import { TypographyTitleProps } from './type'
+
+const Title: React.FC<TypographyTitleProps> = props => {
   return (
     <div>
-      <h1>Typography Component</h1>
+      <h1>Title Component</h1>
     </div>
   )
 }
 
-export default Typography
+export default Title

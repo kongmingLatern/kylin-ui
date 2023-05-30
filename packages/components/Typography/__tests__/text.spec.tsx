@@ -1,11 +1,11 @@
 import { render } from '@testing-library/react'
-import Title from '../Title'
+import Text from '../Text'
 test('renders Title component', () => {
-  const { container } = render(<Title />)
+  const { container } = render(<Text />)
   expect(container.firstChild).toMatchInlineSnapshot(`
     <div>
       <h1>
-        Title Component
+        Text Component
       </h1>
     </div>
   `)
