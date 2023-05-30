@@ -20,4 +20,16 @@ describe('TypographyTitle', () => {
     `
     )
   })
+  test('props -> level -> default ', () => {
+    const { container } = render(
+      <Title>Default Title</Title>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(
+      `
+      <h1>
+        Default Title
+      </h1>
+    `
+    )
+  })
 })
