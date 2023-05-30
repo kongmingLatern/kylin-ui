@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button } from '../button'
+import { Button } from '../Button'
 
 const ButtonType = () => {
   const [loading, setLoading] = useState({

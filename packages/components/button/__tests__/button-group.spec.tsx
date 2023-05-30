@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { ButtonGroup } from '../button-group'
+import { ButtonGroup } from '../ButtonGroup'
 import { Button } from '..'
 
 test('render', () => {

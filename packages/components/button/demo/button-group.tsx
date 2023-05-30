@@ -1,5 +1,5 @@
 import { Button } from '..'
-import { ButtonGroup } from '../button-group'
+import { ButtonGroup } from '../ButtonGroup'
 
 export const ButtonGroupDemo = () => {
   return (
