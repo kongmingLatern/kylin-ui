@@ -22,7 +22,7 @@ export interface BaseTypographyProps {
    * @default false
    * @type boolean
    */
-  delete?: boolean
+  deleteLine?: boolean
   /**
    * @description 禁用文本
    * @default false

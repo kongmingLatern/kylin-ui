@@ -3,7 +3,11 @@ import { Title } from '../Title'
 test('renders Title component', () => {
   const { container } = render(<Title />)
   expect(container.firstChild).toMatchInlineSnapshot(
-    '<h1 />'
+    `
+    <h1
+      class="kylin-typography-title"
+    />
+  `
   )
 })
 
@@ -14,7 +18,9 @@ describe('TypographyTitle', () => {
     )
     expect(container.firstChild).toMatchInlineSnapshot(
       `
-      <h1>
+      <h1
+        class="kylin-typography-title"
+      >
         Default Title
       </h1>
     `
@@ -26,7 +32,9 @@ describe('TypographyTitle', () => {
     )
     expect(container.firstChild).toMatchInlineSnapshot(
       `
-      <h2>
+      <h2
+        class="kylin-typography-title"
+      >
         Title2
       </h2>
     `
@@ -44,6 +52,20 @@ describe('TypographyTitle', () => {
       >
         Title2
       </code>
+    `)
+  })
+  test('props -> delete', () => {
+    const { container } = render(
+      <Title level={2} deleteLine>
+        Title2
+      </Title>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      <h2
+        class="kylin-typography-title kylin-typography-deleteLine"
+      >
+        Title2
+      </h2>
     `)
   })
 })

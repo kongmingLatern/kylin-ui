@@ -1,4 +1,6 @@
+import classNames from 'classnames'
 import { TypographyTitleProps } from './type'
+import { createElement } from 'react'
 
 const Title: React.FC<TypographyTitleProps> = props => {
   return <RenderTitle {...props} />
@@ -7,37 +9,47 @@ const Title: React.FC<TypographyTitleProps> = props => {
 function RenderTitle(
   props: TypographyTitleProps
 ): JSX.Element | null {
-  const { code, level, children } = props
+  const { code, deleteLine, children } = props
   if (code) {
-    return (
-      <code className="kylin-typography-code">
-        {children}
-      </code>
-    )
+    return renderCodeElement(deleteLine, children)
   }
-  const TitleNode = renderTitleElement(level, children)
+
+  const TitleNode = renderTitleElement(props, children)
   return TitleNode
 }
 
-function renderTitleElement(level = 1, children) {
-  // 根据 level 渲染不同的标签
-  switch (level) {
-    case 1:
-      return <h1>{children}</h1>
-    case 2:
-      return <h2>{children}</h2>
-    case 3:
-      return <h3>{children}</h3>
-    case 4:
-      return <h4>{children}</h4>
-    case 5:
-      return <h5>{children}</h5>
-    case 6:
-      return <h6>{children}</h6>
-    default:
-      console.warn(`The level ${level} is not supported.`)
-  }
-  return null
+function renderCodeElement(
+  deleteLine: boolean | undefined,
+  children
+): JSX.Element | null {
+  return (
+    <code
+      className={classNames({
+        ['kylin-typography-code']: true,
+        ['kylin-typography-deleteLine']: deleteLine,
+      })}
+    >
+      {children}
+    </code>
+  )
+}
+
+function renderTitleElement(
+  { level = 1, deleteLine }: TypographyTitleProps,
+  children
+) {
+  const TitleNode = createElement(
+    `h${level}`,
+    {
+      className: classNames({
+        ['kylin-typography-title']: level,
+        ['kylin-typography-deleteLine']: deleteLine,
+      }),
+    },
+    children
+  )
+
+  return TitleNode
 }
 
 export { Title }

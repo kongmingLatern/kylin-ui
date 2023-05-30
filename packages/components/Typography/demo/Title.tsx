@@ -13,6 +13,9 @@ export const TitleDemo = () => {
 
       <Title>Code</Title>
       <Title code>This is Code Title</Title>
+
+      <Title>DeleteLine</Title>
+      <Title deleteLine>This is DeleteLine Text</Title>
     </>
   )
 }

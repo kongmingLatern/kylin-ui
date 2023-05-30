@@ -4,18 +4,18 @@ import { ButtonGroupDemo } from '@components/Button/demo/button-group'
 import { TitleDemo } from '@components/Typography/demo/Title'
 
 const App = () => {
-  return (
-    <>
-      <TitleDemo />
-      <br />
-      <CommonButton />
-      <br />
-      <ButtonGroupDemo />
-      <br />
-      <ThemeButton />
-      <br />
-    </>
-  )
+	return (
+		<>
+			<TitleDemo />
+			<br />
+			<CommonButton />
+			<br />
+			<ButtonGroupDemo />
+			<br />
+			<ThemeButton />
+			<br />
+		</>
+	)
 }
 
 export default App
