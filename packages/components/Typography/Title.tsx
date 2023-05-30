@@ -9,9 +9,9 @@ const Title: React.FC<TypographyTitleProps> = props => {
 function RenderTitle(
   props: TypographyTitleProps
 ): JSX.Element | null {
-  const { code, deleteLine, children } = props
+  const { code, children } = props
   if (code) {
-    return renderCodeElement(deleteLine, children)
+    return renderCodeElement(props, children)
   }
 
   const TitleNode = renderTitleElement(props, children)
@@ -19,9 +19,10 @@ function RenderTitle(
 }
 
 function renderCodeElement(
-  deleteLine: boolean | undefined,
+  props: TypographyTitleProps,
   children
 ): JSX.Element | null {
+  const { deleteLine } = props
   return (
     <code
       className={classNames({
