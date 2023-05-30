@@ -42,7 +42,7 @@ function renderTitleElement(
     `h${level}`,
     {
       className: classNames({
-        ['kylin-typography-title']: level,
+        [`kylin-typography-title-h${level}`]: level,
         ['kylin-typography-deleteLine']: deleteLine,
       }),
     },

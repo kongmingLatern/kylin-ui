@@ -65,3 +65,16 @@
   }
   @include wave;
 }
+
+@mixin title {
+  @for $i from 1 through 6 {
+    &-h#{$i} {
+      font-size: calc(
+        #{$font-size-base} * (1 + 0.25 * (7 - #{$i}))
+      );
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 1rem 0;
+    }
+  }
+}

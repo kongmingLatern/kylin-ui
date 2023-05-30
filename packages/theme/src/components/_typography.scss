@@ -1,4 +1,9 @@
 .kylin-typography {
+  &-title {
+    // 转换成循环
+    @include title;
+  }
+
   &-code {
     margin: 0 0.2em;
     padding-inline: 0.4em;
