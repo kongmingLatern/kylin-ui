@@ -1,18 +1,15 @@
 import classNames from 'classnames'
-import {
-  TypographyTextProps,
-  TypographyTitleProps,
-} from './type'
+import { TypographyTitleProps } from './type'
 import { createElement } from 'react'
-import { TypographyParagraphProps } from './type/TypographyParagraphProps'
 import { NodeType } from './type/NodeType'
+import { TypographyType } from './type/BaseTypography'
 
-const Title: React.FC<TypographyTitleProps> = props => {
+const Title: React.FC<TypographyType> = props => {
   return <RenderTitle {...props} />
 }
 
 function RenderTitle(
-  props: TypographyTitleProps
+  props: TypographyType
 ): JSX.Element | null {
   const { code, children } = props
   if (code) {
@@ -24,9 +21,7 @@ function RenderTitle(
 }
 
 function renderCodeElement(
-  props: TypographyTitleProps &
-    TypographyTextProps &
-    TypographyParagraphProps,
+  props: TypographyType,
   children
 ): JSX.Element | null {
   const {
@@ -37,11 +32,13 @@ function renderCodeElement(
     strong,
     ellipsis,
     indent,
+    type,
   } = props
   return (
     <code
       className={classNames({
         ['kylin-typography-code']: true,
+        [`kylin-typography-type-${type}`]: type,
         ['kylin-typography-deleteLine']: deleteLine,
         ['kylin-typography-underline']: underline,
         ['kylin-typography-disabled']: disabled,
@@ -68,14 +65,10 @@ function handleClick(callback) {
   }
 }
 
-function renderElement(
-  props: TypographyTitleProps &
-    TypographyParagraphProps &
-    TypographyTextProps,
-  children
-) {
+function renderElement(props: TypographyType, children) {
   const {
     _type = NodeType.TITLE,
+    type,
     copyable,
     disabled,
     deleteLine,
@@ -93,6 +86,7 @@ function renderElement(
 
   const classes = classNames({
     [`kylin-typography-title-h${level}`]: level,
+    [`kylin-typography-type-${type}`]: type,
     ['kylin-typography-deleteLine']: deleteLine,
     ['kylin-typography-underline']: underline,
     ['kylin-typography-ellipsis']: ellipsis,

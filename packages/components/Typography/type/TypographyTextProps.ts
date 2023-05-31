@@ -14,5 +14,11 @@ export interface TypographyTextProps
    * @default false
    * @type boolean
    */
-  type?: 'secondary' | 'success' | 'info' | 'error'
+  type?:
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'warning'
+    | 'info'
+    | 'error'
 }

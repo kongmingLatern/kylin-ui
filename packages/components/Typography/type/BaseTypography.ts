@@ -1,3 +1,8 @@
+import {
+  TypographyTextProps,
+  TypographyTitleProps,
+  TypographyParagraphProps,
+} from '.'
 import { NodeType } from './NodeType'
 export interface BaseTypographyProps {
   /**
@@ -75,3 +80,7 @@ export interface BaseTypographyProps {
    */
   onClick?: React.MouseEventHandler<HTMLElement>
 }
+
+export type TypographyType = TypographyTitleProps &
+  TypographyTextProps &
+  TypographyParagraphProps
