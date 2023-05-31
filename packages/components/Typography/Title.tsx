@@ -72,7 +72,7 @@ function renderElement(
   children
 ) {
   const {
-    _type = 'TITLE',
+    _type = NodeType.TITLE,
     copyable,
     disabled,
     deleteLine,
