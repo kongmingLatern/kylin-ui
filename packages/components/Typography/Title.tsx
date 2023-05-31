@@ -1,6 +1,11 @@
 import classNames from 'classnames'
-import { TypographyTitleProps } from './type'
+import {
+  TypographyTextProps,
+  TypographyTitleProps,
+} from './type'
 import { createElement } from 'react'
+import { TypographyParagraphProps } from './type/TypographyParagraphProps'
+import { NodeType } from './type/NodeType'
 
 const Title: React.FC<TypographyTitleProps> = props => {
   return <RenderTitle {...props} />
@@ -60,7 +65,10 @@ function handleClick(callback) {
 }
 
 function renderElement(
-  props: TypographyTitleProps,
+  props:
+    | TypographyTitleProps
+    | TypographyParagraphProps
+    | TypographyTextProps,
   children
 ) {
   const {
@@ -77,7 +85,7 @@ function renderElement(
   } = props
 
   const level = getLevel()
-  const tag = getTag()
+  const tag = getTag(level)
 
   const classes = classNames({
     [`kylin-typography-title-h${level}`]: level,
@@ -102,18 +110,18 @@ function renderElement(
 
   return TitleNode
 
-  function getTag() {
-    return _type === 'TITLE'
+  function getTag(level) {
+    return _type === NodeType.TITLE
       ? `h${level}`
-      : _type === 'TEXT'
+      : _type === NodeType.TEXT
       ? 'span'
       : 'p' // NOTE: 该情况为 Paragraph
   }
 
   function getLevel() {
-    return _type === 'TITLE'
-      ? props.level
-        ? props.level
+    return _type === NodeType.TITLE
+      ? (props as TypographyTitleProps).level
+        ? (props as TypographyTitleProps)?.level
         : 1
       : undefined
   }

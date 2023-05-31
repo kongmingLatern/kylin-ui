@@ -1,10 +1,11 @@
+import { NodeType } from './NodeType'
 export interface BaseTypographyProps {
   /**
    * @description 子元素
    * @default -
    * @type React.ReactNode
    */
-  _type?: 'TEXT' | 'TITLE' | 'PARAGRAPHY'
+  _type?: NodeType
   /**
    * @description 子元素
    * @default -
