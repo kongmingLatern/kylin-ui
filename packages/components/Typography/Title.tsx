@@ -14,8 +14,8 @@ function RenderTitle(
     return renderCodeElement(props, children)
   }
 
-  const TitleNode = renderTitleElement(props, children)
-  return TitleNode
+  const element = renderElement(props, children)
+  return element
 }
 
 function renderCodeElement(
@@ -59,12 +59,12 @@ function handleClick(callback) {
   }
 }
 
-function renderTitleElement(
+function renderElement(
   props: TypographyTitleProps,
   children
 ) {
   const {
-    level = 1,
+    _type = 'TITLE',
     copyable,
     disabled,
     deleteLine,
@@ -76,25 +76,47 @@ function renderTitleElement(
     onClick,
   } = props
 
+  const level = getLevel()
+  const tag = getTag()
+
+  const classes = classNames({
+    [`kylin-typography-title-h${level}`]: level,
+    ['kylin-typography-deleteLine']: deleteLine,
+    ['kylin-typography-underline']: underline,
+    ['kylin-typography-ellipsis']: ellipsis,
+    ['kylin-typography-disabled']: disabled,
+    ['kylin-typography-mark']: mark,
+    ['kylin-typography-italic']: italic,
+    ['kylin-typography-strong']: strong,
+  })
+
   const TitleNode = createElement(
-    `h${level}`,
+    tag,
     {
-      className: classNames({
-        [`kylin-typography-title-h${level}`]: level,
-        ['kylin-typography-deleteLine']: deleteLine,
-        ['kylin-typography-underline']: underline,
-        ['kylin-typography-ellipsis']: ellipsis,
-        ['kylin-typography-disabled']: disabled,
-        ['kylin-typography-mark']: mark,
-        ['kylin-typography-italic']: italic,
-        ['kylin-typography-strong']: strong,
-      }),
+      className: classes !== '' ? classes : undefined,
       onClick: copyable ? handleClick(onClick) : onClick,
     },
+
     children
   )
 
   return TitleNode
+
+  function getTag() {
+    return _type === 'TITLE'
+      ? `h${level}`
+      : _type === 'TEXT'
+      ? 'span'
+      : 'p' // NOTE: 该情况为 Paragraph
+  }
+
+  function getLevel() {
+    return _type === 'TITLE'
+      ? props.level
+        ? props.level
+        : 1
+      : undefined
+  }
 }
 
 export { Title }

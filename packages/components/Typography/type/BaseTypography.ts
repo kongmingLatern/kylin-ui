@@ -4,6 +4,12 @@ export interface BaseTypographyProps {
    * @default -
    * @type React.ReactNode
    */
+  _type?: 'TEXT' | 'TITLE' | 'PARAGRAPHY'
+  /**
+   * @description 子元素
+   * @default -
+   * @type React.ReactNode
+   */
   children?: React.ReactNode
   /**
    * @description 添加代码样式
@@ -16,7 +22,7 @@ export interface BaseTypographyProps {
    * @default false
    * @type boolean
    */
-  // TODO:
+  // TODO: Neet to add a icon for copy
   copyable?: boolean
   /**
    * @description 添加删除线
@@ -30,13 +36,6 @@ export interface BaseTypographyProps {
    * @type boolean
    */
   disabled?: boolean
-  /**
-   * @description 是否可编辑，为对象时可对编辑进行控制
-   * @default false
-   * @type boolean
-   */
-  // TODO:
-  editable?: boolean
   /**
    * @description 自动溢出省略，为对象时可设置省略行数、是否可展开、添加后缀等
    * @default false

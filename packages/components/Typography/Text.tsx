@@ -1,13 +1,8 @@
+import { Title } from './Title'
 import { TypographyTextProps } from './type'
 
 const Text: React.FC<TypographyTextProps> = props => {
-  return (
-    <div>
-      <h1>Text Component</h1>
-    </div>
-  )
+  return <Title {...props} _type="TEXT" />
 }
 
-export {
-  Text
-}
+export { Text }
