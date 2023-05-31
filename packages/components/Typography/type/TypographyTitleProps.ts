@@ -10,4 +10,12 @@ export interface TypographyTitleProps
    * @type 1 | 2 | 3 | 4 | 5 | 6
    */
   level?: LevelType
+
+  type?:
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'warning'
+    | 'info'
+    | 'error'
 }

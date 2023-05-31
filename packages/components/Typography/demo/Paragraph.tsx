@@ -5,6 +5,14 @@ export const ParagraphDemo = () => {
     <>
       <Paragraph>这是默认标题</Paragraph>
 
+      <Paragraph code>Type</Paragraph>
+      <Paragraph type="primary">Primary</Paragraph>
+      <Paragraph type="secondary">Secondary</Paragraph>
+      <Paragraph type="success">Success</Paragraph>
+      <Paragraph type="warning">Warning</Paragraph>
+      <Paragraph type="info">info</Paragraph>
+      <Paragraph type="error">Error</Paragraph>
+
       <Paragraph>Code</Paragraph>
       <Paragraph code>This is Code Title</Paragraph>
 

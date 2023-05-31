@@ -7,7 +7,14 @@ export interface TypographyParagraphProps
    * @default false
    * @type boolean
    */
-  type?: 'secondary' | 'success' | 'info' | 'error'
+  type?:
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'warning'
+    | 'info'
+    | 'error'
+
   /**
    * @description 首行缩进
    * @default false
