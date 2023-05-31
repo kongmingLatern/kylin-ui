@@ -40,6 +40,20 @@ describe('TypographyTitle', () => {
     `
     )
   })
+  test('props -> type', () => {
+    const { container } = render(
+      <Title type="secondary">Title2</Title>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(
+      `
+      <h1
+        class="kylin-typography-title-h1 kylin-typography-type-secondary"
+      >
+        Title2
+      </h1>
+    `
+    )
+  })
   test('props -> code', () => {
     const { container } = render(<Title code>Title2</Title>)
     expect(container.firstChild).toMatchInlineSnapshot(`

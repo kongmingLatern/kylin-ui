@@ -2,7 +2,9 @@ import { render } from '@testing-library/react'
 import { Text } from '../Text'
 test('renders Text component', () => {
   const { container } = render(<Text />)
-  expect(container.firstChild).toMatchInlineSnapshot('<span />')
+  expect(container.firstChild).toMatchInlineSnapshot(
+    '<span />'
+  )
 })
 
 describe('TypographyText', () => {
@@ -105,5 +107,20 @@ describe('TypographyText', () => {
         Text2
       </span>
     `)
+  })
+
+  test('props -> type', () => {
+    const { container } = render(
+      <Text type="secondary">Text2</Text>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(
+      `
+      <span
+        class="kylin-typography-type-secondary"
+      >
+        Text2
+      </span>
+    `
+    )
   })
 })

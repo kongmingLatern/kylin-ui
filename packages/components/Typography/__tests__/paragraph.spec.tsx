@@ -130,4 +130,18 @@ describe('TypographyParagraph', () => {
       </p>
     `)
   })
+  test('props -> type', () => {
+    const { container } = render(
+      <Paragraph type="secondary">Text2</Paragraph>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(
+      `
+      <p
+        class="kylin-typography-type-secondary"
+      >
+        Text2
+      </p>
+    `
+    )
+  })
 })
