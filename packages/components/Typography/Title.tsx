@@ -24,7 +24,9 @@ function RenderTitle(
 }
 
 function renderCodeElement(
-  props: TypographyTitleProps,
+  props: TypographyTitleProps &
+    TypographyTextProps &
+    TypographyParagraphProps,
   children
 ): JSX.Element | null {
   const {
@@ -34,6 +36,7 @@ function renderCodeElement(
     italic,
     strong,
     ellipsis,
+    indent,
   } = props
   return (
     <code
@@ -45,6 +48,7 @@ function renderCodeElement(
         ['kylin-typography-ellipsis']: ellipsis,
         ['kylin-typography-italic']: italic,
         ['kylin-typography-strong']: strong,
+        ['kylin-typography-indent']: indent,
       })}
     >
       {children}
@@ -65,10 +69,9 @@ function handleClick(callback) {
 }
 
 function renderElement(
-  props:
-    | TypographyTitleProps
-    | TypographyParagraphProps
-    | TypographyTextProps,
+  props: TypographyTitleProps &
+    TypographyParagraphProps &
+    TypographyTextProps,
   children
 ) {
   const {
@@ -81,6 +84,7 @@ function renderElement(
     ellipsis,
     strong,
     mark,
+    indent,
     onClick,
   } = props
 
@@ -96,6 +100,7 @@ function renderElement(
     ['kylin-typography-mark']: mark,
     ['kylin-typography-italic']: italic,
     ['kylin-typography-strong']: strong,
+    ['kylin-typography-indent']: indent,
   })
 
   const TitleNode = createElement(

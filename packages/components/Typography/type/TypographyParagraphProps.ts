@@ -8,4 +8,10 @@ export interface TypographyParagraphProps
    * @type boolean
    */
   type?: 'secondary' | 'success' | 'info' | 'error'
+  /**
+   * @description 首行缩进
+   * @default false
+   * @type boolean
+   */
+  indent?: boolean
 }
