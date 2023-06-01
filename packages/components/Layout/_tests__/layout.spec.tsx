@@ -3,14 +3,14 @@ import { Content, Footer, Header } from '../layout'
 
 test('render', () => {
   const { container } = render(
-    <>
+    <div>
       <Header>Header</Header>
       <Content>Content</Content>
       <Footer>Footer</Footer>
-    </>
+    </div>
   )
 
-  expect(container).toMatchInlineSnapshot(`
+  expect(container.firstChild).toMatchInlineSnapshot(`
     <div>
       <header>
         Header
