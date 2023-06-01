@@ -1,0 +1,41 @@
+.kylin-grid {
+  &-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  &-justify {
+    &-start {
+      justify-content: flex-start;
+    }
+    &-center {
+      justify-content: center;
+    }
+    &-end {
+      justify-content: flex-end;
+    }
+  }
+
+  &-align {
+    &-start {
+      align-items: flex-start;
+    }
+    &-center {
+      align-items: center;
+    }
+    &-end {
+      align-items: flex-end;
+    }
+  }
+
+  &-wrap {
+    &-start {
+      flex-wrap: wrap;
+    }
+    &-end {
+      flex-wrap: wrap-reverse;
+    }
+  }
+}
