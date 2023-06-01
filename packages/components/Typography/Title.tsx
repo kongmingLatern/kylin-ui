@@ -33,20 +33,24 @@ function renderCodeElement(
     ellipsis,
     indent,
     type,
+    className,
   } = props
   return (
     <code
-      className={classNames({
-        ['kylin-typography-code']: true,
-        [`kylin-typography-type-${type}`]: type,
-        ['kylin-typography-deleteLine']: deleteLine,
-        ['kylin-typography-underline']: underline,
-        ['kylin-typography-disabled']: disabled,
-        ['kylin-typography-ellipsis']: ellipsis,
-        ['kylin-typography-italic']: italic,
-        ['kylin-typography-strong']: strong,
-        ['kylin-typography-indent']: indent,
-      })}
+      className={classNames(
+        {
+          ['kylin-typography-code']: true,
+          [`kylin-typography-type-${type}`]: type,
+          ['kylin-typography-deleteLine']: deleteLine,
+          ['kylin-typography-underline']: underline,
+          ['kylin-typography-disabled']: disabled,
+          ['kylin-typography-ellipsis']: ellipsis,
+          ['kylin-typography-italic']: italic,
+          ['kylin-typography-strong']: strong,
+          ['kylin-typography-indent']: indent,
+        },
+        className
+      )}
     >
       {children}
     </code>
@@ -79,23 +83,27 @@ function renderElement(props: TypographyType, children) {
     mark,
     indent,
     onClick,
+    className,
   } = props
 
   const level = getLevel()
   const tag = getTag(level)
 
-  const classes = classNames({
-    [`kylin-typography-title-h${level}`]: level,
-    [`kylin-typography-type-${type}`]: type,
-    ['kylin-typography-deleteLine']: deleteLine,
-    ['kylin-typography-underline']: underline,
-    ['kylin-typography-ellipsis']: ellipsis,
-    ['kylin-typography-disabled']: disabled,
-    ['kylin-typography-mark']: mark,
-    ['kylin-typography-italic']: italic,
-    ['kylin-typography-strong']: strong,
-    ['kylin-typography-indent']: indent,
-  })
+  const classes = classNames(
+    {
+      [`kylin-typography-title-h${level}`]: level,
+      [`kylin-typography-type-${type}`]: type,
+      ['kylin-typography-deleteLine']: deleteLine,
+      ['kylin-typography-underline']: underline,
+      ['kylin-typography-ellipsis']: ellipsis,
+      ['kylin-typography-disabled']: disabled,
+      ['kylin-typography-mark']: mark,
+      ['kylin-typography-italic']: italic,
+      ['kylin-typography-strong']: strong,
+      ['kylin-typography-indent']: indent,
+    },
+    className
+  )
 
   const TitleNode = createElement(
     tag,

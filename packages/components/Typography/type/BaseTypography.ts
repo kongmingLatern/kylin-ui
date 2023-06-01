@@ -6,6 +6,12 @@ import {
 import { NodeType } from './NodeType'
 export interface BaseTypographyProps {
   /**
+   * @description 类名
+   * @default ''
+   * @type string
+   */
+  className?: string
+  /**
    * @description 子元素
    * @default -
    * @type React.ReactNode
