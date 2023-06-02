@@ -8,29 +8,29 @@ import { Title } from '@components/Typography'
 import { DividerDemo } from '@components/Divider/demo/divider'
 
 const App = () => {
-  return (
-    <>
-      <DividerDemo />
-      <br />
-      <Title mark>ParagraphDemo</Title>
-      <ParagraphDemo />
-      <br />
-      <Title mark>TextDemo</Title>
-      <TextDemo />
-      <br />
-      <Title mark>TitleDemo</Title>
-      <TitleDemo />
-      <br />
-      <Title mark>ButtonDemo</Title>
-      <CommonButton />
-      <br />
-      <Title mark>ButtonGroupDemo</Title>
-      <ButtonGroupDemo />
-      <br />
-      <ThemeButton />
-      <br />
-    </>
-  )
+	return (
+		<>
+			<DividerDemo />
+			<br />
+			<Title mark>ParagraphDemo</Title>
+			<ParagraphDemo />
+			<br />
+			<Title mark>TextDemo</Title>
+			<TextDemo />
+			<br />
+			<Title mark>TitleDemo</Title>
+			<TitleDemo />
+			<br />
+			<Title mark>ButtonDemo</Title>
+			<CommonButton />
+			<br />
+			<Title mark>ButtonGroupDemo</Title>
+			<ButtonGroupDemo />
+			<br />
+			<ThemeButton />
+			<br />
+		</>
+	)
 }
 
 export default App

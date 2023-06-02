@@ -20,6 +20,7 @@ const Divider = React.forwardRef<HTMLElement, DividerProps>(
       dashed,
       plain,
       children,
+      ...rest
     } = props
 
     const hasChildren = !!children
@@ -30,11 +31,10 @@ const Divider = React.forwardRef<HTMLElement, DividerProps>(
 
     const classes = classNames({
       [`kylin-divider`]: true,
-      [`kylin-divider-with-text`]: hasChildren,
+      [`kylin-divider-with-text-${orientation}`]:
+        hasChildren,
       [`kylin-divider-dashed`]: !!dashed,
       [`kylin-divider-plain`]: !!plain,
-      [`kylin-divider-orientation-${orientation}`]:
-        !!orientation,
       [`kylin-divider-no-default-orientation-margin-left`]:
         hasCustomMarginLeft,
       [`kylin-divider-no-default-orientation-margin-right`]:
@@ -52,12 +52,7 @@ const Divider = React.forwardRef<HTMLElement, DividerProps>(
     }
 
     return (
-      <div
-        className={classes}
-        ref={ref}
-        {...props}
-        role="separator"
-      >
+      <div className={classes} {...rest} role="separator">
         {children && type !== 'vertical' && (
           <span
             className={`kylin-divider-inner-text`}

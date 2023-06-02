@@ -1,6 +1,9 @@
 .kylin-divider {
-  margin: 0;
-  border: 0;
+  position: relative;
+  height: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   &-with-text {
     position: relative;
@@ -13,25 +16,72 @@
     line-height: 1;
     white-space: nowrap;
     color: rgba(0, 0, 0, 0.45);
-    &::before,
+
+    &::before {
+      content: '';
+      flex: 1;
+      border-top: 1px solid #e8e8e8;
+    }
+
     &::after {
       content: '';
       flex: 1;
       border-top: 1px solid #e8e8e8;
     }
-    &::before {
-      margin-right: 8px;
+
+    &-center {
+      &::before {
+        content: '';
+        width: 50%;
+        height: 1px;
+        background: #e8e8e8;
+      }
+      &::after {
+        content: '';
+        width: 50%;
+        height: 1px;
+        background: #e8e8e8;
+      }
     }
-    &::after {
-      margin-left: 8px;
+    &-left {
+      &::before {
+        content: '';
+        width: 5%;
+        height: 1px;
+        margin-right: 8px;
+        background: #e8e8e8;
+      }
+      &::after {
+        content: '';
+        width: 95%;
+        height: 1px;
+        background: #e8e8e8;
+      }
+    }
+    &-right {
+      &::before {
+        content: '';
+        width: 95%;
+        height: 1px;
+        margin-right: 8px;
+        background: #e8e8e8;
+      }
+      &::after {
+        content: '';
+        width: 5%;
+        height: 1px;
+        background: #e8e8e8;
+      }
     }
   }
 
   &-inner-text {
-    padding: 0 8px;
-    font-size: 12px;
+    display: flex;
+    align-items: center;
+    padding: 0 0.8rem;
+    height: 100%;
+    font-size: 0.8rem;
     font-variant: tabular-nums;
-    line-height: 1;
     white-space: nowrap;
     color: rgba(0, 0, 0, 0.45);
   }
@@ -42,42 +92,49 @@
 
   &-vertical {
     display: inline-block;
-    height: 0.9rem;
+    height: 1.1rem;
     border-top: 0;
     border-left: 1px solid #e8e8e8;
-    margin: 0;
+    margin: 0 0.5rem;
   }
 
   &-dashed {
-    border-top-style: dashed;
+    border-top: 1px dashed #e8e8e8;
   }
 
   &-plain {
-    border-top: 1px solid #e8e8e8;
-  }
-
-  &-orientation {
-    &-left {
-      margin-right: 8px;
-      border-right: 1px solid #e8e8e8;
-    }
-
-    &-center {
-      margin: 0 8px;
-    }
-
-    &-right {
-      margin-left: 8px;
-      border-left: 1px solid #e8e8e8;
-    }
+    border: none;
   }
 
   &-no-default-orientation-margin {
     &-left {
-      margin-left: 0;
+      &::before {
+        content: '';
+        width: 0%;
+        height: 1px;
+        background: #e8e8e8;
+      }
+      &::after {
+        content: '';
+        width: 95%;
+        height: 1px;
+        background: #e8e8e8;
+      }
     }
     &-right {
-      margin-right: 0;
+      &::before {
+        content: '';
+        width: 95%;
+        height: 1px;
+        margin-right: 8px;
+        background: #e8e8e8;
+      }
+      &::after {
+        content: '';
+        width: 5%;
+        height: 1px;
+        background: #e8e8e8;
+      }
     }
   }
 }

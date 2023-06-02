@@ -5,7 +5,7 @@ test('render', () => {
   const { container } = render(<Divider />)
   expect(container.firstChild).toMatchInlineSnapshot(`
     <div
-      class="kylin-divider kylin-divider-orientation-center kylin-divider-horizontal"
+      class="kylin-divider kylin-divider-horizontal"
       role="separator"
     />
   `)
@@ -18,9 +18,8 @@ describe('Divider Props', () => {
     )
     expect(container.firstChild).toMatchInlineSnapshot(`
       <div
-        class="kylin-divider kylin-divider-orientation-center kylin-divider-vertical"
+        class="kylin-divider kylin-divider-vertical"
         role="separator"
-        type="vertical"
       />
     `)
   })
@@ -30,8 +29,7 @@ describe('Divider Props', () => {
     )
     expect(container.firstChild).toMatchInlineSnapshot(`
       <div
-        class="kylin-divider kylin-divider-orientation-left kylin-divider-horizontal"
-        orientation="left"
+        class="kylin-divider kylin-divider-horizontal"
         role="separator"
       />
     `)
@@ -42,8 +40,7 @@ describe('Divider Props', () => {
     )
     expect(container.firstChild).toMatchInlineSnapshot(`
       <div
-        class="kylin-divider kylin-divider-with-text kylin-divider-orientation-center kylin-divider-horizontal"
-        orientationmargin="0"
+        class="kylin-divider kylin-divider-with-text-center kylin-divider-horizontal"
         role="separator"
       >
         <span
@@ -58,7 +55,7 @@ describe('Divider Props', () => {
     const { container } = render(<Divider dashed />)
     expect(container.firstChild).toMatchInlineSnapshot(`
       <div
-        class="kylin-divider kylin-divider-dashed kylin-divider-orientation-center kylin-divider-horizontal"
+        class="kylin-divider kylin-divider-dashed kylin-divider-horizontal"
         role="separator"
       />
     `)
@@ -69,7 +66,7 @@ describe('Divider Props', () => {
     )
     expect(container.firstChild).toMatchInlineSnapshot(`
       <div
-        class="kylin-divider kylin-divider-with-text kylin-divider-plain kylin-divider-orientation-center kylin-divider-horizontal"
+        class="kylin-divider kylin-divider-with-text-center kylin-divider-plain kylin-divider-horizontal"
         role="separator"
       >
         <span
