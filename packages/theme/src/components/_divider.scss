@@ -1,0 +1,83 @@
+.kylin-divider {
+  margin: 0;
+  border: 0;
+  overflow: hidden;
+  &-with-text {
+    position: relative;
+    top: -0.06em;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    font-size: 12px;
+    font-variant: tabular-nums;
+    line-height: 1;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.45);
+    &::before,
+    &::after {
+      content: '';
+      flex: 1;
+      border-top: 1px solid #e8e8e8;
+    }
+    &::before {
+      margin-right: 8px;
+    }
+    &::after {
+      margin-left: 8px;
+    }
+  }
+
+  &-inner-text {
+    padding: 0 8px;
+    font-size: 12px;
+    font-variant: tabular-nums;
+    line-height: 1;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.45);
+  }
+
+  &-horizontal {
+    margin: 16px 0;
+  }
+
+  &-vertical {
+    display: inline-block;
+    height: 0.9rem;
+    border-top: 0;
+    border-left: 1px solid #e8e8e8;
+    margin: 0;
+  }
+
+  &-dashed {
+    border-top-style: dashed;
+  }
+
+  &-plain {
+    border-top: 1px solid #e8e8e8;
+  }
+
+  &-orientation {
+    &-left {
+      margin-right: 8px;
+      border-right: 1px solid #e8e8e8;
+    }
+
+    &-center {
+      margin: 0 8px;
+    }
+
+    &-right {
+      margin-left: 8px;
+      border-left: 1px solid #e8e8e8;
+    }
+  }
+
+  &-no-default-orientation-margin {
+    &-left {
+      margin-left: 0;
+    }
+    &-right {
+      margin-right: 0;
+    }
+  }
+}
