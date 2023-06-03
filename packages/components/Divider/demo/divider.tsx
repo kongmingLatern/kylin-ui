@@ -24,8 +24,11 @@ const DividerDemo = () => {
       <Divider orientationMargin="2" orientation="left">
         Left orientation=2
       </Divider>
-      <Divider orientationMargin="2" orientation="right">
+      <Divider orientation="right" orientationMargin="0">
         Right orientation=2
+      </Divider>
+      <Divider orientation="right" orientationMargin={50}>
+        Right Text with 50px orientationMargin
       </Divider>
       <Title>dashed</Title>
       <Divider dashed />

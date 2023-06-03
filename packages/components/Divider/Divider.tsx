@@ -11,59 +11,70 @@ interface DividerProps
   type?: 'horizontal' | 'vertical'
 }
 
-const Divider = React.forwardRef<HTMLElement, DividerProps>(
-  (props, ref) => {
-    const {
-      type = 'horizontal',
-      orientation = 'center',
-      orientationMargin,
-      dashed,
-      plain,
-      children,
-      ...rest
-    } = props
+const Divider = React.forwardRef<
+  HTMLDivElement,
+  DividerProps
+>((props, ref) => {
+  const {
+    type = 'horizontal',
+    orientation = 'center',
+    orientationMargin,
+    dashed,
+    plain,
+    children,
+    ...rest
+  } = props
 
-    const hasChildren = !!children
-    const hasCustomMarginLeft =
-      orientation === 'left' && orientationMargin != null
-    const hasCustomMarginRight =
-      orientation === 'right' && orientationMargin != null
+  const hasChildren = !!children
+  const hasCustomMarginLeft =
+    orientation === 'left' && orientationMargin != null
+  const hasCustomMarginRight =
+    orientation === 'right' && orientationMargin != null
 
-    const classes = classNames({
-      [`kylin-divider`]: true,
-      [`kylin-divider-with-text-${orientation}`]:
-        hasChildren,
-      [`kylin-divider-dashed`]: !!dashed,
-      [`kylin-divider-plain`]: !!plain,
-      [`kylin-divider-no-default-orientation-margin-left`]:
-        hasCustomMarginLeft,
-      [`kylin-divider-no-default-orientation-margin-right`]:
-        hasCustomMarginRight,
-      [`kylin-divider-${type}`]: !!type,
-    })
+  const classes = classNames({
+    [`kylin-divider`]: true,
+    [`kylin-divider-with-text-${orientation}`]: hasChildren,
+    [`kylin-divider-dashed`]: !!dashed,
+    [`kylin-divider-plain`]: !!plain,
+    [`kylin-divider-no-default-orientation-margin-left`]:
+      hasCustomMarginLeft,
+    [`kylin-divider-no-default-orientation-margin-right`]:
+      hasCustomMarginRight,
+    [`kylin-divider-${type}`]: !!type,
+  })
 
-    const innerStyle: React.CSSProperties = {
-      ...(hasCustomMarginLeft && {
-        marginLeft: orientationMargin,
-      }),
-      ...(hasCustomMarginRight && {
-        marginRight: orientationMargin,
-      }),
+  const memoizedOrientationMargin = React.useMemo<
+    string | number
+  >(() => {
+    if (typeof orientationMargin === 'number') {
+      return orientationMargin
     }
+    if (/^\d+$/.test(orientationMargin!)) {
+      return Number(orientationMargin)
+    }
+    return orientationMargin!
+  }, [orientationMargin])
 
-    return (
-      <div className={classes} {...rest} role="separator">
-        {children && type !== 'vertical' && (
-          <span
-            className={`kylin-divider-inner-text`}
-            style={innerStyle}
-          >
-            {children}
-          </span>
-        )}
-      </div>
-    )
+  const innerStyle: React.CSSProperties = {
+    ...(hasCustomMarginLeft && {
+      marginLeft: memoizedOrientationMargin,
+    }),
+    ...(hasCustomMarginRight && {
+      marginRight: memoizedOrientationMargin,
+    }),
   }
-)
+  return (
+    <div className={classes} {...rest} role="separator">
+      {children && type !== 'vertical' && (
+        <span
+          className={`kylin-divider-inner-text`}
+          style={innerStyle}
+        >
+          {children}
+        </span>
+      )}
+    </div>
+  )
+})
 
 export { Divider }
