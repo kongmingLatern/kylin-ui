@@ -52,6 +52,7 @@
     "iconify": "^1.4.0",
     "jsdom": "^21.1.1",
     "prettier": "^2.8.7",
+    "react-is": "^18.2.0",
     "rollup": "^3.21.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.34.1",
