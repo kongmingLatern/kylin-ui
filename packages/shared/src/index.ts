@@ -7,3 +7,5 @@ export * from './omit'
 export * from './string'
 
 export * from './theme'
+
+export * from './toArray'
