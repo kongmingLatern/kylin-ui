@@ -1,5 +1,5 @@
 import React from 'react'
-import { SpaceContext } from './space'
+import { SpaceContext } from './Space'
 
 export interface ItemProps {
   className: string
@@ -20,30 +20,23 @@ export default function Item({
   split,
   wrap,
 }: ItemProps) {
-  const {
-    horizontalSize,
-    verticalSize,
-    latestIndex,
-    supportFlexGap,
-  } = React.useContext(SpaceContext)
+  const { horizontalSize, verticalSize, latestIndex } =
+    React.useContext(SpaceContext)
 
   let style: React.CSSProperties = {}
 
-  if (!supportFlexGap) {
-    if (direction === 'vertical') {
-      if (index < latestIndex) {
-        style = {
-          marginBottom: horizontalSize / (split ? 2 : 1),
-        }
-      }
-    } else {
+  if (direction === 'vertical') {
+    if (index < latestIndex) {
       style = {
-        ...(index < latestIndex && {
-          [marginDirection]:
-            horizontalSize / (split ? 2 : 1),
-        }),
-        ...(wrap && { paddingBottom: verticalSize }),
+        marginBottom: horizontalSize / (split ? 2 : 1),
       }
+    }
+  } else {
+    style = {
+      ...(index < latestIndex && {
+        [marginDirection]: horizontalSize / (split ? 2 : 1),
+      }),
+      ...(wrap && { paddingBottom: verticalSize }),
     }
   }
 

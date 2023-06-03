@@ -78,6 +78,7 @@ const Space = React.forwardRef<HTMLDivElement, SpaceProps>(
     const itemClassName = `kylin-space-item`
 
     let latestIndex = 0
+
     const nodes = childNodes.map((child, i) => {
       if (child !== null && child !== undefined) {
         latestIndex = i
@@ -123,7 +124,7 @@ const Space = React.forwardRef<HTMLDivElement, SpaceProps>(
     return (
       <div
         ref={ref}
-        className={cls}
+        className={cls === '' ? undefined : cls}
         style={{
           ...gapStyle,
           ...style,
@@ -137,5 +138,9 @@ const Space = React.forwardRef<HTMLDivElement, SpaceProps>(
     )
   }
 )
+
+if (process.env.NODE_ENV !== 'production') {
+  Space.displayName = 'Space'
+}
 
 export { Space }
