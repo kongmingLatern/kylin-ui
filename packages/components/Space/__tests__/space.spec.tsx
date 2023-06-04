@@ -5,7 +5,7 @@ test('render', () => {
   const { container } = render(<Space>123</Space>)
   expect(container.firstChild).toMatchInlineSnapshot(`
     <div
-      class="kylin-space-horizontal kylin-space-align-center"
+      class="kylin-space-justify-start kylin-space-horizontal kylin-space-align-center"
       style="column-gap: 8px; row-gap: 8px;"
     >
       <div
@@ -28,7 +28,7 @@ describe('props', () => {
     expect(container.firstChild).toMatchInlineSnapshot(
       `
       <div
-        class="kylin-space-horizontal kylin-space-align-center"
+        class="kylin-space-justify-start kylin-space-horizontal kylin-space-align-center"
         style="column-gap: 2px; row-gap: 2px;"
       >
         <div
@@ -59,7 +59,7 @@ describe('props', () => {
     expect(container.firstChild).toMatchInlineSnapshot(
       `
       <div
-        class="kylin-space-vertical"
+        class="kylin-space-justify-start kylin-space-vertical"
         style="column-gap: 8px; row-gap: 8px;"
       >
         <div
@@ -90,7 +90,7 @@ describe('props', () => {
     expect(container.firstChild).toMatchInlineSnapshot(
       `
       <div
-        class="kylin-space-horizontal kylin-space-align-end"
+        class="kylin-space-justify-start kylin-space-horizontal kylin-space-align-end"
         style="column-gap: 8px; row-gap: 8px;"
       >
         <div
@@ -121,7 +121,7 @@ describe('props', () => {
     expect(container.firstChild).toMatchInlineSnapshot(
       `
       <div
-        class="kylin-space-horizontal kylin-space-align-center"
+        class="kylin-space-justify-start kylin-space-horizontal kylin-space-align-center"
         style="column-gap: 8px; row-gap: 8px;"
       >
         <div
@@ -155,7 +155,7 @@ describe('props', () => {
     expect(container.firstChild).toMatchInlineSnapshot(
       `
       <div
-        class="kylin-space-horizontal kylin-space-align-center"
+        class="kylin-space-justify-start kylin-space-horizontal kylin-space-align-center"
         style="flex-wrap: wrap; column-gap: 8px; row-gap: 8px;"
       >
         <div
@@ -175,5 +175,34 @@ describe('props', () => {
       </div>
     `
     )
+  })
+  test('justify', () => {
+    const { container } = render(
+      <Space justify="end">
+        <div>end1</div>
+        <div>end2</div>
+      </Space>
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      <div
+        class="kylin-space-justify-end kylin-space-horizontal kylin-space-align-center"
+        style="column-gap: 8px; row-gap: 8px;"
+      >
+        <div
+          class="kylin-space-item"
+        >
+          <div>
+            end1
+          </div>
+        </div>
+        <div
+          class="kylin-space-item"
+        >
+          <div>
+            end2
+          </div>
+        </div>
+      </div>
+    `)
   })
 })

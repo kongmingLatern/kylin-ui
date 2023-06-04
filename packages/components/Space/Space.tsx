@@ -7,6 +7,7 @@ interface SpaceProps
   extends React.HTMLAttributes<HTMLDivElement> {
   size?: SpaceSize | [SpaceSize, SpaceSize]
   direction?: 'horizontal' | 'vertical'
+  justify?: 'start' | 'end' | 'center' | 'space-between' | 'space-around'
   align?: 'start' | 'end' | 'center' | 'baseline'
   className?: string
   style?: React.CSSProperties
@@ -38,6 +39,7 @@ const Space = React.forwardRef<HTMLDivElement, SpaceProps>(
   (props, ref) => {
     const {
       size = 'small',
+      justify = 'start',
       direction = 'horizontal',
       align,
       style,
@@ -70,6 +72,7 @@ const Space = React.forwardRef<HTMLDivElement, SpaceProps>(
 
     const cls = classNames(
       {
+        [`kylin-space-justify-${justify}`]: justify,
         [`kylin-space-${direction}`]: direction,
         [`kylin-space-align-${mergedAlign}`]: mergedAlign,
       },

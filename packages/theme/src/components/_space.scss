@@ -1,6 +1,24 @@
 .kylin-space {
   display: flex;
 
+  &-justify {
+    &-start {
+      justify-content: flex-start;
+    }
+    &-end {
+      justify-content: flex-end;
+    }
+    &-center {
+      justify-content: center;
+    }
+    &-between {
+      justify-content: space-between;
+    }
+    &-around {
+      justify-content: space-around;
+    }
+  }
+
   &-horizontal {
     @extend .kylin-space;
     flex-direction: row;
