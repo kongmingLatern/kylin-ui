@@ -25,20 +25,21 @@ export default function Item({
 
   let style: React.CSSProperties = {}
 
-  if (direction === 'vertical') {
-    if (index < latestIndex) {
-      style = {
-        marginBottom: horizontalSize / (split ? 2 : 1),
-      }
-    }
-  } else {
-    style = {
-      ...(index < latestIndex && {
-        [marginDirection]: horizontalSize / (split ? 2 : 1),
-      }),
-      ...(wrap && { paddingBottom: verticalSize }),
-    }
-  }
+  // NOTE:这里是不支持flex的情况下
+  // if (direction === 'vertical') {
+  //   if (index < latestIndex) {
+  //     style = {
+  //       marginBottom: horizontalSize / (split ? 2 : 1),
+  //     }
+  //   }
+  // } else {
+  //   style = {
+  //     ...(index < latestIndex && {
+  //       [marginDirection]: horizontalSize / (split ? 2 : 1),
+  //     }),
+  //     ...(wrap && { paddingBottom: verticalSize }),
+  //   }
+  // }
 
   if (children === null || children === undefined) {
     return null

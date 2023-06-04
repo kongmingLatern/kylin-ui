@@ -1,0 +1,37 @@
+.kylin-space {
+  display: flex;
+
+  &-horizontal {
+    @extend .kylin-space;
+    flex-direction: row;
+  }
+
+  &-vertical {
+    @extend .kylin-space;
+    flex-direction: column;
+  }
+
+  &-align-center {
+    @extend .kylin-space;
+    align-items: center;
+  }
+  &-align-end {
+    @extend .kylin-space;
+    align-items: flex-end;
+  }
+  &-align-start {
+    @extend .kylin-space;
+    align-items: flex-start;
+  }
+  &-align-baseline {
+    @extend .kylin-space;
+    align-items: baseline;
+  }
+
+  &-item {
+    &-split {
+      border-right: 1px solid #ccc;
+      margin-right: 1rem;
+    }
+  }
+}

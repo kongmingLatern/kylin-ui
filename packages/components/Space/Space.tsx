@@ -70,6 +70,7 @@ const Space = React.forwardRef<HTMLDivElement, SpaceProps>(
 
     const cls = classNames(
       {
+        [`kylin-space-${direction}`]: direction,
         [`kylin-space-align-${mergedAlign}`]: mergedAlign,
       },
       className
@@ -93,7 +94,7 @@ const Space = React.forwardRef<HTMLDivElement, SpaceProps>(
           key={key}
           direction={direction}
           index={i}
-          marginDirection={'marginLeft'}
+          marginDirection={'marginRight'}
           split={split}
           wrap={wrap}
         >
@@ -120,6 +121,11 @@ const Space = React.forwardRef<HTMLDivElement, SpaceProps>(
     if (wrap) {
       gapStyle.flexWrap = 'wrap'
     }
+    // TODO: 这里需要兼容低版本浏览器 flex 布局
+    gapStyle.columnGap = horizontalSize
+    gapStyle.rowGap = verticalSize
+
+    // const combineStyle =
 
     return (
       <div

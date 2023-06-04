@@ -6,10 +6,13 @@ import { TextDemo } from '@components/Typography/demo/Text'
 import { ParagraphDemo } from '@components/Typography/demo/Paragraph'
 import { Title } from '@components/Typography'
 import { DividerDemo } from '@components/Divider/demo/divider'
+import { SpaceDemo } from '@components/Space/demo/SpaceDemo'
 
 const App = () => {
 	return (
 		<>
+			<SpaceDemo />
+			<br />
 			<DividerDemo />
 			<br />
 			<Title mark>ParagraphDemo</Title>
