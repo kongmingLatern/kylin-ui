@@ -5,7 +5,8 @@ test('render', () => {
   const { container } = render(<Space>123</Space>)
   expect(container.firstChild).toMatchInlineSnapshot(`
     <div
-      class="kylin-space-align-center"
+      class="kylin-space-horizontal kylin-space-align-center"
+      style="column-gap: 8px; row-gap: 8px;"
     >
       <div
         class="kylin-space-item"
@@ -27,11 +28,11 @@ describe('props', () => {
     expect(container.firstChild).toMatchInlineSnapshot(
       `
       <div
-        class="kylin-space-align-center"
+        class="kylin-space-horizontal kylin-space-align-center"
+        style="column-gap: 2px; row-gap: 2px;"
       >
         <div
           class="kylin-space-item"
-          style="margin-left: 2px;"
         >
           <div>
             first
@@ -57,10 +58,12 @@ describe('props', () => {
     )
     expect(container.firstChild).toMatchInlineSnapshot(
       `
-      <div>
+      <div
+        class="kylin-space-vertical"
+        style="column-gap: 8px; row-gap: 8px;"
+      >
         <div
           class="kylin-space-item"
-          style="margin-bottom: 8px;"
         >
           <div>
             first
@@ -87,11 +90,11 @@ describe('props', () => {
     expect(container.firstChild).toMatchInlineSnapshot(
       `
       <div
-        class="kylin-space-align-end"
+        class="kylin-space-horizontal kylin-space-align-end"
+        style="column-gap: 8px; row-gap: 8px;"
       >
         <div
           class="kylin-space-item"
-          style="margin-left: 8px;"
         >
           <div>
             first
@@ -118,11 +121,11 @@ describe('props', () => {
     expect(container.firstChild).toMatchInlineSnapshot(
       `
       <div
-        class="kylin-space-align-center"
+        class="kylin-space-horizontal kylin-space-align-center"
+        style="column-gap: 8px; row-gap: 8px;"
       >
         <div
           class="kylin-space-item"
-          style="margin-left: 4px;"
         >
           <div>
             first
@@ -130,7 +133,6 @@ describe('props', () => {
         </div>
         <span
           class="kylin-space-item-split"
-          style="margin-left: 4px;"
         />
         <div
           class="kylin-space-item"
@@ -153,12 +155,11 @@ describe('props', () => {
     expect(container.firstChild).toMatchInlineSnapshot(
       `
       <div
-        class="kylin-space-align-center"
-        style="flex-wrap: wrap;"
+        class="kylin-space-horizontal kylin-space-align-center"
+        style="flex-wrap: wrap; column-gap: 8px; row-gap: 8px;"
       >
         <div
           class="kylin-space-item"
-          style="margin-left: 8px; padding-bottom: 8px;"
         >
           <div>
             first
@@ -166,7 +167,6 @@ describe('props', () => {
         </div>
         <div
           class="kylin-space-item"
-          style="padding-bottom: 8px;"
         >
           <div>
             secord
