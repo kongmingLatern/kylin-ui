@@ -3,6 +3,7 @@ import 'uno.css'
 import '@packages/theme/src/style/index.scss'
 
 export * from './Button'
+export * from './Divider'
 export * from './Typography'
 export * from './ThemeProvider'
 export * from './Grid'
