@@ -13,7 +13,7 @@ export const SpaceDemo = () => {
         <div>2324</div>
       </Space>
 
-      <Space wrap>
+      <Space justify="end">
         <span>one</span>
         <span>two</span>
         <span>third</span>
