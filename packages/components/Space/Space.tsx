@@ -7,7 +7,12 @@ interface SpaceProps
   extends React.HTMLAttributes<HTMLDivElement> {
   size?: SpaceSize | [SpaceSize, SpaceSize]
   direction?: 'horizontal' | 'vertical'
-  justify?: 'start' | 'end' | 'center' | 'space-between' | 'space-around'
+  justify?:
+    | 'start'
+    | 'end'
+    | 'center'
+    | 'space-between'
+    | 'space-around'
   align?: 'start' | 'end' | 'center' | 'baseline'
   className?: string
   style?: React.CSSProperties
@@ -127,8 +132,6 @@ const Space = React.forwardRef<HTMLDivElement, SpaceProps>(
     // TODO: 这里需要兼容低版本浏览器 flex 布局
     gapStyle.columnGap = horizontalSize
     gapStyle.rowGap = verticalSize
-
-    // const combineStyle =
 
     return (
       <div
