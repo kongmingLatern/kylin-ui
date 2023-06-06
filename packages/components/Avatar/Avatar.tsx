@@ -6,7 +6,7 @@ interface AvatarProps {
   alt?: string
   size?: number
   shape?: 'circle' | 'square'
-  draggable?: boolean | 'true' | 'false'
+  draggable?: boolean
   className?: string
   style?: React.CSSProperties
   icon?: React.ReactNode
