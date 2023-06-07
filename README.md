@@ -37,7 +37,14 @@
 
 ### Component
 
+- [x] Avatar
 - [x] Button
+- [x] Divider
+- [x] Grid
+- [x] Layout
+- [x] Space
+- [x] ThemeProvider
+- [x] Typography
 
 ### Hooks
 
@@ -99,6 +106,6 @@ Please follow these commit message guidelines:
 
 If you have any questions, suggestions, or need help, feel free to reach out to us:
 
-Email 邮箱: 1577310596@qq.com
+Email 邮箱: <1577310596@qq.com>
 
 Thank you for your contribution to Kylin-UI!
