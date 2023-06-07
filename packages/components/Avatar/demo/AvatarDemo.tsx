@@ -12,6 +12,10 @@ export const AvatarDemo = () => {
       </Title>
       <Avatar
         src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
+        shape="circle"
+      />
+      <Avatar
+        src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
         shape="square"
       />
 
