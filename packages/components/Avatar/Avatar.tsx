@@ -80,11 +80,6 @@ const InternalAvatar: React.ForwardRefRenderFunction<
         src={src}
         alt={alt}
         draggable={draggable}
-        className={classes}
-        style={{
-          ...sizeStyle,
-          ...(rest as AvatarProps).style,
-        }}
       />
     )
   } else if (icon) {
@@ -93,11 +88,11 @@ const InternalAvatar: React.ForwardRefRenderFunction<
 
   return (
     <span
+      className={classes}
       style={{
         ...sizeStyle,
         ...(rest as AvatarProps).style,
       }}
-      className={classes}
     >
       {childrenToRender}
     </span>

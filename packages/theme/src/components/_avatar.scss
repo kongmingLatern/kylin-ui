@@ -6,11 +6,13 @@
     border-radius: 0;
   }
   &-image {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: none;
+    display: inline-flex;
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: none;
+    }
   }
   &-icon {
     display: flex;
