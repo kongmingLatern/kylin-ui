@@ -4,7 +4,7 @@ import React from 'react'
 interface AvatarProps {
   src?: string
   alt?: string
-  size?: number
+  size?: number | 'small' | 'large' | 'default'
   shape?: 'circle' | 'square'
   draggable?: boolean
   className?: string
@@ -21,7 +21,7 @@ const InternalAvatar: React.ForwardRefRenderFunction<
     src,
     alt,
     icon,
-    size = 32,
+    size: customSize = 'default',
     shape = 'circle',
     draggable,
     className,
@@ -29,6 +29,12 @@ const InternalAvatar: React.ForwardRefRenderFunction<
     children,
     ...rest
   } = props
+
+  // FIXME: 这里可以考虑加一个上下文参数值
+  // const size =
+  //   customSize === 'default' ? contextSize : customSize
+
+  const size = customSize === 'default' ? 32 : customSize
 
   const isImgExist = src && src.length > 0
 
@@ -39,7 +45,13 @@ const InternalAvatar: React.ForwardRefRenderFunction<
     )
   }
 
+  const sizeCls = classNames({
+    [`kylin-avatar-lg`]: size === 'large',
+    [`kylin-avatar-sm`]: size === 'small',
+  })
+
   const classes = classNames(
+    sizeCls,
     {
       [`kylin-avatar-${shape}`]: !!shape,
       [`kylin-avatar-icon`]: !!icon,
