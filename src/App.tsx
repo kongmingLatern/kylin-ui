@@ -10,33 +10,33 @@ import { SpaceDemo } from '@components/Space/demo/SpaceDemo'
 import { AvatarDemo } from '@components/Avatar/demo/AvatarDemo'
 
 const App = () => {
-  return (
-    <>
-      <AvatarDemo />
-      <br />
-      <SpaceDemo />
-      <br />
-      <DividerDemo />
-      <br />
-      <Title mark>ParagraphDemo</Title>
-      <ParagraphDemo />
-      <br />
-      <Title mark>TextDemo</Title>
-      <TextDemo />
-      <br />
-      <Title mark>TitleDemo</Title>
-      <TitleDemo />
-      <br />
-      <Title mark>ButtonDemo</Title>
-      <CommonButton />
-      <br />
-      <Title mark>ButtonGroupDemo</Title>
-      <ButtonGroupDemo />
-      <br />
-      <ThemeButton />
-      <br />
-    </>
-  )
+	return (
+		<>
+			<AvatarDemo />
+			<br />
+			<SpaceDemo />
+			<br />
+			<DividerDemo />
+			<br />
+			<Title mark>ParagraphDemo</Title>
+			<ParagraphDemo />
+			<br />
+			<Title mark>TextDemo</Title>
+			<TextDemo />
+			<br />
+			<Title mark>TitleDemo</Title>
+			<TitleDemo />
+			<br />
+			<Title mark>ButtonDemo</Title>
+			<CommonButton />
+			<br />
+			<Title mark>ButtonGroupDemo</Title>
+			<ButtonGroupDemo />
+			<br />
+			<ThemeButton />
+			<br />
+		</>
+	)
 }
 
 export default App

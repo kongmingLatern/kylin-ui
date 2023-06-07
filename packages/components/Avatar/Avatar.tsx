@@ -71,18 +71,36 @@ const InternalAvatar: React.ForwardRefRenderFunction<
         }
       : {}
 
+  let childrenToRender
+
+  if (typeof src === 'string' && isImgExist) {
+    childrenToRender = (
+      <img
+        ref={ref}
+        src={src}
+        alt={alt}
+        draggable={draggable}
+        className={classes}
+        style={{
+          ...sizeStyle,
+          ...(rest as AvatarProps).style,
+        }}
+      />
+    )
+  } else if (icon) {
+    childrenToRender = icon
+  }
+
   return (
-    <img
-      ref={ref}
-      src={src}
-      alt={alt}
-      draggable={draggable}
-      className={classes}
+    <span
       style={{
         ...sizeStyle,
         ...(rest as AvatarProps).style,
       }}
-    />
+      className={classes}
+    >
+      {childrenToRender}
+    </span>
   )
 }
 const Avatar = React.forwardRef<

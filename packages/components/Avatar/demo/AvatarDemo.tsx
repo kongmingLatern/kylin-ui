@@ -1,6 +1,7 @@
 import { Title } from '@components/Typography/Title'
-import Avatar from '../Avatar'
+import { Text } from '@components/Typography/Text'
 import { Divider } from '@components/Divider'
+import Avatar from '../Avatar'
 
 export const AvatarDemo = () => {
   return (
@@ -14,10 +15,27 @@ export const AvatarDemo = () => {
         shape="square"
       />
 
-      <Divider>Avatar Src</Divider>
+      <Divider>Avatar Size</Divider>
+      <Text className="text-sm">small</Text>
       <Avatar
         src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
-        size={40}
+        size={'small'}
+      />
+      <Text className="text-sm">large</Text>
+      <Avatar
+        src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
+        size={'large'}
+      />
+
+      <Divider>Avatar Icon</Divider>
+      <Avatar
+        shape="circle"
+        icon={
+          <img
+            src={'packages/components/Avatar/demo/boy.jpg'}
+            width={32}
+          />
+        }
       />
     </>
   )
