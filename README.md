@@ -18,6 +18,8 @@
     ├── cli                 # Command line tool
     ├── components          # All components
     ├── hooks               # Hooks
+    ├── icon                # Icon packages
+    ├── preset              # Kylin.config.js preset config
     ├── shared              # Utils / helpers
     └── theme               # Style Folder
 ├── pnpm-lock.yaml
