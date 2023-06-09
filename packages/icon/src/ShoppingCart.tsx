@@ -1,5 +1,5 @@
-import type { SVGProps } from 'react'
-const ShoppingCart = (props: SVGProps<SVGSVGElement>) => (
+import { SVGType } from './type/SVGType'
+const ShoppingCart = (props: SVGType<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}

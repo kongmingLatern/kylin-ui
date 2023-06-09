@@ -1,7 +1,5 @@
-import type { SVGProps } from 'react'
-const BatteryCharging = (
-  props: SVGProps<SVGSVGElement>
-) => (
+import { SVGType } from './type/SVGType'
+const BatteryCharging = (props: SVGType<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}

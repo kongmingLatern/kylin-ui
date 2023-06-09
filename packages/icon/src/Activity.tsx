@@ -1,5 +1,6 @@
-import type { SVGProps } from 'react'
-const Activity = (props: SVGProps<SVGSVGElement>) => (
+import { SVGType } from './type/SVGType';
+
+const Activity = (props: SVGType<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
