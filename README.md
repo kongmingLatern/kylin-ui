@@ -48,6 +48,14 @@
 - [x] ThemeProvider
 - [x] Typography
 
+### Packages
+
+- [x] Cli
+- [x] Icon
+- [x] Preset
+- [x] Shared
+- [x] Theme
+
 ### Hooks
 
 ### Utils
