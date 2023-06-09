@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgClipboard = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -18,4 +17,4 @@ const SvgClipboard = (props: SVGProps<SVGSVGElement>) => (
     <rect width={8} height={4} x={8} y={2} rx={1} ry={1} />
   </svg>
 )
-export default SvgClipboard
+export { SvgClipboard }

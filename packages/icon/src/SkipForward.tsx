@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgSkipForward = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -17,4 +16,4 @@ const SvgSkipForward = (props: SVGProps<SVGSVGElement>) => (
     <path d="m5 4 10 8-10 8V4zM19 5v14" />
   </svg>
 )
-export default SvgSkipForward
+export { SvgSkipForward }

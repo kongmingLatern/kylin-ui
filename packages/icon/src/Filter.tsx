@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgFilter = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -17,4 +16,4 @@ const SvgFilter = (props: SVGProps<SVGSVGElement>) => (
     <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z" />
   </svg>
 )
-export default SvgFilter
+export { SvgFilter }

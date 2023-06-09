@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgPercent = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -19,4 +18,4 @@ const SvgPercent = (props: SVGProps<SVGSVGElement>) => (
     <circle cx={17.5} cy={17.5} r={2.5} />
   </svg>
 )
-export default SvgPercent
+export { SvgPercent }

@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgCrosshair = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -18,4 +17,4 @@ const SvgCrosshair = (props: SVGProps<SVGSVGElement>) => (
     <path d="M22 12h-4M6 12H2M12 6V2M12 22v-4" />
   </svg>
 )
-export default SvgCrosshair
+export { SvgCrosshair }

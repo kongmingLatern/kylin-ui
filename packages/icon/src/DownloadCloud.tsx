@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgDownloadCloud = (
   props: SVGProps<SVGSVGElement>
@@ -20,4 +19,4 @@ const SvgDownloadCloud = (
     <path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29" />
   </svg>
 )
-export default SvgDownloadCloud
+export { SvgDownloadCloud }

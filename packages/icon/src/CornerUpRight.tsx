@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgCornerUpRight = (
   props: SVGProps<SVGSVGElement>
@@ -20,4 +19,4 @@ const SvgCornerUpRight = (
     <path d="M4 20v-7a4 4 0 0 1 4-4h12" />
   </svg>
 )
-export default SvgCornerUpRight
+export { SvgCornerUpRight }

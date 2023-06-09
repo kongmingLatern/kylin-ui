@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgMapPin = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -18,4 +17,4 @@ const SvgMapPin = (props: SVGProps<SVGSVGElement>) => (
     <circle cx={12} cy={10} r={3} />
   </svg>
 )
-export default SvgMapPin
+export { SvgMapPin }

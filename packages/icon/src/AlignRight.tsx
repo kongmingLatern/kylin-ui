@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgAlignRight = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -17,4 +16,4 @@ const SvgAlignRight = (props: SVGProps<SVGSVGElement>) => (
     <path d="M21 10H7M21 6H3M21 14H3M21 18H7" />
   </svg>
 )
-export default SvgAlignRight
+export { SvgAlignRight }

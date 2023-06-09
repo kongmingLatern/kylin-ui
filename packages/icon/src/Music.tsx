@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgMusic = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -19,4 +18,4 @@ const SvgMusic = (props: SVGProps<SVGSVGElement>) => (
     <circle cx={18} cy={16} r={3} />
   </svg>
 )
-export default SvgMusic
+export { SvgMusic }

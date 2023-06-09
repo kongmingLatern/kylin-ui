@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgAtSign = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -18,4 +17,4 @@ const SvgAtSign = (props: SVGProps<SVGSVGElement>) => (
     <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94" />
   </svg>
 )
-export default SvgAtSign
+export { SvgAtSign }

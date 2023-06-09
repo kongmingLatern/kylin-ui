@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgCheckCircle = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -18,4 +17,4 @@ const SvgCheckCircle = (props: SVGProps<SVGSVGElement>) => (
     <path d="M22 4 12 14.01l-3-3" />
   </svg>
 )
-export default SvgCheckCircle
+export { SvgCheckCircle }

@@ -17,4 +17,4 @@ const SvgAlertCircle = (props: SVGProps<SVGSVGElement>) => (
     <path d="M12 8v4M12 16h.01" />
   </svg>
 )
-export default SvgAlertCircle
+export { SvgAlertCircle }

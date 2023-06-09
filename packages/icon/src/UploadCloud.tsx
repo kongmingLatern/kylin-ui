@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgUploadCloud = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -19,4 +18,4 @@ const SvgUploadCloud = (props: SVGProps<SVGSVGElement>) => (
     <path d="m16 16-4-4-4 4" />
   </svg>
 )
-export default SvgUploadCloud
+export { SvgUploadCloud }

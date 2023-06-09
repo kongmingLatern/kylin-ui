@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgSpeaker = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -26,4 +25,4 @@ const SvgSpeaker = (props: SVGProps<SVGSVGElement>) => (
     <path d="M12 6h.01" />
   </svg>
 )
-export default SvgSpeaker
+export { SvgSpeaker }

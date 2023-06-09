@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgArrowDownCircle = (
   props: SVGProps<SVGSVGElement>
@@ -20,4 +19,4 @@ const SvgArrowDownCircle = (
     <path d="m8 12 4 4 4-4M12 8v8" />
   </svg>
 )
-export default SvgArrowDownCircle
+export { SvgArrowDownCircle }

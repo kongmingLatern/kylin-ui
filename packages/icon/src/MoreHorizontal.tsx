@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgMoreHorizontal = (
   props: SVGProps<SVGSVGElement>
@@ -21,4 +20,4 @@ const SvgMoreHorizontal = (
     <circle cx={5} cy={12} r={1} />
   </svg>
 )
-export default SvgMoreHorizontal
+export { SvgMoreHorizontal }

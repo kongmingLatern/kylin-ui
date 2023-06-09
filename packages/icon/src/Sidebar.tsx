@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgSidebar = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -25,4 +24,4 @@ const SvgSidebar = (props: SVGProps<SVGSVGElement>) => (
     <path d="M9 3v18" />
   </svg>
 )
-export default SvgSidebar
+export { SvgSidebar }

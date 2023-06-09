@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgTrendingUp = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -18,4 +17,4 @@ const SvgTrendingUp = (props: SVGProps<SVGSVGElement>) => (
     <path d="M17 6h6v6" />
   </svg>
 )
-export default SvgTrendingUp
+export { SvgTrendingUp }

@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgMaximize2 = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -17,4 +16,4 @@ const SvgMaximize2 = (props: SVGProps<SVGSVGElement>) => (
     <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
   </svg>
 )
-export default SvgMaximize2
+export { SvgMaximize2 }

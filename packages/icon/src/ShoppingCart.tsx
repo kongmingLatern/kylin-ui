@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgShoppingCart = (
   props: SVGProps<SVGSVGElement>
@@ -21,4 +20,4 @@ const SvgShoppingCart = (
     <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
   </svg>
 )
-export default SvgShoppingCart
+export { SvgShoppingCart }

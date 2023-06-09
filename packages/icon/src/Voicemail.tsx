@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgVoicemail = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -19,4 +18,4 @@ const SvgVoicemail = (props: SVGProps<SVGSVGElement>) => (
     <path d="M5.5 16h13" />
   </svg>
 )
-export default SvgVoicemail
+export { SvgVoicemail }

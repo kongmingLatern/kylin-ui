@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgGitBranch = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -20,4 +19,4 @@ const SvgGitBranch = (props: SVGProps<SVGSVGElement>) => (
     <path d="M18 9a9 9 0 0 1-9 9" />
   </svg>
 )
-export default SvgGitBranch
+export { SvgGitBranch }

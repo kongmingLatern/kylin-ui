@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgCalendar = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -25,4 +24,4 @@ const SvgCalendar = (props: SVGProps<SVGSVGElement>) => (
     <path d="M16 2v4M8 2v4M3 10h18" />
   </svg>
 )
-export default SvgCalendar
+export { SvgCalendar }

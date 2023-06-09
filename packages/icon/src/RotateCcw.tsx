@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgRotateCcw = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -18,4 +17,4 @@ const SvgRotateCcw = (props: SVGProps<SVGSVGElement>) => (
     <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
   </svg>
 )
-export default SvgRotateCcw
+export { SvgRotateCcw }

@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgDivideCircle = (
   props: SVGProps<SVGSVGElement>
@@ -20,4 +19,4 @@ const SvgDivideCircle = (
     <circle cx={12} cy={12} r={10} />
   </svg>
 )
-export default SvgDivideCircle
+export { SvgDivideCircle }

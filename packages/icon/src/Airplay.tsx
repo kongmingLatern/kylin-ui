@@ -17,4 +17,4 @@ const SvgAirplay = (props: SVGProps<SVGSVGElement>) => (
     <path d="m12 15 5 6H7l5-6z" />
   </svg>
 )
-export default SvgAirplay
+export { SvgAirplay }

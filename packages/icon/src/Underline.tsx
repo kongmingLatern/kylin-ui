@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgUnderline = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -17,4 +16,4 @@ const SvgUnderline = (props: SVGProps<SVGSVGElement>) => (
     <path d="M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3M4 21h16" />
   </svg>
 )
-export default SvgUnderline
+export { SvgUnderline }

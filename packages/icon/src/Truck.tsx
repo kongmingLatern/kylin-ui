@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgTruck = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -19,4 +18,4 @@ const SvgTruck = (props: SVGProps<SVGSVGElement>) => (
     <circle cx={18.5} cy={18.5} r={2.5} />
   </svg>
 )
-export default SvgTruck
+export { SvgTruck }

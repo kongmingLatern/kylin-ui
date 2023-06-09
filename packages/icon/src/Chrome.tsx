@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgChrome = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -19,4 +18,4 @@ const SvgChrome = (props: SVGProps<SVGSVGElement>) => (
     <path d="M21.17 8H12M3.95 6.06 8.54 14M10.88 21.94 15.46 14" />
   </svg>
 )
-export default SvgChrome
+export { SvgChrome }

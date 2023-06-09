@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgAnchor = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -18,4 +17,4 @@ const SvgAnchor = (props: SVGProps<SVGSVGElement>) => (
     <path d="M12 22V8M5 12H2a10 10 0 0 0 20 0h-3" />
   </svg>
 )
-export default SvgAnchor
+export { SvgAnchor }

@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgYoutube = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -18,4 +17,4 @@ const SvgYoutube = (props: SVGProps<SVGSVGElement>) => (
     <path d="m9.75 15.02 5.75-3.27-5.75-3.27v6.54z" />
   </svg>
 )
-export default SvgYoutube
+export { SvgYoutube }

@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgRss = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -18,4 +17,4 @@ const SvgRss = (props: SVGProps<SVGSVGElement>) => (
     <circle cx={5} cy={19} r={1} />
   </svg>
 )
-export default SvgRss
+export { SvgRss }

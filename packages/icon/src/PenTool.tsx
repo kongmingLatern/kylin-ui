@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgPenTool = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -19,4 +18,4 @@ const SvgPenTool = (props: SVGProps<SVGSVGElement>) => (
     <circle cx={11} cy={11} r={2} />
   </svg>
 )
-export default SvgPenTool
+export { SvgPenTool }

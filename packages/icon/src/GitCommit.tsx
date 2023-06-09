@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgGitCommit = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -18,4 +17,4 @@ const SvgGitCommit = (props: SVGProps<SVGSVGElement>) => (
     <path d="M1.05 12H7M17.01 12h5.95" />
   </svg>
 )
-export default SvgGitCommit
+export { SvgGitCommit }

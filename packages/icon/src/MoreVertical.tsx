@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgMoreVertical = (
   props: SVGProps<SVGSVGElement>
@@ -21,4 +20,4 @@ const SvgMoreVertical = (
     <circle cx={12} cy={19} r={1} />
   </svg>
 )
-export default SvgMoreVertical
+export { SvgMoreVertical }

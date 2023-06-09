@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgMinimize2 = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -17,4 +16,4 @@ const SvgMinimize2 = (props: SVGProps<SVGSVGElement>) => (
     <path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7" />
   </svg>
 )
-export default SvgMinimize2
+export { SvgMinimize2 }

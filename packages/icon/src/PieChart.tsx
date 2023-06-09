@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgPieChart = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -18,4 +17,4 @@ const SvgPieChart = (props: SVGProps<SVGSVGElement>) => (
     <path d="M22 12A10 10 0 0 0 12 2v10z" />
   </svg>
 )
-export default SvgPieChart
+export { SvgPieChart }

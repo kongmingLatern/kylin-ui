@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgPrinter = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -18,4 +17,4 @@ const SvgPrinter = (props: SVGProps<SVGSVGElement>) => (
     <path d="M6 14h12v8H6z" />
   </svg>
 )
-export default SvgPrinter
+export { SvgPrinter }

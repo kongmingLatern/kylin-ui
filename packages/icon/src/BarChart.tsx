@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgBarChart = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -17,4 +16,4 @@ const SvgBarChart = (props: SVGProps<SVGSVGElement>) => (
     <path d="M12 20V10M18 20V4M6 20v-4" />
   </svg>
 )
-export default SvgBarChart
+export { SvgBarChart }

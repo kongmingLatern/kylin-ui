@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgChevronsLeft = (
   props: SVGProps<SVGSVGElement>
@@ -19,4 +18,4 @@ const SvgChevronsLeft = (
     <path d="m11 17-5-5 5-5M18 17l-5-5 5-5" />
   </svg>
 )
-export default SvgChevronsLeft
+export { SvgChevronsLeft }

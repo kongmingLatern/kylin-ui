@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgGitMerge = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -19,4 +18,4 @@ const SvgGitMerge = (props: SVGProps<SVGSVGElement>) => (
     <path d="M6 21V9a9 9 0 0 0 9 9" />
   </svg>
 )
-export default SvgGitMerge
+export { SvgGitMerge }

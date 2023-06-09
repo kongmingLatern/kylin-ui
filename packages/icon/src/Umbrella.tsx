@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgUmbrella = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -17,4 +16,4 @@ const SvgUmbrella = (props: SVGProps<SVGSVGElement>) => (
     <path d="M23 12a11.05 11.05 0 0 0-22 0zm-5 7a3 3 0 0 1-6 0v-7" />
   </svg>
 )
-export default SvgUmbrella
+export { SvgUmbrella }

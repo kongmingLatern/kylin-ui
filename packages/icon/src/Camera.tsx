@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgCamera = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -18,4 +17,4 @@ const SvgCamera = (props: SVGProps<SVGSVGElement>) => (
     <circle cx={12} cy={13} r={4} />
   </svg>
 )
-export default SvgCamera
+export { SvgCamera }

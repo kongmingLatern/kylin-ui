@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgDivideSquare = (
   props: SVGProps<SVGSVGElement>
@@ -27,4 +26,4 @@ const SvgDivideSquare = (
     <path d="M8 12h8M12 16h0M12 8h0" />
   </svg>
 )
-export default SvgDivideSquare
+export { SvgDivideSquare }

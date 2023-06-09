@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgStopCircle = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -18,4 +17,4 @@ const SvgStopCircle = (props: SVGProps<SVGSVGElement>) => (
     <path d="M9 9h6v6H9z" />
   </svg>
 )
-export default SvgStopCircle
+export { SvgStopCircle }

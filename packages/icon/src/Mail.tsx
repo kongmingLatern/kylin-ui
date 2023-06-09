@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgMail = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -18,4 +17,4 @@ const SvgMail = (props: SVGProps<SVGSVGElement>) => (
     <path d="m22 6-10 7L2 6" />
   </svg>
 )
-export default SvgMail
+export { SvgMail }

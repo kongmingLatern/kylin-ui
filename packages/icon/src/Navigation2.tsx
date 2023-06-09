@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgNavigation2 = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -17,4 +16,4 @@ const SvgNavigation2 = (props: SVGProps<SVGSVGElement>) => (
     <path d="m12 2 7 19-7-4-7 4 7-19z" />
   </svg>
 )
-export default SvgNavigation2
+export { SvgNavigation2 }

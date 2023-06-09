@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgDatabase = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -19,4 +18,4 @@ const SvgDatabase = (props: SVGProps<SVGSVGElement>) => (
     <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
   </svg>
 )
-export default SvgDatabase
+export { SvgDatabase }

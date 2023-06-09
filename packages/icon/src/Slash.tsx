@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgSlash = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -18,4 +17,4 @@ const SvgSlash = (props: SVGProps<SVGSVGElement>) => (
     <path d="m4.93 4.93 14.14 14.14" />
   </svg>
 )
-export default SvgSlash
+export { SvgSlash }

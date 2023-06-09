@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgLinkedin = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -18,4 +17,4 @@ const SvgLinkedin = (props: SVGProps<SVGSVGElement>) => (
     <circle cx={4} cy={4} r={2} />
   </svg>
 )
-export default SvgLinkedin
+export { SvgLinkedin }

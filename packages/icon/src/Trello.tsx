@@ -1,4 +1,3 @@
-import * as React from 'react'
 import type { SVGProps } from 'react'
 const SvgTrello = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -25,4 +24,4 @@ const SvgTrello = (props: SVGProps<SVGSVGElement>) => (
     <path d="M7 7h3v9H7zM14 7h3v5h-3z" />
   </svg>
 )
-export default SvgTrello
+export { SvgTrello }
