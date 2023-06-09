@@ -1,7 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgChevronsRight = (
-  props: SVGProps<SVGSVGElement>
-) => (
+const ChevronsRight = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -18,4 +16,4 @@ const SvgChevronsRight = (
     <path d="m13 17 5-5-5-5M6 17l5-5-5-5" />
   </svg>
 )
-export { SvgChevronsRight }
+export { ChevronsRight }

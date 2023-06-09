@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgCopy = (props: SVGProps<SVGSVGElement>) => (
+const Copy = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -24,4 +24,4 @@ const SvgCopy = (props: SVGProps<SVGSVGElement>) => (
     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
   </svg>
 )
-export { SvgCopy }
+export { Copy }

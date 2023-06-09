@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgUploadCloud = (props: SVGProps<SVGSVGElement>) => (
+const UploadCloud = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -18,4 +18,4 @@ const SvgUploadCloud = (props: SVGProps<SVGSVGElement>) => (
     <path d="m16 16-4-4-4 4" />
   </svg>
 )
-export { SvgUploadCloud }
+export { UploadCloud }

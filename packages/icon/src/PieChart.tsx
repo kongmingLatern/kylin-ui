@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgPieChart = (props: SVGProps<SVGSVGElement>) => (
+const PieChart = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -17,4 +17,4 @@ const SvgPieChart = (props: SVGProps<SVGSVGElement>) => (
     <path d="M22 12A10 10 0 0 0 12 2v10z" />
   </svg>
 )
-export { SvgPieChart }
+export { PieChart }

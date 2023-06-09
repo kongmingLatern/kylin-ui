@@ -1,7 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgShoppingCart = (
-  props: SVGProps<SVGSVGElement>
-) => (
+const ShoppingCart = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -20,4 +18,4 @@ const SvgShoppingCart = (
     <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
   </svg>
 )
-export { SvgShoppingCart }
+export { ShoppingCart }

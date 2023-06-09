@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgGitBranch = (props: SVGProps<SVGSVGElement>) => (
+const GitBranch = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -19,4 +19,4 @@ const SvgGitBranch = (props: SVGProps<SVGSVGElement>) => (
     <path d="M18 9a9 9 0 0 1-9 9" />
   </svg>
 )
-export { SvgGitBranch }
+export { GitBranch }

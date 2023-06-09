@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgAirplay = (props: SVGProps<SVGSVGElement>) => (
+const Airplay = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -17,4 +17,4 @@ const SvgAirplay = (props: SVGProps<SVGSVGElement>) => (
     <path d="m12 15 5 6H7l5-6z" />
   </svg>
 )
-export { SvgAirplay }
+export { Airplay }

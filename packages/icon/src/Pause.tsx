@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgPause = (props: SVGProps<SVGSVGElement>) => (
+const Pause = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -16,4 +16,4 @@ const SvgPause = (props: SVGProps<SVGSVGElement>) => (
     <path d="M6 4h4v16H6zM14 4h4v16h-4z" />
   </svg>
 )
-export { SvgPause }
+export { Pause }

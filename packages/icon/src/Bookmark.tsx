@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgBookmark = (props: SVGProps<SVGSVGElement>) => (
+const Bookmark = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -16,4 +16,4 @@ const SvgBookmark = (props: SVGProps<SVGSVGElement>) => (
     <path d="m19 21-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
   </svg>
 )
-export { SvgBookmark }
+export { Bookmark }

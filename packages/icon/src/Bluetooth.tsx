@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgBluetooth = (props: SVGProps<SVGSVGElement>) => (
+const Bluetooth = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -16,4 +16,4 @@ const SvgBluetooth = (props: SVGProps<SVGSVGElement>) => (
     <path d="m6.5 6.5 11 11L12 23V1l5.5 5.5-11 11" />
   </svg>
 )
-export { SvgBluetooth }
+export { Bluetooth }

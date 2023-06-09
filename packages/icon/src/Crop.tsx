@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgCrop = (props: SVGProps<SVGSVGElement>) => (
+const Crop = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -17,4 +17,4 @@ const SvgCrop = (props: SVGProps<SVGSVGElement>) => (
     <path d="M1 6.13 16 6a2 2 0 0 1 2 2v15" />
   </svg>
 )
-export { SvgCrop }
+export { Crop }

@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgUnderline = (props: SVGProps<SVGSVGElement>) => (
+const Underline = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -16,4 +16,4 @@ const SvgUnderline = (props: SVGProps<SVGSVGElement>) => (
     <path d="M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3M4 21h16" />
   </svg>
 )
-export { SvgUnderline }
+export { Underline }

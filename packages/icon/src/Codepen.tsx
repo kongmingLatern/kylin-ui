@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgCodepen = (props: SVGProps<SVGSVGElement>) => (
+const Codepen = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -18,4 +18,4 @@ const SvgCodepen = (props: SVGProps<SVGSVGElement>) => (
     <path d="m2 15.5 10-7 10 7M12 2v6.5" />
   </svg>
 )
-export { SvgCodepen }
+export { Codepen }

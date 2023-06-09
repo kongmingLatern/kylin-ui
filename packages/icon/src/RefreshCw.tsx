@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgRefreshCw = (props: SVGProps<SVGSVGElement>) => (
+const RefreshCw = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -17,4 +17,4 @@ const SvgRefreshCw = (props: SVGProps<SVGSVGElement>) => (
     <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
   </svg>
 )
-export { SvgRefreshCw }
+export { RefreshCw }

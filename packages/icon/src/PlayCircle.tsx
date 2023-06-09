@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgPlayCircle = (props: SVGProps<SVGSVGElement>) => (
+const PlayCircle = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -17,4 +17,4 @@ const SvgPlayCircle = (props: SVGProps<SVGSVGElement>) => (
     <path d="m10 8 6 4-6 4V8z" />
   </svg>
 )
-export { SvgPlayCircle }
+export { PlayCircle }

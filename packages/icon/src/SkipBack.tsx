@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgSkipBack = (props: SVGProps<SVGSVGElement>) => (
+const SkipBack = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -16,4 +16,4 @@ const SvgSkipBack = (props: SVGProps<SVGSVGElement>) => (
     <path d="M19 20 9 12l10-8v16zM5 19V5" />
   </svg>
 )
-export { SvgSkipBack }
+export { SkipBack }

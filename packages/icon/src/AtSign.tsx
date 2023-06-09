@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgAtSign = (props: SVGProps<SVGSVGElement>) => (
+const AtSign = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -17,4 +17,4 @@ const SvgAtSign = (props: SVGProps<SVGSVGElement>) => (
     <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94" />
   </svg>
 )
-export { SvgAtSign }
+export { AtSign }

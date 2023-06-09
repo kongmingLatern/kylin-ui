@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgChrome = (props: SVGProps<SVGSVGElement>) => (
+const Chrome = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -18,4 +18,4 @@ const SvgChrome = (props: SVGProps<SVGSVGElement>) => (
     <path d="M21.17 8H12M3.95 6.06 8.54 14M10.88 21.94 15.46 14" />
   </svg>
 )
-export { SvgChrome }
+export { Chrome }

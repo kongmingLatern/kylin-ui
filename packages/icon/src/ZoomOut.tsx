@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgZoomOut = (props: SVGProps<SVGSVGElement>) => (
+const ZoomOut = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -17,4 +17,4 @@ const SvgZoomOut = (props: SVGProps<SVGSVGElement>) => (
     <path d="m21 21-4.35-4.35M8 11h6" />
   </svg>
 )
-export { SvgZoomOut }
+export { ZoomOut }

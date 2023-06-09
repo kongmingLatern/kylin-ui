@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgBriefcase = (props: SVGProps<SVGSVGElement>) => (
+const Briefcase = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -24,4 +24,4 @@ const SvgBriefcase = (props: SVGProps<SVGSVGElement>) => (
     <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
   </svg>
 )
-export { SvgBriefcase }
+export { Briefcase }

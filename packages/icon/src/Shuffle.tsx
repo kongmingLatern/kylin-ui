@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgShuffle = (props: SVGProps<SVGSVGElement>) => (
+const Shuffle = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -16,4 +16,4 @@ const SvgShuffle = (props: SVGProps<SVGSVGElement>) => (
     <path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5" />
   </svg>
 )
-export { SvgShuffle }
+export { Shuffle }

@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgSlash = (props: SVGProps<SVGSVGElement>) => (
+const Slash = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -17,4 +17,4 @@ const SvgSlash = (props: SVGProps<SVGSVGElement>) => (
     <path d="m4.93 4.93 14.14 14.14" />
   </svg>
 )
-export { SvgSlash }
+export { Slash }

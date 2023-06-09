@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgSend = (props: SVGProps<SVGSVGElement>) => (
+const Send = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -16,4 +16,4 @@ const SvgSend = (props: SVGProps<SVGSVGElement>) => (
     <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z" />
   </svg>
 )
-export { SvgSend }
+export { Send }

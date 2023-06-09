@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgMic = (props: SVGProps<SVGSVGElement>) => (
+const Mic = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -17,4 +17,4 @@ const SvgMic = (props: SVGProps<SVGSVGElement>) => (
     <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8" />
   </svg>
 )
-export { SvgMic }
+export { Mic }

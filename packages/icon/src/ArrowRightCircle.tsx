@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgArrowRightCircle = (
+const ArrowRightCircle = (
   props: SVGProps<SVGSVGElement>
 ) => (
   <svg
@@ -19,4 +19,4 @@ const SvgArrowRightCircle = (
     <path d="m12 16 4-4-4-4M8 12h8" />
   </svg>
 )
-export { SvgArrowRightCircle }
+export { ArrowRightCircle }

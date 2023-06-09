@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgFilter = (props: SVGProps<SVGSVGElement>) => (
+const Filter = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -16,4 +16,4 @@ const SvgFilter = (props: SVGProps<SVGSVGElement>) => (
     <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z" />
   </svg>
 )
-export { SvgFilter }
+export { Filter }

@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgClipboard = (props: SVGProps<SVGSVGElement>) => (
+const Clipboard = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -17,4 +17,4 @@ const SvgClipboard = (props: SVGProps<SVGSVGElement>) => (
     <rect width={8} height={4} x={8} y={2} rx={1} ry={1} />
   </svg>
 )
-export { SvgClipboard }
+export { Clipboard }

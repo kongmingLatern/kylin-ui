@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgGitCommit = (props: SVGProps<SVGSVGElement>) => (
+const GitCommit = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -17,4 +17,4 @@ const SvgGitCommit = (props: SVGProps<SVGSVGElement>) => (
     <path d="M1.05 12H7M17.01 12h5.95" />
   </svg>
 )
-export { SvgGitCommit }
+export { GitCommit }

@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgAlignLeft = (props: SVGProps<SVGSVGElement>) => (
+const AlignLeft = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -16,4 +16,4 @@ const SvgAlignLeft = (props: SVGProps<SVGSVGElement>) => (
     <path d="M17 10H3M21 6H3M21 14H3M17 18H3" />
   </svg>
 )
-export { SvgAlignLeft }
+export { AlignLeft }

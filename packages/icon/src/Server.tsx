@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgServer = (props: SVGProps<SVGSVGElement>) => (
+const Server = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -25,4 +25,4 @@ const SvgServer = (props: SVGProps<SVGSVGElement>) => (
     <path d="M6 6h.01M6 18h.01" />
   </svg>
 )
-export { SvgServer }
+export { Server }

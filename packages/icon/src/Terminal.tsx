@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgTerminal = (props: SVGProps<SVGSVGElement>) => (
+const Terminal = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -16,4 +16,4 @@ const SvgTerminal = (props: SVGProps<SVGSVGElement>) => (
     <path d="m4 17 6-6-6-6M12 19h8" />
   </svg>
 )
-export { SvgTerminal }
+export { Terminal }

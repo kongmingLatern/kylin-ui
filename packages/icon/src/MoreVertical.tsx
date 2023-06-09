@@ -1,7 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgMoreVertical = (
-  props: SVGProps<SVGSVGElement>
-) => (
+const MoreVertical = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -20,4 +18,4 @@ const SvgMoreVertical = (
     <circle cx={12} cy={19} r={1} />
   </svg>
 )
-export { SvgMoreVertical }
+export { MoreVertical }

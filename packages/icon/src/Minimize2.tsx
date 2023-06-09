@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgMinimize2 = (props: SVGProps<SVGSVGElement>) => (
+const Minimize2 = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -16,4 +16,4 @@ const SvgMinimize2 = (props: SVGProps<SVGSVGElement>) => (
     <path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7" />
   </svg>
 )
-export { SvgMinimize2 }
+export { Minimize2 }

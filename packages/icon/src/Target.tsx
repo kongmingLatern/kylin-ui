@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgTarget = (props: SVGProps<SVGSVGElement>) => (
+const Target = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -18,4 +18,4 @@ const SvgTarget = (props: SVGProps<SVGSVGElement>) => (
     <circle cx={12} cy={12} r={2} />
   </svg>
 )
-export { SvgTarget }
+export { Target }

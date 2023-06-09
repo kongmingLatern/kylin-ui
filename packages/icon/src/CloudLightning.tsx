@@ -1,7 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgCloudLightning = (
-  props: SVGProps<SVGSVGElement>
-) => (
+const CloudLightning = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -19,4 +17,4 @@ const SvgCloudLightning = (
     <path d="m13 11-4 6h6l-4 6" />
   </svg>
 )
-export { SvgCloudLightning }
+export { CloudLightning }

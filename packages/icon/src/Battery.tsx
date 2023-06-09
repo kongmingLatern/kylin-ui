@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgBattery = (props: SVGProps<SVGSVGElement>) => (
+const Battery = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -24,4 +24,4 @@ const SvgBattery = (props: SVGProps<SVGSVGElement>) => (
     <path d="M23 13v-2" />
   </svg>
 )
-export { SvgBattery }
+export { Battery }

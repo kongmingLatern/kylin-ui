@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgLock = (props: SVGProps<SVGSVGElement>) => (
+const Lock = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -24,4 +24,4 @@ const SvgLock = (props: SVGProps<SVGSVGElement>) => (
     <path d="M7 11V7a5 5 0 0 1 10 0v4" />
   </svg>
 )
-export { SvgLock }
+export { Lock }

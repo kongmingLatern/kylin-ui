@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgType = (props: SVGProps<SVGSVGElement>) => (
+const Type = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -16,4 +16,4 @@ const SvgType = (props: SVGProps<SVGSVGElement>) => (
     <path d="M4 7V4h16v3M9 20h6M12 4v16" />
   </svg>
 )
-export { SvgType }
+export { Type }

@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgVoicemail = (props: SVGProps<SVGSVGElement>) => (
+const Voicemail = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -18,4 +18,4 @@ const SvgVoicemail = (props: SVGProps<SVGSVGElement>) => (
     <path d="M5.5 16h13" />
   </svg>
 )
-export { SvgVoicemail }
+export { Voicemail }

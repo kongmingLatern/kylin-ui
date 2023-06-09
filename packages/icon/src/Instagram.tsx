@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgInstagram = (props: SVGProps<SVGSVGElement>) => (
+const Instagram = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -24,4 +24,4 @@ const SvgInstagram = (props: SVGProps<SVGSVGElement>) => (
     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01" />
   </svg>
 )
-export { SvgInstagram }
+export { Instagram }

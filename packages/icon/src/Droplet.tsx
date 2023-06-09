@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgDroplet = (props: SVGProps<SVGSVGElement>) => (
+const Droplet = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -16,4 +16,4 @@ const SvgDroplet = (props: SVGProps<SVGSVGElement>) => (
     <path d="m12 2.69 5.66 5.66a8 8 0 1 1-11.31 0z" />
   </svg>
 )
-export { SvgDroplet }
+export { Droplet }

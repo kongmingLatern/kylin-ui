@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgRepeat = (props: SVGProps<SVGSVGElement>) => (
+const Repeat = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -18,4 +18,4 @@ const SvgRepeat = (props: SVGProps<SVGSVGElement>) => (
     <path d="M21 13v2a4 4 0 0 1-4 4H3" />
   </svg>
 )
-export { SvgRepeat }
+export { Repeat }

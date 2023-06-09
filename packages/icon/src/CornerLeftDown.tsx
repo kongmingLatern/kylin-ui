@@ -1,7 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgCornerLeftDown = (
-  props: SVGProps<SVGSVGElement>
-) => (
+const CornerLeftDown = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -19,4 +17,4 @@ const SvgCornerLeftDown = (
     <path d="M20 4h-7a4 4 0 0 0-4 4v12" />
   </svg>
 )
-export { SvgCornerLeftDown }
+export { CornerLeftDown }

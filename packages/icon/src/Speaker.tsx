@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgSpeaker = (props: SVGProps<SVGSVGElement>) => (
+const Speaker = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -25,4 +25,4 @@ const SvgSpeaker = (props: SVGProps<SVGSVGElement>) => (
     <path d="M12 6h.01" />
   </svg>
 )
-export { SvgSpeaker }
+export { Speaker }

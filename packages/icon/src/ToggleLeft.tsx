@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgToggleLeft = (props: SVGProps<SVGSVGElement>) => (
+const ToggleLeft = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -24,4 +24,4 @@ const SvgToggleLeft = (props: SVGProps<SVGSVGElement>) => (
     <circle cx={8} cy={12} r={3} />
   </svg>
 )
-export { SvgToggleLeft }
+export { ToggleLeft }

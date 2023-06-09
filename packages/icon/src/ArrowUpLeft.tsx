@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgArrowUpLeft = (props: SVGProps<SVGSVGElement>) => (
+const ArrowUpLeft = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -16,4 +16,4 @@ const SvgArrowUpLeft = (props: SVGProps<SVGSVGElement>) => (
     <path d="M17 17 7 7M7 17V7h10" />
   </svg>
 )
-export { SvgArrowUpLeft }
+export { ArrowUpLeft }

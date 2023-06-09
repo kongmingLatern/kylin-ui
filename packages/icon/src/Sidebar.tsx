@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-const SvgSidebar = (props: SVGProps<SVGSVGElement>) => (
+const Sidebar = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={40}
@@ -24,4 +24,4 @@ const SvgSidebar = (props: SVGProps<SVGSVGElement>) => (
     <path d="M9 3v18" />
   </svg>
 )
-export { SvgSidebar }
+export { Sidebar }
