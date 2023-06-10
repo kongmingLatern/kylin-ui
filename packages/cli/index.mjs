@@ -118,7 +118,7 @@ import ${componentName} from '../${componentName}';
 test('renders ${componentName} component', () => {
   render(<${componentName} />);
   const linkElement = screen.getByText(/${componentName} Component/i);
-expect(linkElement.firstChild).toMatchInlineSnapshot('${componentName} Component')
+  expect(linkElement.firstChild).toMatchInlineSnapshot('${componentName} Component')
 });
 `
   await fs.outputFile(
