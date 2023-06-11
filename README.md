@@ -41,9 +41,13 @@
 
 - [x] Avatar
 - [x] Button
+  - [x] ButtonGroup
 - [x] Divider
 - [x] Grid
 - [x] Layout
+  - [x] Header
+  - [x] Content
+  - [x] Footer
 - [x] Space
 - [x] ThemeProvider
 - [x] Typography
