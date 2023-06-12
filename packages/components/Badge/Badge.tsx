@@ -5,6 +5,8 @@ export const Badge: React.FC<BadgeProps> = props => {
   const {
     type = 'primary',
     size = 'middle',
+    shape = 'square',
+    gradient,
     text,
     children,
     className,
@@ -13,9 +15,13 @@ export const Badge: React.FC<BadgeProps> = props => {
 
   const classes = classNames(
     {
-      [`kylin-badge-${type}`]: type,
-      [`kylin-badge-${size}`]: size,
+      [`kylin-badge-gradient-${gradient}`]: gradient,
+      [`kylin-badge-type-${type}`]: type,
+      [`kylin-badge-shape-${shape}`]: shape,
+      [`kylin-badge-size-${size}`]: size,
     },
+    'font-bold',
+    'whitespace-nowrap',
     className
   )
 

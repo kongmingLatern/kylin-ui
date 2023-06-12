@@ -9,10 +9,13 @@ import { DividerDemo } from '@components/Divider/demo/divider'
 import { SpaceDemo } from '@components/Space/demo/SpaceDemo'
 import { AvatarDemo } from '@components/Avatar/demo/AvatarDemo'
 import { RenderIcon } from '@icon/src/demo'
+import { BadgeDemo } from '@components/Badge/demo/badgeDemo'
 
 const App = () => {
 	return (
 		<>
+			<BadgeDemo />
+			<br />
 			<RenderIcon />
 			<br />
 			<AvatarDemo />
