@@ -1,17 +1,60 @@
 // 默认颜色
 $default-color: #1f2937;
-// 主要颜色
-
+// 主题颜色
 $primary-color: #6e0b75;
 $secondary-color: #006597;
 $success-color: #36d399;
 $info-color: #3abff8;
-$error-color: #f87272;
-
 $disabled-color: #bdc3c7;
-
 $warning-color: #e67e22;
 $danger-color: #e74c3c;
+
+$primary-contrast-color: #ffffff;
+$secondary-contrast-color: #ffffff;
+$success-contrast-color: #ffffff;
+$info-contrast-color: #ffffff;
+$danger-contrast-color: #ffffff;
+$warning-contrast-color: #ffffff;
+
+// 渐变色主题
+// 渐变主题色 1
+$gradient-color-1-start: #1a237e; // 深蓝渐变起始色
+$gradient-color-1-end: #76a1e4; // 深蓝渐变结束色
+
+// 渐变主题色 2
+$gradient-color-2-start: #ff5722; // 深橙渐变起始色
+$gradient-color-2-end: #df323a; // 深橙渐变结束色
+
+// 渐变主题色 3
+$gradient-color-3-start: #0d47a1; // 深蓝渐变起始色（与渐变主题色1相同）
+$gradient-color-3-end: #01579b; // 深蓝渐变结束色
+
+// 渐变主题色 4
+$gradient-color-4-start: #966c6c; // 深红渐变起始色
+$gradient-color-4-end: #fe3939; // 深红渐变结束色
+
+$gradient-direction: 'to right';
+
+$background-gradient-aquamarine: linear-gradient(
+  to right,
+  $gradient-color-1-start,
+  $gradient-color-1-end
+);
+$background-gradient-soft-orange: linear-gradient(
+  to right,
+  $gradient-color-2-start,
+  $gradient-color-2-end
+);
+$background-gradient-gentle-blue: linear-gradient(
+  to right,
+  $gradient-color-3-start,
+  $gradient-color-3-end
+);
+$background-gradient-muted-red: linear-gradient(
+  to right,
+  $gradient-color-4-start,
+  $gradient-color-4-end
+);
 
 // 背景颜色
 $background-color: #ecf0f1;
