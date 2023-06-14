@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import { SpinProps } from './demo'
+import { SpinProps } from './type'
 
 export const Spin: React.ForwardRefRenderFunction<
   HTMLImageElement,
