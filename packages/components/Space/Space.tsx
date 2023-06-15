@@ -5,7 +5,12 @@ import { toArray } from '@kylin-ui/shared'
 
 interface SpaceProps
   extends React.HTMLAttributes<HTMLDivElement> {
-  size?: SpaceSize | [SpaceSize, SpaceSize]
+  size?:
+    | SpaceSize
+    | [SpaceSize, SpaceSize]
+    | 'small'
+    | 'middle'
+    | 'large'
   direction?: 'horizontal' | 'vertical'
   justify?:
     | 'start'
