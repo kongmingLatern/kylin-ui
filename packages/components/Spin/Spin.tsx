@@ -1,6 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import { SpinProps } from './type'
+import LoadingIcon from '@components/Button/LoadingIcon'
 
 export const Spin: React.ForwardRefRenderFunction<
   HTMLImageElement,
@@ -59,6 +60,7 @@ export const Spin: React.ForwardRefRenderFunction<
   }
 
   const spinClassName = classNames(
+    'kylin-spin',
     {
       [`kylin-spin-sm`]: size === 'small',
       [`kylin-spin-lg`]: size === 'large',
@@ -83,6 +85,7 @@ export const Spin: React.ForwardRefRenderFunction<
       aria-live="polite"
       aria-busy={spinning}
     >
+      <LoadingIcon loading={spinning} />
       {tip && isNestedPattern ? (
         <div className={`kylin-spin-text`}>{tip}</div>
       ) : null}
