@@ -85,7 +85,11 @@ export const Spin: React.ForwardRefRenderFunction<
       aria-live="polite"
       aria-busy={spinning}
     >
-      <LoadingIcon loading={spinning} />
+      {spinning && (
+        <div className="kylin-spin-dot">
+          <LoadingIcon loading={spinning} />
+        </div>
+      )}
       {tip && isNestedPattern ? (
         <div className={`kylin-spin-text`}>{tip}</div>
       ) : null}

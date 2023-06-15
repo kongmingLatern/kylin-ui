@@ -18,6 +18,13 @@
   transition: transform 0.3s
     cubic-bezier(0.78, 0.14, 0.15, 0.86);
 
+  &-dot {
+    position: absolute;
+    top: 50%;
+    inset-inline-start: 50%;
+    margin: -10px;
+  }
+
   &-nested-loading {
     position: relative;
     & > div .kylin-spin {
