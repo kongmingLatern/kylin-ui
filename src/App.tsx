@@ -10,10 +10,13 @@ import { SpaceDemo } from '@components/Space/demo/SpaceDemo'
 import { AvatarDemo } from '@components/Avatar/demo/AvatarDemo'
 import { RenderIcon } from '@icon/src/demo'
 import { BadgeDemo } from '@components/Badge/demo/badgeDemo'
+import { SpinDemo } from '@components/Spin/demo/SpinDemo'
 
 const App = () => {
 	return (
 		<>
+			<SpinDemo />
+			<br />
 			<BadgeDemo />
 			<br />
 			<RenderIcon />
