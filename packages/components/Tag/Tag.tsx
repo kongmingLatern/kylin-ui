@@ -1,7 +1,7 @@
 import classNames from 'classnames'
-import { BadgeProps } from './type'
+import { TagProps } from './type'
 
-export const Badge: React.FC<BadgeProps> = props => {
+export const Tag: React.FC<TagProps> = props => {
   const {
     type = 'primary',
     size = 'middle',
@@ -15,10 +15,10 @@ export const Badge: React.FC<BadgeProps> = props => {
 
   const classes = classNames(
     {
-    [`kylin-badge-gradient-${gradient}`]: gradient,
-      [`kylin-badge-type-${type}`]: type,
-      [`kylin-badge-shape-${shape}`]: shape,
-      [`kylin-badge-size-${size}`]: size,
+      [`kylin-tag-gradient-${gradient}`]: gradient,
+      [`kylin-tag-type-${type}`]: type,
+      [`kylin-tag-shape-${shape}`]: shape,
+      [`kylin-tag-size-${size}`]: size,
     },
     'font-bold',
     'whitespace-nowrap',
@@ -26,9 +26,7 @@ export const Badge: React.FC<BadgeProps> = props => {
   )
 
   if (text && children) {
-    console.warn(
-      `Badge组件的text和children属性不能同时存在`
-    )
+    console.warn(`Tag组件的text和children属性不能同时存在`)
   }
 
   const renderToChildren = text ? text : children
