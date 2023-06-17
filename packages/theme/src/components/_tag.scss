@@ -74,4 +74,13 @@
       border-radius: 0;
     }
   }
+
+  &-icon {
+    &-before {
+      margin-right: 0.5rem;
+    }
+    &-after {
+      margin-left: 0.5rem;
+    }
+  }
 }
