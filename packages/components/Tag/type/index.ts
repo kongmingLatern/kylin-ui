@@ -25,5 +25,7 @@ export interface TagProps
   size?: SizeType
   shape?: ShapeType
   text?: string | React.ReactNode
+  beforeIcon?: React.ReactNode
+  afterIcon?: React.ReactNode
   gradient?: GradientType
 }

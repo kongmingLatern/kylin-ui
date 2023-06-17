@@ -37,4 +37,41 @@ describe('type', () => {
       </span>
     `)
   })
+  test('icon', () => {
+    const { container } = render(
+      <Tag beforeIcon={<div>beforeIcon</div>} />
+    )
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      <span
+        class="kylin-tag-type-primary kylin-tag-shape-square kylin-tag-size-middle font-bold whitespace-nowrap"
+      >
+        <span
+          class="kylin-tag-icon-before"
+        >
+          <div>
+            beforeIcon
+          </div>
+        </span>
+      </span>
+    `)
+
+    const { container: afterIconContainer } = render(
+      <Tag afterIcon={<div>afterIcon</div>} />
+    )
+    expect(
+      afterIconContainer.firstChild
+    ).toMatchInlineSnapshot(`
+      <span
+        class="kylin-tag-type-primary kylin-tag-shape-square kylin-tag-size-middle font-bold whitespace-nowrap"
+      >
+        <span
+          class="kylin-tag-icon-after"
+        >
+          <div>
+            afterIcon
+          </div>
+        </span>
+      </span>
+    `)
+  })
 })

@@ -8,6 +8,8 @@ export const Tag: React.FC<TagProps> = props => {
     shape = 'square',
     gradient,
     text,
+    beforeIcon,
+    afterIcon,
     children,
     className,
     ...rest
@@ -31,9 +33,33 @@ export const Tag: React.FC<TagProps> = props => {
 
   const renderToChildren = text ? text : children
 
+  const BeforeIcon = () =>
+    beforeIcon ? (
+      <span className="kylin-tag-icon-before">
+        {beforeIcon}
+      </span>
+    ) : null
+
+  const AfterIcon = () =>
+    afterIcon ? (
+      <span className="kylin-tag-icon-after">
+        {afterIcon}
+      </span>
+    ) : null
+
+  const IconNode = ({ children }) => {
+    return (
+      <>
+        <BeforeIcon />
+        {children}
+        <AfterIcon />
+      </>
+    )
+  }
+
   return (
     <span className={classes} {...rest}>
-      {renderToChildren}
+      <IconNode>{renderToChildren}</IconNode>
     </span>
   )
 }
