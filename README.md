@@ -49,8 +49,13 @@
   - [x] Content
   - [x] Footer
 - [x] Space
+- [x] Spin
+- [x] Tag
 - [x] ThemeProvider
 - [x] Typography
+  - [x] Title
+  - [x] Text
+  - [x] Paragraph
 
 ### Packages
 
