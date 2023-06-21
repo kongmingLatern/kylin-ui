@@ -1,5 +1,4 @@
 import { Title } from './Title'
-import { TypographyTextProps } from './type'
 import { TypographyType } from './type/BaseTypography'
 import { NodeType } from './type/NodeType'
 
