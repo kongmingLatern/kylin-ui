@@ -98,6 +98,8 @@ const ButtonType = () => {
       >
         click me to load 2s
       </Button>
+
+      <br/>
     </>
   )
 }
