@@ -1,54 +1,34 @@
 import { Text } from '../Text'
+import { Title } from '../Title'
 
 export const TextDemo = () => {
   return (
     <>
-      <Text>这是默认标题</Text>
-      <br />
-
-      <Text>Code</Text>
-      <br />
+      <Title>Code</Title>
       <Text code>This is Code Title</Text>
-      <br />
 
-      <Text>DeleteLine</Text>
-      <br />
+      <Title>DeleteLine</Title>
       <Text deleteLine>This is DeleteLine Text</Text>
-      <br />
 
-      <Text>Underline</Text>
-      <br />
+      <Title>Underline</Title>
       <Text underline>This is Underline Text</Text>
-      <br />
 
-      <Text>Italic</Text>
-      <br />
+      <Title>Italic</Title>
       <Text italic>This is Italic Text</Text>
-      <br />
 
-      <Text>Strong</Text>
-      <br />
+      <Title>Strong</Title>
       <Text strong>This is Strong Text</Text>
-      <br />
 
-      <Text>Mark</Text>
-      <br />
+      <Title>Mark</Title>
       <Text mark>This is Mark Text</Text>
-      <br />
 
-      <Text>Ellipsis</Text>
-      <br />
+      <Title>Ellipsis</Title>
       <Text ellipsis>This is Ellipsis Text</Text>
 
-      <br />
-
-      <Text>disabled</Text>
-      <br />
+      <Title>disabled</Title>
       <Text disabled>This is Disabled Text</Text>
 
-      <br />
-      <Text>copyable</Text>
-      <br />
+      <Title>copyable</Title>
       <Text copyable onClick={e => console.log(e)}>
         This is Copy Text
       </Text>
