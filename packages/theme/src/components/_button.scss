@@ -83,7 +83,7 @@
     font-size: 1.3rem;
     letter-spacing: -0.02rem;
     position: relative;
-    color: #fff;
+    color: currentColor;
     border: 0;
     border-radius: var(--border-radius);
     background-color: transparent;
@@ -91,7 +91,7 @@
     padding: var(--border-width);
     & > span {
       display: block;
-      background-color: #000;
+      background-color: #fff;
       padding: 0.8rem 2.5rem;
       border-radius: calc(
         var(--border-radius) - var(--border-width) / 2
