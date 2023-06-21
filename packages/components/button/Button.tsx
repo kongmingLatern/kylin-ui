@@ -159,7 +159,9 @@ const InternalButton: React.ForwardRefRenderFunction<
       disabled={!!innerLoading}
       {...restProps}
     >
-      <IconNode>{children}</IconNode>
+      <IconNode>
+        {ghost ? <span>{children}</span> : children}
+      </IconNode>
     </button>
   )
 

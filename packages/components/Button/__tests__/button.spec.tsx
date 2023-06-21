@@ -170,7 +170,9 @@ describe("button's props", () => {
         class="kylin-btn-ghost"
         type="button"
       >
-        This is a ghost button
+        <span>
+          This is a ghost button
+        </span>
       </button>
     `)
   })

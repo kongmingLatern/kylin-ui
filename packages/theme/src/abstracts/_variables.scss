@@ -35,6 +35,8 @@ $gradient-color-4-end: #fe3939; // 深红渐变结束色
 
 $gradient-direction: 'to right';
 
+$background-spread: 300px;
+
 $background-gradient-aquamarine: linear-gradient(
   to right,
   $gradient-color-1-start,
@@ -65,6 +67,7 @@ $text-color-light: #ffffff;
 
 // 边框颜色
 $border-color: #bdc3c7;
-$border-radius: 5px;
+$border-width: 2px;
+$border-radius: 0.35rem;
 
 $font-size-base: 10px;

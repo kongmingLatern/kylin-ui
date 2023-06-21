@@ -79,15 +79,47 @@
   }
 
   &-ghost {
-    @extend .kylin-btn;
+    font-weight: bold;
+    font-size: 1.3rem;
+    letter-spacing: -0.02rem;
+    position: relative;
+    color: #fff;
+    border: 0;
+    border-radius: var(--border-radius);
     background-color: transparent;
-    border-color: transparent;
-    color: currentColor;
-    border: 1px solid currentColor;
+    overflow: hidden;
+    padding: var(--border-width);
+    & > span {
+      display: block;
+      background-color: #000;
+      padding: 0.8rem 2.5rem;
+      border-radius: calc(
+        var(--border-radius) - var(--border-width) / 2
+      );
+    }
+
     &:hover {
       background-color: var(--default-color);
       opacity: 1;
       color: #fff;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      background: conic-gradient(
+        from 180deg at 50% 50%,
+        #00d1ff 0deg,
+        #ee27ff 106.88deg,
+        #205eff 206.25deg,
+        #00f0ff 286.87deg,
+        #00d1ff 360deg
+      );
+      top: calc(var(--background-spread) * -1);
+      right: calc(var(--background-spread) * -1);
+      bottom: calc(var(--background-spread) * -1);
+      left: calc(var(--background-spread) * -1);
+      z-index: -1;
+      animation: 3s rotate linear infinite;
     }
   }
 
