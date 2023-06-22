@@ -1,6 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import { SpinProps } from './type'
+import { debounce } from 'throttle-debounce'
 import LoadingIcon from '@components/Button/LoadingIcon'
 
 export const Spin: React.ForwardRefRenderFunction<
@@ -27,19 +28,19 @@ export const Spin: React.ForwardRefRenderFunction<
     return !!spinning && !!delay && !isNaN(Number(delay))
   }
 
-  // React.useEffect(() => {
-  //   if (customSpinning) {
-  //     const showSpinning = debounce(delay, () => {
-  //       setSpinning(true)
-  //     })
-  //     showSpinning()
-  //     return () => {
-  //       showSpinning?.cancel?.()
-  //     }
-  //   }
+  React.useEffect(() => {
+    if (customSpinning) {
+      const showSpinning = debounce(delay, () => {
+        setSpinning(true)
+      })
+      showSpinning()
+      return () => {
+        showSpinning?.cancel?.()
+      }
+    }
 
-  //   setSpinning(false)
-  // }, [delay, customSpinning])
+    setSpinning(false)
+  }, [delay, customSpinning])
 
   const [spinning, setSpinning] = React.useState<boolean>(
     () =>

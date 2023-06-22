@@ -117,6 +117,9 @@ importers:
       style-loader:
         specifier: ^3.3.2
         version: registry.npmmirror.com/style-loader@3.3.2(webpack@5.81.0)
+      throttle-debounce:
+        specifier: ^5.0.0
+        version: registry.npmmirror.com/throttle-debounce@5.0.0
       typescript:
         specifier: ^4.9.3
         version: registry.npmmirror.com/typescript@4.9.5
@@ -6730,6 +6733,13 @@ packages:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/text-table/-/text-table-0.2.0.tgz}
     name: text-table
     version: 0.2.0
+    dev: true
+
+  registry.npmmirror.com/throttle-debounce@5.0.0:
+    resolution: {integrity: sha512-2iQTSgkkc1Zyk0MeVrt/3BvuOXYPl/R8Z0U2xxo9rjwNciaHDG3R+Lm6dh4EeUci49DanvBnuqI6jshoQQRGEg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/throttle-debounce/-/throttle-debounce-5.0.0.tgz}
+    name: throttle-debounce
+    version: 5.0.0
+    engines: {node: '>=12.22'}
     dev: true
 
   registry.npmmirror.com/through2@4.0.2:
