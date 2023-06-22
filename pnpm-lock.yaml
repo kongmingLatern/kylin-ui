@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -131,14 +135,6 @@ importers:
       vitest:
         specifier: ^0.30.1
         version: registry.npmmirror.com/vitest@0.30.1(jsdom@21.1.1)(sass@1.62.0)
-
-  dist/Button: {}
-
-  dist/ThemeProvider: {}
-
-  dist/Typography: {}
-
-  dist/button: {}
 
   packages/cli:
     dependencies:

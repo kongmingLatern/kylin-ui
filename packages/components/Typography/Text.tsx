@@ -3,7 +3,7 @@ import { TypographyType } from './type/BaseTypography'
 import { NodeType } from './type/NodeType'
 
 const Text: React.FC<TypographyType> = props => {
-  return <Title {...props} _type={NodeType.TEXT} />
+	return <Title {...props} _type={NodeType.TEXT} />
 }
 
 export { Text }
