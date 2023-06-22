@@ -13,13 +13,16 @@ import { BadgeDemo } from '@components/Badge/demo/badgeDemo'
 import { SpinDemo } from '@components/Spin/demo/SpinDemo'
 import { TagDemo } from '@components/Tag/demo/TagDemo'
 import { CardDemo } from '@components/Card/demo/CardDemo'
+import { ImageDemo } from '@components/Image/demo/ImageDemo'
 
 const App = () => {
   return (
     <>
-      <Title mark>Card</Title>
-      <CardDemo />
-      <Title mark>Tag</Title>
+      <Title mark>Image</Title>
+      <ImageDemo />
+      {/* <Title mark>Card</Title>
+      <CardDemo /> */}
+      {/* <Title mark>Tag</Title>
       <TagDemo />
       <Title mark>Spin</Title>
       <SpinDemo />
@@ -55,7 +58,7 @@ const App = () => {
       <ButtonGroupDemo />
       <br />
       <ThemeButton />
-      <br />
+      <br /> */}
     </>
   )
 }
