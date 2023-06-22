@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { ImageProps } from './type'
 import { Spin } from '@components/Spin'
+import { ImageProps } from './type'
 
 const Image = React.forwardRef<
   HTMLImageElement,
@@ -29,6 +29,7 @@ const Image = React.forwardRef<
     if (onError) {
       onError()
     }
+    setLoading(false)
   }
 
   return (
@@ -41,7 +42,7 @@ const Image = React.forwardRef<
         onLoad={handleOnLoad}
         onError={handleOnError}
         ref={ref}
-        style={{ display: loading ? 'block' : 'none' }}
+        style={{ display: loading ? 'none' : 'block' }}
         {...rest}
       />
     </Spin>

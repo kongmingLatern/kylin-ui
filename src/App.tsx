@@ -18,14 +18,14 @@ import { ImageDemo } from '@components/Image/demo/ImageDemo'
 const App = () => {
   return (
     <>
+      {/* <Title mark>Spin</Title> */}
+      {/* <SpinDemo /> */}
       <Title mark>Image</Title>
       <ImageDemo />
       {/* <Title mark>Card</Title>
       <CardDemo /> */}
       {/* <Title mark>Tag</Title>
       <TagDemo />
-      <Title mark>Spin</Title>
-      <SpinDemo />
       <br />
       <Title mark>Badge</Title>
       <BadgeDemo />
