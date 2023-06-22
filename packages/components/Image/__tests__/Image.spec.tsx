@@ -79,7 +79,7 @@ test('render', () => {
       >
         <img
           src="1"
-          style="display: block;"
+          style="display: none;"
         />
       </div>
     </div>
