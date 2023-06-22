@@ -12,49 +12,52 @@ import { RenderIcon } from '@icon/src/demo'
 import { BadgeDemo } from '@components/Badge/demo/badgeDemo'
 import { SpinDemo } from '@components/Spin/demo/SpinDemo'
 import { TagDemo } from '@components/Tag/demo/TagDemo'
+import { CardDemo } from '@components/Card/demo/CardDemo'
 
 const App = () => {
-	return (
-		<>
-			<Title mark>Tag</Title>
-			<TagDemo />
-			<Title mark>Spin</Title>
-			<SpinDemo />
-			<br />
-			<Title mark>Badge</Title>
-			<BadgeDemo />
-			<br />
-			<Title mark>Icon</Title>
-			<RenderIcon />
-			<br />
-			<Title mark>Avatar</Title>
-			<AvatarDemo />
-			<br />
-			<Title mark>Space</Title>
-			<SpaceDemo />
-			<br />
-			<Title mark>Divider</Title>
-			<DividerDemo />
-			<br />
-			<Title mark>ParagraphDemo</Title>
-			<ParagraphDemo />
-			<br />
-			<Title mark>TextDemo</Title>
-			<TextDemo />
-			<br />
-			<Title mark>TitleDemo</Title>
-			<TitleDemo />
-			<br />
-			<Title mark>ButtonDemo</Title>
-			<CommonButton />
-			<br />
-			<Title mark>ButtonGroupDemo</Title>
-			<ButtonGroupDemo />
-			<br />
-			<ThemeButton />
-			<br />
-		</>
-	)
+  return (
+    <>
+      <Title mark>Card</Title>
+      <CardDemo />
+      <Title mark>Tag</Title>
+      <TagDemo />
+      <Title mark>Spin</Title>
+      <SpinDemo />
+      <br />
+      <Title mark>Badge</Title>
+      <BadgeDemo />
+      <br />
+      <Title mark>Icon</Title>
+      <RenderIcon />
+      <br />
+      <Title mark>Avatar</Title>
+      <AvatarDemo />
+      <br />
+      <Title mark>Space</Title>
+      <SpaceDemo />
+      <br />
+      <Title mark>Divider</Title>
+      <DividerDemo />
+      <br />
+      <Title mark>ParagraphDemo</Title>
+      <ParagraphDemo />
+      <br />
+      <Title mark>TextDemo</Title>
+      <TextDemo />
+      <br />
+      <Title mark>TitleDemo</Title>
+      <TitleDemo />
+      <br />
+      <Title mark>ButtonDemo</Title>
+      <CommonButton />
+      <br />
+      <Title mark>ButtonGroupDemo</Title>
+      <ButtonGroupDemo />
+      <br />
+      <ThemeButton />
+      <br />
+    </>
+  )
 }
 
 export default App
