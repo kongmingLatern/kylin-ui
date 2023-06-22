@@ -24,5 +24,6 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': ['off'],
     quotes: ['off'],
     '@typescript-eslint/no-non-null-assertion': ['off'],
+    'no-undef': ['off'],
   },
 }
