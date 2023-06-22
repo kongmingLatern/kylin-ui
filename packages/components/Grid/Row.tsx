@@ -47,7 +47,7 @@ const Row = React.forwardRef<HTMLDivElement, RowProps>(
     )
     const childrenWithProps = React.Children.map(
       children,
-      (child: any) => {
+      child => {
         if (React.isValidElement(child)) {
           return React.cloneElement(child, {
             gutter: [horizontal / 2, vertical / 2],
