@@ -78,6 +78,7 @@ test('render', () => {
         class="kylin-spin-container kylin-spin-blur"
       >
         <img
+          class="kylin-image-preview"
           src="1"
           style="display: none;"
         />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Spin } from '@components/Spin'
 import { ImageProps } from './type'
+import classNames from 'classnames'
 
 const Image = React.forwardRef<
   HTMLImageElement,
@@ -13,21 +14,29 @@ const Image = React.forwardRef<
     height,
     onLoad,
     onError,
+    preview = true,
     ...rest
   } = props
 
   const [loading, setLoading] = useState(true)
 
-  const handleOnLoad = () => {
+  // TODO: 图片的预览功能
+  const classes = classNames({
+    ['kylin-image-preview']: preview,
+  })
+
+  const handleOnLoad = e => {
     if (onLoad) {
-      onLoad()
+      console.log(e)
+      onLoad(e)
     }
     setLoading(false)
   }
 
-  const handleOnError = () => {
+  const handleOnError = e => {
     if (onError) {
-      onError()
+      console.log(e)
+      onError(e)
     }
     setLoading(false)
   }
@@ -39,6 +48,7 @@ const Image = React.forwardRef<
         width={width}
         height={height}
         alt={alt}
+        className={classes}
         onLoad={handleOnLoad}
         onError={handleOnError}
         ref={ref}

@@ -1,6 +1,6 @@
 interface ImageCallback {
-  onLoad?: () => void
-  onError?: () => void
+  onLoad?: (event: Event) => void
+  onError?: (event: Event) => void
 }
 
 export interface ImageProps extends ImageCallback {
@@ -8,6 +8,7 @@ export interface ImageProps extends ImageCallback {
   alt?: string
   width?: number
   height?: number
+  preview?: boolean
   className?: string
   children?: React.ReactNode
 }
