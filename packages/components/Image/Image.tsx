@@ -43,6 +43,23 @@ const Image = React.forwardRef<
     setLoading(false)
   }
 
+  // 监听 window 的 esc 事件，如果按下了 esc 键，就关闭预览
+  window.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      setPreviewVisible(false)
+    }
+  })
+
+  const PreviewIcon = () => {
+    return (
+      <div className="kylin-image-preview-info">
+        <Eye width={20} height={20} />
+        <span>预览</span>
+      </div>
+    )
+  }
+
+  // TODO: 图片的预览功能 animation
   const openPreview = () => {
     // 将图片的地址传递给一个新的组件，这个组件是一个弹窗，弹窗中展示图片
     const createImageComponent = () => {
@@ -86,24 +103,6 @@ const Image = React.forwardRef<
 
     return createPopup()
   }
-
-  // TODO: 图片的预览功能
-
-  const PreviewIcon = () => {
-    return (
-      <div className="kylin-image-preview-info">
-        <Eye width={20} height={20} />
-        <span>预览</span>
-      </div>
-    )
-  }
-
-  // 监听 window 的 esc 事件，如果按下了 esc 键，就关闭预览
-  window.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      setPreviewVisible(false)
-    }
-  })
 
   return (
     <>

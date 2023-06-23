@@ -34,7 +34,7 @@ export interface BaseTypographyProps {
    * @default false
    * @type boolean
    */
-  // TODO: Neet to add a icon for copy
+  // TODO: Need to add a icon for copy
   copyable?: boolean
   /**
    * @description 添加删除线
