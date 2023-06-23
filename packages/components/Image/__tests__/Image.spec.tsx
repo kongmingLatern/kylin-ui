@@ -77,11 +77,45 @@ test('render', () => {
       <div
         class="kylin-spin-container kylin-spin-blur"
       >
-        <img
-          class="kylin-image-preview"
-          src="1"
-          style="display: none;"
-        />
+        <span
+          class="kylin-image-preview-container"
+        >
+          <div
+            class="kylin-image-preview-mask"
+          >
+            <div
+              class="kylin-image-preview-info"
+            >
+              <svg
+                class="eye_svg__feather eye_svg__feather-eye"
+                fill="none"
+                height="20"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="3"
+                />
+              </svg>
+              预览
+            </div>
+          </div>
+          <img
+            class="kylin-image-preview"
+            src="1"
+            style="display: none;"
+          />
+        </span>
       </div>
     </div>
   `)

@@ -6,3 +6,12 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes toObacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

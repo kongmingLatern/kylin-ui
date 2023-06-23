@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { Spin } from '@components/Spin'
 import { ImageProps } from './type'
+import { Spin } from '@components/Spin'
 import classNames from 'classnames'
+import { Eye } from '@packages/icon'
 
 const Image = React.forwardRef<
   HTMLImageElement,
@@ -19,15 +20,14 @@ const Image = React.forwardRef<
   } = props
 
   const [loading, setLoading] = useState(true)
+  const [over, setOver] = useState(false)
 
-  // TODO: 图片的预览功能
   const classes = classNames({
     ['kylin-image-preview']: preview,
   })
 
   const handleOnLoad = e => {
     if (onLoad) {
-      console.log(e)
       onLoad(e)
     }
     setLoading(false)
@@ -35,26 +35,43 @@ const Image = React.forwardRef<
 
   const handleOnError = e => {
     if (onError) {
-      console.log(e)
       onError(e)
     }
     setLoading(false)
   }
 
+  // TODO: 图片的预览功能
+
+  const PreviewIcon = () => {
+    return (
+      <div className="kylin-image-preview-info">
+        <Eye width={20} height={20} />
+        预览
+      </div>
+    )
+  }
+
   return (
     <Spin spinning={loading}>
-      <img
-        src={src}
-        width={width}
-        height={height}
-        alt={alt}
-        className={classes}
-        onLoad={handleOnLoad}
-        onError={handleOnError}
-        ref={ref}
-        style={{ display: loading ? 'none' : 'block' }}
-        {...rest}
-      />
+      <span className="kylin-image-preview-container">
+        <div className="kylin-image-preview-mask">
+          {preview && <PreviewIcon />}
+        </div>
+        <img
+          src={src}
+          width={width}
+          height={height}
+          alt={alt}
+          className={classes}
+          onLoad={handleOnLoad}
+          onError={handleOnError}
+          onMouseOver={() => setOver(true)}
+          onMouseLeave={() => setOver(false)}
+          ref={ref}
+          style={{ display: loading ? 'none' : 'block' }}
+          {...rest}
+        />
+      </span>
     </Spin>
   )
 })

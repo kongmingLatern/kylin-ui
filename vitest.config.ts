@@ -11,9 +11,17 @@ export default defineConfig({
   resolve: {
     alias: {
       components: resolve(__dirname, 'packages/components'),
+      '@packages': path.resolve(
+        path.resolve(),
+        '/packages'
+      ),
       '@components': path.resolve(
         path.resolve(),
         '/packages/components/'
+      ),
+      '@icon': path.resolve(
+        path.resolve(),
+        '/packages/icon/'
       ),
     },
   },
