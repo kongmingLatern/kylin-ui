@@ -20,7 +20,7 @@ const Image = React.forwardRef<
   } = props
 
   const [loading, setLoading] = useState(true)
-  const [over, setOver] = useState(false)
+  const [error, setErr] = useState(false)
 
   const classes = classNames({
     ['kylin-image-preview']: preview,
@@ -36,6 +36,7 @@ const Image = React.forwardRef<
   const handleOnError = e => {
     if (onError) {
       onError(e)
+      setErr(true)
     }
     setLoading(false)
   }
@@ -46,7 +47,7 @@ const Image = React.forwardRef<
     return (
       <div className="kylin-image-preview-info">
         <Eye width={20} height={20} />
-        预览
+        <span>预览</span>
       </div>
     )
   }
@@ -55,7 +56,7 @@ const Image = React.forwardRef<
     <Spin spinning={loading}>
       <span className="kylin-image-preview-container">
         <div className="kylin-image-preview-mask">
-          {preview && <PreviewIcon />}
+          {preview && !error && <PreviewIcon />}
         </div>
         <img
           src={src}
@@ -65,8 +66,6 @@ const Image = React.forwardRef<
           className={classes}
           onLoad={handleOnLoad}
           onError={handleOnError}
-          onMouseOver={() => setOver(true)}
-          onMouseLeave={() => setOver(false)}
           ref={ref}
           style={{ display: loading ? 'none' : 'block' }}
           {...rest}
