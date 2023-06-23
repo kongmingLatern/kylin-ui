@@ -107,7 +107,9 @@ test('render', () => {
                   r="3"
                 />
               </svg>
-              预览
+              <span>
+                预览
+              </span>
             </div>
           </div>
           <img
