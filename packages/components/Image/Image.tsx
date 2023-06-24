@@ -50,13 +50,6 @@ const Image = React.forwardRef<
     setLoading(false)
   }
 
-  // 监听 window 的 esc 事件，如果按下了 esc 键，就关闭预览
-  window.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      setPreviewVisible(false)
-    }
-  })
-
   const PreviewIcon = () => {
     return (
       <div className="kylin-image-preview-info">
@@ -68,6 +61,20 @@ const Image = React.forwardRef<
 
   // TODO: 图片的预览功能 animation
   const openPreview = () => {
+    // 监听 window 的 esc 事件，如果按下了 esc 键，就关闭预览
+    window.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        setPreviewVisible(false)
+      }
+    })
+
+    const ImageToolIcons = [
+      <Plus width={30} key={'plus'} />,
+      <Minus width={30} key={'minus'} />,
+      <RotateCcw width={30} key={'rotateCCw'} />,
+      <X width={30} key={'close'} />,
+    ]
+
     // 将图片的地址传递给一个新的组件，这个组件是一个弹窗，弹窗中展示图片
     const ImageCover = () => {
       return (
@@ -124,12 +131,7 @@ const Image = React.forwardRef<
               marginRight: '2rem',
             }}
           >
-            {[
-              <Plus width={30} key={'plus'} />,
-              <Minus width={30} key={'minus'} />,
-              <RotateCcw width={30} key={'rotateCCw'} />,
-              <X width={30} key={'close'} />,
-            ].map((item, key) => {
+            {ImageToolIcons.map((item, key) => {
               return (
                 <span
                   key={key}
