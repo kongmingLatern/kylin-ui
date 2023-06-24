@@ -41,7 +41,6 @@ const InternalButton: React.ForwardRefRenderFunction<
     className,
     children,
     htmlType = 'button',
-    onClick,
     ...rest
   } = props
 
