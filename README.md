@@ -48,6 +48,7 @@
   - [x] Header
   - [x] Content
   - [x] Footer
+- [x] Image
 - [x] Space
 - [x] Spin
 - [x] Tag
