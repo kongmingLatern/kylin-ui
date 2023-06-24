@@ -2,27 +2,12 @@ import classNames from 'classnames'
 import React from 'react'
 import Item from './Item'
 import { toArray } from '@kylin-ui/shared'
+import { SpaceSize, SpaceProps } from './type'
 
-interface SpaceProps
-  extends React.HTMLAttributes<HTMLDivElement> {
-  size?:
-    | SpaceSize
-    | [SpaceSize, SpaceSize]
-    | 'small'
-    | 'middle'
-    | 'large'
-  direction?: 'horizontal' | 'vertical'
-  justify?:
-    | 'start'
-    | 'end'
-    | 'center'
-    | 'space-between'
-    | 'space-around'
-  align?: 'start' | 'end' | 'center' | 'baseline'
-  className?: string
-  style?: React.CSSProperties
-  split?: React.ReactNode
-  wrap?: boolean
+const spaceSize = {
+  small: 8,
+  middle: 16,
+  large: 24,
 }
 
 export const SpaceContext = React.createContext({
@@ -30,14 +15,6 @@ export const SpaceContext = React.createContext({
   horizontalSize: 0,
   verticalSize: 0,
 })
-
-type SpaceSize = number
-
-const spaceSize = {
-  small: 8,
-  middle: 16,
-  large: 24,
-}
 
 function getNumberSize(size: SpaceSize) {
   return typeof size === 'string'
