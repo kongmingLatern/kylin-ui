@@ -25,5 +25,6 @@ module.exports = {
     quotes: ['off'],
     '@typescript-eslint/no-non-null-assertion': ['off'],
     'no-undef': ['off'],
+    'react/prop-types': ['off'],
   },
 }
