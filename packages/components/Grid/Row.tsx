@@ -1,20 +1,7 @@
 import classNames from 'classnames'
 import React from 'react'
+import { RowProps } from './type'
 
-type RowProps = {
-  gutter?: number | [number, number]
-  wrap?: 'start' | 'reverse'
-  justify?:
-    | 'start'
-    | 'end'
-    | 'center'
-    | 'space-around'
-    | 'space-between'
-  align?: 'start' | 'center' | 'end'
-  className?: string
-  style?: React.CSSProperties
-  children?: React.ReactNode
-}
 const Row = React.forwardRef<HTMLDivElement, RowProps>(
   (props, ref) => {
     const {
