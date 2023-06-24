@@ -2,7 +2,13 @@ import React, { useState } from 'react'
 import { ImageProps } from './type'
 import { Spin } from '@components/Spin'
 import classNames from 'classnames'
-import { Eye } from '@packages/icon'
+import {
+  Eye,
+  Minus,
+  Plus,
+  RotateCcw,
+  X,
+} from '@packages/icon'
 import { Space } from '@components/Space'
 
 const Image = React.forwardRef<
@@ -84,6 +90,21 @@ const Image = React.forwardRef<
     }
 
     const ImageTools = () => {
+      const handleClick = key => {
+        switch (key) {
+          case 'plus':
+            break
+          case 'minus':
+            break
+          case 'rotateCCw':
+            break
+          case 'close':
+            setPreviewVisible(false)
+            break
+          default:
+            break
+        }
+      }
       return (
         <div
           style={{
@@ -93,7 +114,7 @@ const Image = React.forwardRef<
             justifyContent: 'end',
             alignItems: 'center',
             position: 'fixed',
-            top: 0,
+            top: '1rem',
             left: 0,
           }}
         >
@@ -103,18 +124,23 @@ const Image = React.forwardRef<
               marginRight: '2rem',
             }}
           >
-            {['放大', '缩小', '旋转', '关闭'].map(item => {
+            {[
+              <Plus width={30} key={'plus'} />,
+              <Minus width={30} key={'minus'} />,
+              <RotateCcw width={30} key={'rotateCCw'} />,
+              <X width={30} key={'close'} />,
+            ].map((item, key) => {
               return (
                 <span
-                  key={item}
+                  key={key}
                   style={{
-                    display: 'block',
-                    width: '2rem',
-                    height: '2rem',
-                    lineHeight: '2rem',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
                     color: 'white',
                     cursor: 'pointer',
                   }}
+                  onClick={() => handleClick(item.key)}
                 >
                   {item}
                 </span>
@@ -156,7 +182,7 @@ const Image = React.forwardRef<
             className="kylin-image-preview-mask"
             onClick={() => setPreviewVisible(true)}
           >
-            {preview && !error && <PreviewIcon />}
+            {!previewVisible && !error && <PreviewIcon />}
           </div>
           <img
             src={src}
