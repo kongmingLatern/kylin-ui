@@ -61,93 +61,92 @@ const Image = React.forwardRef<
       }
     })
 
-    const ImageToolIcons = [
-      <Plus width={30} key={'plus'} />,
-      <Minus width={30} key={'minus'} />,
-      <RotateCcw width={30} key={'rotateCCw'} />,
-      <X width={30} key={'close'} />,
-    ]
-
-    // 将图片的地址传递给一个新的组件，这个组件是一个弹窗，弹窗中展示图片
-    const ImageCover = () => {
-      return (
-        <img
-          src={src}
-          alt={alt}
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform:
-              'translate(-50%, -50%) translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotate(0deg)',
-            maxWidth: '80%',
-            maxHeight: '80%',
-            minWidth: '20%',
-            minHeight: '20%',
-            objectFit: 'cover',
-          }}
-        />
-      )
-    }
-
-    const ImageTools = () => {
-      const handleClick = key => {
-        switch (key) {
-          case 'plus':
-            break
-          case 'minus':
-            break
-          case 'rotateCCw':
-            break
-          case 'close':
-            setPreviewVisible(false)
-            break
-          default:
-            break
-        }
-      }
-      return (
-        <div
-          style={{
-            display: 'flex',
-            width: '100%',
-            height: '3rem',
-            justifyContent: 'end',
-            alignItems: 'center',
-            position: 'fixed',
-            top: '1rem',
-            left: 0,
-          }}
-        >
-          <Space
-            size={32}
+    const ImagePreview = () => {
+      // 将图片的地址传递给一个新的组件，这个组件是一个弹窗，弹窗中展示图片
+      const ImageCover = () => {
+        return (
+          <img
+            src={src}
+            alt={alt}
             style={{
-              marginRight: '2rem',
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform:
+                'translate(-50%, -50%) translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotate(0deg)',
+              maxWidth: '80%',
+              maxHeight: '80%',
+              minWidth: '20%',
+              minHeight: '20%',
+              objectFit: 'cover',
+            }}
+          />
+        )
+      }
+
+      const ImageTools = () => {
+        const ImageToolIcons = [
+          <Plus width={30} key={'plus'} />,
+          <Minus width={30} key={'minus'} />,
+          <RotateCcw width={30} key={'rotateCCw'} />,
+          <X width={30} key={'close'} />,
+        ]
+        const handleClick = key => {
+          switch (key) {
+            case 'plus':
+              break
+            case 'minus':
+              break
+            case 'rotateCCw':
+              break
+            case 'close':
+              setPreviewVisible(false)
+              break
+            default:
+              break
+          }
+        }
+        return (
+          <div
+            style={{
+              display: 'flex',
+              width: '100%',
+              height: '3rem',
+              justifyContent: 'end',
+              alignItems: 'center',
+              position: 'fixed',
+              top: '1rem',
+              left: 0,
             }}
           >
-            {ImageToolIcons.map((item, key) => {
-              return (
-                <span
-                  key={key}
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    color: 'white',
-                    cursor: 'pointer',
-                  }}
-                  onClick={() => handleClick(item.key)}
-                >
-                  {item}
-                </span>
-              )
-            })}
-          </Space>
-        </div>
-      )
-    }
+            <Space
+              size={32}
+              style={{
+                marginRight: '2rem',
+              }}
+            >
+              {ImageToolIcons.map((item, key) => {
+                return (
+                  <span
+                    key={key}
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      color: 'white',
+                      cursor: 'pointer',
+                    }}
+                    onClick={() => handleClick(item.key)}
+                  >
+                    {item}
+                  </span>
+                )
+              })}
+            </Space>
+          </div>
+        )
+      }
 
-    const ImagePreview = () => {
       return (
         <div
           className="kylin-image-preview-popup"
