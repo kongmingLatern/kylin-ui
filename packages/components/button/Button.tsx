@@ -151,7 +151,7 @@ const InternalButton: React.ForwardRefRenderFunction<
     )?.(e)
   }
 
-  let buttonNode = (
+  const buttonNode = (
     <button
       type={htmlType}
       className={classes}
