@@ -1,15 +1,6 @@
 import classNames from 'classnames'
 import React from 'react'
-
-interface DividerProps
-  extends React.HTMLAttributes<HTMLDivElement> {
-  dashed?: boolean
-  orientation?: 'left' | 'right' | 'center'
-  orientationMargin?: string | number
-  plain?: boolean
-  style?: React.CSSProperties
-  type?: 'horizontal' | 'vertical'
-}
+import { DividerProps } from './type/DividerProps'
 
 const Divider = React.forwardRef<
   HTMLDivElement,
@@ -64,7 +55,12 @@ const Divider = React.forwardRef<
     }),
   }
   return (
-    <div className={classes} {...rest} role="separator">
+    <div
+      className={classes}
+      ref={ref}
+      {...rest}
+      role="separator"
+    >
       {children && type !== 'vertical' && (
         <span
           className={`kylin-divider-inner-text`}
