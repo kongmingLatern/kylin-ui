@@ -3,6 +3,7 @@ import { ImageProps } from './type'
 import { Spin } from '@components/Spin'
 import classNames from 'classnames'
 import { Eye } from '@packages/icon'
+import { Space } from '@components/Space'
 
 const Image = React.forwardRef<
   HTMLImageElement,
@@ -62,7 +63,7 @@ const Image = React.forwardRef<
   // TODO: 图片的预览功能 animation
   const openPreview = () => {
     // 将图片的地址传递给一个新的组件，这个组件是一个弹窗，弹窗中展示图片
-    const createImageComponent = () => {
+    const ImageCover = () => {
       return (
         <img
           src={src}
@@ -82,7 +83,49 @@ const Image = React.forwardRef<
       )
     }
 
-    const createPopup = () => {
+    const ImageTools = () => {
+      return (
+        <div
+          style={{
+            display: 'flex',
+            width: '100%',
+            height: '3rem',
+            justifyContent: 'end',
+            alignItems: 'center',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+          }}
+        >
+          <Space
+            size={32}
+            style={{
+              marginRight: '2rem',
+            }}
+          >
+            {['放大', '缩小', '旋转', '关闭'].map(item => {
+              return (
+                <span
+                  key={item}
+                  style={{
+                    display: 'block',
+                    width: '2rem',
+                    height: '2rem',
+                    lineHeight: '2rem',
+                    color: 'white',
+                    cursor: 'pointer',
+                  }}
+                >
+                  {item}
+                </span>
+              )
+            })}
+          </Space>
+        </div>
+      )
+    }
+
+    const ImagePreview = () => {
       return (
         <div
           className="kylin-image-preview-popup"
@@ -96,12 +139,13 @@ const Image = React.forwardRef<
             zIndex: 9999,
           }}
         >
-          {createImageComponent()}
+          <ImageTools />
+          <ImageCover />
         </div>
       )
     }
 
-    return createPopup()
+    return <ImagePreview />
   }
 
   return (
