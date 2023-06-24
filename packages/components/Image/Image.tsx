@@ -10,6 +10,7 @@ import {
   X,
 } from '@packages/icon'
 import { Space } from '@components/Space'
+import { GetHandler } from './helpers'
 
 const Image = React.forwardRef<
   HTMLImageElement,
@@ -31,26 +32,18 @@ const Image = React.forwardRef<
     useState(false)
   const [error, setErr] = useState(false)
 
+  const { handleOnError, handleOnLoad } = GetHandler({
+    setLoading,
+    setErr,
+    onError,
+    onLoad,
+  })
+
   const classes = classNames({
     ['kylin-image-preview']: preview,
   })
 
-  const handleOnLoad = e => {
-    if (onLoad) {
-      onLoad(e)
-    }
-    setLoading(false)
-  }
-
-  const handleOnError = e => {
-    if (onError) {
-      onError(e)
-      setErr(true)
-    }
-    setLoading(false)
-  }
-
-  const PreviewIcon = () => {
+  const PreviewText = () => {
     return (
       <div className="kylin-image-preview-info">
         <Eye width={20} height={20} />
@@ -85,7 +78,8 @@ const Image = React.forwardRef<
             position: 'absolute',
             top: '50%',
             left: '50%',
-            transform: 'translate(-50%, -50%)',
+            transform:
+              'translate(-50%, -50%) translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotate(0deg)',
             maxWidth: '80%',
             maxHeight: '80%',
             minWidth: '20%',
@@ -184,7 +178,7 @@ const Image = React.forwardRef<
             className="kylin-image-preview-mask"
             onClick={() => setPreviewVisible(true)}
           >
-            {!previewVisible && !error && <PreviewIcon />}
+            {!previewVisible && !error && <PreviewText />}
           </div>
           <img
             src={src}
