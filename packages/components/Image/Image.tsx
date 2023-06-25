@@ -11,6 +11,7 @@ import {
 } from '@packages/icon'
 import { Space } from '@components/Space'
 import { GetHandler, GetImageIconsHandler } from './helpers'
+import { ImageTools as Tools } from './helpers/const'
 
 const Image = React.forwardRef<
   HTMLImageElement,
@@ -95,10 +96,10 @@ const Image = React.forwardRef<
       }
       const ImageTools = () => {
         const ImageToolIcons = [
-          <Plus width={30} key={'plus'} />,
-          <Minus width={30} key={'minus'} />,
-          <RotateCcw width={30} key={'rotateCCw'} />,
-          <X width={30} key={'close'} />,
+          <Plus width={30} key={Tools.PLUS} />,
+          <Minus width={30} key={Tools.MINUS} />,
+          <RotateCcw width={30} key={Tools.ROTATE_CCW} />,
+          <X width={30} key={Tools.CLOSE} />,
         ]
         const { handleClick } = GetImageIconsHandler(
           setPreviewVisible as any
