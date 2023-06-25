@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ImageProps } from './type'
 import { Spin } from '@components/Spin'
 import classNames from 'classnames'
@@ -54,14 +54,24 @@ const Image = React.forwardRef<
 
   // TODO: 图片的预览功能 animation
   const openPreview = () => {
-    // 监听 window 的 esc 事件，如果按下了 esc 键，就关闭预览
-    window.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
-        setPreviewVisible(false)
-      }
-    })
-
     const ImagePreview = () => {
+      useEffect(() => {
+        function registerEscEvent(e) {
+          if (e.key === 'Escape') {
+            setPreviewVisible(false)
+          }
+        }
+
+        window.addEventListener('keydown', registerEscEvent)
+
+        return () => {
+          window.removeEventListener(
+            'keydown',
+            registerEscEvent
+          )
+        }
+      }, [])
+
       // 将图片的地址传递给一个新的组件，这个组件是一个弹窗，弹窗中展示图片
       const ImageCover = () => {
         return (
@@ -83,7 +93,6 @@ const Image = React.forwardRef<
           />
         )
       }
-
       const ImageTools = () => {
         const ImageToolIcons = [
           <Plus width={30} key={'plus'} />,
