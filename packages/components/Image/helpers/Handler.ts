@@ -39,10 +39,16 @@ export function GetImageIconsHandler({
     ) as any
     switch (key) {
       case ImageTools.PLUS:
-        transformPreviewSize(formatCount(ImageTools.PLUS))
+        transformPreviewSize(
+          formatCount(ImageTools.PLUS),
+          rotate
+        )
         break
       case ImageTools.MINUS:
-        transformPreviewSize(formatCount(ImageTools.MINUS))
+        transformPreviewSize(
+          formatCount(ImageTools.MINUS),
+          rotate
+        )
         break
       case ImageTools.ROTATE_CCW:
         transformPreviewSize(count, ++rotate)
