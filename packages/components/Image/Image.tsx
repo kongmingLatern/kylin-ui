@@ -40,6 +40,10 @@ const Image = React.forwardRef<
     onLoad,
   })
 
+  const { handleClick } = GetImageIconsHandler({
+    setPreviewVisible,
+  })
+
   const classes = classNames({
     ['kylin-image-preview']: preview,
   })
@@ -77,19 +81,18 @@ const Image = React.forwardRef<
       const ImageCover = () => {
         return (
           <img
+            id={'kylin-image_preview_cover'}
             src={src}
             alt={alt}
             style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
               transform:
-                'translate(-50%, -50%) translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotate(0deg)',
+                'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotate(0deg)',
               maxWidth: '80%',
               maxHeight: '80%',
               minWidth: '20%',
               minHeight: '20%',
               objectFit: 'cover',
+              userSelect: 'none',
             }}
           />
         )
@@ -101,9 +104,6 @@ const Image = React.forwardRef<
           <RotateCcw width={30} key={Tools.ROTATE_CCW} />,
           <X width={30} key={Tools.CLOSE} />,
         ]
-        const { handleClick } = GetImageIconsHandler(
-          setPreviewVisible as any
-        )
 
         return (
           <div
@@ -160,7 +160,20 @@ const Image = React.forwardRef<
           }}
         >
           <ImageTools />
-          <ImageCover />
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              transform:
+                'transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s',
+              zIndex: -1,
+            }}
+          >
+            <ImageCover />
+          </div>
         </div>
       )
     }
