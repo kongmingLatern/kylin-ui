@@ -1,3 +1,5 @@
+import { ImageTools } from './const'
+
 export function GetHandler({
   onLoad,
   onError,
@@ -22,5 +24,28 @@ export function GetHandler({
   return {
     handleOnLoad,
     handleOnError,
+  }
+}
+
+export function GetImageIconsHandler({
+  setPreviewVisible,
+}) {
+  const handleClick = key => {
+    switch (key) {
+      case ImageTools.PLUS:
+        break
+      case ImageTools.MINUS:
+        break
+      case ImageTools.ROTATE_CCW:
+        break
+      case ImageTools.CLOSE:
+        setPreviewVisible(false)
+        break
+      default:
+        break
+    }
+  }
+  return {
+    handleClick,
   }
 }

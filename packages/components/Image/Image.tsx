@@ -10,7 +10,7 @@ import {
   X,
 } from '@packages/icon'
 import { Space } from '@components/Space'
-import { GetHandler } from './helpers'
+import { GetHandler, GetImageIconsHandler } from './helpers'
 
 const Image = React.forwardRef<
   HTMLImageElement,
@@ -100,21 +100,10 @@ const Image = React.forwardRef<
           <RotateCcw width={30} key={'rotateCCw'} />,
           <X width={30} key={'close'} />,
         ]
-        const handleClick = key => {
-          switch (key) {
-            case 'plus':
-              break
-            case 'minus':
-              break
-            case 'rotateCCw':
-              break
-            case 'close':
-              setPreviewVisible(false)
-              break
-            default:
-              break
-          }
-        }
+        const { handleClick } = GetImageIconsHandler(
+          setPreviewVisible as any
+        )
+
         return (
           <div
             style={{
