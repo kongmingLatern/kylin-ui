@@ -20,10 +20,10 @@ const App = () => {
     <>
       {/* <Title mark>Spin</Title> */}
       {/* <SpinDemo /> */}
-      <Title mark>Image</Title>
-      <ImageDemo />
-      {/* <Title mark>Card</Title>
-      <CardDemo /> */}
+      {/* <Title mark>Image</Title>
+      <ImageDemo /> */}
+      <Title mark>Card</Title>
+      <CardDemo />
       {/* <Title mark>Tag</Title>
       <TagDemo />
       <br />
