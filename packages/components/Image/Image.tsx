@@ -137,12 +137,14 @@ const Image = React.forwardRef<
     <>
       <Spin spinning={loading}>
         <span className="kylin-image-preview-container">
-          <div
-            className="kylin-image-preview-mask"
-            onClick={() => setPreviewVisible(true)}
-          >
-            {!previewVisible && !error && <PreviewText />}
-          </div>
+          {preview && (
+            <div
+              className="kylin-image-preview-mask"
+              onClick={() => setPreviewVisible(true)}
+            >
+              {!error && <PreviewText />}
+            </div>
+          )}
           <img
             src={src}
             width={width}
