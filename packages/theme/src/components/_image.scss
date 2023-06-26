@@ -65,15 +65,15 @@
         }
       }
     }
+    &-cover {
+      transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1)
+        rotate(0deg);
+      max-width: 80%;
+      max-height: 80%;
+      min-width: 20%;
+      min-height: 20%;
+      object-fit: cover;
+      user-select: none;
+    }
   }
-}
-#kylin-image_preview_cover {
-  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1)
-    rotate(0deg);
-  max-width: 80%;
-  max-height: 80%;
-  min-width: 20%;
-  min-height: 20%;
-  object-fit: cover;
-  user-select: none;
 }

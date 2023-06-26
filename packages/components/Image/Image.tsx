@@ -82,7 +82,7 @@ const Image = React.forwardRef<
       const ImageCover = () => {
         return (
           <img
-            id={'kylin-image_preview_cover'}
+            className={'kylin-image-preview-cover'}
             src={src}
             alt={alt}
           />

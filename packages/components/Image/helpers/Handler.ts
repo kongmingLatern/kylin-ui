@@ -35,7 +35,7 @@ export function GetImageIconsHandler({
   const limitCount = 5
   const handleClick = key => {
     const dom = document.querySelector(
-      '#kylin-image_preview_cover'
+      '.kylin-image-preview-cover'
     ) as any
     switch (key) {
       case ImageTools.PLUS:
