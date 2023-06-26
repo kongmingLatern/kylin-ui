@@ -9,3 +9,5 @@ export * from './string'
 export * from './theme'
 
 export * from './toArray'
+
+export * from './keyboard'

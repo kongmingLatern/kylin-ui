@@ -12,6 +12,7 @@ import {
 import { Space } from '@components/Space'
 import { GetHandler, GetImageIconsHandler } from './helpers'
 import { ImageTools as Tools } from './helpers/const'
+import { Keyboard } from '@kylin-ui/shared'
 
 const Image = React.forwardRef<
   HTMLImageElement,
@@ -62,7 +63,7 @@ const Image = React.forwardRef<
     const ImagePreview = () => {
       useEffect(() => {
         function registerEscEvent(e) {
-          if (e.key === 'Escape') {
+          if (e.key === Keyboard.ESCAPE) {
             setPreviewVisible(false)
           }
         }
