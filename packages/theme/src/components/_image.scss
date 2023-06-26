@@ -4,6 +4,7 @@
     &-container {
       display: inline-flex;
       position: relative;
+      user-select: none;
     }
     &-mask {
       position: absolute;
