@@ -85,16 +85,6 @@ const Image = React.forwardRef<
             id={'kylin-image_preview_cover'}
             src={src}
             alt={alt}
-            style={{
-              transform:
-                'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotate(0deg)',
-              maxWidth: '80%',
-              maxHeight: '80%',
-              minWidth: '20%',
-              minHeight: '20%',
-              objectFit: 'cover',
-              userSelect: 'none',
-            }}
           />
         )
       }
@@ -107,18 +97,7 @@ const Image = React.forwardRef<
         ]
 
         return (
-          <div
-            style={{
-              display: 'flex',
-              width: '100%',
-              height: '3rem',
-              justifyContent: 'end',
-              alignItems: 'center',
-              position: 'fixed',
-              top: '1rem',
-              left: 0,
-            }}
-          >
+          <div className="kylin-image-preview-popup-tools">
             <Space
               size={32}
               style={{
@@ -128,14 +107,8 @@ const Image = React.forwardRef<
               {ImageToolIcons.map((item, key) => {
                 return (
                   <span
+                    className="kylin-image-preview-popup-tools-icon"
                     key={key}
-                    style={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      color: 'white',
-                      cursor: 'pointer',
-                    }}
                     onClick={() => handleClick(item.key)}
                   >
                     {item}
@@ -148,31 +121,9 @@ const Image = React.forwardRef<
       }
 
       return (
-        <div
-          className="kylin-image-preview-popup"
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            background: 'rgba(0, 0, 0, 0.5)',
-            zIndex: 9999,
-          }}
-        >
+        <div className="kylin-image-preview-popup">
           <ImageTools />
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              transform:
-                'transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s',
-              zIndex: -1,
-            }}
-          >
+          <div className="kylin-image-preview-popup-container">
             <ImageCover />
           </div>
         </div>
