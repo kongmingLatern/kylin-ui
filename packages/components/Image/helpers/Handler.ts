@@ -72,7 +72,10 @@ export function GetImageIconsHandler({
       return count
     }
 
-    function transformPreviewSize(count, rotate = 0) {
+    function transformPreviewSize(
+      count: number,
+      rotate = 0
+    ) {
       if (dom) {
         dom.style.transform = `translate3d(${
           0.25 * count
