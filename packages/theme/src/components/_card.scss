@@ -1,0 +1,13 @@
+.kylin-card {
+  &-position {
+    &-top,
+    &-bottom {
+      flex-direction: column;
+    }
+
+    &-left,
+    &-right {
+      flex-direction: row;
+    }
+  }
+}
