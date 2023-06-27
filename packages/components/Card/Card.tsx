@@ -1,6 +1,7 @@
 import React from 'react'
 import type { CardProps } from './type'
 import { Content, Footer, Paragraph, Title } from '..'
+import classNames from 'classnames'
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   (props, ref) => {
@@ -8,10 +9,15 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
 
     function CardContent(props) {
       const { className } = props
+      const classes = classNames(
+        'kylin-card-content',
+        className
+      )
       return (
-        <Content className={className}>
-          <Title>卡片标题</Title>
-
+        <Content className={classes}>
+          <Title level={1} strong>
+            卡片标题
+          </Title>
           <Paragraph>卡片内容</Paragraph>
         </Content>
       )
@@ -27,14 +33,14 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       } = Cover
 
       return (
-        <div className="flex flex-col p-2">
+        <div className="inline-flex flex-col p-2" ref={ref}>
           <div className="flex">
-            <div className="kylin-card-cover flex-1">
+            <div className="kylin-card-cover">
               {element}
             </div>
-            <CardContent className={'flex-1'} />
+            <CardContent />
           </div>
-          <Footer>
+          <Footer className="bg-blue-300">
             <Paragraph>卡片底部</Paragraph>
           </Footer>
         </div>
