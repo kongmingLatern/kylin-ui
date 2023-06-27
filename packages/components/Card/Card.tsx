@@ -5,7 +5,12 @@ import classNames from 'classnames'
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   (props, ref) => {
-    const { Cover } = props
+    const {
+      Cover,
+      Header: HeaderContainer,
+      Footer: FooterContainer,
+      Content: ContentContainer,
+    } = props
 
     function CardContent(props) {
       const { className } = props
@@ -16,9 +21,9 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       return (
         <Content className={classes}>
           <Title level={1} strong>
-            卡片标题
+            {HeaderContainer}
           </Title>
-          <Paragraph>卡片内容</Paragraph>
+          <Paragraph>{ContentContainer}</Paragraph>
         </Content>
       )
     }
@@ -26,7 +31,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
     if (Cover) {
       const {
         element,
-        description,
+        alt,
         size = 'small',
         position = 'top',
         shape = 'square',
@@ -41,15 +46,15 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
             <CardContent />
           </div>
           <Footer className="bg-blue-300">
-            <Paragraph>卡片底部</Paragraph>
+            <Paragraph>{FooterContainer}</Paragraph>
           </Footer>
         </div>
       )
     }
     return (
-      <div className="flex relative p-2">
+      <div className="inline-flex flex-col p-2">
         <CardContent />
-        <Footer className="absolute bottom-0 left-0">
+        <Footer>
           <Paragraph>卡片底部</Paragraph>
         </Footer>
       </div>
