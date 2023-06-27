@@ -8,8 +8,8 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
     const {
       Cover,
       Header: HeaderContainer,
-      Footer: FooterContainer,
       Content: ContentContainer,
+      Footer: FooterContainer,
     } = props
 
     function CardContent(props) {
@@ -37,9 +37,21 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         shape = 'square',
       } = Cover
 
+      const classes = classNames(
+        {
+          [`kylin-card-position-${position}`]: position,
+          [`kylin-card-size-${size}`]: size,
+          [`kylin-card-shape-${shape}`]: shape,
+        },
+        'flex'
+      )
+
       return (
         <div className="inline-flex flex-col p-2" ref={ref}>
-          <div className="flex">
+          <div
+            className={classes}
+            dir={position === 'right' ? 'rtl' : 'auto'}
+          >
             <div className="kylin-card-cover">
               {element}
             </div>
@@ -51,14 +63,6 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         </div>
       )
     }
-    return (
-      <div className="inline-flex flex-col p-2">
-        <CardContent />
-        <Footer>
-          <Paragraph>卡片底部</Paragraph>
-        </Footer>
-      </div>
-    )
   }
 )
 
