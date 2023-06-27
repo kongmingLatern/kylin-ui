@@ -9,5 +9,12 @@
     &-right {
       flex-direction: row;
     }
+
+    &-bottom {
+      flex-direction: column-reverse;
+    }
+    &-right {
+      flex-direction: row-reverse;
+    }
   }
 }

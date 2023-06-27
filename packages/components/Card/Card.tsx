@@ -48,10 +48,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
 
       return (
         <div className="inline-flex flex-col p-2" ref={ref}>
-          <div
-            className={classes}
-            dir={position === 'right' ? 'rtl' : 'auto'}
-          >
+          <div className={classes}>
             <div className="kylin-card-cover">
               {element}
             </div>
@@ -63,6 +60,15 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         </div>
       )
     }
+
+    return (
+      <div className="inline-flex flex-col p-2" ref={ref}>
+        <CardContent />
+        <Footer className="bg-blue-300">
+          <Paragraph>{FooterContainer}</Paragraph>
+        </Footer>
+      </div>
+    )
   }
 )
 
