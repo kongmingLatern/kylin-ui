@@ -1,11 +1,14 @@
 import React from 'react'
 import type { CardProps } from './type'
-import { Content, Footer, Paragraph, Title } from '..'
+import { Content, Footer, Title } from '..'
 import classNames from 'classnames'
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   (props, ref) => {
     const {
+      shape,
+      className,
+      children,
       Cover,
       Header: HeaderContainer,
       Content: ContentContainer,
@@ -24,15 +27,25 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
           <Title level={1} strong>
             {HeaderContainer}
           </Title>
-          <Paragraph>{ContentContainer}</Paragraph>
+          {ContentContainer || children}
         </Content>
       )
     }
 
+    const containerClass = classNames(
+      {
+        [`kylin-card-shape-${shape}`]: shape,
+      },
+      'kylin-card-container',
+      'flex',
+      'flex-col',
+      'p-2',
+      className
+    )
+
     if (Cover) {
       const {
         element,
-        alt,
         size = 'small',
         position = 'top',
         shape = 'square',
@@ -48,11 +61,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       )
 
       return (
-        <div
-          className="flex flex-col p-2"
-          ref={ref}
-          {...rest}
-        >
+        <div className={containerClass} ref={ref} {...rest}>
           <div className={classes}>
             <div className="kylin-card-cover">
               {element}
@@ -65,11 +74,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
     }
 
     return (
-      <div
-        className="flex flex-col p-2"
-        ref={ref}
-        {...rest}
-      >
+      <div className={containerClass} ref={ref} {...rest}>
         <CardContent />
         <Footer className="bg-blue-300">
           {FooterContainer}
