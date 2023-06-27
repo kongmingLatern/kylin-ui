@@ -1,4 +1,8 @@
 .kylin-card {
+  &-container {
+    border: 1px solid #f0f0f0;
+    overflow: hidden;
+  }
   &-position {
     &-top,
     &-bottom {
@@ -15,6 +19,28 @@
     }
     &-right {
       flex-direction: row-reverse;
+    }
+  }
+  &-size {
+    &-small {
+      width: 30rem;
+    }
+    &-medium {
+      width: 50rem;
+    }
+    &-large {
+      width: 70rem;
+    }
+  }
+  &-shape {
+    &-circle {
+      border-radius: 50%;
+    }
+    &-square {
+      border-radius: 0;
+    }
+    &-round {
+      border-radius: 1rem;
     }
   }
 }
