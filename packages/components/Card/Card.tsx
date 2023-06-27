@@ -1,10 +1,26 @@
 import React from 'react'
 import type { CardProps } from './type'
-import { Paragraph, Title } from '..'
+import { Content, Footer, Paragraph, Title } from '..'
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   (props, ref) => {
     const { Cover } = props
+
+    function CardContent() {
+      return (
+        <>
+          <Content>
+            <Title>卡片标题</Title>
+
+            <Paragraph>卡片内容</Paragraph>
+          </Content>
+
+          <Footer>
+            <Paragraph>卡片底部</Paragraph>
+          </Footer>
+        </>
+      )
+    }
 
     if (Cover) {
       const {
@@ -14,21 +30,16 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         position = 'top',
         shape = 'square',
       } = Cover
+
       return (
         <div>
-          {element}
-          <Title>卡片标题</Title>
-
-          <Paragraph>卡片内容</Paragraph>
+          {/* Cover */}
+          <div>{element}</div>
+          <CardContent />
         </div>
       )
     }
-    return (
-      <div>
-        <Title>卡片标题</Title>
-        <Paragraph>卡片内容</Paragraph>
-      </div>
-    )
+    return <CardContent />
   }
 )
 
