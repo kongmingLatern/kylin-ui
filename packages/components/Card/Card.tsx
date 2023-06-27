@@ -76,9 +76,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
     return (
       <div className={containerClass} ref={ref} {...rest}>
         <CardContent />
-        <Footer className="bg-blue-300">
-          {FooterContainer}
-        </Footer>
+        <Footer>{FooterContainer}</Footer>
       </div>
     )
   }

@@ -33,6 +33,7 @@ describe("button's props", () => {
   })
   test("button's other props", () => {
     const { container } = render(
+      // @ts-ignore
       <Button type="default" bg="blue-500">
         This is a primary button
       </Button>
