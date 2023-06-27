@@ -11,11 +11,13 @@
     &-center {
       justify-content: center;
     }
-    &-between {
-      justify-content: space-between;
-    }
-    &-around {
-      justify-content: space-around;
+    &-space {
+      &-between {
+        justify-content: space-between;
+      }
+      &-around {
+        justify-content: space-around;
+      }
     }
   }
 
