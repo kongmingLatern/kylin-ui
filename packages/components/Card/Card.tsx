@@ -59,9 +59,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
             </div>
             <CardContent />
           </div>
-          <Footer className="bg-blue-300">
-            {FooterContainer}
-          </Footer>
+          <Footer>{FooterContainer}</Footer>
         </div>
       )
     }
