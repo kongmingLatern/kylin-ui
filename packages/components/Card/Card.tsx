@@ -6,19 +6,14 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
   (props, ref) => {
     const { Cover } = props
 
-    function CardContent() {
+    function CardContent(props) {
+      const { className } = props
       return (
-        <>
-          <Content>
-            <Title>卡片标题</Title>
+        <Content className={className}>
+          <Title>卡片标题</Title>
 
-            <Paragraph>卡片内容</Paragraph>
-          </Content>
-
-          <Footer>
-            <Paragraph>卡片底部</Paragraph>
-          </Footer>
-        </>
+          <Paragraph>卡片内容</Paragraph>
+        </Content>
       )
     }
 
@@ -32,14 +27,27 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       } = Cover
 
       return (
-        <div>
-          {/* Cover */}
-          <div>{element}</div>
-          <CardContent />
+        <div className="flex flex-col p-2">
+          <div className="flex">
+            <div className="kylin-card-cover flex-1">
+              {element}
+            </div>
+            <CardContent className={'flex-1'} />
+          </div>
+          <Footer>
+            <Paragraph>卡片底部</Paragraph>
+          </Footer>
         </div>
       )
     }
-    return <CardContent />
+    return (
+      <div className="flex relative p-2">
+        <CardContent />
+        <Footer className="absolute bottom-0 left-0">
+          <Paragraph>卡片底部</Paragraph>
+        </Footer>
+      </div>
+    )
   }
 )
 
