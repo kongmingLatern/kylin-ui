@@ -10,6 +10,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       Header: HeaderContainer,
       Content: ContentContainer,
       Footer: FooterContainer,
+      ...rest
     } = props
 
     function CardContent(props) {
@@ -47,7 +48,11 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       )
 
       return (
-        <div className="inline-flex flex-col p-2" ref={ref}>
+        <div
+          className="flex flex-col p-2"
+          ref={ref}
+          {...rest}
+        >
           <div className={classes}>
             <div className="kylin-card-cover">
               {element}
@@ -55,17 +60,21 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
             <CardContent />
           </div>
           <Footer className="bg-blue-300">
-            <Paragraph>{FooterContainer}</Paragraph>
+            {FooterContainer}
           </Footer>
         </div>
       )
     }
 
     return (
-      <div className="inline-flex flex-col p-2" ref={ref}>
+      <div
+        className="flex flex-col p-2"
+        ref={ref}
+        {...rest}
+      >
         <CardContent />
         <Footer className="bg-blue-300">
-          <Paragraph>{FooterContainer}</Paragraph>
+          {FooterContainer}
         </Footer>
       </div>
     )

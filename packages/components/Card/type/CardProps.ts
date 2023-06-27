@@ -10,6 +10,9 @@ export interface CardProps {
   Cover?: CoverProps
   className?: string
   children?: React.ReactNode
+  width?: string | number
+  height?: string | number
+  style?: React.CSSProperties
   shape?: 'circle' | 'square'
   title?: string
   Header?: React.ReactElement
