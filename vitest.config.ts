@@ -7,6 +7,7 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     threads: false,
+    exclude: ['**/node_modules/**', '**/dist/**'],
   },
   resolve: {
     alias: {
