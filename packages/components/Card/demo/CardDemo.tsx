@@ -1,5 +1,5 @@
-import { Image } from '@components/Image'
 import { Card } from '..'
+import { Image } from '@components/Image'
 import { Button } from '@components/Button'
 import { Space } from '@components/Space'
 import { Paragraph } from '@components/Typography'
