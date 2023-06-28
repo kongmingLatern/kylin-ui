@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Button } from '../Button'
 
-const ButtonType = () => {
+const ButtonDemo = () => {
   const [loading, setLoading] = useState({
     delay: 0,
   })
@@ -99,9 +99,9 @@ const ButtonType = () => {
         click me to load 2s
       </Button>
 
-      <br/>
+      <br />
     </>
   )
 }
 
-export default ButtonType
+export { ButtonDemo }
