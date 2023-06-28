@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { useState } from 'react'
-import { Button } from '../Button'
-import '../../../../dist/index.css'
+import { Button } from '../components/Button/Button'
+import 'uno.css'
+import '../../dist/index.css'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
