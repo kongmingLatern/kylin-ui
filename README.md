@@ -112,6 +112,19 @@ If you would like to contribute to MyReactComponentLibrary, please follow these 
 
 We will review your pull request as soon as possible. If there are any issues or changes needed, we will communicate with you in the comments. Once your contribution is accepted and merged, you will become a contributor to the project.
 
+## How to contribution a new component
+
+1. Fork the project on GitHub to your account
+2. Clone your forked repository to your local machine
+3. You can use `hygen` to create a new component template, If you don't have `hygen`, you can install it globally with `npm install -g hygen`
+4. Then you can use `hygen component new {Your Component Name}` to create a new component template
+5. Make changes on the new branch
+6. Ensure the code follows the Coding Guidelines
+7. Run tests and ensure all tests pass
+8. Write commit messages following the Commit Guidelines
+9. Push the changes to your forked repository
+10. Create a pull request on GitHub to merge your branch into the main branch of the main repository
+
 ## Commit Guidelines
 
 Please follow these commit message guidelines:
