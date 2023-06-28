@@ -120,9 +120,6 @@ importers:
       prettier:
         specifier: ^2.8.7
         version: registry.npmmirror.com/prettier@2.8.7
-      prop-types:
-        specifier: ^15.8.1
-        version: registry.npmmirror.com/prop-types@15.8.1
       react-is:
         specifier: ^18.2.0
         version: registry.npmmirror.com/react-is@18.2.0

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-
+import { useState } from 'react'
 import { Button } from '../Button'
 import '../../../../dist/index.css'
 
@@ -16,7 +16,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+// ***************** type *******************
 export const Primary: Story = {
   args: {
     type: 'primary',
@@ -43,6 +43,86 @@ export const Info: Story = {
   },
   render: args => <Button {...args}>Info</Button>,
 }
+
+// ***************** block *******************
+export const Block: Story = {
+  args: {
+    block: true,
+  },
+  render: args => <Button {...args}>Block</Button>,
+}
+
+// ***************** loading *******************
+export const Loading: Story = {
+  args: {
+    loading: true,
+  },
+  render: args => <Button {...args}>Loading</Button>,
+}
+
+// ***************** delay loading *******************
+export const DelayLoading: Story = {
+  args: {
+    loading: {
+      delay: 2000,
+    },
+  },
+  render: args => {
+    const [loading, setLoading] = useState(
+      args?.loading ?? { delay: 2000 }
+    )
+    console.log('args', args)
+    return (
+      <>
+        <Button loading={loading}>
+          {loading.delay > 0
+            ? 'After 2s to load'
+            : 'Well Job!'}
+        </Button>
+        <Button onClick={() => setLoading({ delay: 0 })}>
+          Loading finishing
+        </Button>
+        <Button onClick={() => setLoading({ delay: 2000 })}>
+          Again
+        </Button>
+      </>
+    )
+  },
+}
+
+// ***************** beforeIcon *******************
+export const BeforeIcon: Story = {
+  args: {
+    beforeIcon: <span>👈</span>,
+  },
+  render: args => <Button {...args}>BeforeIcon</Button>,
+}
+
+// ***************** afterIcon *******************
+export const AfterIcon: Story = {
+  args: {
+    afterIcon: <span>👉</span>,
+  },
+  render: args => <Button {...args}>AfterIcon</Button>,
+}
+
+// ***************** size *******************
+export const Size: Story = {
+  args: {
+    size: 'small',
+  },
+  render: args => <Button {...args}>Size</Button>,
+}
+
+// ***************** disabled *******************
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+  render: args => <Button {...args}>Disabled</Button>,
+}
+
+// ***************** ghost *******************
 export const Ghost: Story = {
   args: {
     ghost: true,
