@@ -68,14 +68,11 @@ export const DelayLoading: Story = {
     },
   },
   render: args => {
-    const [loading, setLoading] = useState(
-      args?.loading ?? { delay: 2000 }
-    )
-    console.log('args', args)
+    const [loading, setLoading] = useState(args.loading)
     return (
       <>
         <Button loading={loading}>
-          {loading.delay > 0
+          {(loading as Record<'delay', number>).delay > 0
             ? 'After 2s to load'
             : 'Well Job!'}
         </Button>
