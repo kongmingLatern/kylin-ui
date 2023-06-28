@@ -1,6 +1,7 @@
 import React from 'react'
 import type { CardProps } from './type'
-import { Content, Footer, Title } from '..'
+import { Content, Footer } from '../Layout'
+import { Title } from '../Typography'
 import classNames from 'classnames'
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
