@@ -6,19 +6,16 @@ const meta = {
   title: 'UI Component/Badge',
   component: Badge,
   tags: ['autodocs'],
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  } as any,
 } satisfies Meta<typeof Badge>
 
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-  render: () => <Badge>123</Badge>,
+  render: args => <Badge>123</Badge>,
 }
 
 export const Type: Story = {
-  render: () => (
+  render: args => (
     <Space>
       <Badge type="secondary">Secondary</Badge>
       <Badge type="success">Success</Badge>
@@ -30,7 +27,7 @@ export const Type: Story = {
 }
 
 export const Shape: Story = {
-  render: () => (
+  render: args => (
     <Space>
       <Badge shape="square">default shape</Badge>
       <Badge shape="circle">circle</Badge>
@@ -40,7 +37,7 @@ export const Shape: Story = {
 }
 
 export const Size: Story = {
-  render: () => (
+  render: args => (
     <Space>
       <Badge size="small">small</Badge>
       <Badge size="middle">middle</Badge>
@@ -50,7 +47,7 @@ export const Size: Story = {
 }
 
 export const Gradient: Story = {
-  render: () => (
+  render: args => (
     <Space>
       <Badge gradient="aquamarine">aqua</Badge>
       <Badge gradient="blue">blue</Badge>
@@ -61,7 +58,7 @@ export const Gradient: Story = {
 }
 
 export const Text: Story = {
-  render: () => <Badge text="text" />,
+  render: args => <Badge text="text" />,
 }
 
 export default meta
