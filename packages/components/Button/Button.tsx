@@ -41,7 +41,6 @@ const InternalButton: React.ForwardRefRenderFunction<
     className,
     children,
     htmlType = 'button',
-    onClick,
     ...rest
   } = props
 
@@ -151,10 +150,11 @@ const InternalButton: React.ForwardRefRenderFunction<
     )?.(e)
   }
 
-  let buttonNode = (
+  const buttonNode = (
     <button
       type={htmlType}
       className={classes}
+      ref={ref}
       onClick={handleClick}
       disabled={!!innerLoading}
       {...restProps}
