@@ -5,7 +5,7 @@ test('render', () => {
   const { container } = render(<Badge>Badge</Badge>)
   expect(container.firstChild).toMatchInlineSnapshot(`
     <span
-      class="kylin-badge-type-primary kylin-badge-shape-square kylin-badge-size-middle font-bold whitespace-nowrap"
+      class="relative inline-flex"
     >
       Badge
     </span>
@@ -20,7 +20,7 @@ describe('type', () => {
 
     expect(container.firstChild).toMatchInlineSnapshot(`
       <span
-        class="kylin-badge-type-secondary kylin-badge-shape-square kylin-badge-size-middle font-bold whitespace-nowrap"
+        class="relative inline-flex"
       >
         Badge
       </span>
@@ -33,9 +33,19 @@ describe('type', () => {
     )
     expect(container.firstChild).toMatchInlineSnapshot(`
       <span
-        class="kylin-badge-type-primary kylin-badge-shape-square kylin-badge-size-middle font-bold whitespace-nowrap"
+        class="relative inline-flex"
       >
-        text
+        <sup
+          style="position: absolute; top: -1rem; right: -1.5rem; height: 20px; z-index: 10;"
+        >
+          <span
+            class="kylin-badge kylin-badge-type-primary kylin-badge-shape-square whitespace-nowrap relative"
+            style="color: white; height: 20px;"
+          >
+            text
+          </span>
+        </sup>
+        Badge
       </span>
     `)
   })
