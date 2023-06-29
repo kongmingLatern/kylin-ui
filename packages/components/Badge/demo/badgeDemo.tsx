@@ -1,38 +1,62 @@
 import { Space } from '@components/Space'
 import { Badge } from '../Badge'
+import Avatar from '@components/Avatar/Avatar'
+import { Layout } from '@packages/icon'
 
 export const BadgeDemo = () => {
   return (
-    <>
-      <Space>
-        <Badge>New Primary</Badge>
-        <Badge type="secondary">New Secondary</Badge>
-        <Badge type="success">New Success</Badge>
-        <Badge type="warning">New Warning</Badge>
-        <Badge type="danger">New Danger</Badge>
-        <Badge type="info">New Info</Badge>
-      </Space>
+    <Space size={20}>
+      <Badge
+        text="1"
+        size="small"
+        shape="circle"
+        offset={['-.8rem', '-.6rem']}
+        bgColor="red"
+      >
+        <Avatar
+          src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
+          shape="circle"
+          size={'large'}
+        />
+      </Badge>
 
-      <Space>
-        <Badge shape="square">default shape</Badge>
-        <Badge shape="circle">circle</Badge>
-        <Badge shape="rounded">rounded</Badge>
-      </Space>
+      <Badge
+        text="999+"
+        size="small"
+        shape="square"
+        offset={['-.8rem', '-1.5rem']}
+        bgColor="red"
+      >
+        <Avatar
+          src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
+          shape="circle"
+          size={'small'}
+        />
+      </Badge>
 
-      <Space direction="vertical">
-        <Badge size="small">small</Badge>
-        <Badge size="middle">middle</Badge>
-        <Badge size="large">large</Badge>
-      </Space>
+      <Badge
+        text="999+"
+        shape="rounded"
+        offset={['-.8rem', '-1rem']}
+        bgColor="blue"
+      >
+        <Avatar
+          src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
+          shape="circle"
+          size={'large'}
+        />
+      </Badge>
 
-      <Space direction="vertical">
-        <Badge gradient="aquamarine">aqua</Badge>
-        <Badge gradient="blue">blue</Badge>
-        <Badge gradient="orange">orange</Badge>
-        <Badge gradient="red">red</Badge>
-      </Space>
-
-      <Badge gradient="orange" text="text" />
-    </>
+      <Badge
+        text={<Layout width={20} />}
+        offset={['-.7rem', '-.5rem']}
+      >
+        <Avatar
+          src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
+          shape="circle"
+          size={'large'}
+        />
+      </Badge>
+    </Space>
   )
 }
