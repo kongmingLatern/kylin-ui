@@ -20,4 +20,3 @@ export const Basic: Story =  {
 }
 
 export default meta
-
