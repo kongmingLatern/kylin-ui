@@ -14,7 +14,6 @@ const meta = {
   } as any,
 } satisfies Meta<typeof Button>
 
-export default meta
 type Story = StoryObj<typeof meta>
 
 // ***************** type *******************
@@ -127,3 +126,5 @@ export const Ghost: Story = {
   },
   render: args => <Button {...args}>Ghost</Button>,
 }
+
+export default meta
