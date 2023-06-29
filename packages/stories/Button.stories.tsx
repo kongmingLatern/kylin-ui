@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { useState } from 'react'
+import { Space } from '@components/Space'
 import { Button } from '@components/Button'
 import 'uno.css'
 import '../../dist/index.css'
-import { Space } from '@components/Space'
 
 const meta = {
   title: 'UI Component/Button',
