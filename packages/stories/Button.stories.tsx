@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { useState } from 'react'
-import { Button } from '../components/Button/Button'
+import { Button } from '@components/Button'
 import 'uno.css'
 import '../../dist/index.css'
+import { Space } from '@components/Space'
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-  title: 'Example/Button',
+  title: 'UI Component/Button',
   component: Button,
   tags: ['autodocs'],
   argTypes: {
@@ -17,33 +17,17 @@ const meta = {
 type Story = StoryObj<typeof meta>
 
 // ***************** type *******************
-export const Primary: Story = {
-  args: {
-    type: 'primary',
-  },
-  render: args => <Button {...args}>Primary</Button>,
+export const Type: Story = {
+  render: () => (
+    <Space>
+      <Button type="default">Default</Button>
+      <Button type="primary">Primary</Button>
+      <Button type="secondary">Secondary</Button>
+      <Button type="success">Success</Button>
+      <Button type="info">Warning</Button>
+    </Space>
+  ),
 }
-
-export const Secondary: Story = {
-  args: {
-    type: 'secondary',
-  },
-  render: args => <Button {...args}>Secondary</Button>,
-}
-
-export const Success: Story = {
-  args: {
-    type: 'success',
-  },
-  render: args => <Button {...args}>Success</Button>,
-}
-export const Info: Story = {
-  args: {
-    type: 'info',
-  },
-  render: args => <Button {...args}>Info</Button>,
-}
-
 // ***************** block *******************
 export const Block: Story = {
   args: {
@@ -70,7 +54,7 @@ export const DelayLoading: Story = {
   render: args => {
     const [loading, setLoading] = useState(args.loading)
     return (
-      <>
+      <Space>
         <Button loading={loading}>
           {(loading as Record<'delay', number>).delay > 0
             ? 'After 2s to load'
@@ -82,7 +66,7 @@ export const DelayLoading: Story = {
         <Button onClick={() => setLoading({ delay: 2000 })}>
           Again
         </Button>
-      </>
+      </Space>
     )
   },
 }
@@ -105,10 +89,13 @@ export const AfterIcon: Story = {
 
 // ***************** size *******************
 export const Size: Story = {
-  args: {
-    size: 'small',
-  },
-  render: args => <Button {...args}>Size</Button>,
+  render: () => (
+    <Space>
+      <Button size="small">small</Button>
+      <Button size="middle">middle</Button>
+      <Button size="large">large</Button>
+    </Space>
+  ),
 }
 
 // ***************** disabled *******************
