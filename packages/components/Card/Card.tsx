@@ -47,7 +47,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
     if (Cover) {
       const {
         element,
-        size = 'small',
+        size = 'middle',
         position = 'top',
         shape = 'square',
       } = Cover
