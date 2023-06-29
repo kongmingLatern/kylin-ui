@@ -8,9 +8,6 @@ const meta = {
   title: 'UI Component/<%= name %>',
   component: <%= name %>,
   tags: ['autodocs'],
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  } as any,
 } satisfies Meta<typeof <%= name %>>
 
 type Story = StoryObj<typeof meta>
