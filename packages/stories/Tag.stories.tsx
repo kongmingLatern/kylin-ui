@@ -22,5 +22,39 @@ export const type: Story = {
     </Space>
   ),
 }
+export const Shape: Story = {
+  render: args => (
+    <Space>
+      <Tag shape="square">default shape</Tag>
+      <Tag shape="circle">circle</Tag>
+      <Tag shape="rounded">rounded</Tag>
+    </Space>
+  ),
+}
+
+export const Size: Story = {
+  render: args => (
+    <Space>
+      <Tag size="small">small</Tag>
+      <Tag size="middle">middle</Tag>
+      <Tag size="large">large</Tag>
+    </Space>
+  ),
+}
+
+export const Gradient: Story = {
+  render: args => (
+    <Space>
+      <Tag gradient="aquamarine">aqua</Tag>
+      <Tag gradient="blue">blue</Tag>
+      <Tag gradient="orange">orange</Tag>
+      <Tag gradient="red">red</Tag>
+    </Space>
+  ),
+}
+
+export const Text: Story = {
+  render: args => <Tag text="text" />,
+}
 
 export default meta
