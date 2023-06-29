@@ -1,11 +1,17 @@
 :root {
   --default-color: #{$default-color};
   --primary-color: #{$primary-color};
+  --primary-constrast-color: #{$primary-contrast-color};
   --secondary-color: #{$secondary-color};
+  --secondary-constrast-color: #{$secondary-contrast-color};
   --success-color: #{$success-color};
+  --success-constrast-color: #{$success-contrast-color};
   --info-color: #{$info-color};
+  --info-constrast-color: #{$info-contrast-color};
   --warning-color: #{$warning-color};
+  --warning-constrast-color: #{$warning-contrast-color};
   --danger-color: #{$danger-color};
+  --danger-constrast-color: #{$danger-contrast-color};
   --background-color: #{$background-color};
   --text-color: #{$text-color};
   --text-color-light: #{$text-color-light};
@@ -13,4 +19,5 @@
   --disabled-color: #{$disabled-color};
   --background-spread: #{$background-spread};
   --border-width: #{$border-width};
+  --border-radius: #{$border-radius};
 }

@@ -1,45 +1,45 @@
 .kylin-badge {
   &-type {
     &-primary {
-      background: $primary-color;
-      color: $primary-contrast-color;
+      background: var(--primary-color);
+      color: var(--primary-contrast-color);
     }
     &-secondary {
-      background: $secondary-color;
-      color: $secondary-contrast-color;
+      background: var(--secondary-color);
+      color: var(--secondary-contrast-color);
     }
     &-success {
-      background: $success-color;
-      color: $success-contrast-color;
+      background: var(--success-color);
+      color: var(--success-contrast-color);
     }
     &-warning {
-      background: $warning-color;
-      color: $warning-contrast-color;
+      background: var(--warning-color);
+      color: var(--warning-contrast-color);
     }
     &-danger {
-      background: $danger-color;
-      color: $danger-contrast-color;
+      background: var(--danger-color);
+      color: var(--danger-constrast-color);
     }
     &-info {
-      background: $info-color;
-      color: $info-contrast-color;
+      background: var(--info-color);
+      color: var(--info-constrast-color);
     }
   }
   &-gradient {
     &-aquamarine {
-      background: $background-gradient-aquamarine;
+      background: var(--background-gradient-aquamarine);
       color: #fff;
     }
     &-orange {
-      background: $background-gradient-soft-orange;
+      background: var(--background-gradient-soft-orange);
       color: #fff;
     }
     &-blue {
-      background: $background-gradient-gentle-blue;
+      background: var(--background-gradient-gentle-blue);
       color: #fff;
     }
     &-red {
-      background: $background-gradient-muted-red;
+      background: var(--background-gradient-muted-red);
       color: #fff;
     }
   }
