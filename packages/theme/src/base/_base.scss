@@ -21,3 +21,9 @@
   --border-width: #{$border-width};
   --border-radius: #{$border-radius};
 }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}

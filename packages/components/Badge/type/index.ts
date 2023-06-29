@@ -1,4 +1,4 @@
-const size = ['large', 'middle', 'small'] as const
+const size = ['default', 'small'] as const
 type SizeType = (typeof size)[number]
 
 const shape = ['circle', 'rounded', 'square'] as const
@@ -22,8 +22,11 @@ export interface BadgeProps
     | 'danger'
     | 'warning'
     | 'info'
-  size?: SizeType
+  size?: SizeType | number
   shape?: ShapeType
+  offset?: [number, number] | [string, string]
+  bgColor?: string
+  style?: React.CSSProperties
   text?: string | React.ReactNode
   gradient?: GradientType
 }

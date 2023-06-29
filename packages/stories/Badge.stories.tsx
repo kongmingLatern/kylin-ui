@@ -1,3 +1,4 @@
+import Avatar from '@components/Avatar/Avatar'
 import { Badge } from '@components/Badge'
 import { Space } from '@components/Space'
 import { Meta, StoryObj } from '@storybook/react'
@@ -30,7 +31,7 @@ export const Shape: Story = {
   render: args => (
     <Space>
       <Badge shape="square">default shape</Badge>
-      <Badge shape="circle">circle</Badge>
+      <Badge shape="circle">1</Badge>
       <Badge shape="rounded">rounded</Badge>
     </Space>
   ),
@@ -39,9 +40,8 @@ export const Shape: Story = {
 export const Size: Story = {
   render: args => (
     <Space>
+      <Badge size="default">default</Badge>
       <Badge size="small">small</Badge>
-      <Badge size="middle">middle</Badge>
-      <Badge size="large">large</Badge>
     </Space>
   ),
 }
@@ -58,7 +58,51 @@ export const Gradient: Story = {
 }
 
 export const Text: Story = {
-  render: args => <Badge text="text" />,
+  render: args => (
+    <Space size={20}>
+      <Badge
+        text="1"
+        size="small"
+        shape="circle"
+        offset={['-.8rem', '-.6rem']}
+        bgColor="red"
+      >
+        <Avatar
+          src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
+          shape="circle"
+          size={'large'}
+        />
+      </Badge>
+
+      <Badge
+        text="999+"
+        size="small"
+        shape="square"
+        offset={['-.8rem', '-1.5rem']}
+        bgColor="red"
+      >
+        <Avatar
+          src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
+          shape="circle"
+          size={'small'}
+        />
+      </Badge>
+
+      <Badge
+        text="999+"
+        shape="rounded"
+        offset={['-.8rem', '-1rem']}
+        bgColor="blue"
+      >
+        <Avatar
+          src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
+          shape="circle"
+          size={'large'}
+        />
+      </Badge>
+
+    </Space>
+  ),
 }
 
 export default meta

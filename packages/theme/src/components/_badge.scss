@@ -1,4 +1,9 @@
 .kylin-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  padding: 2px;
   &-type {
     &-primary {
       background: var(--primary-color);
