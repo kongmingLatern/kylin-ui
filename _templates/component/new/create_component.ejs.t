@@ -6,7 +6,7 @@ import { <%= name %>Props } from "./type"
 
 const <%= name %> = React.forwardRef<HTMLDivElement, <%= name %>Props>(
   (props, ref) => {
-     const {children} = props
+     const { children } = props
      return <div ref={ref}>{children}</div>
     }
 )

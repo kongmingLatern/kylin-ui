@@ -8,7 +8,7 @@ const meta = {
   argTypes: {
     backgroundColor: { control: 'color' },
   } as any,
-} satisfies Meta<typeof <%= name %>>
+} satisfies Meta<typeof<%= name %>>
 
 type Story = StoryObj<typeof meta>
 
