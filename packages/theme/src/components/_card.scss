@@ -2,6 +2,9 @@
   &-container {
     border: 1px solid #f0f0f0;
     overflow: hidden;
+    &:hover {
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    }
   }
   &-position {
     &-top,

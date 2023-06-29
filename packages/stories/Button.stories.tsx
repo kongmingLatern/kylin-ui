@@ -9,9 +9,6 @@ const meta = {
   title: 'UI Component/Button',
   component: Button,
   tags: ['autodocs'],
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  } as any,
 } satisfies Meta<typeof Button>
 
 type Story = StoryObj<typeof meta>
