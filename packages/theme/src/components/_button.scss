@@ -48,6 +48,7 @@
 
   &-default {
     @extend .kylin-btn;
+    @include buttonActive;
     background-color: var(--default-color);
     color: #fff;
     font-weight: 700;
@@ -56,24 +57,28 @@
 
   &-primary {
     @extend .kylin-btn;
+    @include buttonActive;
     background-color: var(--primary-color);
     color: #fff;
   }
 
   &-secondary {
     @extend .kylin-btn;
+    @include buttonActive;
     background-color: var(--secondary-color);
     color: #fff;
   }
 
   &-success {
     @extend .kylin-btn;
+    @include buttonActive;
     background-color: var(--success-color);
     color: #fff;
   }
 
   &-info {
     @extend .kylin-btn;
+    @include buttonActive;
     background-color: var(--info-color);
     color: #fff;
   }
@@ -99,9 +104,14 @@
     }
 
     &:hover {
-      background-color: var(--default-color);
-      opacity: 1;
-      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      // background-color: var(--default-color);
+      // opacity: 0.6;
+      // color: #fff;
+    }
+    &:active {
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
     }
     &::after {
       content: '';
