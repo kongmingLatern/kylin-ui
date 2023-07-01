@@ -1,5 +1,5 @@
 import ThemeButton from '@packages/components/ThemeProvider/demo/button-theme'
-import CommonButton from '@components/Button/demo/button'
+import { ButtonDemo } from '@components/Button/demo/button'
 import { ButtonGroupDemo } from '@components/Button/demo/button-group'
 import { TitleDemo } from '@components/Typography/demo/Title'
 import { TextDemo } from '@components/Typography/demo/Text'
@@ -18,15 +18,15 @@ import { ImageDemo } from '@components/Image/demo/ImageDemo'
 const App = () => {
   return (
     <>
-      {/* <Title mark>Spin</Title> */}
-      {/* <SpinDemo /> */}
-      {/* <Title mark>Image</Title>
-      <ImageDemo /> */}
-      <Title mark>Card</Title>
+      {/* <Title mark>Card</Title>
       <CardDemo />
-      {/* <Title mark>Tag</Title>
+      <Title mark>Spin</Title>
+      <SpinDemo />
+      <Title mark>Image</Title>
+      <ImageDemo /> */}
+      <Title mark>Tag</Title>
       <TagDemo />
-      <br />
+      {/* <br />
       <Title mark>Badge</Title>
       <BadgeDemo />
       <br />
@@ -52,7 +52,7 @@ const App = () => {
       <TitleDemo />
       <br />
       <Title mark>ButtonDemo</Title>
-      <CommonButton />
+      <ButtonDemo />
       <br />
       <Title mark>ButtonGroupDemo</Title>
       <ButtonGroupDemo />
