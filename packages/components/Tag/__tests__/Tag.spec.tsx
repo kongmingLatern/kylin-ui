@@ -5,7 +5,7 @@ test('render', () => {
   const { container } = render(<Tag>Tag</Tag>)
   expect(container.firstChild).toMatchInlineSnapshot(`
     <span
-      class="kylin-tag-type-primary kylin-tag-shape-square kylin-tag-size-middle font-bold whitespace-nowrap"
+      class="sc-bdfCkl crqkIc"
     >
       Tag
     </span>
@@ -20,7 +20,8 @@ describe('type', () => {
 
     expect(container.firstChild).toMatchInlineSnapshot(`
       <span
-        class="kylin-tag-type-secondary kylin-tag-shape-square kylin-tag-size-middle font-bold whitespace-nowrap"
+        class="sc-bdfCkl hAKtHV"
+        type="secondary"
       >
         Tag
       </span>
@@ -31,7 +32,7 @@ describe('type', () => {
     const { container } = render(<Tag text="text">Tag</Tag>)
     expect(container.firstChild).toMatchInlineSnapshot(`
       <span
-        class="kylin-tag-type-primary kylin-tag-shape-square kylin-tag-size-middle font-bold whitespace-nowrap"
+        class="sc-bdfCkl crqkIc"
       >
         text
       </span>
@@ -43,10 +44,11 @@ describe('type', () => {
     )
     expect(container.firstChild).toMatchInlineSnapshot(`
       <span
-        class="kylin-tag-type-primary kylin-tag-shape-square kylin-tag-size-middle font-bold whitespace-nowrap"
+        class="sc-bdfCkl crqkIc"
       >
         <span
-          class="kylin-tag-icon-before"
+          class="sc-gsTChe dBpwuc"
+          position="before"
         >
           <div>
             beforeIcon
@@ -62,10 +64,11 @@ describe('type', () => {
       afterIconContainer.firstChild
     ).toMatchInlineSnapshot(`
       <span
-        class="kylin-tag-type-primary kylin-tag-shape-square kylin-tag-size-middle font-bold whitespace-nowrap"
+        class="sc-bdfCkl crqkIc"
       >
         <span
-          class="kylin-tag-icon-after"
+          class="sc-gsTChe YFaKI"
+          position="after"
         >
           <div>
             afterIcon

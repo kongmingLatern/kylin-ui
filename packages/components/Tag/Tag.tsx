@@ -29,12 +29,11 @@ const TagContainer = styled.span<{
 `
 
 const TagIcon = styled.span<{
-  beforeIcon?: React.ReactDOM
-  afterIcon?: React.ReactDOM
-  children?: React.ReactDOM
+  position?: 'before' | 'after'
+  children?: any
 }>`
   margin: ${props => {
-    if (props.beforeIcon) {
+    if (props.position === 'before') {
       return '0 4px 0 0'
     } else {
       return '0 0 0 4px'
@@ -43,7 +42,16 @@ const TagIcon = styled.span<{
 `
 
 export const Tag: React.FC<TagProps> = props => {
-  const { text, beforeIcon, afterIcon, children } = props
+  const {
+    type,
+    size,
+    shape,
+    gradient,
+    text,
+    beforeIcon,
+    afterIcon,
+    children,
+  } = props
 
   if (text && children) {
     console.warn(`Tag组件的text和children属性不能同时存在`)
@@ -53,14 +61,12 @@ export const Tag: React.FC<TagProps> = props => {
 
   const BeforeIcon = () =>
     beforeIcon ? (
-      <TagIcon beforeIcon={beforeIcon}>
-        {beforeIcon}
-      </TagIcon>
+      <TagIcon position="before">{beforeIcon}</TagIcon>
     ) : null
 
   const AfterIcon = () =>
     afterIcon ? (
-      <TagIcon afterIcon={afterIcon}>{afterIcon}</TagIcon>
+      <TagIcon position="after">{afterIcon}</TagIcon>
     ) : null
 
   const IconNode = ({ children }) => {
@@ -74,7 +80,12 @@ export const Tag: React.FC<TagProps> = props => {
   }
 
   return (
-    <TagContainer {...props}>
+    <TagContainer
+      type={type}
+      size={size}
+      shape={shape}
+      gradient={gradient}
+    >
       <IconNode>{renderToChildren}</IconNode>
     </TagContainer>
   )
