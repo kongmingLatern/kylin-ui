@@ -8,6 +8,9 @@ const TagContainer = styled.span<{
   shape?: TagProps['shape']
   gradient?: TagProps['gradient']
 }>`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: ${props => {
     if (props.gradient) {
       return Theme[props.gradient]
