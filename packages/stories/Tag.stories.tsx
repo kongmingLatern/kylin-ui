@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Tag } from '@components/Tag'
 import { Space } from '@components/Space'
+import { Loader, Radio } from '@packages/icon'
 
 const meta = {
   title: 'UI Component/Tag',
@@ -55,6 +56,18 @@ export const Gradient: Story = {
 
 export const Text: Story = {
   render: args => <Tag text="text" />,
+}
+
+export const Icon: Story = {
+  render: args => (
+    <>
+      <Tag
+        text="hello"
+        beforeIcon={<Loader width={20} height={20} />}
+        afterIcon={<Radio width={20} height={20} />}
+      />
+    </>
+  ),
 }
 
 export default meta

@@ -5,7 +5,7 @@ test('render', () => {
   const { container } = render(<Tag>Tag</Tag>)
   expect(container.firstChild).toMatchInlineSnapshot(`
     <span
-      class="sc-bdfCkl crqkIc"
+      class="sc-bdfCkl kvgYMm"
     >
       Tag
     </span>
@@ -20,7 +20,7 @@ describe('type', () => {
 
     expect(container.firstChild).toMatchInlineSnapshot(`
       <span
-        class="sc-bdfCkl hAKtHV"
+        class="sc-bdfCkl fDNgKn"
         type="secondary"
       >
         Tag
@@ -32,7 +32,7 @@ describe('type', () => {
     const { container } = render(<Tag text="text">Tag</Tag>)
     expect(container.firstChild).toMatchInlineSnapshot(`
       <span
-        class="sc-bdfCkl crqkIc"
+        class="sc-bdfCkl kvgYMm"
       >
         text
       </span>
@@ -44,7 +44,7 @@ describe('type', () => {
     )
     expect(container.firstChild).toMatchInlineSnapshot(`
       <span
-        class="sc-bdfCkl crqkIc"
+        class="sc-bdfCkl kvgYMm"
       >
         <span
           class="sc-gsTChe dBpwuc"
@@ -64,7 +64,7 @@ describe('type', () => {
       afterIconContainer.firstChild
     ).toMatchInlineSnapshot(`
       <span
-        class="sc-bdfCkl crqkIc"
+        class="sc-bdfCkl kvgYMm"
       >
         <span
           class="sc-gsTChe YFaKI"
