@@ -7,8 +7,8 @@ test('render', () => {
   )
   expect(container.firstChild).toMatchInlineSnapshot(`
     <span
-      class="kylin-avatar-circle kylin-avatar-image"
-      style="width: 32px; height: 32px; line-height: 32px; font-size: 18px;"
+      class="sc-bdfCkl hRcBEu"
+      shape="circle"
     >
       <img
         src="./images/1.jpg"
@@ -24,8 +24,8 @@ describe('props', () => {
     )
     expect(container.firstChild).toMatchInlineSnapshot(`
       <span
-        class="kylin-avatar-circle kylin-avatar-image"
-        style="width: 32px; height: 32px; line-height: 32px; font-size: 18px;"
+        class="sc-bdfCkl hRcBEu"
+        shape="circle"
       >
         <img
           src="./images/1.jpg"
@@ -41,8 +41,8 @@ describe('props', () => {
     expect(container).toMatchInlineSnapshot(`
       <div>
         <span
-          class="kylin-avatar-square kylin-avatar-image"
-          style="width: 32px; height: 32px; line-height: 32px; font-size: 18px;"
+          class="sc-bdfCkl eCOUZq"
+          shape="square"
         >
           <img
             src="./images/1.jpg"
@@ -60,8 +60,8 @@ describe('props', () => {
     )
     expect(container.firstChild).toMatchInlineSnapshot(`
       <span
-        class="kylin-avatar-circle kylin-avatar-icon"
-        style="width: 32px; height: 32px; line-height: 32px; font-size: 16px;"
+        class="sc-bdfCkl hRcBEu"
+        shape="circle"
       >
         <img
           src="./images/1.jpg"
@@ -77,7 +77,8 @@ describe('props', () => {
     )
     expect(container.firstChild).toMatchInlineSnapshot(`
       <span
-        class="kylin-avatar-lg kylin-avatar-circle kylin-avatar-image"
+        class="sc-bdfCkl ojIWl"
+        shape="circle"
       >
         <img
           src="./images/1.jpg"
