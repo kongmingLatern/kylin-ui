@@ -13,6 +13,7 @@
   "dependencies": {
     "@kylin-ui/hooks": "link:../hooks",
     "@kylin-ui/preset": "link:../preset",
-    "@kylin-ui/shared": "link:../shared"
+    "@kylin-ui/shared": "link:../shared",
+    "@kylin-ui/styled-system": "link:../styled-system"
   }
 }
