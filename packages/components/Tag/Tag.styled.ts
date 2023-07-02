@@ -24,9 +24,8 @@ export const TagContainer = styled.span<{
       gradient: props.gradient,
       type: props.type,
     })};
-  padding: ${props => getSize({ size: props.size })};
-  border-radius: ${props =>
-    getRadius({ shape: props.shape })};
+  padding: ${props => getSize(props.size)};
+  border-radius: ${props => getRadius(props.shape)};
 `
 
 export const TagIcon = styled.span<{
