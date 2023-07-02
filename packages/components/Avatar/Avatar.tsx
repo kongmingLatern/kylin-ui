@@ -1,17 +1,6 @@
 import classNames from 'classnames'
 import React from 'react'
-
-interface AvatarProps {
-  src?: string
-  alt?: string
-  size?: number | 'small' | 'large' | 'default'
-  shape?: 'circle' | 'square'
-  draggable?: boolean
-  className?: string
-  style?: React.CSSProperties
-  icon?: React.ReactNode
-  children?: React.ReactNode
-}
+import { AvatarProps } from './type'
 
 const InternalAvatar: React.ForwardRefRenderFunction<
   HTMLImageElement,
@@ -25,7 +14,6 @@ const InternalAvatar: React.ForwardRefRenderFunction<
     shape = 'circle',
     draggable,
     className,
-    style,
     children,
     ...rest
   } = props
