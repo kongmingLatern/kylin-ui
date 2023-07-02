@@ -1,7 +1,11 @@
+import React from 'react'
 import { TagContainer, TagIcon } from './Tag.styled'
 import { TagProps } from './type'
 
-export const Tag: React.FC<TagProps> = props => {
+const TagComponent: React.ForwardRefRenderFunction<
+  HTMLSpanElement,
+  TagProps
+> = (props, ref) => {
   const {
     type,
     size,
@@ -45,8 +49,10 @@ export const Tag: React.FC<TagProps> = props => {
       size={size}
       shape={shape}
       gradient={gradient}
+      ref={ref}
     >
       <IconNode>{renderToChildren}</IconNode>
     </TagContainer>
   )
 }
+export const Tag = React.forwardRef(TagComponent)
