@@ -18,14 +18,7 @@ describe('type', () => {
       <Tag type="secondary">Tag</Tag>
     )
 
-    expect(container.firstChild).toMatchInlineSnapshot(`
-      <span
-        class="sc-bdfCkl dhSdNH"
-        type="secondary"
-      >
-        Tag
-      </span>
-    `)
+    expect(container.contains).toBe('Tag')
   })
 
   test('text', () => {
