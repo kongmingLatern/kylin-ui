@@ -19,18 +19,17 @@ export const TagContainer = styled.span<{
   color: white;
   font-weight: 700;
   white-space: nowrap;
-  background: ${props =>
+  background: ${({ type, gradient }) =>
     getBackground({
-      gradient: props.gradient,
-      type: props.type,
+      gradient: gradient,
+      type: type,
     })};
-  padding: ${props => getSize(props.size)};
-  border-radius: ${props => getRadius(props.shape)};
+  padding: ${({ size }) => getSize(size)};
+  border-radius: ${({ shape }) => getRadius(shape)};
 `
 
 export const TagIcon = styled.span<{
   position?: 'before' | 'after'
 }>`
-  margin: ${props =>
-    getMargin({ position: props.position })};
+  margin: ${({ position }) => getMargin({ position })};
 `
