@@ -14,12 +14,12 @@ export const AvatarContainer = styled.span<{
   justify-content: center;
   overflow: hidden;
 
-  width: ${props => getWidthHeightSize(props.size)};
-  height: ${props => getWidthHeightSize(props.size)};
-  font-size: ${props => getFontSize(props.size)};
-  line-height: ${props => getWidthHeightSize(props.size)};
+  width: ${({ size }) => getWidthHeightSize(size)};
+  height: ${({ size }) => getWidthHeightSize(size)};
+  font-size: ${({ size }) => getFontSize(size)};
+  line-height: ${({ size }) => getWidthHeightSize(size)};
 
-  border-radius: ${props => getRadius(props.shape)};
+  border-radius: ${({ shape }) => getRadius(shape)};
 
   & > img,
   & > svg {
