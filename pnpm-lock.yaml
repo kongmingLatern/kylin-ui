@@ -221,6 +221,9 @@ importers:
       '@kylin-ui/shared':
         specifier: link:../shared
         version: link:../shared
+      '@kylin-ui/styled-system':
+        specifier: link:../styled-system
+        version: link:../styled-system
 
   packages/hooks:
     dependencies:
@@ -244,6 +247,8 @@ importers:
       '@kylin-ui/preset':
         specifier: link:../preset
         version: link:../preset
+
+  packages/styled-system: {}
 
   packages/theme: {}
 

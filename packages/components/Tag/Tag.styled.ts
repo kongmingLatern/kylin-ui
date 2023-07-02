@@ -1,21 +1,10 @@
 import { styled } from 'styled-components'
 import { TagProps } from './type'
-import { theme as Theme } from '@packages/theme/src'
-
-function getBackground({ gradient, type }) {
-  if (gradient) {
-    return Theme[gradient]
-  }
-  return Theme[type!] ?? Theme['default']
-}
-
-function getSize({ size }) {
-  return size ? Theme[size] : Theme['middle']
-}
-
-function getRadis({ shape }) {
-  return shape ? Theme[shape] : Theme['square']
-}
+import {
+  getBackground,
+  getSize,
+  getRadius,
+} from '@kylin-ui/styled-system'
 
 export const TagContainer = styled.span<{
   type?: TagProps['type']
@@ -36,7 +25,7 @@ export const TagContainer = styled.span<{
     })};
   padding: ${props => getSize({ size: props.size })};
   border-radius: ${props =>
-    getRadis({ shape: props.shape })};
+    getRadius({ shape: props.shape })};
 `
 
 export const TagIcon = styled.span<{
