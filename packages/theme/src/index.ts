@@ -21,6 +21,14 @@ export const theme = {
   middle: '0 0.6rem',
   large: '0 0.8rem',
 
+  widthSmall: '2.4rem',
+  widthMiddle: '3.2rem',
+  widthLarge: '4rem',
+
+  fontSmall: '12px',
+  fontMiddle: '14px',
+  fontLarge: '18px',
+
   circle: '50%',
   rounded: '0.25rem',
   square: '0',

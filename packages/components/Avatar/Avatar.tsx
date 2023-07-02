@@ -1,6 +1,6 @@
-import classNames from 'classnames'
 import React from 'react'
 import { AvatarProps } from './type'
+import { AvatarContainer } from './Avatar.styled'
 
 const InternalAvatar: React.ForwardRefRenderFunction<
   HTMLImageElement,
@@ -10,19 +10,16 @@ const InternalAvatar: React.ForwardRefRenderFunction<
     src,
     alt,
     icon,
-    size: customSize = 'default',
+    size: customSize = 'middle',
     shape = 'circle',
     draggable,
-    className,
     children,
     ...rest
   } = props
 
   // FIXME: 这里可以考虑加一个上下文参数值
   // const size =
-  //   customSize === 'default' ? contextSize : customSize
-
-  const size = customSize === 'default' ? 32 : customSize
+  //   customSize === 'middle' ? contextSize : customSize
 
   const isImgExist = src && src.length > 0
 
@@ -32,32 +29,6 @@ const InternalAvatar: React.ForwardRefRenderFunction<
       `Avatar children and src can not exist at same time.`
     )
   }
-
-  const sizeCls = classNames({
-    [`kylin-avatar-lg`]: size === 'large',
-    [`kylin-avatar-sm`]: size === 'small',
-  })
-
-  const classes = classNames(
-    sizeCls,
-    {
-      [`kylin-avatar-${shape}`]: !!shape,
-      [`kylin-avatar-icon`]: !!icon,
-      [`kylin-avatar-image`]:
-        isImgExist || React.isValidElement(children),
-    },
-    className
-  )
-
-  const sizeStyle: React.CSSProperties =
-    typeof size === 'number'
-      ? {
-          width: size,
-          height: size,
-          lineHeight: `${size}px`,
-          fontSize: icon ? size / 2 : 18,
-        }
-      : {}
 
   let childrenToRender
 
@@ -75,15 +46,13 @@ const InternalAvatar: React.ForwardRefRenderFunction<
   }
 
   return (
-    <span
-      className={classes}
-      style={{
-        ...sizeStyle,
-        ...(rest as AvatarProps).style,
-      }}
+    <AvatarContainer
+      size={customSize}
+      shape={shape}
+      {...rest}
     >
       {childrenToRender}
-    </span>
+    </AvatarContainer>
   )
 }
 const Avatar = React.forwardRef<
