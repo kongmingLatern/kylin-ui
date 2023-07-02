@@ -14,3 +14,7 @@ export function getSize({ size }) {
 export function getRadius({ shape }) {
   return shape ? Theme[shape] : Theme['square']
 }
+
+export function getMargin({ position }) {
+  return position === 'before' ? '0 4px 0 0' : '0 0 0 4px'
+}

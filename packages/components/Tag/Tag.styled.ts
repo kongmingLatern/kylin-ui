@@ -4,6 +4,7 @@ import {
   getBackground,
   getSize,
   getRadius,
+  getMargin,
 } from '@kylin-ui/styled-system'
 
 export const TagContainer = styled.span<{
@@ -30,13 +31,7 @@ export const TagContainer = styled.span<{
 
 export const TagIcon = styled.span<{
   position?: 'before' | 'after'
-  children?: any
 }>`
-  margin: ${props => {
-    if (props.position === 'before') {
-      return '0 4px 0 0'
-    } else {
-      return '0 0 0 4px'
-    }
-  }};
+  margin: ${props =>
+    getMargin({ position: props.position })};
 `
