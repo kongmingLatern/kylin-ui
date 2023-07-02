@@ -1,7 +1,7 @@
 export interface AvatarProps {
   src?: string
   alt?: string
-  size?: number | 'small' | 'large' | 'default'
+  size?: number | 'small' | 'large' | 'middle'
   shape?: 'circle' | 'square'
   draggable?: boolean
   className?: string
