@@ -1,5 +1,5 @@
 import { Title } from '@components/Typography/Title'
-import { Text } from '@components/Typography/Text'
+import { Paragraph } from '@components/Typography/Paragraph'
 import { Divider } from '@components/Divider'
 import Avatar from '../Avatar'
 
@@ -8,7 +8,7 @@ export const AvatarDemo = () => {
     <>
       <Divider>Avatar Src</Divider>
       <Title italic level={4}>
-        Avatar
+        Avatar Shape
       </Title>
       <Avatar
         src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
@@ -20,17 +20,25 @@ export const AvatarDemo = () => {
       />
 
       <Divider>Avatar Size</Divider>
-      <Text className="text-sm">small</Text>
+      <Paragraph code>small</Paragraph>
       <Avatar
         src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
         size={'small'}
       />
-      <Text className="text-sm">large</Text>
+      <br />
+      <Paragraph code>middle</Paragraph>
+      <Avatar
+        src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
+        size={'middle'}
+      />
+      <br />
+      <Paragraph code>large</Paragraph>
       <Avatar
         src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
         size={'large'}
       />
 
+      <br />
       <Divider>Avatar Icon</Divider>
       <Avatar
         shape="circle"
