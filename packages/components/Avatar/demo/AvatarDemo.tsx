@@ -1,7 +1,7 @@
 import { Title } from '@components/Typography/Title'
 import { Paragraph } from '@components/Typography/Paragraph'
 import { Divider } from '@components/Divider'
-import Avatar from '../Avatar'
+import { Avatar } from '../Avatar'
 
 export const AvatarDemo = () => {
   return (
