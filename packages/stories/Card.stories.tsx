@@ -7,7 +7,6 @@ import { Space } from '@components/Space'
 const meta = {
   title: 'UI Component/Card',
   component: Card,
-  tags: ['autodocs'],
   args: {
     style: {
       width: '600px',

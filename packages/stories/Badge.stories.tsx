@@ -1,4 +1,4 @@
-import Avatar from '@components/Avatar/Avatar'
+import { Avatar } from '@components/Avatar'
 import { Badge } from '@components/Badge'
 import { Space } from '@components/Space'
 import { Meta, StoryObj } from '@storybook/react'
@@ -100,7 +100,6 @@ export const Text: Story = {
           size={'large'}
         />
       </Badge>
-
     </Space>
   ),
 }
