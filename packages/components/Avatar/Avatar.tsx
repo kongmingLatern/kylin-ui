@@ -64,4 +64,4 @@ if (process.env.NODE_ENV !== 'production') {
   Avatar.displayName = 'Avatar'
 }
 
-export default Avatar
+export { Avatar }
