@@ -30,9 +30,17 @@ export const Type: Story = {
 export const Shape: Story = {
   render: args => (
     <Space>
-      <Badge shape="square">default shape</Badge>
-      <Badge shape="circle">1</Badge>
-      <Badge shape="rounded">rounded</Badge>
+      <Badge type="success" shape="square">
+        11
+      </Badge>
+      <br />
+      <Badge type="info" shape="circle">
+        1
+      </Badge>
+      <br />
+      <Badge type="warning" shape="rounded">
+        99+
+      </Badge>
     </Space>
   ),
 }
