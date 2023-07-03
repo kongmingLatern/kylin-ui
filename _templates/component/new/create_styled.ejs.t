@@ -1,5 +1,5 @@
 ---
-to: packages/components/<%= name %>/<%= name %>.styled.ts
+to: packages/components/<%= name %>/styled/<%= name %>.styled.ts
 ---
 
 import { styled } from 'styled-components'
