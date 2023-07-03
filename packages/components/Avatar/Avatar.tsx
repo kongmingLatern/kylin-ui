@@ -1,6 +1,6 @@
 import React from 'react'
 import { AvatarProps } from './type'
-import { AvatarContainer } from './Avatar.styled'
+import { AvatarContainer } from './styled'
 
 const InternalAvatar: React.ForwardRefRenderFunction<
   HTMLImageElement,
