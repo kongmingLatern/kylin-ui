@@ -5,5 +5,6 @@ export interface SVGType<T> extends SVGProps<T> {
   height?: number
   key?: any
   fill?: string
+  opacity?: number
   focusable?: boolean
 }

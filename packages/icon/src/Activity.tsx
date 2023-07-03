@@ -1,4 +1,4 @@
-import { SVGType } from './type/SVGType';
+import { SVGType } from './type/SVGType'
 
 const Activity = (props: SVGType<SVGSVGElement>) => (
   <svg
