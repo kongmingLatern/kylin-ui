@@ -40,8 +40,9 @@ export const Shape: Story = {
 export const Size: Story = {
   render: args => (
     <Space>
-      <Badge size="default">default</Badge>
       <Badge size="small">small</Badge>
+      <Badge size="middle">middle</Badge>
+      <Badge size="large">large</Badge>
     </Space>
   ),
 }

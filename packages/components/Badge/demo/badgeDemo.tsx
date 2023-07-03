@@ -1,6 +1,6 @@
 import { Space } from '@components/Space'
 import { Badge } from '../Badge'
-import Avatar from '@components/Avatar/Avatar'
+import { Avatar } from '@components/Avatar/Avatar'
 import { Layout } from '@packages/icon'
 
 export const BadgeDemo = () => {

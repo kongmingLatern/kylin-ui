@@ -13,7 +13,7 @@ export const InternalBadge: React.ForwardRefRenderFunction<
   const {
     type = 'primary',
     size = 'small',
-    shape = 'square',
+    shape = 'rounded',
     color = 'white',
     bgColor,
     gradient,

@@ -8,9 +8,9 @@ test('render', () => {
       class="sc-gsTChe kRlmJt"
     >
       <span
-        class="sc-bdfCkl jFQSPq"
+        class="sc-bdfCkl dJNJR"
         color="white"
-        shape="square"
+        shape="rounded"
         type="primary"
       >
         Badge
@@ -30,9 +30,9 @@ describe('type', () => {
         class="sc-gsTChe kRlmJt"
       >
         <span
-          class="sc-bdfCkl dByLQs"
+          class="sc-bdfCkl fJzKJD"
           color="white"
-          shape="square"
+          shape="rounded"
           type="secondary"
         >
           Badge
@@ -50,15 +50,15 @@ describe('type', () => {
         class="sc-gsTChe kRlmJt"
       >
         <sup
-          class="sc-dlfmnT dlEILS"
+          class="sc-dlfmnT hcMoGJ"
           color="white"
-          shape="square"
+          shape="rounded"
         >
           text
         </sup>
         <span
-          class="sc-bdfCkl kKZXSc"
-          shape="square"
+          class="sc-bdfCkl ddymHD"
+          shape="rounded"
         >
           Badge
         </span>
