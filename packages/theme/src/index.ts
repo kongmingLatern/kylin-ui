@@ -27,9 +27,9 @@ export const theme = {
   widthMiddle: '3.2rem',
   widthLarge: '4rem',
 
-  fontSmall: '12px',
-  fontMiddle: '14px',
-  fontLarge: '18px',
+  fontSmall: '1rem',
+  fontMiddle: '1.2rem',
+  fontLarge: '1.4rem',
 
   circle: '50%',
   rounded: '0.25rem',
