@@ -59,7 +59,7 @@ export const Gradient: Story = {
 
 export const Text: Story = {
   render: args => (
-    <Space size={20}>
+    <>
       <Badge
         text="1"
         size="small"
@@ -100,7 +100,7 @@ export const Text: Story = {
           size={'large'}
         />
       </Badge>
-    </Space>
+    </>
   ),
 }
 

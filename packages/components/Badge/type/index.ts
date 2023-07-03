@@ -1,4 +1,4 @@
-const size = ['default', 'small'] as const
+const size = ['small', 'middle', 'large'] as const
 type SizeType = (typeof size)[number]
 
 const shape = ['circle', 'rounded', 'square'] as const

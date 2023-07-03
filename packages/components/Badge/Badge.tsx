@@ -1,11 +1,10 @@
-import classNames from 'classnames'
 import { BadgeProps } from './type'
 import React from 'react'
-
-const badgeSize = {
-  default: 12,
-  small: 20,
-}
+import {
+  BadgeContainer,
+  BadgeInner,
+  SupContainer,
+} from './styled'
 
 export const InternalBadge: React.ForwardRefRenderFunction<
   HTMLSpanElement,
@@ -20,77 +19,41 @@ export const InternalBadge: React.ForwardRefRenderFunction<
     gradient,
     text,
     offset,
-    style,
     children,
-    className,
     ...rest
   } = props
 
-  const [offsetTop, offsetRight] = offset ?? [
-    '-1rem',
-    '-1.5rem',
-  ]
-
-  const classes = classNames(
-    {
-      [`kylin-badge`]: true,
-      [`kylin-badge-gradient-${gradient}`]: gradient,
-      [`kylin-badge-type-${type}`]: type,
-      [`kylin-badge-shape-${shape}`]: shape,
-    },
-    'whitespace-nowrap',
-    'relative',
-    className
-  )
-
-  const getSize = React.useMemo(() => {
-    if (/\d+/g.test(size as string)) return Number(size)
-
-    return typeof size === 'string' ? badgeSize[size] : size
-  }, [size])
-
-  const CircleHeight = React.useMemo(() => {
-    return shape === 'circle'
-      ? {
-          width: getSize + 'px',
-          height: getSize + 'px',
-        }
-      : {
-          height: getSize + 'px',
-        }
-  }, [size])
-
-  const addSuffix = offset =>
-    typeof offset === 'number' ? offset + 'px' : offset
-
   return (
-    <span className="relative inline-flex" ref={ref}>
-      {text && (
-        <sup
-          style={{
-            position: 'absolute',
-            top: addSuffix(offsetTop),
-            right: addSuffix(offsetRight),
-            height: getSize + 'px',
-            zIndex: 10,
-          }}
-        >
-          <span
-            className={classes}
-            style={{
-              color,
-              background: bgColor,
-              ...CircleHeight,
-              ...style,
-            }}
-            {...rest}
+    <BadgeInner ref={ref} {...rest}>
+      {text ? (
+        <>
+          <SupContainer
+            offset={offset}
+            color={color}
+            bgColor={bgColor}
+            shape={shape}
+            size={size}
           >
             {text}
-          </span>
-        </sup>
+          </SupContainer>
+          <BadgeContainer shape={shape} bgColor={null}>
+            {children}
+          </BadgeContainer>
+        </>
+      ) : (
+        <BadgeContainer
+          type={type}
+          gradient={gradient}
+          shape={shape}
+          size={size}
+          color={color}
+          bgColor={bgColor}
+          {...rest}
+        >
+          {children}
+        </BadgeContainer>
       )}
-      {children}
-    </span>
+    </BadgeInner>
   )
 }
 

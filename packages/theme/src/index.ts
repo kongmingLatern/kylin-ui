@@ -17,6 +17,8 @@ export const theme = {
 
   borderRadius: '0.35rem',
 
+  fontSize: '1rem',
+
   small: '0 0.4rem',
   middle: '0 0.6rem',
   large: '0 0.8rem',

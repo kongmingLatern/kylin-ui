@@ -3,6 +3,7 @@ import { theme as Theme } from '@packages/theme/src'
 export function getBackground({
   type,
   gradient,
+  bgColor,
 }: {
   type?:
     | 'primary'
@@ -12,17 +13,43 @@ export function getBackground({
     | 'warning'
     | 'info'
   gradient?: 'aquamarine' | 'orange' | 'red' | 'blue'
+  bgColor?: string | null
 }) {
-  if (gradient) {
+  if (bgColor === null) return
+  if (bgColor) {
+    return bgColor
+  } else if (gradient) {
     return Theme[gradient]
   }
   return Theme[type!] ?? Theme['default']
 }
 
 export function getSize(
-  size?: 'small' | 'middle' | 'large'
+  size?: 'small' | 'middle' | 'large' | number
 ) {
+  if (typeof size === 'number') {
+    return `${size}px`
+  }
+
   return size ? Theme[size] : Theme['middle']
+}
+
+export function getBadgeSize(
+  size?: 'small' | 'middle' | 'large' | number
+) {
+  const sizeMap = {
+    small: 'widthSmall',
+    middle: 'widthMiddle',
+    large: 'widthLarge',
+  }
+
+  if (typeof size === 'number') {
+    return `${size}px`
+  }
+
+  return size
+    ? Theme[sizeMap[size]]
+    : Theme[sizeMap['middle']]
 }
 
 export function getWidthHeightSize(
@@ -69,4 +96,13 @@ export function getFontSize(
   return size
     ? Theme[sizeMap[size]]
     : Theme[sizeMap['middle']]
+}
+
+export function getAddSuffixOffset(
+  offset: number | string
+) {
+  if (typeof offset === 'number') {
+    return `${offset}px`
+  }
+  return offset
 }
