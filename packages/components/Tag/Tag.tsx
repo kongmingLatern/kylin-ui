@@ -1,5 +1,5 @@
 import React from 'react'
-import { TagContainer, TagIcon } from './Tag.styled'
+import { TagContainer, TagIcon } from './styled'
 import { TagProps } from './type'
 
 const TagComponent: React.ForwardRefRenderFunction<

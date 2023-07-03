@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { TagProps } from './type'
+import { TagProps } from '../type'
 import {
   getBackground,
   getSize,
