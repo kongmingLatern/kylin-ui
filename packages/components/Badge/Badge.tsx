@@ -7,7 +7,7 @@ const badgeSize = {
   small: 20,
 }
 
-export const Badge: React.ForwardRefRenderFunction<
+export const InternalBadge: React.ForwardRefRenderFunction<
   HTMLSpanElement,
   BadgeProps
 > = (props, ref) => {
@@ -64,7 +64,7 @@ export const Badge: React.ForwardRefRenderFunction<
     typeof offset === 'number' ? offset + 'px' : offset
 
   return (
-    <span className="relative inline-flex">
+    <span className="relative inline-flex" ref={ref}>
       {text && (
         <sup
           style={{
@@ -92,4 +92,13 @@ export const Badge: React.ForwardRefRenderFunction<
       {children}
     </span>
   )
+}
+
+export const Badge = React.forwardRef<
+  HTMLSpanElement,
+  BadgeProps
+>(InternalBadge)
+
+if (process.env.NODE_ENV !== 'production') {
+  Badge.displayName = 'Badge'
 }
