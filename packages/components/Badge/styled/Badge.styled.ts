@@ -1,9 +1,8 @@
 import {
   getAddSuffixOffset,
   getBackground,
-  getFontSize,
   getRadius,
-  getSize,
+  getPaddingSize,
 } from '@packages/styled-system'
 import { styled } from 'styled-components'
 import { BadgeProps } from '../type'
@@ -24,14 +23,10 @@ export const BadgeContainer = styled.span<{
   padding: 2px;
   white-space: nowrap;
   color: ${({ color }) => color ?? '#fff'};
-
+  padding: ${({ size }) => getPaddingSize(size)};
+  border-radius: ${({ shape }) => getRadius(shape)};
   background: ${({ type, gradient, bgColor }) =>
     getBackground({ type, gradient, bgColor })};
-
-  padding: ${({ size }) => getSize(size)};
-  font-size: ${({ size }) => getFontSize(size)};
-
-  border-radius: ${({ shape }) => getRadius(shape)};
 `
 
 export const BadgeInner = styled.span`
@@ -55,8 +50,7 @@ export const SupContainer = styled.sup<{
   color: ${({ color }) => color ?? '#fff'};
   background: ${({ bgColor }) =>
     getBackground({ bgColor })};
-  padding: ${({ size }) => getSize(size)};
-  font-size: ${({ size }) => getFontSize(size)};
+  padding: ${({ size }) => getPaddingSize(size)};
 
   border-radius: ${({ shape }) => getRadius(shape)};
 `

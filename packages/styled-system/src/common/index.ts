@@ -1,4 +1,4 @@
-import { theme as Theme } from '@packages/theme/src'
+import { theme as Theme } from '../theme'
 
 export function getBackground({
   type,
@@ -19,61 +19,53 @@ export function getBackground({
   if (bgColor) {
     return bgColor
   } else if (gradient) {
-    return Theme[gradient]
+    return Theme['gradient'][gradient]
   }
-  return Theme[type!] ?? Theme['default']
+  return Theme['type'][type!] ?? Theme['type']['default']
 }
 
-export function getSize(
+export function getPaddingSize(
   size?: 'small' | 'middle' | 'large' | number
 ) {
   if (typeof size === 'number') {
     return `${size}px`
   }
 
-  return size ? Theme[size] : Theme['middle']
+  return size
+    ? Theme['padding'][size]
+    : Theme['padding']['middle']
 }
 
 export function getBadgeSize(
   size?: 'small' | 'middle' | 'large' | number
 ) {
-  const sizeMap = {
-    small: 'widthSmall',
-    middle: 'widthMiddle',
-    large: 'widthLarge',
-  }
-
   if (typeof size === 'number') {
     return `${size}px`
   }
 
   return size
-    ? Theme[sizeMap[size]]
-    : Theme[sizeMap['middle']]
+    ? Theme['width'][size]
+    : Theme['width']['middle']
 }
 
-export function getWidthHeightSize(
+export function getWidthSize(
   size?: 'small' | 'middle' | 'large' | number
 ) {
-  const sizeMap = {
-    small: 'widthSmall',
-    middle: 'widthMiddle',
-    large: 'widthLarge',
-  }
-
   if (typeof size === 'number') {
     return `${size}px`
   }
 
   return size
-    ? Theme[sizeMap[size]]
-    : Theme[sizeMap['middle']]
+    ? Theme['width'][size]
+    : Theme['width']['middle']
 }
 
 export function getRadius(
   shape?: 'circle' | 'rounded' | 'square'
 ) {
-  return shape ? Theme[shape] : Theme['square']
+  return shape
+    ? Theme['shape'][shape]
+    : Theme['shape']['square']
 }
 
 export function getMargin({ position }) {
@@ -83,19 +75,13 @@ export function getMargin({ position }) {
 export function getFontSize(
   size?: 'small' | 'middle' | 'large' | number
 ) {
-  const sizeMap = {
-    small: 'fontSmall',
-    middle: 'fontMiddle',
-    large: 'fontLarge',
-  }
-
   if (typeof size === 'number') {
     return `${size}px`
   }
 
   return size
-    ? Theme[sizeMap[size]]
-    : Theme[sizeMap['middle']]
+    ? Theme['fontSize'][size]
+    : Theme['fontSize']['middle']
 }
 
 export function getAddSuffixOffset(

@@ -49,6 +49,7 @@ export const Size: Story = {
   render: args => (
     <Space>
       <Badge size="small">small</Badge>
+      <Badge size={24}>24</Badge>
       <Badge size="middle">middle</Badge>
       <Badge size="large">large</Badge>
     </Space>

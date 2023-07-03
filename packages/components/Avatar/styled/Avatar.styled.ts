@@ -1,7 +1,7 @@
 import {
   getFontSize,
   getRadius,
-  getWidthHeightSize,
+  getWidthSize,
 } from '@kylin-ui/styled-system'
 import { styled } from 'styled-components'
 
@@ -14,10 +14,10 @@ export const AvatarContainer = styled.span<{
   justify-content: center;
   overflow: hidden;
 
-  width: ${({ size }) => getWidthHeightSize(size)};
-  height: ${({ size }) => getWidthHeightSize(size)};
+  width: ${({ size }) => getWidthSize(size)};
+  height: ${({ size }) => getWidthSize(size)};
   font-size: ${({ size }) => getFontSize(size)};
-  line-height: ${({ size }) => getWidthHeightSize(size)};
+  line-height: ${({ size }) => getWidthSize(size)};
 
   border-radius: ${({ shape }) => getRadius(shape)};
 

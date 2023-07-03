@@ -2,9 +2,9 @@ import { styled } from 'styled-components'
 import { TagProps } from '../type'
 import {
   getBackground,
-  getSize,
   getRadius,
   getMargin,
+  getPaddingSize,
 } from '@kylin-ui/styled-system'
 
 export const TagContainer = styled.span<{
@@ -19,13 +19,13 @@ export const TagContainer = styled.span<{
   color: white;
   font-weight: 700;
   white-space: nowrap;
+  padding: ${({ size }) => getPaddingSize(size)};
+  border-radius: ${({ shape }) => getRadius(shape)};
   background: ${({ type, gradient }) =>
     getBackground({
       gradient: gradient,
       type: type,
     })};
-  padding: ${({ size }) => getSize(size)};
-  border-radius: ${({ shape }) => getRadius(shape)};
 `
 
 export const TagIcon = styled.span<{
