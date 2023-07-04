@@ -36,18 +36,6 @@ export function getPaddingSize(
     : Theme['padding']['middle']
 }
 
-export function getBadgeSize(
-  size?: 'small' | 'middle' | 'large' | number
-) {
-  if (typeof size === 'number') {
-    return `${size}px`
-  }
-
-  return size
-    ? Theme['width'][size]
-    : Theme['width']['middle']
-}
-
 export function getWidthSize(
   size?: 'small' | 'middle' | 'large' | number
 ) {
@@ -89,6 +77,8 @@ export function getAddSuffixOffset(
 ) {
   if (typeof offset === 'number') {
     return `${offset}px`
+  } else if (/^\d+$/.test(offset)) {
+    return Number(offset)
   }
   return offset
 }
