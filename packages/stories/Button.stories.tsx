@@ -5,7 +5,7 @@ import { Button } from '@components/Button'
 import 'uno.css'
 import '../../dist/index.css'
 
-const meta = {
+const meta: any = {
   title: 'UI Component/Button',
   component: Button,
   tags: ['autodocs'],

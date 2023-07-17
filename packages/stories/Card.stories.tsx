@@ -59,6 +59,7 @@ export const Position: Story = {
           position: 'left',
         }}
         Header={<div>Left</div>}
+        Footer={<div>Footer</div>}
       />
       <Card
         Cover={{
@@ -72,6 +73,7 @@ export const Position: Story = {
           position: 'right',
         }}
         Header={<div>Right</div>}
+        Footer={<div>Footer</div>}
       />
       <Card
         Cover={{
@@ -85,6 +87,7 @@ export const Position: Story = {
           position: 'top',
         }}
         Header={<div>Top</div>}
+        Footer={<div>Footer</div>}
       />
       <Card
         Cover={{
@@ -98,6 +101,7 @@ export const Position: Story = {
           position: 'bottom',
         }}
         Header={<div>Bottom</div>}
+        Footer={<div>Footer</div>}
       />
     </Space>
   ),

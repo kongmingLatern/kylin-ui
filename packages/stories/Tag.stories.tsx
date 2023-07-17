@@ -35,7 +35,7 @@ export const Shape: Story = {
 
 export const Size: Story = {
   render: args => (
-    <Space>
+    <Space direction="vertical">
       <Tag size="small">small</Tag>
       <Tag size="middle">middle</Tag>
       <Tag size="large">large</Tag>
