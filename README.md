@@ -58,6 +58,12 @@
   - [x] Text
   - [x] Paragraph
 
+### Refactor by using styled-component
+
+- [x] Avatar
+- [x] Badge
+- [x] Tag
+
 ### Packages
 
 - [x] Cli
