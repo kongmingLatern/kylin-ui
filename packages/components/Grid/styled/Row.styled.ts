@@ -3,7 +3,6 @@ import { RowProps } from '../type'
 import { formatBy, getWrap } from '@packages/styled-system'
 
 export const RowContainer = styled.div<{
-  row?: boolean
   justify?: RowProps['justify']
   align?: RowProps['align']
   wrap?: RowProps['wrap']
