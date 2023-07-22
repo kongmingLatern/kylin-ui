@@ -26,34 +26,20 @@ export const Flex: Story = {
   render: args => (
     <Space direction="vertical">
       <Row>
-        <Col
-          flex={'0 0 10%'}
-          bg="blue-300"
-          h="50px"
-          lh="50px"
-          text="center white"
-        >
+        <Col flex={'0 0 10%'} {...basicStyle}>
           0 0 10%
         </Col>
         <Col
           flex={'1 1 auto'}
+          {...basicStyle}
           bg="blue-400"
-          h="50px"
-          lh="50px"
-          text="center white"
         >
           1 1 auto
         </Col>
       </Row>
 
       <Row>
-        <Col
-          flex={1}
-          bg="blue-300"
-          h="50px"
-          lh="50px"
-          text="center white"
-        >
+        <Col flex={1} {...basicStyle}>
           flex: 1
         </Col>
         <Col
@@ -72,7 +58,7 @@ export const Flex: Story = {
 
 export const Span: Story = {
   render: args => (
-    <>
+    <Space direction="vertical">
       <Row text="white">
         <Col
           span={2}
@@ -108,37 +94,37 @@ export const Span: Story = {
             key={index}
             span={6}
             {...basicStyle}
-            bg="blue-400"
+            bg={!(index % 2) ? 'blue-400' : 'blue-600'}
           >
             col-6
           </Col>
         ))}
       </Row>
       <Row>
-        {new Array(6).fill(0).map(i => (
+        {new Array(6).fill(0).map((i, k) => (
           <Col
             span={4}
             {...basicStyle}
             key={i}
-            bg="blue-600"
+            bg={k % 2 ? 'blue-400' : 'blue-600'}
           >
-            4
+            col-4
           </Col>
         ))}
       </Row>
       <Row>
-        {new Array(8).fill(0).map(i => (
+        {new Array(8).fill(0).map((i, k) => (
           <Col
             span={3}
             {...basicStyle}
             key={i}
-            bg="blue-400"
+            bg={k % 2 ? 'blue-400' : 'blue-600'}
           >
-            3
+            col-3
           </Col>
         ))}
       </Row>{' '}
-    </>
+    </Space>
   ),
 }
 
