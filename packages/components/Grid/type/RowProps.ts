@@ -1,6 +1,6 @@
 export type RowProps = {
   gutter?: number | [number, number]
-  wrap?: 'start' | 'reverse'
+  wrap?: 'nowrap' | 'reverse' | 'wrap'
   justify?:
     | 'start'
     | 'end'
