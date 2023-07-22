@@ -37,4 +37,23 @@ export const Flex: Story = {
     </Space>
   ),
 }
+
+export const Span: Story = {
+  render: args => (
+    <>
+      <Row>
+        <Col span={2} bg="blue-300" h="50px">
+          2
+        </Col>
+        <Col span={20} bg="blue-500" h="50px">
+          20
+        </Col>
+        <Col span={2} bg="blue-300" h="50px">
+          2
+        </Col>
+      </Row>
+    </>
+  ),
+}
+
 export default meta
