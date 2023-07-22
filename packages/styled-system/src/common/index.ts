@@ -1,3 +1,4 @@
+import { RowProps } from '@components/Grid/type'
 import { theme as Theme } from '../theme'
 
 /**
@@ -152,4 +153,32 @@ export function getAddSuffixOffset(
     return Number(offset)
   }
   return offset
+}
+
+/**
+ *
+ * @param name 根据 name 获取 justify 和 align
+ * @returns 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around'
+ */
+export function formatBy(
+  name: RowProps['justify'] | RowProps['align']
+) {
+  if (!name) return
+  if (name === 'start' || name === 'end')
+    return `flex-${name}`
+  return name
+}
+
+/**
+ *
+ * @param name 根据 wrap 获取 flex-wrap
+ * @returns 'wrap' | 'wrap-reverse'
+ *
+ * */
+export function getWrap(wrap: RowProps['wrap']) {
+  if (!wrap) return
+  if (wrap === 'reverse') {
+    return 'wrap-reverse'
+  }
+  return wrap
 }
