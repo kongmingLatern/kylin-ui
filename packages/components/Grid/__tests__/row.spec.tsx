@@ -51,7 +51,7 @@ describe.skip('test props', () => {
 
   test('wrap', () => {
     const { container } = render(
-      <Row wrap="start">This is a row</Row>
+      <Row wrap="wrap">This is a row</Row>
     )
     expect(container.firstChild).toMatchInlineSnapshot(`
       <div

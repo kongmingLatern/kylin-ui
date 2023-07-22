@@ -43,6 +43,7 @@ const InternalRow: React.ForwardRefRenderFunction<
       justify={justify}
       align={align}
       wrap={wrap}
+      {...rest}
       style={rowStyle}
     >
       {childrenWithProps}
