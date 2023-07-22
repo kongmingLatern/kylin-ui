@@ -121,6 +121,7 @@ const Space = React.forwardRef<HTMLDivElement, SpaceProps>(
         className={cls === '' ? undefined : cls}
         style={{
           ...gapStyle,
+          display: 'flex',
           ...style,
         }}
         {...rest}
