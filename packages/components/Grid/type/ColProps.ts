@@ -12,7 +12,7 @@ export interface ColSize {
 
 export interface ColProps
   extends React.HTMLAttributes<HTMLDivElement> {
-  flex?: string
+  flex?: string | number
   span?: ColSpanType
   order?: ColSpanType
   offset?: ColSpanType
