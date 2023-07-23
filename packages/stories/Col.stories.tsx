@@ -42,13 +42,7 @@ export const Flex: Story = {
         <Col flex={1} {...basicStyle}>
           flex: 1
         </Col>
-        <Col
-          flex={2}
-          bg="blue-400"
-          h="50px"
-          lh="50px"
-          text="center white"
-        >
+        <Col flex={2} {...basicStyle} bg="blue-400">
           flex: 2
         </Col>
       </Row>
@@ -60,31 +54,13 @@ export const Span: Story = {
   render: args => (
     <Space direction="vertical">
       <Row text="white">
-        <Col
-          span={2}
-          bg="blue-300"
-          h="50px"
-          lh="50px"
-          text="center"
-        >
+        <Col span={2} {...basicStyle} bg="blue-300">
           col-2
         </Col>
-        <Col
-          span={20}
-          bg="blue-500"
-          h="50px"
-          lh="50px"
-          text="center"
-        >
+        <Col span={20} {...basicStyle} bg="blue-500">
           col-20
         </Col>
-        <Col
-          span={2}
-          bg="blue-300"
-          h="50px"
-          lh="50px"
-          text="center"
-        >
+        <Col span={2} {...basicStyle} bg="blue-300">
           col-2
         </Col>
       </Row>
@@ -105,7 +81,7 @@ export const Span: Story = {
           <Col
             span={4}
             {...basicStyle}
-            key={i}
+            key={k}
             bg={k % 2 ? 'blue-400' : 'blue-600'}
           >
             col-4
@@ -117,7 +93,7 @@ export const Span: Story = {
           <Col
             span={3}
             {...basicStyle}
-            key={i}
+            key={k}
             bg={k % 2 ? 'blue-400' : 'blue-600'}
           >
             col-3
