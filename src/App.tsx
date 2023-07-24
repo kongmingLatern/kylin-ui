@@ -14,18 +14,53 @@ import { SpinDemo } from '@components/Spin/demo/SpinDemo'
 import { TagDemo } from '@components/Tag/demo/TagDemo'
 import { CardDemo } from '@components/Card/demo/CardDemo'
 import { ImageDemo } from '@components/Image/demo/ImageDemo'
+import { Button } from '@components/Button'
+import { message } from '@components/Message'
 
 const App = () => {
   return (
     <>
+      <Button
+        onClick={() =>
+          message.success('This is a success message')
+        }
+      >
+        Success
+      </Button>
+      <Button
+        type="error"
+        onClick={() =>
+          message.error('This is an error message')
+        }
+      >
+        Error
+      </Button>
+      <Button
+        type="secondary"
+        onClick={() =>
+          message.warn('This is a warn message')
+        }
+      >
+        Warn
+      </Button>
+      <Button
+        type="info"
+        onClick={() =>
+          message.info('This is an info message')
+        }
+      >
+        Info
+      </Button>
+      {/* <Title mark>Avatar</Title>
+      <AvatarDemo /> */}
       {/* <Title mark>Card</Title>
       <CardDemo />
       <Title mark>Spin</Title>
       <SpinDemo />
       <Title mark>Image</Title>
       <ImageDemo /> */}
-      <Title mark>Tag</Title>
-      <TagDemo />
+      {/* <Title mark>Tag</Title>
+      <TagDemo /> */}
       {/* <br />
       <Title mark>Badge</Title>
       <BadgeDemo />
@@ -33,8 +68,6 @@ const App = () => {
       <Title mark>Icon</Title>
       <RenderIcon />
       <br />
-      <Title mark>Avatar</Title>
-      <AvatarDemo />
       <br />
       <Title mark>Space</Title>
       <SpaceDemo />
