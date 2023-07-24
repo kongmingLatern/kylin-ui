@@ -58,7 +58,9 @@ export const Position: Story = {
           ),
           position: 'left',
         }}
-        Header={<div>Left</div>}
+        Header={<div>这个是头部</div>}
+        Title={<div>Left</div>}
+        Content={<div>这里是对这个卡片的描述内容</div>}
         Footer={<div>Footer</div>}
       />
       <Card
@@ -72,7 +74,9 @@ export const Position: Story = {
           ),
           position: 'right',
         }}
-        Header={<div>Right</div>}
+        Header={<div>这个是头部</div>}
+        Title={<div>Right</div>}
+        Content={<div>这里是对这个卡片的描述内容</div>}
         Footer={<div>Footer</div>}
       />
       <Card
@@ -86,7 +90,9 @@ export const Position: Story = {
           ),
           position: 'top',
         }}
-        Header={<div>Top</div>}
+        Header={<div>这个是头部</div>}
+        Title={<div>Top</div>}
+        Content={<div>这里是对这个卡片的描述内容</div>}
         Footer={<div>Footer</div>}
       />
       <Card
@@ -100,7 +106,9 @@ export const Position: Story = {
           ),
           position: 'bottom',
         }}
-        Header={<div>Bottom</div>}
+        Header={<div>这个是头部</div>}
+        Title={<div>Bottom</div>}
+        Content={<div>这里是对这个卡片的描述内容</div>}
         Footer={<div>Footer</div>}
       />
     </Space>
