@@ -5,7 +5,7 @@ import {
   MessageType,
 } from './type'
 import classNames from 'classnames'
-import { Messageitem } from './MessageItem'
+import { MessageItem } from './MessageItem'
 import ReactDOM from 'react-dom/client'
 
 function init() {
@@ -76,7 +76,7 @@ const MessageList = () => {
       {Object.keys(messageList).map(key => {
         const item = messageList[key]
         return (
-          <Messageitem
+          <MessageItem
             key={item.id}
             id={item.id}
             type={item.type}

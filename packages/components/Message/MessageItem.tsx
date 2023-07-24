@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { MessageListProps, MessageType } from './type'
 import { CheckCircle, Info, XOctagon } from '@packages/icon'
 
-export function Messageitem({
+export function MessageItem({
   onRemove,
   id,
   type,
