@@ -17,9 +17,37 @@ const basicStyle = {
   lh: '50px',
   text: 'center white',
 }
+const style: React.CSSProperties = {
+  background: '#0092ff',
+  padding: '8px 0',
+}
 
 export const Basic: Story = {
-  render: args => <Col>There are some text</Col>,
+  render: args => (
+    <Space direction="vertical">
+      <Row>
+        <Col flex={'0 0 30%'} {...basicStyle}>
+          0 0 30%
+        </Col>
+        <Col
+          flex={'1 1 auto'}
+          {...basicStyle}
+          bg="blue-400"
+        >
+          1 1 auto
+        </Col>
+      </Row>
+
+      <Row>
+        <Col flex={1} {...basicStyle}>
+          flex: 1
+        </Col>
+        <Col flex={2} {...basicStyle} bg="blue-400">
+          flex: 2
+        </Col>
+      </Row>
+    </Space>
+  ),
 }
 
 export const Flex: Story = {
@@ -101,6 +129,22 @@ export const Span: Story = {
         ))}
       </Row>{' '}
     </Space>
+  ),
+}
+export const Gutter: Story = {
+  render: args => (
+    <Row gutter={[0, 24]}>
+      {new Array(8).fill(0).map((i, k) => (
+        <Col
+          span={6}
+          {...basicStyle}
+          key={k}
+          bg={k % 2 ? 'blue-400' : 'blue-600'}
+        >
+          col-6
+        </Col>
+      ))}
+    </Row>
   ),
 }
 
