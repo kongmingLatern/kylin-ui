@@ -11,7 +11,7 @@ export const BadgeDemo = () => {
         size="small"
         shape="circle"
         offset={['-.8rem', '-.6rem']}
-        bgColor="red"
+        background="red"
       >
         <Avatar
           src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
@@ -25,7 +25,7 @@ export const BadgeDemo = () => {
         size="small"
         shape="square"
         offset={['-.8rem', '-1.5rem']}
-        bgColor="red"
+        background="red"
       >
         <Avatar
           src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
@@ -38,7 +38,7 @@ export const BadgeDemo = () => {
         text="999+"
         shape="rounded"
         offset={['-.8rem', '-1rem']}
-        bgColor="blue"
+        background="blue"
       >
         <Avatar
           src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"

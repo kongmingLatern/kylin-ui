@@ -2,7 +2,7 @@ import { RowProps } from '@components/Grid/type'
 import { theme as Theme } from '../theme'
 
 /**
- * @description 根据type, gradient, bgColor 获取背景色
+ * @description 根据type, gradient, background 获取背景色
  * @param `type`
     | 'primary'
     | 'secondary'
@@ -11,7 +11,7 @@ import { theme as Theme } from '../theme'
     | 'warning'
     | 'info'
  * @param gradient 'aquamarine' | 'orange' | 'red' | 'blue'
- * @param bgColor  string | null
+ * @param background  string | null
  * @returns
       `type`: {
         `default`: '#5123f7',
@@ -37,7 +37,7 @@ import { theme as Theme } from '../theme'
 export function getBackground({
   type,
   gradient,
-  bgColor,
+  background,
 }: {
   type?:
     | 'primary'
@@ -47,11 +47,11 @@ export function getBackground({
     | 'warning'
     | 'info'
   gradient?: 'aquamarine' | 'orange' | 'red' | 'blue'
-  bgColor?: string | null
+  background?: string | null
 }) {
-  if (bgColor === null) return
-  if (bgColor) {
-    return bgColor
+  if (background === null) return
+  if (background) {
+    return background
   } else if (gradient) {
     return Theme['gradient'][gradient]
   }

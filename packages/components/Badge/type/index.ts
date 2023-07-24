@@ -25,7 +25,7 @@ export interface BadgeProps
   size?: SizeType | number
   shape?: ShapeType
   offset?: [number, number] | [string, string]
-  bgColor?: string
+  background?: string
   style?: React.CSSProperties
   text?: string | React.ReactNode
   gradient?: GradientType

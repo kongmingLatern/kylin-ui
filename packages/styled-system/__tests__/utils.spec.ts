@@ -25,12 +25,14 @@ describe('getBackground', () => {
     expect(getBackground({})).toBe(theme['type']['default'])
   })
 
-  test('should return bgColor', () => {
-    expect(getBackground({ bgColor: 'red' })).toBe('red')
+  test('should return background', () => {
+    expect(getBackground({ background: 'red' })).toBe('red')
   })
 
-  test('should return default bgColor', () => {
-    expect(getBackground({ bgColor: null })).toBeUndefined()
+  test('should return default background', () => {
+    expect(
+      getBackground({ background: null })
+    ).toBeUndefined()
   })
 })
 

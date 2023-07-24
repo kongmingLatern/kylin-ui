@@ -75,7 +75,7 @@ export const Text: Story = {
         size="small"
         shape="circle"
         offset={['-.8rem', '-.6rem']}
-        bgColor="red"
+        background="red"
       >
         <Avatar
           src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
@@ -84,12 +84,12 @@ export const Text: Story = {
         />
       </Badge>
 
-      <Badge
+      {/* <Badge
         text="999+"
         size="small"
         shape="square"
         offset={['-.8rem', '-1.5rem']}
-        bgColor="red"
+        background="red"
       >
         <Avatar
           src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
@@ -102,14 +102,14 @@ export const Text: Story = {
         text="999+"
         shape="rounded"
         offset={['-.8rem', '-1rem']}
-        bgColor="blue"
+        background="blue"
       >
         <Avatar
           src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
           shape="circle"
           size={'large'}
         />
-      </Badge>
+      </Badge> */}
     </>
   ),
 }

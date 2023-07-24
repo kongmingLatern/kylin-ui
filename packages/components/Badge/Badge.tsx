@@ -6,7 +6,7 @@ import {
   SupContainer,
 } from './styled'
 
-export const InternalBadge: React.ForwardRefRenderFunction<
+const InternalBadge: React.ForwardRefRenderFunction<
   HTMLSpanElement,
   BadgeProps
 > = (props, ref) => {
@@ -15,7 +15,7 @@ export const InternalBadge: React.ForwardRefRenderFunction<
     size = 'small',
     shape = 'circle',
     color = 'white',
-    bgColor,
+    background,
     gradient,
     text,
     offset,
@@ -30,13 +30,13 @@ export const InternalBadge: React.ForwardRefRenderFunction<
           <SupContainer
             offset={offset}
             color={color}
-            bgColor={bgColor}
+            background={background}
             shape={shape}
             size={size}
           >
             {text}
           </SupContainer>
-          <BadgeContainer shape={shape} bgColor={null}>
+          <BadgeContainer shape={shape} background={null}>
             {children}
           </BadgeContainer>
         </>
@@ -47,8 +47,7 @@ export const InternalBadge: React.ForwardRefRenderFunction<
           shape={shape}
           size={size}
           color={color}
-          bgColor={bgColor}
-
+          background={background}
           {...rest}
         >
           {children}

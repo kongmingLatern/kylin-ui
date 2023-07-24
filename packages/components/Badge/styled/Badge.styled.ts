@@ -12,7 +12,7 @@ export const BadgeContainer = styled.span<{
   gradient?: BadgeProps['gradient']
   size?: BadgeProps['size']
   shape?: BadgeProps['shape']
-  bgColor?: BadgeProps['bgColor'] | null
+  background?: BadgeProps['background'] | null
   color?: BadgeProps['color']
 }>`
   position: relative;
@@ -22,11 +22,11 @@ export const BadgeContainer = styled.span<{
   height: 100%;
   padding: 2px;
   white-space: nowrap;
-  color: ${({ color }) => color ?? '#fff'};
+  color: ${({ color }) => color ?? '#000'};
   padding: ${({ size }) => getPaddingSize(size)};
   border-radius: ${({ shape }) => getRadius(shape)};
-  background: ${({ type, gradient, bgColor }) =>
-    getBackground({ type, gradient, bgColor })};
+  background: ${({ type, gradient, background }) =>
+    getBackground({ type, gradient, background })};
 `
 
 export const BadgeInner = styled.span`
@@ -36,7 +36,7 @@ export const BadgeInner = styled.span`
 
 export const SupContainer = styled.sup<{
   offset?: BadgeProps['offset']
-  bgColor?: BadgeProps['bgColor']
+  background?: BadgeProps['background']
   color?: BadgeProps['color']
   size?: BadgeProps['size']
   shape?: BadgeProps['shape']
@@ -48,8 +48,8 @@ export const SupContainer = styled.sup<{
     getAddSuffixOffset(offset?.[1] ?? '-1.5rem')};
   z-index: 100;
   color: ${({ color }) => color ?? '#fff'};
-  background: ${({ bgColor }) =>
-    getBackground({ bgColor })};
+  background: ${({ background }) =>
+    getBackground({ background })};
   padding: ${({ size }) => getPaddingSize(size)};
 
   border-radius: ${({ shape }) => getRadius(shape)};
