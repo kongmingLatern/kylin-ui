@@ -44,6 +44,8 @@
   - [x] ButtonGroup
 - [x] Divider
 - [x] Grid
+  - [x] Row
+  - [x] Col
 - [x] Layout
   - [x] Header
   - [x] Content
