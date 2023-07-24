@@ -51,6 +51,7 @@
   - [x] Content
   - [x] Footer
 - [x] Image
+- [x] Message
 - [x] Space
 - [x] Spin
 - [x] Tag
