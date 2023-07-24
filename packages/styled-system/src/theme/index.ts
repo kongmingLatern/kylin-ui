@@ -1,7 +1,7 @@
 export const theme = {
   type: {
     default: '#5123f7',
-    primary: '#6e0b75',
+    primary: '#1677ff',
     secondary: '#006597',
     success: '#36d399',
     info: '#3abff8',

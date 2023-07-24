@@ -36,9 +36,16 @@ export default async () => {
           presetIcons(),
           presetAttributify(),
         ],
+        shortcuts: {
+          'j-a-c': 'justify-center items-center',
+        },
         safelist: [
           // FLAG: 根据 开发者传入的 preset 进行 safelist 的配置
           ...safelist,
+          'h-50px',
+          'lh-50px',
+          'text-white',
+          'text-center',
         ],
       }),
       ...BuildPlugins(),

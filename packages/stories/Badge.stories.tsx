@@ -84,7 +84,7 @@ export const Text: Story = {
         />
       </Badge>
 
-      {/* <Badge
+      <Badge
         text="999+"
         size="small"
         shape="square"
@@ -109,7 +109,7 @@ export const Text: Story = {
           shape="circle"
           size={'large'}
         />
-      </Badge> */}
+      </Badge>
     </>
   ),
 }
