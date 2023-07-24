@@ -24,7 +24,8 @@ const InternalCol: React.ForwardRefRenderFunction<
   HTMLDivElement,
   ColProps
 > = (props, ref) => {
-  const { flex, span, children, style, ...rest } = props
+  const { flex, span, offset, children, style, ...rest } =
+    props
 
   const { gutter, wrap, supportFlexGap } =
     React.useContext(RowContext)
@@ -73,6 +74,7 @@ const InternalCol: React.ForwardRefRenderFunction<
     <ColContainer
       flex={flex}
       ref={ref}
+      offset={offset}
       span={span || sizeClassObj['span']}
       {...rest}
       style={{

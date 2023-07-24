@@ -4,9 +4,14 @@ import { ColProps } from '../type'
 export const ColContainer = styled.div<{
   flex: ColProps['flex']
   span?: ColProps['span']
+  offset?: ColProps['offset']
 }>`
   flex: ${props =>
     getFlex(props.flex, { span: props.span ?? 0 })};
+  margin-inline-start: ${props =>
+    props.offset
+      ? `${(Number(props.offset) / 24) * 100}%`
+      : 0};
 `
 
 function getFlex(flex, { span }: any) {

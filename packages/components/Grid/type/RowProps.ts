@@ -7,6 +7,7 @@ export type RowProps = {
     | 'center'
     | 'space-around'
     | 'space-between'
+    | 'space-evenly'
   align?: 'start' | 'center' | 'end'
   className?: string
   style?: React.CSSProperties
