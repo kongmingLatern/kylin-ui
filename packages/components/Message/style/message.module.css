@@ -1,0 +1,27 @@
+.move {
+  animation: messageMove 5s ease-in-out alternate;
+  -moz-animation: messageMove 5s ease-in-out; /* Firefox */
+  -webkit-animation: messageMove 5s ease-in-out; /* Safari 和 Chrome */
+  -o-animation: messageMove 5s ease-in-out; /* Opera */
+}
+@keyframes messageMove {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  10% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  80% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+}
