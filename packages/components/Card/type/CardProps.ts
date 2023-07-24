@@ -16,6 +16,7 @@ export interface CardProps {
   shape?: 'circle' | 'square' | 'round'
   title?: string
   Header?: React.ReactElement
+  Title?: React.ReactElement
   Content?: React.ReactElement
   Footer?: React.ReactElement
 }

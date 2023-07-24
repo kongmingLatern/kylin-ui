@@ -7,15 +7,33 @@ test('render', () => {
     <div
       class="kylin-card-container flex flex-col p-2"
     >
-      <main
-        class="kylin-card-content"
+      <div
+        class="kylin-space-justify-start kylin-space-vertical"
+        style="column-gap: 8px; row-gap: 8px; display: flex;"
       >
-        <h1
-          class="kylin-typography-title-h1 kylin-typography-strong"
-        />
-        This is a card
-      </main>
-      <footer />
+        <div
+          class="kylin-space-item"
+        >
+          <header />
+        </div>
+        <div
+          class="kylin-space-item"
+        >
+          <main
+            class="kylin-card-content p-2"
+          >
+            <h1
+              class="kylin-typography-title-h1 kylin-typography-strong"
+            />
+            This is a card
+          </main>
+        </div>
+        <div
+          class="kylin-space-item"
+        >
+          <footer />
+        </div>
+      </div>
     </div>
   `)
 })
@@ -29,19 +47,37 @@ describe('Props', () => {
       <div
         class="kylin-card-container flex flex-col p-2"
       >
-        <main
-          class="kylin-card-content"
+        <div
+          class="kylin-space-justify-start kylin-space-vertical"
+          style="column-gap: 8px; row-gap: 8px; display: flex;"
         >
-          <h1
-            class="kylin-typography-title-h1 kylin-typography-strong"
+          <div
+            class="kylin-space-item"
           >
-            <div>
-              Header
-            </div>
-          </h1>
-          This is a card
-        </main>
-        <footer />
+            <header>
+              <div>
+                Header
+              </div>
+            </header>
+          </div>
+          <div
+            class="kylin-space-item"
+          >
+            <main
+              class="kylin-card-content p-2"
+            >
+              <h1
+                class="kylin-typography-title-h1 kylin-typography-strong"
+              />
+              This is a card
+            </main>
+          </div>
+          <div
+            class="kylin-space-item"
+          >
+            <footer />
+          </div>
+        </div>
       </div>
     `)
   })
@@ -55,17 +91,35 @@ describe('Props', () => {
       <div
         class="kylin-card-container flex flex-col p-2"
       >
-        <main
-          class="kylin-card-content"
+        <div
+          class="kylin-space-justify-start kylin-space-vertical"
+          style="column-gap: 8px; row-gap: 8px; display: flex;"
         >
-          <h1
-            class="kylin-typography-title-h1 kylin-typography-strong"
-          />
-          <div>
-            Content
+          <div
+            class="kylin-space-item"
+          >
+            <header />
           </div>
-        </main>
-        <footer />
+          <div
+            class="kylin-space-item"
+          >
+            <main
+              class="kylin-card-content p-2"
+            >
+              <h1
+                class="kylin-typography-title-h1 kylin-typography-strong"
+              />
+              <div>
+                Content
+              </div>
+            </main>
+          </div>
+          <div
+            class="kylin-space-item"
+          >
+            <footer />
+          </div>
+        </div>
       </div>
     `)
   })
@@ -77,19 +131,37 @@ describe('Props', () => {
       <div
         class="kylin-card-container flex flex-col p-2"
       >
-        <main
-          class="kylin-card-content"
+        <div
+          class="kylin-space-justify-start kylin-space-vertical"
+          style="column-gap: 8px; row-gap: 8px; display: flex;"
         >
-          <h1
-            class="kylin-typography-title-h1 kylin-typography-strong"
-          />
-          This is a card
-        </main>
-        <footer>
-          <div>
-            Footer
+          <div
+            class="kylin-space-item"
+          >
+            <header />
           </div>
-        </footer>
+          <div
+            class="kylin-space-item"
+          >
+            <main
+              class="kylin-card-content p-2"
+            >
+              <h1
+                class="kylin-typography-title-h1 kylin-typography-strong"
+              />
+              This is a card
+            </main>
+          </div>
+          <div
+            class="kylin-space-item"
+          >
+            <footer>
+              <div>
+                Footer
+              </div>
+            </footer>
+          </div>
+        </div>
       </div>
     `)
   })
@@ -111,25 +183,43 @@ describe('Props', () => {
         class="kylin-card-container flex flex-col p-2"
       >
         <div
-          class="kylin-card-position-left kylin-card-size-small kylin-card-shape-circle flex"
+          class="kylin-space-justify-start kylin-space-vertical"
+          style="column-gap: 8px; row-gap: 8px; display: flex;"
         >
           <div
-            class="kylin-card-cover"
+            class="kylin-space-item"
           >
-            <img
-              src="1"
-            />
+            <header />
           </div>
-          <main
-            class="kylin-card-content"
+          <div
+            class="kylin-space-item"
           >
-            <h1
-              class="kylin-typography-title-h1 kylin-typography-strong"
-            />
-            This is a card
-          </main>
+            <div
+              class="kylin-card-position-left kylin-card-size-small kylin-card-shape-circle flex"
+            >
+              <div
+                class="kylin-card-cover"
+              >
+                <img
+                  src="1"
+                />
+              </div>
+              <main
+                class="kylin-card-content p-2"
+              >
+                <h1
+                  class="kylin-typography-title-h1 kylin-typography-strong"
+                />
+                This is a card
+              </main>
+            </div>
+          </div>
+          <div
+            class="kylin-space-item"
+          >
+            <footer />
+          </div>
         </div>
-        <footer />
       </div>
     `)
   })
@@ -152,25 +242,43 @@ describe('Props', () => {
         class="kylin-card-shape-round kylin-card-container flex flex-col p-2"
       >
         <div
-          class="kylin-card-position-left kylin-card-size-small kylin-card-shape-circle flex"
+          class="kylin-space-justify-start kylin-space-vertical"
+          style="column-gap: 8px; row-gap: 8px; display: flex;"
         >
           <div
-            class="kylin-card-cover"
+            class="kylin-space-item"
           >
-            <img
-              src="1"
-            />
+            <header />
           </div>
-          <main
-            class="kylin-card-content"
+          <div
+            class="kylin-space-item"
           >
-            <h1
-              class="kylin-typography-title-h1 kylin-typography-strong"
-            />
-            round
-          </main>
+            <div
+              class="kylin-card-position-left kylin-card-size-small kylin-card-shape-circle flex"
+            >
+              <div
+                class="kylin-card-cover"
+              >
+                <img
+                  src="1"
+                />
+              </div>
+              <main
+                class="kylin-card-content p-2"
+              >
+                <h1
+                  class="kylin-typography-title-h1 kylin-typography-strong"
+                />
+                round
+              </main>
+            </div>
+          </div>
+          <div
+            class="kylin-space-item"
+          >
+            <footer />
+          </div>
         </div>
-        <footer />
       </div>
     `)
   })

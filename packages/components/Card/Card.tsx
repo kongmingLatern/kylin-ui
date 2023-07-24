@@ -1,8 +1,9 @@
 import React from 'react'
 import type { CardProps } from './type'
-import { Content, Footer } from '../Layout'
+import { Content, Footer, Header } from '../Layout'
 import { Title } from '../Typography'
 import classNames from 'classnames'
+import { Space } from '../Space'
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   (props, ref) => {
@@ -12,6 +13,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       children,
       Cover,
       Header: HeaderContainer,
+      Title: TitleContainer,
       Content: ContentContainer,
       Footer: FooterContainer,
       ...rest
@@ -21,12 +23,13 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       const { className } = props
       const classes = classNames(
         'kylin-card-content',
+        'p-2',
         className
       )
       return (
         <Content className={classes}>
           <Title level={1} strong>
-            {HeaderContainer}
+            {TitleContainer}
           </Title>
           {ContentContainer || children}
         </Content>
@@ -63,21 +66,27 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
 
       return (
         <div className={containerClass} ref={ref} {...rest}>
-          <div className={classes}>
-            <div className="kylin-card-cover">
-              {element}
+          <Space direction="vertical">
+            <Header>{HeaderContainer}</Header>
+            <div className={classes}>
+              <div className="kylin-card-cover">
+                {element}
+              </div>
+              <CardContent />
             </div>
-            <CardContent />
-          </div>
-          <Footer>{FooterContainer}</Footer>
+            <Footer>{FooterContainer}</Footer>
+          </Space>
         </div>
       )
     }
 
     return (
       <div className={containerClass} ref={ref} {...rest}>
-        <CardContent />
-        <Footer>{FooterContainer}</Footer>
+        <Space direction="vertical">
+          <Header>{HeaderContainer}</Header>
+          <CardContent />
+          <Footer>{FooterContainer}</Footer>
+        </Space>
       </div>
     )
   }
