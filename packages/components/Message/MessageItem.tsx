@@ -60,9 +60,9 @@ export function MessageItem({
         'flex',
         'j-a-c',
         'shadow-lg',
+        'transform-gpu',
         getColorByType(),
         styles.move,
-        'transition',
         'px-3',
         'py-4'
       )}

@@ -1,4 +1,5 @@
 .move {
+  transition: all 5s;
   animation: messageMove 5s ease-in-out alternate;
   -moz-animation: messageMove 5s ease-in-out; /* Firefox */
   -webkit-animation: messageMove 5s ease-in-out; /* Safari 和 Chrome */
@@ -15,13 +16,13 @@
     opacity: 1;
   }
 
-  80% {
+  40% {
     transform: translateY(0%);
     opacity: 1;
   }
 
-  to {
+  70% {
     transform: translateY(-100%);
-    opacity: 1;
+    opacity: 0;
   }
 }
