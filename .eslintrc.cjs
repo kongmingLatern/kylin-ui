@@ -27,5 +27,6 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': ['off'],
     'no-undef': ['off'],
     'react/prop-types': ['off'],
+    '@typescript-eslint/ban-types': ['off'],
   },
 }
