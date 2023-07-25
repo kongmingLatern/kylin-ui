@@ -12,6 +12,8 @@
 ├── README.md               # README
 ├── commitlint.config.cjs   # Commlint config
 ├── docs                    # Vitepress address
+├── _template               # hygen template 
+├── .husky                  # husky hook 
 ├── index.html
 ├── package.json
 ├── packages                # Monorepo
@@ -21,6 +23,8 @@
     ├── icon                # Icon packages
     ├── preset              # Kylin.config.js preset config
     ├── shared              # Utils / helpers
+    ├── stories             # Storybook Folder
+    ├── styled-system       # styled-system theme define 
     └── theme               # Style Folder
 ├── pnpm-lock.yaml
 ├── pnpm-workspace.yaml
@@ -31,6 +35,10 @@
 ├── tsconfig.json
 ├── tsconfig.node.json
 ├── uno.config.ts
+├── .editorconfig
+├── .eslintrc.js
+├── .gitignore
+├── .prettierrc
 ├── vite.config.ts
 └── vitest.config.ts
 ```
