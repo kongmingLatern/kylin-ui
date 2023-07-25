@@ -22,6 +22,7 @@ import {
 import LoadingIcon from './LoadingIcon'
 import { getLoadingConfig } from './getLoadingConfig'
 import { GroupSizeContext } from './ButtonGroup'
+import { ButtonContainer } from './styled'
 
 const InternalButton: React.ForwardRefRenderFunction<
   HTMLButtonElement,
@@ -30,7 +31,7 @@ const InternalButton: React.ForwardRefRenderFunction<
   /**============================= 设置 props ============================= */
   const {
     type = 'default',
-    shape,
+    shape = 'rounded',
     block,
     size = useContext(GroupSizeContext),
     beforeIcon,
@@ -40,7 +41,6 @@ const InternalButton: React.ForwardRefRenderFunction<
     loading = false,
     className,
     children,
-    htmlType = 'button',
     ...rest
   } = props
 
@@ -69,22 +69,22 @@ const InternalButton: React.ForwardRefRenderFunction<
 
   /**============================= 设置 className ============================= */
 
-  const classes = classNames(
-    // TODO: 判断 type 是否在预期之内
-    {
-      [`kylin-btn-${type}`]: !ghost && type,
-      [`kylin-btn-shape-${shape}`]: shape,
-      [`kylin-btn-size-${size}`]: size,
-      [`kylin-btn-block`]: block,
-      [`kylin-btn-ghost`]: ghost,
-      [`kylin-btn-loading`]: innerLoading,
-      [`kylin-btn-disabled`]: disabled || innerLoading,
-      // FLAG: 经过处理后的 Unocss 样式
-      ...presetClass,
-    },
-    className,
-    shortcuts ? shortcuts : ''
-  )
+  // const classes = classNames(
+  //   // TODO: 判断 type 是否在预期之内
+  //   {
+  //     [`kylin-btn-${type}`]: !ghost && type,
+  //     [`kylin-btn-shape-${shape}`]: shape,
+  //     [`kylin-btn-size-${size}`]: size,
+  //     [`kylin-btn-block`]: block,
+  //     [`kylin-btn-ghost`]: ghost,
+  //     [`kylin-btn-loading`]: innerLoading,
+  //     [`kylin-btn-disabled`]: disabled || innerLoading,
+  //     // FLAG: 经过处理后的 Unocss 样式
+  //     ...presetClass,
+  //   },
+  //   className,
+  //   shortcuts ? shortcuts : ''
+  // )
 
   useEffect(() => {
     let delayTimer: NodeJS.Timer | null = null
@@ -109,16 +109,12 @@ const InternalButton: React.ForwardRefRenderFunction<
 
   const BeforeIcon = () =>
     beforeIcon ? (
-      <span className="kylin-btn-icon-before">
-        {beforeIcon}
-      </span>
+      <span className="mr-[0.5rem]">{beforeIcon}</span>
     ) : null
 
   const AfterIcon = () =>
     afterIcon ? (
-      <span className="kylin-btn-icon-after">
-        {afterIcon}
-      </span>
+      <span className="ml-[0.5rem]">{afterIcon}</span>
     ) : null
 
   const IconNode = ({ children }) => {
@@ -151,23 +147,26 @@ const InternalButton: React.ForwardRefRenderFunction<
   }
 
   const buttonNode = (
-    <button
-      type={htmlType}
-      className={classes}
+    <ButtonContainer
+      type={type}
+      size={size}
+      displayblock={block ? 1 : 0}
+      shape={shape}
+      loading={Number(!!innerLoading)}
       ref={ref}
       onClick={handleClick}
-      disabled={!!innerLoading}
-      {...restProps}
+      disabled={Number(disabled || innerLoading)}
+      className={className}
+      {...rest}
     >
       <IconNode>
         {ghost ? <span>{children}</span> : children}
       </IconNode>
-    </button>
+    </ButtonContainer>
   )
 
   return buttonNode
 }
-/**============================= 设置 Button ============================= */
 const Button = React.forwardRef<
   HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>,
   ButtonProps

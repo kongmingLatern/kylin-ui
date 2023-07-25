@@ -1,7 +1,9 @@
+import { Default } from './../../../stories/Badge.stories'
 import { RowProps } from '@components/Grid/type'
 import { theme as Theme } from '../theme'
 import { SpaceProps } from '@components/Space/type'
 import { CoverProps } from '@components/Card/type'
+import { ButtonProps } from '@components/Button'
 
 /**
  * @description 根据type, gradient, background 获取背景色
@@ -41,13 +43,7 @@ export function getBackground({
   gradient,
   background,
 }: {
-  type?:
-    | 'primary'
-    | 'secondary'
-    | 'success'
-    | 'danger'
-    | 'warning'
-    | 'info'
+  type?: ButtonProps['type']
   gradient?: 'aquamarine' | 'orange' | 'red' | 'blue'
   background?: string | null
 }) {

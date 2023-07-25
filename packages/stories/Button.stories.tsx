@@ -22,6 +22,7 @@ export const Type: Story = {
       <Button type="secondary">Secondary</Button>
       <Button type="success">Success</Button>
       <Button type="info">Warning</Button>
+      <Button type="error">Error</Button>
     </Space>
   ),
 }
@@ -95,6 +96,16 @@ export const Size: Story = {
   ),
 }
 
+// ***************** size *******************
+export const Shape: Story = {
+  render: () => (
+    <Space>
+      <Button shape="square">square</Button>
+      <Button shape="rounded">rounded</Button>
+      <Button shape="circle">circle</Button>
+    </Space>
+  ),
+}
 // ***************** disabled *******************
 export const Disabled: Story = {
   args: {

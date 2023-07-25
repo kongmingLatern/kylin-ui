@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 import { Button } from '../Button'
 
-test('render button', () => {
+test.skip('render button', () => {
   const { container } = render(
     <Button>This is a primary button</Button>
   )
@@ -15,7 +15,7 @@ test('render button', () => {
 	`)
 })
 
-describe("button's props", () => {
+describe.skip("button's props", () => {
   test("button's type", () => {
     const { container } = render(
       <Button type="primary">

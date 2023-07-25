@@ -8,6 +8,7 @@ export const theme = {
     disabled: '#bdc3c7',
     warning: '#e67e22',
     danger: '#e74c3c',
+    error: '#e74c3c',
   },
 
   gradient: {
@@ -26,9 +27,9 @@ export const theme = {
   },
 
   padding: {
-    small: '0 0.4rem',
-    middle: '0 0.6rem',
-    large: '0 0.8rem',
+    small: '0.4rem 0.4rem',
+    middle: '0.6rem 0.8rem',
+    large: '0.8rem 1.2rem',
   },
 
   width: {

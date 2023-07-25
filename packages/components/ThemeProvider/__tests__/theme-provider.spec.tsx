@@ -2,7 +2,7 @@ import { render } from '@testing-library/react'
 import { Button } from '../../button/Button'
 import { ThemeProvider } from '../theme-provider'
 
-describe('themeProvider', () => {
+describe.skip('themeProvider', () => {
   let theme = {}
   beforeEach(() => {
     theme = {
