@@ -18,7 +18,7 @@ type Story = StoryObj<typeof meta>
 
 export const Basic: Story = {
   args: {
-    shape: 'round',
+    shape: 'rounded',
     Cover: {
       element: (
         <Image
@@ -46,7 +46,7 @@ export const Basic: Story = {
 
 export const Position: Story = {
   render: args => (
-    <Space>
+    <Space direction="vertical">
       <Card
         Cover={{
           element: (

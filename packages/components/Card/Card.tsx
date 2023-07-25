@@ -4,6 +4,7 @@ import { Content, Footer, Header } from '../Layout'
 import { Title } from '../Typography'
 import classNames from 'classnames'
 import { Space } from '../Space'
+import { CardContainer, CardCover } from './styled'
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   (props, ref) => {
@@ -36,21 +37,10 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       )
     }
 
-    const containerClass = classNames(
-      {
-        [`kylin-card-shape-${shape}`]: shape,
-      },
-      'kylin-card-container',
-      'flex',
-      'flex-col',
-      'p-2',
-      className
-    )
-
     if (Cover) {
       const {
         element,
-        size = 'middle',
+        size,
         position = 'top',
         shape = 'square',
       } = Cover
@@ -65,29 +55,33 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       )
 
       return (
-        <div className={containerClass} ref={ref} {...rest}>
+        <CardContainer shape={shape} ref={ref} {...rest}>
           <Space direction="vertical">
             <Header>{HeaderContainer}</Header>
-            <div className={classes}>
+            <CardCover
+              position={position}
+              size={size}
+              shape={shape}
+            >
               <div className="kylin-card-cover">
                 {element}
               </div>
               <CardContent />
-            </div>
+            </CardCover>
             <Footer>{FooterContainer}</Footer>
           </Space>
-        </div>
+        </CardContainer>
       )
     }
 
     return (
-      <div className={containerClass} ref={ref} {...rest}>
+      <CardContainer shape={shape} ref={ref} {...rest}>
         <Space direction="vertical">
           <Header>{HeaderContainer}</Header>
           <CardContent />
           <Footer>{FooterContainer}</Footer>
         </Space>
-      </div>
+      </CardContainer>
     )
   }
 )

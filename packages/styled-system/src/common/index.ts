@@ -1,6 +1,7 @@
 import { RowProps } from '@components/Grid/type'
 import { theme as Theme } from '../theme'
 import { SpaceProps } from '@components/Space/type'
+import { CoverProps } from '@components/Card/type'
 
 /**
  * @description 根据type, gradient, background 获取背景色
@@ -194,4 +195,35 @@ export function getFlexDirection(
     return 'column'
   }
   return 'row'
+}
+
+export function getCoverPosition(
+  position?: CoverProps['position']
+) {
+  if (!position) return
+  switch (position) {
+    case 'top':
+      return 'column'
+    case 'bottom':
+      return 'column-reverse'
+    case 'left':
+      return 'row'
+    case 'right':
+      return 'row-reverse'
+    default:
+      return 'row'
+  }
+}
+
+export function getCoverWidth(width: CoverProps['size']) {
+  switch (width) {
+    case 'small':
+      return '30rem'
+    case 'medium':
+      return '50rem'
+    case 'large':
+      return '70rem'
+    default:
+      return 'auto'
+  }
 }
