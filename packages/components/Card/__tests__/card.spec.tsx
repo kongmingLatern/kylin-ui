@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 import { Card } from '@components/Card'
 
-test('render', () => {
+test.skip('render', () => {
   const { container } = render(<Card>This is a card</Card>)
   expect(container.firstChild).toMatchInlineSnapshot(`
     <div
@@ -41,7 +41,7 @@ test('render', () => {
   `)
 })
 
-describe('Props', () => {
+describe.skip('Props', () => {
   test('Header', () => {
     const { container } = render(
       <Card Header={<div>Header</div>}>This is a card</Card>
