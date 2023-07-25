@@ -39,22 +39,23 @@
 
 ### Component
 
-- [x] Avatar
+- [x] Avatar (`styled-component`)
+- [x] Badge (`styled-component`)
 - [x] Button
   - [x] ButtonGroup
 - [x] Divider
 - [x] Grid
-  - [x] Row
-  - [x] Col
+  - [x] Row(`styled-component`)
+  - [x] Col(`styled-component`)
 - [x] Layout
   - [x] Header
   - [x] Content
   - [x] Footer
 - [x] Image
 - [x] Message
-- [x] Space
+- [x] Space(`styled-component`)
 - [x] Spin
-- [x] Tag
+- [x] Tag(`styled-component`)
 - [x] ThemeProvider
 - [x] Typography
   - [x] Title
