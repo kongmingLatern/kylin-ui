@@ -5,8 +5,10 @@ test('render', () => {
   const { container } = render(<Space>123</Space>)
   expect(container.firstChild).toMatchInlineSnapshot(`
     <div
-      class="kylin-space-justify-start kylin-space-horizontal kylin-space-align-center"
-      style="column-gap: 8px; row-gap: 8px; display: flex;"
+      align="center"
+      class="sc-dlfmnT GBcQr"
+      direction="horizontal"
+      justify="start"
     >
       <div
         class="kylin-space-item"
@@ -28,11 +30,14 @@ describe('props', () => {
     expect(container.firstChild).toMatchInlineSnapshot(
       `
       <div
-        class="kylin-space-justify-start kylin-space-horizontal kylin-space-align-center"
-        style="column-gap: 2px; row-gap: 2px; display: flex;"
+        align="center"
+        class="sc-dlfmnT GBcQr"
+        direction="horizontal"
+        justify="start"
       >
         <div
           class="kylin-space-item"
+          style="margin-right: 2px;"
         >
           <div>
             first
@@ -59,11 +64,13 @@ describe('props', () => {
     expect(container.firstChild).toMatchInlineSnapshot(
       `
       <div
-        class="kylin-space-justify-start kylin-space-vertical"
-        style="column-gap: 8px; row-gap: 8px; display: flex;"
+        class="sc-dlfmnT dBIvBc"
+        direction="vertical"
+        justify="start"
       >
         <div
           class="kylin-space-item"
+          style="margin-bottom: 8px;"
         >
           <div>
             first
@@ -90,11 +97,14 @@ describe('props', () => {
     expect(container.firstChild).toMatchInlineSnapshot(
       `
       <div
-        class="kylin-space-justify-start kylin-space-horizontal kylin-space-align-end"
-        style="column-gap: 8px; row-gap: 8px; display: flex;"
+        align="end"
+        class="sc-dlfmnT gkqjTZ"
+        direction="horizontal"
+        justify="start"
       >
         <div
           class="kylin-space-item"
+          style="margin-right: 8px;"
         >
           <div>
             first
@@ -121,18 +131,22 @@ describe('props', () => {
     expect(container.firstChild).toMatchInlineSnapshot(
       `
       <div
-        class="kylin-space-justify-start kylin-space-horizontal kylin-space-align-center"
-        style="column-gap: 8px; row-gap: 8px; display: flex;"
+        align="center"
+        class="sc-dlfmnT GBcQr"
+        direction="horizontal"
+        justify="start"
       >
         <div
           class="kylin-space-item"
+          style="margin-right: 4px;"
         >
           <div>
             first
           </div>
         </div>
         <span
-          class="kylin-space-item-split"
+          class="sc-hKgJyM bSsMGA kylin-space-item-split"
+          style="margin-right: 4px;"
         />
         <div
           class="kylin-space-item"
@@ -155,11 +169,15 @@ describe('props', () => {
     expect(container.firstChild).toMatchInlineSnapshot(
       `
       <div
-        class="kylin-space-justify-start kylin-space-horizontal kylin-space-align-center"
-        style="flex-wrap: wrap; column-gap: 8px; row-gap: 8px; display: flex;"
+        align="center"
+        class="sc-dlfmnT GBcQr"
+        direction="horizontal"
+        justify="start"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
       >
         <div
           class="kylin-space-item"
+          style="margin-right: 8px; padding-bottom: 8px;"
         >
           <div>
             first
@@ -167,6 +185,7 @@ describe('props', () => {
         </div>
         <div
           class="kylin-space-item"
+          style="padding-bottom: 8px;"
         >
           <div>
             secord
@@ -185,11 +204,14 @@ describe('props', () => {
     )
     expect(container.firstChild).toMatchInlineSnapshot(`
       <div
-        class="kylin-space-justify-end kylin-space-horizontal kylin-space-align-center"
-        style="column-gap: 8px; row-gap: 8px; display: flex;"
+        align="center"
+        class="sc-dlfmnT gylfEU"
+        direction="horizontal"
+        justify="end"
       >
         <div
           class="kylin-space-item"
+          style="margin-right: 8px;"
         >
           <div>
             end1

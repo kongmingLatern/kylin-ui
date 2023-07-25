@@ -8,16 +8,19 @@ test('render', () => {
       class="kylin-card-container flex flex-col p-2"
     >
       <div
-        class="kylin-space-justify-start kylin-space-vertical"
-        style="column-gap: 8px; row-gap: 8px; display: flex;"
+        class="sc-bdfCkl bTOQkl"
+        direction="vertical"
+        justify="start"
       >
         <div
           class="kylin-space-item"
+          style="margin-bottom: 8px;"
         >
           <header />
         </div>
         <div
           class="kylin-space-item"
+          style="margin-bottom: 8px;"
         >
           <main
             class="kylin-card-content p-2"
@@ -48,11 +51,13 @@ describe('Props', () => {
         class="kylin-card-container flex flex-col p-2"
       >
         <div
-          class="kylin-space-justify-start kylin-space-vertical"
-          style="column-gap: 8px; row-gap: 8px; display: flex;"
+          class="sc-bdfCkl bTOQkl"
+          direction="vertical"
+          justify="start"
         >
           <div
             class="kylin-space-item"
+            style="margin-bottom: 8px;"
           >
             <header>
               <div>
@@ -62,6 +67,7 @@ describe('Props', () => {
           </div>
           <div
             class="kylin-space-item"
+            style="margin-bottom: 8px;"
           >
             <main
               class="kylin-card-content p-2"
@@ -92,16 +98,19 @@ describe('Props', () => {
         class="kylin-card-container flex flex-col p-2"
       >
         <div
-          class="kylin-space-justify-start kylin-space-vertical"
-          style="column-gap: 8px; row-gap: 8px; display: flex;"
+          class="sc-bdfCkl bTOQkl"
+          direction="vertical"
+          justify="start"
         >
           <div
             class="kylin-space-item"
+            style="margin-bottom: 8px;"
           >
             <header />
           </div>
           <div
             class="kylin-space-item"
+            style="margin-bottom: 8px;"
           >
             <main
               class="kylin-card-content p-2"
@@ -132,16 +141,19 @@ describe('Props', () => {
         class="kylin-card-container flex flex-col p-2"
       >
         <div
-          class="kylin-space-justify-start kylin-space-vertical"
-          style="column-gap: 8px; row-gap: 8px; display: flex;"
+          class="sc-bdfCkl bTOQkl"
+          direction="vertical"
+          justify="start"
         >
           <div
             class="kylin-space-item"
+            style="margin-bottom: 8px;"
           >
             <header />
           </div>
           <div
             class="kylin-space-item"
+            style="margin-bottom: 8px;"
           >
             <main
               class="kylin-card-content p-2"
@@ -183,16 +195,19 @@ describe('Props', () => {
         class="kylin-card-container flex flex-col p-2"
       >
         <div
-          class="kylin-space-justify-start kylin-space-vertical"
-          style="column-gap: 8px; row-gap: 8px; display: flex;"
+          class="sc-bdfCkl bTOQkl"
+          direction="vertical"
+          justify="start"
         >
           <div
             class="kylin-space-item"
+            style="margin-bottom: 8px;"
           >
             <header />
           </div>
           <div
             class="kylin-space-item"
+            style="margin-bottom: 8px;"
           >
             <div
               class="kylin-card-position-left kylin-card-size-small kylin-card-shape-circle flex"
@@ -242,16 +257,19 @@ describe('Props', () => {
         class="kylin-card-shape-round kylin-card-container flex flex-col p-2"
       >
         <div
-          class="kylin-space-justify-start kylin-space-vertical"
-          style="column-gap: 8px; row-gap: 8px; display: flex;"
+          class="sc-bdfCkl bTOQkl"
+          direction="vertical"
+          justify="start"
         >
           <div
             class="kylin-space-item"
+            style="margin-bottom: 8px;"
           >
             <header />
           </div>
           <div
             class="kylin-space-item"
+            style="margin-bottom: 8px;"
           >
             <div
               class="kylin-card-position-left kylin-card-size-small kylin-card-shape-circle flex"
