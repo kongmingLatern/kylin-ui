@@ -129,4 +129,22 @@ export const Split: Story = {
     </Space>
   ),
 }
+export const Wrap: Story = {
+  render: args => (
+    <Space wrap>
+      <Button>Wrap</Button>
+      <Button>Wrap</Button>
+      <Button>Wrap</Button>
+      <Button>Wrap</Button>
+      <Button>Wrap</Button>
+      <Button>Wrap</Button>
+      <Button>Wrap</Button>
+      <Button>Wrap</Button>
+      <Button>Wrap</Button>
+      <Button>Wrap</Button>
+      <Button>Wrap</Button>
+      <Button>Wrap</Button>
+    </Space>
+  ),
+}
 export default meta
