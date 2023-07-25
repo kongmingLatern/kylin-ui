@@ -1,8 +1,9 @@
-import classNames from 'classnames'
 import React from 'react'
 import Item from './Item'
 import { toArray } from '@kylin-ui/shared'
 import { SpaceSize, SpaceProps } from './type'
+import { useFlexGapSupport } from '@kylin-ui/hooks'
+import { SpaceContainer } from './styled'
 
 const spaceSize = {
   small: 8,
@@ -14,6 +15,7 @@ export const SpaceContext = React.createContext({
   latestIndex: 0,
   horizontalSize: 0,
   verticalSize: 0,
+  supportFlexGap: false,
 })
 
 function getNumberSize(size: SpaceSize) {
@@ -33,7 +35,6 @@ const Space = React.forwardRef<HTMLDivElement, SpaceProps>(
       split,
       wrap,
       children,
-      className,
       ...rest
     } = props
 
@@ -48,6 +49,8 @@ const Space = React.forwardRef<HTMLDivElement, SpaceProps>(
       [size]
     )
 
+    const supportFlexGap = useFlexGapSupport()
+
     const childNodes = toArray(children, {
       keepEmpty: true,
     })
@@ -56,15 +59,6 @@ const Space = React.forwardRef<HTMLDivElement, SpaceProps>(
       align === undefined && direction === 'horizontal'
         ? 'center'
         : align
-
-    const cls = classNames(
-      {
-        [`kylin-space-justify-${justify}`]: justify,
-        [`kylin-space-${direction}`]: direction,
-        [`kylin-space-align-${mergedAlign}`]: mergedAlign,
-      },
-      className
-    )
 
     const itemClassName = `kylin-space-item`
 
@@ -98,8 +92,14 @@ const Space = React.forwardRef<HTMLDivElement, SpaceProps>(
         horizontalSize,
         verticalSize,
         latestIndex,
+        supportFlexGap,
       }),
-      [horizontalSize, verticalSize, latestIndex]
+      [
+        horizontalSize,
+        verticalSize,
+        latestIndex,
+        supportFlexGap,
+      ]
     )
 
     if (childNodes.length === 0) {
@@ -110,18 +110,25 @@ const Space = React.forwardRef<HTMLDivElement, SpaceProps>(
 
     if (wrap) {
       gapStyle.flexWrap = 'wrap'
+
+      if (!supportFlexGap) {
+        gapStyle.marginBottom = -verticalSize
+      }
     }
-    // TODO: 这里需要兼容低版本浏览器 flex 布局
-    gapStyle.columnGap = horizontalSize
-    gapStyle.rowGap = verticalSize
+
+    if (supportFlexGap) {
+      gapStyle.columnGap = horizontalSize
+      gapStyle.rowGap = verticalSize
+    }
 
     return (
-      <div
+      <SpaceContainer
         ref={ref}
-        className={cls === '' ? undefined : cls}
+        justify={justify}
+        align={mergedAlign}
+        direction={direction}
         style={{
           ...gapStyle,
-          display: 'flex',
           ...style,
         }}
         {...rest}
@@ -129,7 +136,7 @@ const Space = React.forwardRef<HTMLDivElement, SpaceProps>(
         <SpaceContext.Provider value={spaceContext}>
           {nodes}
         </SpaceContext.Provider>
-      </div>
+      </SpaceContainer>
     )
   }
 )

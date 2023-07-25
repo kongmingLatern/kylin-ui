@@ -1,5 +1,6 @@
 import { RowProps } from '@components/Grid/type'
 import { theme as Theme } from '../theme'
+import { SpaceProps } from '@components/Space/type'
 
 /**
  * @description 根据type, gradient, background 获取背景色
@@ -161,7 +162,9 @@ export function getAddSuffixOffset(
  * @returns 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around'
  */
 export function formatBy(
-  name: RowProps['justify'] | RowProps['align']
+  name:
+    | RowProps['justify']
+    | (RowProps['align'] | 'baseline')
 ) {
   if (!name) return
   if (name === 'start' || name === 'end')
@@ -181,4 +184,14 @@ export function getWrap(wrap: RowProps['wrap']) {
     return 'wrap-reverse'
   }
   return wrap
+}
+
+export function getFlexDirection(
+  direction: SpaceProps['direction']
+) {
+  if (!direction) return
+  if (direction === 'vertical') {
+    return 'column'
+  }
+  return 'row'
 }
