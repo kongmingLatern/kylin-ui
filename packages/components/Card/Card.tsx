@@ -1,16 +1,15 @@
 import React from 'react'
-import type { CardProps } from './type'
-import { Content, Footer, Header } from '../Layout'
-import { Title } from '../Typography'
 import classNames from 'classnames'
-import { Space } from '../Space'
+import type { CardProps } from './type'
 import { CardContainer, CardCover } from './styled'
+import { Content, Footer, Header } from '../Layout'
+import { Space } from '../Space'
+import { Title } from '../Typography'
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   (props, ref) => {
     const {
       shape,
-      className,
       children,
       Cover,
       Header: HeaderContainer,
@@ -44,15 +43,6 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         position = 'top',
         shape = 'square',
       } = Cover
-
-      const classes = classNames(
-        {
-          [`kylin-card-position-${position}`]: position,
-          [`kylin-card-size-${size}`]: size,
-          [`kylin-card-shape-${shape}`]: shape,
-        },
-        'flex'
-      )
 
       return (
         <CardContainer shape={shape} ref={ref} {...rest}>
