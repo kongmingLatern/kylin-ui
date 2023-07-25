@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Space } from '@components/Space'
 import { Button } from '@components/Button'
+import { Divider } from '@components/Divider'
 
 const meta = {
   title: 'UI Component/Space',
@@ -114,6 +115,17 @@ export const Align: Story = {
         <Button>End</Button>
         <Button>End</Button>
       </Space>
+    </Space>
+  ),
+}
+
+export const Split: Story = {
+  render: args => (
+    <Space split={<Divider type="vertical" />}>
+      <Button>分隔符</Button>
+      <Button>分隔符</Button>
+      <Button>分隔符</Button>
+      <Button>分隔符</Button>
     </Space>
   ),
 }
