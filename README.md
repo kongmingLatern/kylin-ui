@@ -44,6 +44,7 @@
 - [x] Button
   - [x] ButtonGroup
 - [x] Divider
+- [x] Card (`styled-component`)
 - [x] Grid
   - [x] Row(`styled-component`)
   - [x] Col(`styled-component`)
