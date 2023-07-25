@@ -68,62 +68,67 @@ export const ButtonContainer = styled.button<{
     transition: opacity 0s;
   }
 
-  ${({ type }) => css`
-    background: ${getBackground({ type })};
-    color: ${type === 'link' ? '#1890ff' : '#fff'};
-    border-color: ${type === 'link'
-      ? 'transparent'
-      : 'transparent'};
-    &:active {
-      box-shadow: 0 0 0 rgba(0, 0, 0, 0.4),
-        0 0 0 rgba(255, 255, 255, 0.9),
-        inset -7px -7px 12px rgba(255, 255, 255, 0.9),
-        inset 7px 7px 12px rgba(0, 0, 0, 0.4);
-    }
-  `}
+  ${({ type }) => getTypeStyle(type)}
 
-  ${({ loading }) =>
-    loading &&
-    css`
-      cursor: not-allowed;
-      background: #f5f5f5;
-      color: #ccc;
-      &:hover {
-        opacity: 1;
-      }
-      // 去除点击效果
-      &:active {
-        transform: scale(1);
-        box-shadow: none;
-      }
-      // 去除动画
-      &::after {
-        opacity: 0;
-        transform: scale(0);
-        transition: opacity 0s;
-      }
-  `}
+  ${({ loading }) => getLoadingStyle(loading)}
 
-
-  ${({ disabled }) =>
-    disabled &&
-    css`
-      cursor: not-allowed;
-      background: #f5f5f5;
-      color: #ccc;
-      &:hover {
-        opacity: 1;
-      }
-      // 去除点击效果
-      &:active {
-        transform: scale(1);
-        box-shadow: none;
-      }
-      // 去除动画
-      &::after {
-        opacity: 0;
-        transform: scale(0);
-        transition: opacity 0s;
-      }
-  `}
+  ${({ disabled }) => getDisabledStyle(disabled)}
 `
+
+const getTypeStyle = type => css`
+  background: ${getBackground({ type })};
+  color: ${type === 'link' ? '#1890ff' : '#fff'};
+  border-color: ${type === 'link'
+    ? 'transparent'
+    : 'transparent'};
+  &:active {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.4),
+      0 0 0 rgba(255, 255, 255, 0.9),
+      inset -7px -7px 12px rgba(255, 255, 255, 0.9),
+      inset 7px 7px 12px rgba(0, 0, 0, 0.4);
+  }
+`
+
+const getLoadingStyle = loading =>
+  loading &&
+  css`
+    cursor: not-allowed;
+    background: #f5f5f5;
+    color: #ccc;
+    &:hover {
+      opacity: 1;
+    }
+    // 去除点击效果
+    &:active {
+      transform: scale(1);
+      box-shadow: none;
+    }
+    // 去除动画
+    &::after {
+      opacity: 0;
+      transform: scale(0);
+      transition: opacity 0s;
+    }
+  `
+
+const getDisabledStyle = disabled =>
+  disabled &&
+  css`
+    cursor: not-allowed;
+    background: #f5f5f5;
+    color: #ccc;
+    &:hover {
+      opacity: 1;
+    }
+    // 去除点击效果
+    &:active {
+      transform: scale(1);
+      box-shadow: none;
+    }
+    // 去除动画
+    &::after {
+      opacity: 0;
+      transform: scale(0);
+      transition: opacity 0s;
+    }
+  `
