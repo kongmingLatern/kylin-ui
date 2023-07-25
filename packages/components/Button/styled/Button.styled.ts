@@ -73,6 +73,8 @@ export const ButtonContainer = styled.button<{
   ${({ loading }) => getLoadingStyle(loading)}
 
   ${({ disabled }) => getDisabledStyle(disabled)}
+
+  ${({ ghost }) => getGhostStyle(ghost)}
 `
 
 const getTypeStyle = type => css`
@@ -88,7 +90,6 @@ const getTypeStyle = type => css`
       inset 7px 7px 12px rgba(0, 0, 0, 0.4);
   }
 `
-
 const getLoadingStyle = loading =>
   loading &&
   css`
@@ -115,6 +116,7 @@ const getDisabledStyle = disabled =>
   disabled &&
   css`
     cursor: not-allowed;
+    cursor: not-allowed;
     background: #f5f5f5;
     color: #ccc;
     &:hover {
@@ -132,3 +134,27 @@ const getDisabledStyle = disabled =>
       transition: opacity 0s;
     }
   `
+
+const getGhostStyle = ghost => {
+  if (ghost === 1) {
+    return css`
+      border-color: transparent;
+      background: transparent;
+      color: #000;
+      &:hover {
+        opacity: 1;
+      }
+      // 去除点击效果
+      &:active {
+        transform: scale(1);
+        box-shadow: none;
+      }
+      // 去除动画
+      &::after {
+        opacity: 0;
+        transform: scale(0);
+        transition: opacity 0s;
+      }
+    `
+  }
+}
