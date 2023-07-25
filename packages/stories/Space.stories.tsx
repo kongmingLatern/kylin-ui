@@ -61,4 +61,60 @@ export const Size: Story = {
     </Space>
   ),
 }
+
+export const Justify: Story = {
+  render: args => (
+    <Space direction="vertical">
+      <Space justify="start">
+        <Button>Start</Button>
+        <Button>Start</Button>
+        <Button>Start</Button>
+        <Button>Start</Button>
+      </Space>
+      <Space justify="center">
+        <Button>Center</Button>
+        <Button>Center</Button>
+        <Button>Center</Button>
+        <Button>Center</Button>
+      </Space>
+      <Space justify="end">
+        <Button>End</Button>
+        <Button>End</Button>
+        <Button>End</Button>
+        <Button>End</Button>
+      </Space>
+    </Space>
+  ),
+}
+
+export const Align: Story = {
+  render: args => (
+    <Space direction="vertical">
+      <Space align="start">
+        <Button className="h-30">Start</Button>
+        <Button>Start</Button>
+        <Button>Start</Button>
+        <Button>Start</Button>
+      </Space>
+      <Space align="baseline">
+        <Button className="h-30">baseline</Button>
+        <Button>baseline</Button>
+        <Button>baseline</Button>
+        <Button>baseline</Button>
+      </Space>
+      <Space align="center">
+        <Button className="h-30">Center</Button>
+        <Button>Center</Button>
+        <Button>Center</Button>
+        <Button>Center</Button>
+      </Space>
+      <Space align="end">
+        <Button className="h-30">End</Button>
+        <Button>End</Button>
+        <Button>End</Button>
+        <Button>End</Button>
+      </Space>
+    </Space>
+  ),
+}
 export default meta
