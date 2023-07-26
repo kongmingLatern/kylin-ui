@@ -151,7 +151,7 @@ const InternalButton: React.ForwardRefRenderFunction<
       type={type}
       size={size}
       displayblock={block ? 1 : 0}
-      ghost={ghost ? 1 : 0}
+      ghost={ghost}
       shape={shape}
       loading={Number(!!innerLoading)}
       ref={ref}

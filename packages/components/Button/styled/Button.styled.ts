@@ -14,7 +14,7 @@ export const ButtonContainer = styled.button<{
   displayblock?: ButtonProps['block'] | number
   disabled?: ButtonProps['disabled'] | number
   loading?: ButtonProps['loading'] | number
-  ghost?: ButtonProps['ghost'] | number
+  ghost?: ButtonProps['ghost']
 }>`
   display: ${({ displayblock }) =>
     displayblock ? 'block' : 'inline-flex'};
@@ -68,21 +68,19 @@ export const ButtonContainer = styled.button<{
     transition: opacity 0s;
   }
 
-  ${({ type }) => getTypeStyle(type)}
+  ${({ type }) => getTypeStyle(type)};
 
-  ${({ loading }) => getLoadingStyle(loading)}
+  ${({ loading }) => getLoadingStyle(loading)};
 
-  ${({ disabled }) => getDisabledStyle(disabled)}
+  ${({ disabled }) => getDisabledStyle(disabled)};
 
-  ${({ ghost }) => getGhostStyle(ghost)}
+  ${({ ghost }) => ghost && getGhostStyle(ghost)}
 `
 
 const getTypeStyle = type => css`
   background: ${getBackground({ type })};
   color: ${type === 'link' ? '#1890ff' : '#fff'};
-  border-color: ${type === 'link'
-    ? 'transparent'
-    : 'transparent'};
+  border-color: transparent;
   &:active {
     box-shadow: 0 0 0 rgba(0, 0, 0, 0.4),
       0 0 0 rgba(255, 255, 255, 0.9),
@@ -136,13 +134,14 @@ const getDisabledStyle = disabled =>
   `
 
 const getGhostStyle = ghost => {
-  if (ghost === 1) {
-    return css`
-      border-color: transparent;
+  return (
+    ghost &&
+    css`
+      border-color: #1677ff;
       background: transparent;
       color: #000;
       &:hover {
-        opacity: 1;
+        color: #1677ff;
       }
       // 去除点击效果
       &:active {
@@ -156,5 +155,5 @@ const getGhostStyle = ghost => {
         transition: opacity 0s;
       }
     `
-  }
+  )
 }
