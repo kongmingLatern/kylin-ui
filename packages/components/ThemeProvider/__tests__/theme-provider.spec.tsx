@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { Button } from '../../button/Button'
+import { Button } from '../../Button'
 import { ThemeProvider } from '../theme-provider'
 
 describe.skip('themeProvider', () => {
