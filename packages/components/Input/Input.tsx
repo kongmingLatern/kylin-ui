@@ -1,13 +1,24 @@
 import React from 'react'
 import { InputProps } from './type'
-import { InputContainer } from './styled'
+import {
+  InputComponent,
+  InputContainer,
+  Prefix,
+  Suffix,
+} from './styled'
 
 const InternalInput: React.ForwardRefRenderFunction<
   HTMLInputElement,
   InputProps
 > = (props, ref) => {
-  const { className, placeholder, onChange, ...rest } =
-    props
+  const {
+    className,
+    placeholder,
+    prefix,
+    suffix,
+    onChange,
+    ...rest
+  } = props
 
   const handleChange = e => {
     if (onChange) {
@@ -16,13 +27,16 @@ const InternalInput: React.ForwardRefRenderFunction<
   }
 
   return (
-    <InputContainer
-      ref={ref}
-      placeholder={placeholder}
-      className={className}
-      onChange={handleChange}
-      {...rest}
-    />
+    <InputContainer className={className} tabIndex="1">
+      {prefix && <Prefix>{prefix}</Prefix>}
+      <InputComponent
+        ref={ref}
+        placeholder={placeholder}
+        onChange={handleChange}
+        {...rest}
+      />
+      {suffix && <Suffix>{suffix}</Suffix>}
+    </InputContainer>
   )
 }
 

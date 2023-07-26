@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Input } from '@components/Input'
 import { Space } from '@components/Space'
+import { Lock } from '@packages/icon'
 
 const meta = {
   title: 'UI Component/Input',
@@ -64,4 +65,34 @@ export const Height: Story = {
     </Space>
   ),
 }
+
+export const Icon: Story = {
+  render: args => (
+    <Space>
+      <Input
+        placeholder={'Prefix'}
+        prefix={
+          <Lock
+            className="flex j-a-c"
+            width={20}
+            height={20}
+          />
+        }
+        onChange={value => console.log('value', value)}
+      />
+      <Input
+        placeholder={'Suffix'}
+        suffix={
+          <Lock
+            className="flex j-a-c"
+            width={20}
+            height={20}
+          />
+        }
+        onChange={value => console.log('value', value)}
+      />
+    </Space>
+  ),
+}
+
 export default meta
