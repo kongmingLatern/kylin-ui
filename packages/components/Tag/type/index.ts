@@ -19,7 +19,7 @@ export interface TagProps
     | 'primary'
     | 'secondary'
     | 'success'
-    | 'danger'
+    | 'error'
     | 'warning'
     | 'info'
   size?: SizeType

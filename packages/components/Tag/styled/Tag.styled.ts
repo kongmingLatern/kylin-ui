@@ -31,5 +31,6 @@ export const TagContainer = styled.span<{
 export const TagIcon = styled.span<{
   position?: 'before' | 'after'
 }>`
+  display: inline-flex;
   margin: ${({ position }) => getMargin({ position })};
 `
