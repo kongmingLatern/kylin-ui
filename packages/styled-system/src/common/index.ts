@@ -1,4 +1,3 @@
-import { Default } from './../../../stories/Badge.stories'
 import { RowProps } from '@components/Grid/type'
 import { theme as Theme } from '../theme'
 import { SpaceProps } from '@components/Space/type'
