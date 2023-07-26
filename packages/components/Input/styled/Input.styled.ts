@@ -8,14 +8,13 @@ export const InputContainer = styled.input<{
   shape?: InputProps['shape']
 }>`
   display: inline-block;
-  border: 1px solid #d9d9d9;
+  padding: 0.6rem 0.4rem;
   width: ${({ width }) => handleSuffix(width) || '100%'};
   height: ${({ height }) => handleSuffix(height) || 'auto'};
-
-  outline: none;
-  padding: 0.6rem 0.4rem;
+  border: 1px solid #d9d9d9;
   border-radius: ${({ shape }) => getRadius(shape)};
   transition: all 0.3s;
+  outline: none;
 
   &:focus {
     border-color: #40a9ff;

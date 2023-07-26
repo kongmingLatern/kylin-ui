@@ -11,7 +11,7 @@ const meta = {
 type Story = StoryObj<typeof meta>
 
 export const Basic: Story = {
-  render: () => (
+  render: args => (
     <Input
       placeholder={'请输入内容'}
       onChange={value => console.log('value', value)}
@@ -20,7 +20,7 @@ export const Basic: Story = {
 }
 
 export const Width: Story = {
-  render: () => (
+  render: args => (
     <Space>
       <Input
         placeholder={'Width 100px'}
@@ -41,7 +41,7 @@ export const Width: Story = {
   ),
 }
 export const Height: Story = {
-  render: () => (
+  render: args => (
     <Space>
       <Input
         placeholder={'Height 10px'}
