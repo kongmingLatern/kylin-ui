@@ -27,7 +27,7 @@ export const theme = {
   },
 
   padding: {
-    small: '0.4rem 0.4rem',
+    small: '0.2rem 0.4rem',
     middle: '0.6rem 0.8rem',
     large: '0.8rem 1.2rem',
   },

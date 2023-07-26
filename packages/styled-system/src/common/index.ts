@@ -60,9 +60,9 @@ export function getBackground({
  * @description 根据size获取 padding
  * @param size  number | 'small' | 'middle' | 'large'
  * @returns
-    `small`: '0 0.4rem',
-    `middle`: '0 0.6rem',
-    `large`: '0 0.8rem',
+    `small`: '0.2rem 0.4rem',
+    `middle`: '0.4rem 0.6rem',
+    `large`: '0.6rem 0.8rem',
  */
 export function getPaddingSize(
   size?: 'small' | 'middle' | 'large' | number
