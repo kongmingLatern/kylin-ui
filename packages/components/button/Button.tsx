@@ -65,7 +65,7 @@ const InternalButton: React.ForwardRefRenderFunction<
   const presetClass = useStyle(preset, rest)
 
   // Omit the props which is not needed
-  const restProps = omit(rest, excludePreset(preset))
+  // const restProps = omit(rest, excludePreset(preset))
 
   /**============================= 设置 className ============================= */
 
@@ -151,13 +151,17 @@ const InternalButton: React.ForwardRefRenderFunction<
       type={type}
       size={size}
       displayblock={block ? 1 : 0}
-      ghost={ghost}
+      ghost={ghost ? 1 : 0}
       shape={shape}
       loading={Number(!!innerLoading)}
       ref={ref}
       onClick={handleClick}
       disabled={Number(disabled || innerLoading)}
-      className={className}
+      className={classNames(
+        className,
+        presetClass,
+        shortcuts
+      )}
       {...rest}
     >
       <IconNode>
@@ -172,7 +176,6 @@ const Button = React.forwardRef<
   HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>,
   ButtonProps
 >(InternalButton as any)
-
 // Button.__KYLIN_BUTTON = true
 
 export { Button }

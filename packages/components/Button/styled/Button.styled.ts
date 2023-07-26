@@ -14,7 +14,7 @@ export const ButtonContainer = styled.button<{
   displayblock?: ButtonProps['block'] | number
   disabled?: ButtonProps['disabled'] | number
   loading?: ButtonProps['loading'] | number
-  ghost?: ButtonProps['ghost']
+  ghost?: ButtonProps['ghost'] | number
 }>`
   display: ${({ displayblock }) =>
     displayblock ? 'block' : 'inline-flex'};
@@ -30,10 +30,10 @@ export const ButtonContainer = styled.button<{
   border: 1px solid transparent;
   cursor: pointer;
   border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out,
-    background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
+  transition: color 0.25s ease-in-out,
+    background-color 0.25s ease-in-out,
+    border-color 0.25s ease-in-out,
+    box-shadow 0.25s ease-in-out;
 
   border-radius: ${({ shape }) => getRadius(shape)};
 
@@ -137,11 +137,12 @@ const getGhostStyle = ghost => {
   return (
     ghost &&
     css`
-      border-color: #1677ff;
+      border-color: #d9d9d9;
       background: transparent;
       color: #000;
       &:hover {
         color: #1677ff;
+        border-color: #1677ff;
       }
       // 去除点击效果
       &:active {

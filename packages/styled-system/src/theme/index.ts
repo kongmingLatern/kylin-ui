@@ -1,6 +1,6 @@
 export const theme = {
   type: {
-    default: '#5123f7',
+    default: '#951bcd',
     primary: '#1677ff',
     secondary: '#006597',
     success: '#36d399',
