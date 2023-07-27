@@ -2,7 +2,7 @@ export interface InputProps {
   className?: string
   width?: number | string
   height?: number | string
-  size?: 'small' | 'middle' | 'large' | number
+  size?: SizeType
   shape?: 'rounded' | 'square'
   placeholder?: string
   prefix?: React.ReactNode
