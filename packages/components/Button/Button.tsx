@@ -14,11 +14,7 @@ import {
 } from './type'
 import { ThemeContext } from '../ThemeProvider'
 import { useStyle } from '@kylin-ui/hooks'
-import {
-  extractThemeConfig,
-  omit,
-  excludePreset,
-} from '@kylin-ui/shared'
+import { extractThemeConfig } from '@kylin-ui/shared'
 import LoadingIcon from './LoadingIcon'
 import { getLoadingConfig } from './getLoadingConfig'
 import { GroupSizeContext } from './ButtonGroup'
@@ -108,21 +104,17 @@ const InternalButton: React.ForwardRefRenderFunction<
   }, [loadingOrDelay])
 
   const BeforeIcon = () =>
-    beforeIcon ? (
-      <span className="mr-[0.5rem]">{beforeIcon}</span>
-    ) : null
+    beforeIcon ? <span>{beforeIcon}</span> : null
 
   const AfterIcon = () =>
-    afterIcon ? (
-      <span className="ml-[0.5rem]">{afterIcon}</span>
-    ) : null
+    afterIcon ? <span>{afterIcon}</span> : null
 
   const IconNode = ({ children }) => {
     return (
       <>
         <BeforeIcon />
         <LoadingIcon loading={!!innerLoading} />
-        {children}
+        <span className="mx-[0.5rem]">{children}</span>
         <AfterIcon />
       </>
     )
