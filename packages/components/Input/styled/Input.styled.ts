@@ -7,7 +7,7 @@ export const InputContainer = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 0.6rem 0.4rem;
+  padding: 0.4rem 0.4rem;
   border: 1px solid #d9d9d9;
   outline: none;
   &:focus-within {
