@@ -9,8 +9,10 @@ export const InputContainer = styled.div`
   position: relative;
   padding: 0.4rem 0.4rem;
   border: 1px solid #d9d9d9;
+  transition: all 0.25s;
   outline: none;
-  &:focus-within {
+  &:focus-within,
+  &:hover {
     border-color: #40a9ff;
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
   }
