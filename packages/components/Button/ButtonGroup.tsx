@@ -1,5 +1,6 @@
 import { createContext } from 'react'
 import { ButtonGroupProps, ButtonSizeType } from './type'
+import { ButtonGroupContainer } from './styled'
 
 export const GroupSizeContext = createContext<
   ButtonSizeType | undefined
@@ -12,7 +13,9 @@ const ButtonGroup: React.FC<ButtonGroupProps> = props => {
 
   return (
     <GroupSizeContext.Provider value={size}>
-      <div className="kylin-btn-group">{children}</div>
+      <ButtonGroupContainer>
+        {children}
+      </ButtonGroupContainer>
     </GroupSizeContext.Provider>
   )
 }
