@@ -21,7 +21,6 @@ const InternalInput: React.ForwardRefRenderFunction<
       <Search width={20} height={20} />
     ) : null,
     onChange,
-    ...rest
   } = props
 
   const handleChange = e => {
@@ -30,7 +29,11 @@ const InternalInput: React.ForwardRefRenderFunction<
     }
   }
 
-  const restProps = omit(props, ['enterSearch'])
+  const restProps = omit(props, [
+    'enterSearch',
+    'prefix',
+    'suffix',
+  ])
 
   return (
     <InputContainer className={className} tabIndex={1}>
