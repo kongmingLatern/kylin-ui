@@ -24,7 +24,7 @@ export const InputComponent = styled.input<{
   shape?: InputProps['shape']
 }>`
   display: inline-block;
-  width: ${({ width }) => handleSuffix(width) || '100%'};
+  width: ${({ width }) => handleSuffix(width) || '70%'};
   height: ${({ height }) => handleSuffix(height) || 'auto'};
   border: none;
   border-radius: ${({ shape }) => getRadius(shape)};
@@ -41,9 +41,26 @@ export const Prefix = styled.div`
   margin-right: 0.2rem;
 `
 
+export const RelativeContainer = styled.div<{
+  width?: InputProps['width']
+}>`
+  position: relative;
+
+  width: ${({ width }) => handleSuffix(width) || '100%'};
+`
+
 export const Suffix = styled.div`
   display: inline-flex;
   margin-left: 0.2rem;
+`
+
+export const CountContainer = styled.span`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0.4rem;
+  font-size: 0.8rem;
+  color: #aaa;
 `
 
 function handleSuffix(number: InputProps['width']) {

@@ -102,5 +102,31 @@ export const Icon: Story = {
     </Space>
   ),
 }
-
+export const ShowCount: Story = {
+  render: args => (
+    <Space>
+      <Input
+        placeholder={'Height 10px'}
+        width={'100px'}
+        height={'10px'}
+        showCount
+        onChange={value => console.log('value', value)}
+      />
+      <Input
+        placeholder={'Height 20px'}
+        width={200}
+        height={20}
+        showCount
+        suffix={
+          <Lock
+            className="flex j-a-c"
+            width={20}
+            height={20}
+          />
+        }
+        onChange={value => console.log('value', value)}
+      />
+    </Space>
+  ),
+}
 export default meta

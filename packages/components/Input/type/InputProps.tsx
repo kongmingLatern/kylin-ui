@@ -7,8 +7,10 @@ export interface InputProps {
   placeholder?: string
   prefix?: React.ReactNode
   suffix?: React.ReactNode
-  enterSearch?: boolean
-  value?: any
   children?: React.ReactNode
+  value?: any
+  limitCount?: number
+  enterSearch?: boolean
+  showCount?: boolean
   onChange?: (value: any) => void
 }
