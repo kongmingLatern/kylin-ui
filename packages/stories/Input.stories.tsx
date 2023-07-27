@@ -19,7 +19,15 @@ export const Basic: Story = {
     />
   ),
 }
-
+export const SearchIcon: Story = {
+  render: args => (
+    <Input
+      enterSearch
+      placeholder={'请输入内容'}
+      onChange={value => console.log('value', value)}
+    />
+  ),
+}
 export const Width: Story = {
   render: args => (
     <Space>

@@ -7,6 +7,7 @@ export interface InputProps {
   placeholder?: string
   prefix?: React.ReactNode
   suffix?: React.ReactNode
+  enterSearch?: boolean
   value?: any
   children?: React.ReactNode
   onChange?: (value: any) => void

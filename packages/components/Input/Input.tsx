@@ -6,6 +6,8 @@ import {
   Prefix,
   Suffix,
 } from './styled'
+import { Search } from '@packages/icon'
+import { omit } from '@packages/shared'
 
 const InternalInput: React.ForwardRefRenderFunction<
   HTMLInputElement,
@@ -15,7 +17,9 @@ const InternalInput: React.ForwardRefRenderFunction<
     className,
     placeholder,
     prefix,
-    suffix,
+    suffix = props?.enterSearch ? (
+      <Search width={20} height={20} />
+    ) : null,
     onChange,
     ...rest
   } = props
@@ -26,14 +30,16 @@ const InternalInput: React.ForwardRefRenderFunction<
     }
   }
 
+  const restProps = omit(props, ['enterSearch'])
+
   return (
-    <InputContainer className={className} tabIndex="1">
+    <InputContainer className={className} tabIndex={1}>
       {prefix && <Prefix>{prefix}</Prefix>}
       <InputComponent
         ref={ref}
         placeholder={placeholder}
         onChange={handleChange}
-        {...rest}
+        {...restProps}
       />
       {suffix && <Suffix>{suffix}</Suffix>}
     </InputContainer>
