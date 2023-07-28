@@ -64,6 +64,7 @@ const InternalInput: React.ForwardRefRenderFunction<
             ref={ref}
             placeholder={placeholder}
             onChange={handleChange}
+            maxLength={limitCount}
             onKeyDown={e => {
               if (!onPressEnter) return
               if (e.keyCode === 13) {

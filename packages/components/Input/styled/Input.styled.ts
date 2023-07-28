@@ -7,7 +7,7 @@ export const InputContainer = styled.div<{
 }>`
   display: inline-flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: start;
   position: relative;
   padding: 0.4rem 0.4rem;
   border: 1px solid #d9d9d9;
