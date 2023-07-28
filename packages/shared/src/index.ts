@@ -15,3 +15,5 @@ export * from './theme'
 export * from './toArray'
 
 export * from './keyboard'
+
+export * from './randomString'
