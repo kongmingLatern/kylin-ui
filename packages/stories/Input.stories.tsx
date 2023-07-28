@@ -16,6 +16,7 @@ export const Basic: Story = {
     <Input
       placeholder={'请输入内容'}
       onChange={value => console.log('value', value)}
+      onPressEnter={(e, val) => console.log('e', e, val)}
     />
   ),
 }
@@ -29,12 +30,12 @@ export const Shape: Story = {
     <Space>
       <Input
         enterSearch
-        placeholder={'请输入内容'}
+        placeholder={'请输入内容 square'}
         shape={'square'}
       />
       <Input
         enterSearch
-        placeholder={'请输入内容'}
+        placeholder={'请输入内容 rounded'}
         shape={'rounded'}
       />
     </Space>

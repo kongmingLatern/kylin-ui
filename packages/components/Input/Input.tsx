@@ -18,7 +18,7 @@ const InternalInput: React.ForwardRefRenderFunction<
   const {
     className,
     placeholder,
-    shape = 'square',
+    shape = 'rounded',
     prefix,
     suffix = props?.enterSearch ? (
       <Search width={20} height={20} />
@@ -27,6 +27,7 @@ const InternalInput: React.ForwardRefRenderFunction<
     limitCount,
     label = generateRandomStr(5),
     onChange,
+    onPressEnter,
   } = props
 
   const [count, setCount] = useState(0)
@@ -46,6 +47,7 @@ const InternalInput: React.ForwardRefRenderFunction<
     'suffix',
     'showCount',
     'onChange',
+    'onPressEnter',
   ])
 
   return (
@@ -62,9 +64,15 @@ const InternalInput: React.ForwardRefRenderFunction<
             ref={ref}
             placeholder={placeholder}
             onChange={handleChange}
+            onKeyDown={e => {
+              if (!onPressEnter) return
+              if (e.keyCode === 13) {
+                onPressEnter(e, e.target.value)
+              }
+            }}
             show={Number(showCount)}
             {...restProps}
-          ></InputComponent>
+          />
           {showCount && (
             <CountContainer htmlFor={label}>
               {count}/{limitCount ?? '∞'}

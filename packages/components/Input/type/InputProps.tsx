@@ -14,4 +14,5 @@ export interface InputProps {
   enterSearch?: boolean
   showCount?: boolean
   onChange?: (value: any) => void
+  onPressEnter?: (e: Event, value?: any) => void
 }
