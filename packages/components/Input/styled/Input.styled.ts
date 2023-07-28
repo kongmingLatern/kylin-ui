@@ -33,8 +33,6 @@ export const InputComponent = styled.input<{
   height: ${({ height }) => handleSuffix(height) || 'auto'};
   border: none;
   transition: all 0.3s;
-  padding-right: ${({ show }) =>
-    show ? '3rem' : '0.4rem'};
   outline: none;
 
   &::placeholder {
@@ -51,7 +49,9 @@ export const RelativeContainer = styled.div<{
   width?: InputProps['width']
 }>`
   position: relative;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   width: ${({ width }) => handleSuffix(width) || '100%'};
 `
 
@@ -61,10 +61,7 @@ export const Suffix = styled.div`
 `
 
 export const CountContainer = styled.label`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0.4rem;
+  white-space: nowrap;
   font-size: 0.8rem;
   user-select: none;
   color: #aaa;

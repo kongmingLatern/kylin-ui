@@ -106,7 +106,7 @@ export const ShowCount: Story = {
     <Space>
       <Input
         placeholder={'Height 10px'}
-        height={'10px'}
+        height={'20px'}
         w="200px"
         showCount
       />
@@ -114,8 +114,8 @@ export const ShowCount: Story = {
         placeholder={'Height 20px'}
         width={200}
         height={20}
+        limitCount={20000}
         showCount
-        limitCount={20}
         suffix={
           <Lock
             className="flex j-a-c"
@@ -125,6 +125,24 @@ export const ShowCount: Story = {
         }
       />
     </Space>
+  ),
+}
+export const LimitCount: Story = {
+  render: args => (
+    <Input
+      placeholder={'Height 20px'}
+      width={200}
+      height={20}
+      showCount
+      limitCount={100}
+      suffix={
+        <Lock
+          className="flex j-a-c"
+          width={20}
+          height={20}
+        />
+      }
+    />
   ),
 }
 export default meta
