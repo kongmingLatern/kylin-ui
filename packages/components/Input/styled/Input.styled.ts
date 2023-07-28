@@ -2,7 +2,9 @@ import { styled } from 'styled-components'
 import { InputProps } from '../type'
 import { getRadius } from '@packages/styled-system'
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.div<{
+  shape?: InputProps['shape']
+}>`
   display: inline-flex;
   align-items: center;
   justify-content: space-around;
@@ -10,6 +12,7 @@ export const InputContainer = styled.div`
   padding: 0.4rem 0.4rem;
   border: 1px solid #d9d9d9;
   transition: all 0.25s;
+  border-radius: ${({ shape }) => getRadius(shape)};
   outline: none;
   &:focus-within,
   &:hover {
@@ -29,7 +32,6 @@ export const InputComponent = styled.input<{
   width: ${({ width }) => handleSuffix(width) || '100%'};
   height: ${({ height }) => handleSuffix(height) || 'auto'};
   border: none;
-  border-radius: ${({ shape }) => getRadius(shape)};
   transition: all 0.3s;
   padding-right: ${({ show }) =>
     show ? '3rem' : '0.4rem'};

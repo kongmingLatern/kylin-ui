@@ -18,6 +18,7 @@ const InternalInput: React.ForwardRefRenderFunction<
   const {
     className,
     placeholder,
+    shape = 'square',
     prefix,
     suffix = props?.enterSearch ? (
       <Search width={20} height={20} />
@@ -49,7 +50,11 @@ const InternalInput: React.ForwardRefRenderFunction<
 
   return (
     <>
-      <InputContainer className={className} tabIndex={1}>
+      <InputContainer
+        className={className}
+        tabIndex={1}
+        shape={shape}
+      >
         {prefix && <Prefix>{prefix}</Prefix>}
         <RelativeContainer width={props?.width}>
           <InputComponent
