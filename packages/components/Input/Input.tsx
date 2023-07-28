@@ -9,7 +9,7 @@ import {
   Suffix,
 } from './styled'
 import { Search } from '@packages/icon'
-import { omit } from '@packages/shared'
+import { generateRandomStr, omit } from '@packages/shared'
 
 const InternalInput: React.ForwardRefRenderFunction<
   HTMLInputElement,
@@ -24,6 +24,7 @@ const InternalInput: React.ForwardRefRenderFunction<
     ) : null,
     showCount = false,
     limitCount,
+    label = generateRandomStr(5),
     onChange,
   } = props
 
@@ -52,13 +53,15 @@ const InternalInput: React.ForwardRefRenderFunction<
         {prefix && <Prefix>{prefix}</Prefix>}
         <RelativeContainer width={props?.width}>
           <InputComponent
+            id={label}
             ref={ref}
             placeholder={placeholder}
             onChange={handleChange}
+            show={Number(showCount)}
             {...restProps}
           ></InputComponent>
           {showCount && (
-            <CountContainer>
+            <CountContainer htmlFor={label}>
               {count}/{limitCount ?? '∞'}
             </CountContainer>
           )}

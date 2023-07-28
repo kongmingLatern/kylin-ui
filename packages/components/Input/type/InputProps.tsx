@@ -1,5 +1,6 @@
 export interface InputProps {
   className?: string
+  label?: string
   width?: number | string
   height?: number | string
   size?: SizeType

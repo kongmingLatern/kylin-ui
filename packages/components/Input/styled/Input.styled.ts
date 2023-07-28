@@ -5,7 +5,7 @@ import { getRadius } from '@packages/styled-system'
 export const InputContainer = styled.div`
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   position: relative;
   padding: 0.4rem 0.4rem;
   border: 1px solid #d9d9d9;
@@ -22,13 +22,17 @@ export const InputComponent = styled.input<{
   width?: InputProps['width']
   size?: InputProps['size']
   shape?: InputProps['shape']
+  show?: number
 }>`
+  box-sizing: border-box;
   display: inline-block;
-  width: ${({ width }) => handleSuffix(width) || '70%'};
+  width: ${({ width }) => handleSuffix(width) || '100%'};
   height: ${({ height }) => handleSuffix(height) || 'auto'};
   border: none;
   border-radius: ${({ shape }) => getRadius(shape)};
   transition: all 0.3s;
+  padding-right: ${({ show }) =>
+    show ? '3rem' : '0.4rem'};
   outline: none;
 
   &::placeholder {
@@ -54,12 +58,13 @@ export const Suffix = styled.div`
   margin-left: 0.2rem;
 `
 
-export const CountContainer = styled.span`
+export const CountContainer = styled.label`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 0.4rem;
   font-size: 0.8rem;
+  user-select: none;
   color: #aaa;
 `
 
