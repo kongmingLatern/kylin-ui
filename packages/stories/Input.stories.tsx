@@ -21,31 +21,15 @@ export const Basic: Story = {
 }
 export const SearchIcon: Story = {
   render: args => (
-    <Input
-      enterSearch
-      placeholder={'请输入内容'}
-      onChange={value => console.log('value', value)}
-    />
+    <Input enterSearch placeholder={'请输入内容'} />
   ),
 }
 export const Width: Story = {
   render: args => (
     <Space>
-      <Input
-        placeholder={'Width 100px'}
-        width={'100px'}
-        onChange={value => console.log('value', value)}
-      />
-      <Input
-        placeholder={'Width 200px'}
-        width={200}
-        onChange={value => console.log('value', value)}
-      />
-      <Input
-        placeholder={'Width 300px'}
-        width={300}
-        onChange={value => console.log('value', value)}
-      />
+      <Input placeholder={'Width 100px'} width={'100px'} />
+      <Input placeholder={'Width 200px'} width={200} />
+      <Input placeholder={'Width 300px'} width={300} />
     </Space>
   ),
 }
@@ -86,7 +70,6 @@ export const Icon: Story = {
             height={20}
           />
         }
-        onChange={value => console.log('value', value)}
       />
       <Input
         placeholder={'Suffix'}
@@ -97,7 +80,6 @@ export const Icon: Story = {
             height={20}
           />
         }
-        onChange={value => console.log('value', value)}
       />
     </Space>
   ),
@@ -110,7 +92,6 @@ export const ShowCount: Story = {
         width={'100px'}
         height={'10px'}
         showCount
-        onChange={value => console.log('value', value)}
       />
       <Input
         placeholder={'Height 20px'}
@@ -124,7 +105,6 @@ export const ShowCount: Story = {
             height={20}
           />
         }
-        onChange={value => console.log('value', value)}
       />
     </Space>
   ),
