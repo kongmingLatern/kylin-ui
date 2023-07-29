@@ -51,38 +51,36 @@ const InternalInput: React.ForwardRefRenderFunction<
   ])
 
   return (
-    <>
-      <InputContainer
-        className={className}
-        tabIndex={1}
-        shape={shape}
-      >
-        {prefix && <Prefix>{prefix}</Prefix>}
-        <RelativeContainer width={props?.width}>
-          <InputComponent
-            id={label}
-            ref={ref}
-            placeholder={placeholder}
-            onChange={handleChange}
-            maxLength={limitCount}
-            onKeyDown={e => {
-              if (!onPressEnter) return
-              if (e.keyCode === 13) {
-                onPressEnter(e, e.target.value)
-              }
-            }}
-            show={Number(showCount)}
-            {...restProps}
-          />
-          {showCount && (
-            <CountContainer htmlFor={label}>
-              {count}/{limitCount ?? '∞'}
-            </CountContainer>
-          )}
-        </RelativeContainer>
-        {suffix && <Suffix>{suffix}</Suffix>}
-      </InputContainer>
-    </>
+    <InputContainer
+      className={className}
+      tabIndex={1}
+      shape={shape}
+    >
+      {prefix && <Prefix>{prefix}</Prefix>}
+      <RelativeContainer width={props?.width}>
+        <InputComponent
+          id={label}
+          ref={ref}
+          placeholder={placeholder}
+          onChange={handleChange}
+          maxLength={limitCount}
+          onKeyDown={e => {
+            if (!onPressEnter) return
+            if (e.keyCode === 13) {
+              onPressEnter(e, e.target.value)
+            }
+          }}
+          show={Number(showCount)}
+          {...restProps}
+        />
+        {showCount && (
+          <CountContainer htmlFor={label}>
+            {count}/{limitCount ?? '∞'}
+          </CountContainer>
+        )}
+      </RelativeContainer>
+      {suffix && <Suffix>{suffix}</Suffix>}
+    </InputContainer>
   )
 }
 
