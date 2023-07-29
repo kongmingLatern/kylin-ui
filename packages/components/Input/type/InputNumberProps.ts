@@ -8,11 +8,8 @@ export interface InputNumberProps {
   placeholder?: string
   prefix?: React.ReactNode
   suffix?: React.ReactNode
-  children?: React.ReactNode
-  value?: any
-  limitCount?: number
-  enterSearch?: boolean
-  showCount?: boolean
+  value?: number
+  step?: number | string
   onChange?: (value: any) => void
   onPressEnter?: (e: Event, value?: any) => void
 }

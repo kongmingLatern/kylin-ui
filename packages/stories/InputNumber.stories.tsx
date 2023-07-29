@@ -10,9 +10,7 @@ const meta = {
 type Story = StoryObj<typeof meta>
 
 export const Basic: Story = {
-  render: () => (
-    <InputNumber>There are some text</InputNumber>
-  ),
+  render: () => <InputNumber className="h-[30px]" />,
 }
 
 export default meta
