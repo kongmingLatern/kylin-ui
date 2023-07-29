@@ -49,8 +49,8 @@
 
 - [x] Avatar (`styled-component`)
 - [x] Badge (`styled-component`)
-- [x] Button
-  - [x] ButtonGroup
+- [x] Button(`styled-component`)
+  - [x] ButtonGroup(`styled-component`)
 - [x] Divider
 - [x] Card (`styled-component`)
 - [x] Grid
