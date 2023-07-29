@@ -12,8 +12,8 @@
 ├── README.md               # README
 ├── commitlint.config.cjs   # Commlint config
 ├── docs                    # Vitepress address
-├── _template               # hygen template 
-├── .husky                  # husky hook 
+├── _template               # hygen template
+├── .husky                  # husky hook
 ├── index.html
 ├── package.json
 ├── packages                # Monorepo
@@ -24,7 +24,7 @@
     ├── preset              # Kylin.config.js preset config
     ├── shared              # Utils / helpers
     ├── stories             # Storybook Folder
-    ├── styled-system       # styled-system theme define 
+    ├── styled-system       # styled-system theme define
     └── theme               # Style Folder
 ├── pnpm-lock.yaml
 ├── pnpm-workspace.yaml
@@ -61,6 +61,8 @@
   - [x] Content
   - [x] Footer
 - [x] Image
+- [x] Input(`styled-component`)
+- [x] InputNumber(`styled-component`)
 - [x] Message
 - [x] Space(`styled-component`)
 - [x] Spin
