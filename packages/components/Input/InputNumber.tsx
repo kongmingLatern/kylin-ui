@@ -1,7 +1,7 @@
 import React from 'react'
 import { InputNumberProps } from './type'
 import {
-  InputNumberContainer,
+  InputContainer,
   InputNumberComponent,
   Prefix,
   RelativeContainer,
@@ -17,9 +17,9 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
     className,
     placeholder,
     shape = 'rounded',
-    onChange,
     prefix,
     suffix,
+    onChange,
     onPressEnter,
     ...rest
   } = props
@@ -39,7 +39,7 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
 
   return (
     <>
-      <InputNumberContainer
+      <InputContainer
         className={className}
         tabIndex={1}
         shape={shape}
@@ -63,7 +63,7 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
           />
         </RelativeContainer>
         {suffix && <Suffix>{suffix}</Suffix>}
-      </InputNumberContainer>
+      </InputContainer>
     </>
   )
 }
