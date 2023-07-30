@@ -38,33 +38,31 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
   ])
 
   return (
-    <>
-      <InputContainer
-        className={className}
-        tabIndex={1}
-        shape={shape}
-        {...rest}
-      >
-        {prefix && <Prefix>{prefix}</Prefix>}
-        <RelativeContainer width={props?.width}>
-          <InputNumberComponent
-            type={'number'}
-            ref={ref}
-            className={className}
-            placeholder={placeholder}
-            onChange={handleChange}
-            onKeyDown={e => {
-              if (!onPressEnter) return
-              if (e.keyCode === 13) {
-                onPressEnter(e, e.target.value)
-              }
-            }}
-            {...restProps}
-          />
-        </RelativeContainer>
-        {suffix && <Suffix>{suffix}</Suffix>}
-      </InputContainer>
-    </>
+    <InputContainer
+      className={className}
+      tabIndex={1}
+      shape={shape}
+      {...rest}
+    >
+      {prefix && <Prefix>{prefix}</Prefix>}
+      <RelativeContainer width={props?.width}>
+        <InputNumberComponent
+          type={'number'}
+          ref={ref}
+          className={className}
+          placeholder={placeholder}
+          onChange={handleChange}
+          onKeyDown={e => {
+            if (!onPressEnter) return
+            if (e.keyCode === 13) {
+              onPressEnter(e, e.target.value)
+            }
+          }}
+          {...restProps}
+        />
+      </RelativeContainer>
+      {suffix && <Suffix>{suffix}</Suffix>}
+    </InputContainer>
   )
 }
 
