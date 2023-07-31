@@ -9,6 +9,7 @@ export const InputContainer = styled.div<{
   align-items: center;
   justify-content: start;
   position: relative;
+  overflow: hidden;
   /* padding: 0.4rem 0.4rem; */
   padding-left: 0.4rem;
   border: 1px solid #d9d9d9;
@@ -67,7 +68,7 @@ export const CountContainer = styled.label`
   color: #aaa;
 `
 
-function handleSuffix(number: InputProps['width']) {
+export function handleSuffix(number: InputProps['width']) {
   if (typeof number === 'number') {
     return `${number}px`
   }

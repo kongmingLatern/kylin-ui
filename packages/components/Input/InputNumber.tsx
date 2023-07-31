@@ -1,10 +1,10 @@
 import React from 'react'
 import { InputNumberProps } from './type'
 import {
+  ArrowIcon,
   InputContainer,
   InputNumberComponent,
   Prefix,
-  RelativeContainer,
   Suffix,
 } from './styled'
 import { omit } from '@packages/shared'
@@ -22,7 +22,6 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
     suffix,
     onChange,
     onPressEnter,
-    ...rest
   } = props
 
   const handleChange = e => {
@@ -43,7 +42,6 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
       className={className}
       tabIndex={1}
       shape={shape}
-      {...rest}
     >
       {prefix && <Prefix>{prefix}</Prefix>}
       <InputNumberComponent
@@ -60,10 +58,17 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
         }}
         {...restProps}
       />
-      <div className="flex flex-col">
-        <ArrowUp width={20} height={15} color={'#ccc'} />
+      <ArrowIcon>
+        <ArrowUp
+          width={20}
+          height={15}
+          color={'#ccc'}
+          style={{
+            borderBottom: '1px solid #d9d9d9',
+          }}
+        />
         <ArrowDown width={20} height={15} color={'#ccc'} />
-      </div>
+      </ArrowIcon>
       {suffix && <Suffix>{suffix}</Suffix>}
     </InputContainer>
   )

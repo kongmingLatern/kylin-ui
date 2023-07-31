@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 import { InputNumberProps } from '../type'
-import { getRadius } from '@packages/styled-system'
+import { handleSuffix } from './Input.styled'
 
 export const InputNumberComponent = styled.input<{
   width?: InputNumberProps['width']
@@ -8,8 +8,8 @@ export const InputNumberComponent = styled.input<{
   size?: InputNumberProps['size']
 }>`
   position: relative;
-  width: ${({ width }) => width || '100%'};
-  height: ${({ height }) => height || 'auto'};
+  width: ${({ width }) => handleSuffix(width) || '100%'};
+  height: ${({ height }) => handleSuffix(height) || 'auto'};
   border: none;
   outline: none;
 
@@ -17,5 +17,21 @@ export const InputNumberComponent = styled.input<{
   &::-webkit-outer-spin-button {
     -webkit-appearance: none;
     appearance: none;
+  }
+`
+
+export const ArrowIcon = styled.div`
+  width: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
+  border-collapse: collapse;
+  overflow: hidden;
+  &:focus-within,
+  &:hover {
+    border-color: #40a9ff;
+    box-shadow: 0 0 0 1px rgba(24, 144, 255, 0.2);
   }
 `
