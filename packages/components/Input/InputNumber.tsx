@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { InputNumberProps } from './type'
 import {
   ArrowIcon,
@@ -20,6 +20,11 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
     className,
     placeholder,
     shape = 'rounded',
+    max,
+    min,
+    defaultValue = min || 0,
+    value,
+    step = 1,
     prefix,
     suffix,
     onChange,
@@ -27,10 +32,18 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
   } = props
 
   const [hover, setHover] = useState(false)
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const handleChange = e => {
     if (onChange) {
       onChange(e.target.value)
+    }
+  }
+
+  const handlePressEnter = e => {
+    if (!onPressEnter) return
+    if (e.keyCode === 13) {
+      onPressEnter(e, e.target.value)
     }
   }
 
@@ -52,17 +65,14 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
       {prefix && <Prefix>{prefix}</Prefix>}
       <InputNumberComponent
         type={'number'}
-        ref={ref}
+        ref={inputRef}
         className={className}
         placeholder={placeholder}
+        defaultValue={defaultValue}
+        value={value}
         onChange={handleChange}
+        onKeyDown={handlePressEnter}
         onMouseOver={() => setHover(true)}
-        onKeyDown={e => {
-          if (!onPressEnter) return
-          if (e.keyCode === 13) {
-            onPressEnter(e, e.target.value)
-          }
-        }}
         onMouseLeave={() => setHover(false)}
         {...restProps}
       />
@@ -70,8 +80,16 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
         {hover && (
           <>
             <ArrowUp
+              id={'arrow-up'}
               width={20}
               color={'#ccc'}
+              className={
+                'hover:bg-[#40a9ff] hover:color-white'
+              }
+              onClick={handleArrowClick(
+                'add',
+                Number(step)
+              )}
               style={{
                 height: '50%',
                 borderBottom: '1px solid #d9d9d9',
@@ -80,6 +98,13 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
             <ArrowDown
               width={20}
               color={'#ccc'}
+              className={
+                'hover:bg-[#40a9ff] hover:color-white'
+              }
+              onClick={handleArrowClick(
+                'sub',
+                Number(step)
+              )}
               style={{
                 height: '50%',
               }}
@@ -90,6 +115,27 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
       {suffix && <Suffix>{suffix}</Suffix>}
     </InputContainer>
   )
+
+  function handleArrowClick(
+    type: 'add' | 'sub',
+    step
+  ): React.MouseEventHandler<SVGSVGElement> | undefined {
+    return () => {
+      if (inputRef?.current && inputRef.current.value) {
+        const result = Number(inputRef.current.value)
+        switch (type) {
+          case 'add':
+            if (max && result + step > max) return
+            inputRef.current.value = String(result + step)
+            break
+          case 'sub':
+            if (min && result - step < min) return
+            inputRef.current.value = String(result - step)
+            break
+        }
+      }
+    }
+  }
 }
 
 const InputNumber = React.forwardRef(InternalInputNumber)

@@ -1,6 +1,5 @@
 export interface InputNumberProps {
   className?: string
-  label?: string
   width?: number | string
   height?: number | string
   size?: SizeType
@@ -8,6 +7,9 @@ export interface InputNumberProps {
   placeholder?: string
   prefix?: React.ReactNode
   suffix?: React.ReactNode
+  defaultValue?: number
+  max?: number
+  min?: number
   value?: number
   step?: number | string
   onChange?: (value: any) => void

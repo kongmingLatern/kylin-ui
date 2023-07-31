@@ -12,7 +12,7 @@ const meta = {
 type Story = StoryObj<typeof meta>
 
 export const Basic: Story = {
-  render: () => <InputNumber className="h-[30px]" />,
+  render: () => <InputNumber />,
 }
 export const Width: Story = {
   render: args => (
@@ -79,6 +79,59 @@ export const Icon: Story = {
             height={20}
           />
         }
+      />
+    </Space>
+  ),
+}
+
+export const Step: Story = {
+  render: args => (
+    <Space>
+      <InputNumber placeholder={'Step 1'} step={1} />
+      <InputNumber placeholder={'Step 2'} step={2} />
+      <InputNumber placeholder={'Step 3'} step={3} />
+    </Space>
+  ),
+}
+
+export const Max: Story = {
+  render: args => (
+    <Space>
+      <InputNumber
+        placeholder={'Step 1, max 10'}
+        step={1}
+        max={10}
+      />
+      <InputNumber
+        placeholder={'Step 2, max 20'}
+        step={2}
+        max={20}
+      />
+      <InputNumber
+        placeholder={'Step 3, max 10'}
+        step={3}
+        max={10}
+      />
+    </Space>
+  ),
+}
+export const Min: Story = {
+  render: args => (
+    <Space>
+      <InputNumber
+        placeholder={'Step 1, max 10'}
+        step={1}
+        min={10}
+      />
+      <InputNumber
+        placeholder={'Step 2, max 20'}
+        step={2}
+        min={20}
+      />
+      <InputNumber
+        placeholder={'Step 3, max 10'}
+        step={'3'}
+        min={10}
       />
     </Space>
   ),
