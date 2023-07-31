@@ -8,7 +8,7 @@ export interface InputProps {
   shape?: 'rounded' | 'square'
   placeholder?: string
   prefix?: React.ReactNode
-  suffix?: React.ReactNode
+  suffix?: React.ReactNode | ((fn?: any) => React.ReactNode)
   children?: React.ReactNode
   value?: any
   limitCount?: number

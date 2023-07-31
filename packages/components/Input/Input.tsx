@@ -79,7 +79,11 @@ const InternalInput: React.ForwardRefRenderFunction<
           </CountContainer>
         )}
       </RelativeContainer>
-      {suffix && <Suffix>{suffix}</Suffix>}
+      {suffix && (
+        <Suffix>
+          {typeof suffix === 'function' ? suffix() : suffix}
+        </Suffix>
+      )}
     </InputContainer>
   )
 }
