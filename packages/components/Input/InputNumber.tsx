@@ -8,6 +8,7 @@ import {
   Suffix,
 } from './styled'
 import { omit } from '@packages/shared'
+import { ArrowDown, ArrowUp } from '@packages/icon'
 
 const InternalInputNumber: React.ForwardRefRenderFunction<
   HTMLInputElement,
@@ -45,22 +46,24 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
       {...rest}
     >
       {prefix && <Prefix>{prefix}</Prefix>}
-      <RelativeContainer width={props?.width}>
-        <InputNumberComponent
-          type={'number'}
-          ref={ref}
-          className={className}
-          placeholder={placeholder}
-          onChange={handleChange}
-          onKeyDown={e => {
-            if (!onPressEnter) return
-            if (e.keyCode === 13) {
-              onPressEnter(e, e.target.value)
-            }
-          }}
-          {...restProps}
-        />
-      </RelativeContainer>
+      <InputNumberComponent
+        type={'number'}
+        ref={ref}
+        className={className}
+        placeholder={placeholder}
+        onChange={handleChange}
+        onKeyDown={e => {
+          if (!onPressEnter) return
+          if (e.keyCode === 13) {
+            onPressEnter(e, e.target.value)
+          }
+        }}
+        {...restProps}
+      />
+      <div className="flex flex-col">
+        <ArrowUp width={20} height={15} color={'#ccc'} />
+        <ArrowDown width={20} height={15} color={'#ccc'} />
+      </div>
       {suffix && <Suffix>{suffix}</Suffix>}
     </InputContainer>
   )

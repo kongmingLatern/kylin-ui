@@ -9,7 +9,8 @@ export const InputContainer = styled.div<{
   align-items: center;
   justify-content: start;
   position: relative;
-  padding: 0.4rem 0.4rem;
+  /* padding: 0.4rem 0.4rem; */
+  padding-left: 0.4rem;
   border: 1px solid #d9d9d9;
   transition: all 0.25s;
   border-radius: ${({ shape }) => getRadius(shape)};
