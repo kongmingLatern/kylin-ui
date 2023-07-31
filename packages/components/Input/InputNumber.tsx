@@ -56,13 +56,13 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
         className={className}
         placeholder={placeholder}
         onChange={handleChange}
+        onMouseOver={() => setHover(true)}
         onKeyDown={e => {
           if (!onPressEnter) return
           if (e.keyCode === 13) {
             onPressEnter(e, e.target.value)
           }
         }}
-        onMouseOver={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         {...restProps}
       />
