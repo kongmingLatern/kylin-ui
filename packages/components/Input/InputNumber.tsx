@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { InputNumberProps } from './type'
 import {
   ArrowIcon,
@@ -15,6 +15,8 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
   InputNumberProps
 > = (props, ref) => {
   const {
+    width,
+    height = '30px',
     className,
     placeholder,
     shape = 'rounded',
@@ -23,6 +25,8 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
     onChange,
     onPressEnter,
   } = props
+
+  const [hover, setHover] = useState(false)
 
   const handleChange = e => {
     if (onChange) {
@@ -42,6 +46,8 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
       className={className}
       tabIndex={1}
       shape={shape}
+      onMouseOver={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
       {prefix && <Prefix>{prefix}</Prefix>}
       <InputNumberComponent
@@ -56,18 +62,30 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
             onPressEnter(e, e.target.value)
           }
         }}
+        onMouseOver={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
         {...restProps}
       />
-      <ArrowIcon>
-        <ArrowUp
-          width={20}
-          height={15}
-          color={'#ccc'}
-          style={{
-            borderBottom: '1px solid #d9d9d9',
-          }}
-        />
-        <ArrowDown width={20} height={15} color={'#ccc'} />
+      <ArrowIcon width={width} height={height}>
+        {hover && (
+          <>
+            <ArrowUp
+              width={20}
+              color={'#ccc'}
+              style={{
+                height: '50%',
+                borderBottom: '1px solid #d9d9d9',
+              }}
+            />
+            <ArrowDown
+              width={20}
+              color={'#ccc'}
+              style={{
+                height: '50%',
+              }}
+            />
+          </>
+        )}
       </ArrowIcon>
       {suffix && <Suffix>{suffix}</Suffix>}
     </InputContainer>

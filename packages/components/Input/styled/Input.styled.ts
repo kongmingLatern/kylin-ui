@@ -6,8 +6,8 @@ export const InputContainer = styled.div<{
   shape?: InputProps['shape']
 }>`
   display: inline-flex;
-  align-items: center;
   justify-content: start;
+  align-items: center;
   position: relative;
   overflow: hidden;
   /* padding: 0.4rem 0.4rem; */
@@ -51,8 +51,8 @@ export const RelativeContainer = styled.div<{
   width?: InputProps['width']
 }>`
   position: relative;
-  display: flex;
   align-items: center;
+  display: flex;
   width: ${({ width }) => handleSuffix(width) || '100%'};
 `
 
