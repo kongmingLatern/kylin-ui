@@ -1,4 +1,5 @@
 export interface InputProps {
+  type?: 'text' | 'password' | 'number'
   className?: string
   label?: string
   width?: number | string
