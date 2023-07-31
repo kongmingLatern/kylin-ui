@@ -9,6 +9,7 @@ import {
 } from './styled'
 import { omit } from '@packages/shared'
 import { ArrowDown, ArrowUp } from '@packages/icon'
+import classNames from 'classnames'
 
 const InternalInputNumber: React.ForwardRefRenderFunction<
   HTMLInputElement,
@@ -56,7 +57,7 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
 
   return (
     <InputContainer
-      className={className}
+      className={classNames(className, 'pr-0', 'py-0')}
       tabIndex={1}
       shape={shape}
       onMouseOver={() => setHover(true)}
