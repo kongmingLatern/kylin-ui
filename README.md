@@ -51,7 +51,7 @@
 - [x] Badge (`styled-component`)
 - [x] Button(`styled-component`)
   - [x] ButtonGroup(`styled-component`)
-- [x] Divider
+- [x] Divider(`styled-component`)
 - [x] Card (`styled-component`)
 - [x] Grid
   - [x] Row(`styled-component`)
