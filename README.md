@@ -56,17 +56,17 @@
 - [x] Grid
   - [x] Row(`styled-component`)
   - [x] Col(`styled-component`)
-- [x] Layout
-  - [x] Header
-  - [x] Content
-  - [x] Footer
+- [x] Layout(`No need`)
+  - [x] Header(`No need`)
+  - [x] Content(`No need`)
+  - [x] Footer(`No need`)
 - [x] Image
 - [x] Input(`styled-component`)
   - [x] Password(`styled-component`)
 - [x] InputNumber(`styled-component`)
 - [x] Message
 - [x] Space(`styled-component`)
-- [x] Spin
+- [x] Spin(`styled-component`)
 - [x] Tag(`styled-component`)
 - [x] ThemeProvider
 - [x] Typography
