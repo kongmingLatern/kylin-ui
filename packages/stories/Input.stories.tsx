@@ -105,7 +105,7 @@ export const ShowCount: Story = {
   render: args => (
     <Space>
       <Input
-        width={20}
+        width={200}
         placeholder={'Height 10px'}
         height={'20px'}
         showCount
