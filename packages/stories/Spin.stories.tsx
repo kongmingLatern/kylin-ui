@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Spin } from '@components/Spin'
 import { Space } from '@components/Space'
+import { useState } from 'react'
+import { Button } from '@components/Button'
 
 const meta = {
   title: 'UI Component/Spin',
@@ -66,6 +68,24 @@ export const Demo: Story = {
   ),
 }
 
-export const Control: Story = {}
+export const Control: Story = {
+  render: args => {
+    const [spinning, setSpinning] = useState(true)
+    return (
+      <>
+        <Spin spinning={spinning} tip={'Waiting...'}>
+          <div style={{ height: '200px' }}>
+            {[1, 2, 3, 4, 5].map(item => {
+              return <span key={item}>{item}</span>
+            })}
+          </div>
+        </Spin>
+        <Button onClick={() => setSpinning(!spinning)}>
+          Toggle
+        </Button>
+      </>
+    )
+  },
+}
 
 export default meta

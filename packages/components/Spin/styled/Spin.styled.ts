@@ -35,9 +35,10 @@ export const SpinContainer = styled.div<{
 
 export const SpinDot = styled.span`
   position: absolute;
+  left: 50%;
   top: 50%;
   inset-inline-start: 50%;
-  margin: -10px;
+  transform: translateX(-50%) translateY(-50%);
 `
 
 export const SpinText = styled.div<{
@@ -46,7 +47,8 @@ export const SpinText = styled.div<{
   position: absolute;
   top: 50%;
   width: 100%;
-  padding-top: 0.8rem;
+  transform: translateY(-30%);
+  padding-top: 2rem;
   user-select: none;
   ${({ size }) => {
     switch (size) {
