@@ -57,6 +57,7 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
 
   return (
     <InputContainer
+      ref={ref}
       className={classNames(className, 'pr-0', 'py-0')}
       tabIndex={1}
       shape={shape}
@@ -85,7 +86,7 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
               width={20}
               color={'#ccc'}
               className={
-                'hover:bg-[#40a9ff] hover:color-white'
+                'hover:bg-[#40a9ff] hover:color-white transition'
               }
               onClick={handleArrowClick(
                 'add',
