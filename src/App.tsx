@@ -16,6 +16,7 @@ import { CardDemo } from '@components/Card/demo/CardDemo'
 import { ImageDemo } from '@components/Image/demo/ImageDemo'
 import { Button } from '@components/Button'
 import { message } from '@components/Message'
+import { Divider } from '@components/Divider'
 
 const App = () => {
   return (
@@ -51,6 +52,9 @@ const App = () => {
       >
         Info
       </Button>
+
+      <Divider />
+      <SpinDemo />
       {/* <Title mark>Avatar</Title>
       <AvatarDemo /> */}
       {/* <Title mark>Card</Title>

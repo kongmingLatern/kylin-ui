@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { ImageProps } from './type'
-import { Spin } from '@components/Spin'
 import classNames from 'classnames'
+import { Spin } from '@components/Spin'
+import { Space } from '@components/Space'
+import { Keyboard } from '@kylin-ui/shared'
 import {
   Eye,
   Minus,
@@ -9,10 +11,11 @@ import {
   RotateCcw,
   X,
 } from '@packages/icon'
-import { Space } from '@components/Space'
-import { GetHandler, GetImageIconsHandler } from './helpers'
-import { ImageTools as Tools } from './helpers/const'
-import { Keyboard } from '@kylin-ui/shared'
+import {
+  GetHandler,
+  GetImageIconsHandler,
+  ImageTools as Tools,
+} from './helpers'
 
 const Image = React.forwardRef<
   HTMLImageElement,

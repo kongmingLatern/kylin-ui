@@ -69,7 +69,7 @@ export const Demo: Story = {
 }
 
 export const Control: Story = {
-  render: args => {
+  render: () => {
     const [spinning, setSpinning] = useState(true)
     return (
       <>
