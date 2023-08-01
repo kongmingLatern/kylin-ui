@@ -60,7 +60,7 @@
   - [x] Header(`No need`)
   - [x] Content(`No need`)
   - [x] Footer(`No need`)
-- [x] Image
+- [x] Image(`styled-component`)
 - [x] Input(`styled-component`)
   - [x] Password(`styled-component`)
 - [x] InputNumber(`styled-component`)
@@ -73,17 +73,6 @@
   - [x] Title
   - [x] Text
   - [x] Paragraph
-
-### Refactor by using styled-component
-
-- [x] Avatar
-- [x] Badge
-- [x] Card
-- [x] Grid
-  - [x] Row
-  - [x] Col
-- [x] Space
-- [x] Tag
 
 ### Packages
 
