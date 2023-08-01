@@ -14,6 +14,13 @@ export const Basic: Story = {
   render: () => <Spin>There are some text</Spin>,
 }
 
+export const Delay: Story = {
+  render: () => (
+    <Spin tip={<div>Wait for data...</div>} delay={1000}>
+      <span>Delay for 1000ms</span>
+    </Spin>
+  ),
+}
 export const Demo: Story = {
   render: () => (
     <Space size={'large'}>
@@ -58,5 +65,7 @@ export const Demo: Story = {
     </Space>
   ),
 }
+
+export const Control: Story = {}
 
 export default meta

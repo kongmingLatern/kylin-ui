@@ -3,7 +3,7 @@ export interface SpinProps {
 
   size?: 'small' | 'default' | 'large'
 
-  tip?: string
+  tip?: string | React.ReactNode
 
   delay?: number
 
