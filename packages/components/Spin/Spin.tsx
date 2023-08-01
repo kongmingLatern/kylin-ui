@@ -1,8 +1,14 @@
 import React from 'react'
-import classNames from 'classnames'
 import { SpinProps } from './type'
 import { debounce } from 'throttle-debounce'
 import LoadingIcon from '@components/Button/LoadingIcon'
+import {
+  SpinContainer,
+  SpinContainerClass,
+  SpinDot,
+  SpinNestPattern,
+  SpinText,
+} from './styled'
 
 export const Spin: React.ForwardRefRenderFunction<
   HTMLImageElement,
@@ -15,7 +21,6 @@ export const Spin: React.ForwardRefRenderFunction<
     wrapperClassName,
     size = 'default',
     tip,
-    indicator,
     style,
     children,
     ...rest
@@ -60,57 +65,44 @@ export const Spin: React.ForwardRefRenderFunction<
     )
   }
 
-  const spinClassName = classNames(
-    'kylin-spin',
-    {
-      [`kylin-spin-sm`]: size === 'small',
-      [`kylin-spin-lg`]: size === 'large',
-      [`kylin-spin-spinning`]: spinning,
-      [`kylin-spin-show-text`]: !!tip,
-    },
-    className
-  )
-
-  const containerClassName = classNames(
-    `kylin-spin-container`,
-    {
-      [`kylin-spin-blur`]: spinning,
-    }
-  )
-
   const spinElement: React.ReactNode = (
-    <div
-      {...rest}
+    <SpinContainer
+      id={'kylin-spin'}
+      size={size}
+      $spinning={spinning}
       style={style}
-      className={spinClassName}
+      className={className}
       aria-live="polite"
       aria-busy={spinning}
+      {...rest}
     >
       {spinning && (
-        <div className="kylin-spin-dot">
+        <SpinDot>
           <LoadingIcon loading={spinning} />
-        </div>
+        </SpinDot>
       )}
       {tip && isNestedPattern ? (
-        <div className={`kylin-spin-text`}>{tip}</div>
+        <SpinText>{tip}</SpinText>
       ) : null}
-    </div>
+    </SpinContainer>
   )
 
   if (isNestedPattern) {
     return (
-      <div
+      <SpinNestPattern
+        className={wrapperClassName}
         {...rest}
-        className={classNames(
-          `kylin-spin-nested-loading`,
-          wrapperClassName
-        )}
       >
-        {spinning && <div key="loading">{spinElement}</div>}
-        <div className={containerClassName} key="container">
+        {spinning && (
+          <div key={'loading'}>{spinElement}</div>
+        )}
+        <SpinContainerClass
+          $spinning={spinning}
+          key="container"
+        >
           {children}
-        </div>
-      </div>
+        </SpinContainerClass>
+      </SpinNestPattern>
     )
   }
   return spinElement
