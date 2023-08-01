@@ -48,6 +48,7 @@ const InternalInput: React.ForwardRefRenderFunction<
     'showCount',
     'onChange',
     'onPressEnter',
+    'limitCount',
   ])
 
   return (
@@ -81,7 +82,7 @@ const InternalInput: React.ForwardRefRenderFunction<
       </RelativeContainer>
       {suffix && (
         <Suffix>
-          {typeof suffix === 'function' ? suffix() : suffix}
+          {typeof suffix === 'function' ? null : suffix}
         </Suffix>
       )}
     </InputContainer>
