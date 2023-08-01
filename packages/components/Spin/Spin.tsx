@@ -10,7 +10,7 @@ import {
   SpinText,
 } from './styled'
 
-export const Spin: React.ForwardRefRenderFunction<
+const InternalSpin: React.ForwardRefRenderFunction<
   HTMLImageElement,
   SpinProps
 > = (props, ref) => {
@@ -68,7 +68,6 @@ export const Spin: React.ForwardRefRenderFunction<
   const spinElement: React.ReactNode = (
     <SpinContainer
       id={'kylin-spin'}
-      size={size}
       $spinning={spinning}
       style={style}
       className={className}
@@ -82,7 +81,7 @@ export const Spin: React.ForwardRefRenderFunction<
         </SpinDot>
       )}
       {tip && isNestedPattern ? (
-        <SpinText>{tip}</SpinText>
+        <SpinText size={size}>{tip}</SpinText>
       ) : null}
     </SpinContainer>
   )
@@ -94,7 +93,9 @@ export const Spin: React.ForwardRefRenderFunction<
         {...rest}
       >
         {spinning && (
-          <div key={'loading'}>{spinElement}</div>
+          <div key={'loading'} ref={ref}>
+            {spinElement}
+          </div>
         )}
         <SpinContainerClass
           $spinning={spinning}
@@ -107,3 +108,5 @@ export const Spin: React.ForwardRefRenderFunction<
   }
   return spinElement
 }
+
+export const Spin = React.forwardRef(InternalSpin)

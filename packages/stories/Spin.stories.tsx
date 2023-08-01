@@ -17,7 +17,7 @@ export const Basic: Story = {
 export const Demo: Story = {
   render: () => (
     <Space size={'large'}>
-      <Spin tip='hello'>
+      <Spin tip="加载中..." size="small">
         <span
           style={{
             display: 'block',

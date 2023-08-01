@@ -24,29 +24,6 @@ export const SpinContainer = styled.div<{
   transition: transform 0.3s
     cubic-bezier(0.78, 0.14, 0.15, 0.86);
 
-  ${({ size }) => {
-    switch (size) {
-      case 'small':
-        return css`
-          width: 14px;
-          height: 14px;
-          font-size: 14px;
-        `
-      case 'large':
-        return css`
-          width: 32px;
-          height: 32px;
-          font-size: 32px;
-        `
-      default:
-        return css`
-          width: 20px;
-          height: 20px;
-          font-size: 20px;
-        `
-    }
-  }}
-
   ${({ $spinning }) =>
     $spinning &&
     css`
@@ -63,13 +40,30 @@ export const SpinDot = styled.span`
   margin: -10px;
 `
 
-export const SpinText = styled.div`
+export const SpinText = styled.div<{
+  size?: SpinProps['size']
+}>`
   position: absolute;
   top: 50%;
   width: 100%;
   padding-top: 0.8rem;
-  font-size: 1.4rem;
   user-select: none;
+  ${({ size }) => {
+    switch (size) {
+      case 'small':
+        return css`
+          font-size: 1rem;
+        `
+      case 'large':
+        return css`
+          font-size: 2rem;
+        `
+      default:
+        return css`
+          font-size: 1.2rem;
+        `
+    }
+  }}
 `
 
 export const SpinNestPattern = styled.div`
