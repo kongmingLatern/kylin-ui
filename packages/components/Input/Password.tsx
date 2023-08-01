@@ -1,7 +1,7 @@
 import React from 'react'
 import { PasswordProps } from './type'
 import { Input } from './Input'
-import { Lock } from '@packages/icon'
+import { Lock, Unlock } from '@packages/icon'
 
 const InternalPassword: React.ForwardRefRenderFunction<
   HTMLInputElement,
@@ -10,25 +10,30 @@ const InternalPassword: React.ForwardRefRenderFunction<
   const {
     showPassword = false,
     onShowPassword,
-    suffix = onClick => (
-      <Lock width={20} height={20} onClick={onClick} />
-    ),
+    suffix = (visible, onClick) =>
+      visible ? (
+        <Unlock width={20} height={20} onClick={onClick} />
+      ) : (
+        <Lock width={20} height={20} onClick={onClick} />
+      ),
   } = props
-  const [show, setShow] = React.useState(showPassword)
-  const handleShowPassword = e => {
+  const [visible, setVisible] = React.useState(showPassword)
+
+  const handleShowPassword = () => {
     if (onShowPassword) {
-      onShowPassword(e)
+      onShowPassword(visible, setVisible)
+      return
     }
-    setShow(!show)
+    setVisible(!visible)
   }
 
   return (
     <Input
       ref={ref}
-      type={show ? 'text' : 'password'}
+      type={visible ? 'text' : 'password'}
       suffix={
         typeof suffix === 'function' &&
-        suffix(handleShowPassword)
+        suffix(visible, handleShowPassword)
       }
     />
   )
