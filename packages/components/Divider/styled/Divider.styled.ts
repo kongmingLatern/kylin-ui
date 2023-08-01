@@ -94,6 +94,7 @@ export const DividerContainer = styled.div<{
           border-top: 0;
           border-left: 1px solid #e8e8e8;
           margin: 0 0.5rem;
+          padding: 0;
         `
     }
   }}
