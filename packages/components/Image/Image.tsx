@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { ImageProps } from './type'
-import classNames from 'classnames'
 import { Spin } from '@components/Spin'
 import { Space } from '@components/Space'
 import { Keyboard } from '@kylin-ui/shared'
@@ -16,6 +15,16 @@ import {
   GetImageIconsHandler,
   ImageTools as Tools,
 } from './helpers'
+import {
+  ImagePreviewContainer,
+  ImagePreviewCover,
+  ImagePreviewInfo,
+  ImagePreviewMask,
+  ImagePreviewPopup,
+  ImagePreviewPopupTools,
+  ImagePreviewPopupToolsIcon,
+  ImagePreviewPopupContainer,
+} from './styled'
 
 const Image = React.forwardRef<
   HTMLImageElement,
@@ -48,16 +57,12 @@ const Image = React.forwardRef<
     setPreviewVisible,
   })
 
-  const classes = classNames({
-    ['kylin-image-preview']: preview,
-  })
-
   const PreviewText = () => {
     return (
-      <div className="kylin-image-preview-info">
+      <ImagePreviewInfo>
         <Eye width={20} height={20} />
         <span>预览</span>
-      </div>
+      </ImagePreviewInfo>
     )
   }
 
@@ -84,8 +89,8 @@ const Image = React.forwardRef<
       // 将图片的地址传递给一个新的组件，这个组件是一个弹窗，弹窗中展示图片
       const ImageCover = () => {
         return (
-          <img
-            className={'kylin-image-preview-cover'}
+          <ImagePreviewCover
+            id={'kylin-image-preview-cover'}
             src={src}
             alt={alt}
           />
@@ -100,7 +105,7 @@ const Image = React.forwardRef<
         ]
 
         return (
-          <div className="kylin-image-preview-popup-tools">
+          <ImagePreviewPopupTools>
             <Space
               size={32}
               style={{
@@ -109,27 +114,26 @@ const Image = React.forwardRef<
             >
               {ImageToolIcons.map((item, key) => {
                 return (
-                  <span
-                    className="kylin-image-preview-popup-tools-icon"
+                  <ImagePreviewPopupToolsIcon
                     key={key}
                     onClick={() => handleClick(item.key)}
                   >
                     {item}
-                  </span>
+                  </ImagePreviewPopupToolsIcon>
                 )
               })}
             </Space>
-          </div>
+          </ImagePreviewPopupTools>
         )
       }
 
       return (
-        <div className="kylin-image-preview-popup">
+        <ImagePreviewPopup>
           <ImageTools />
-          <div className="kylin-image-preview-popup-container">
+          <ImagePreviewPopupContainer>
             <ImageCover />
-          </div>
-        </div>
+          </ImagePreviewPopupContainer>
+        </ImagePreviewPopup>
       )
     }
 
@@ -139,28 +143,29 @@ const Image = React.forwardRef<
   return (
     <>
       <Spin spinning={loading}>
-        <span className="kylin-image-preview-container">
+        <ImagePreviewContainer>
           {preview && (
-            <div
-              className="kylin-image-preview-mask"
+            <ImagePreviewMask
               onClick={() => setPreviewVisible(true)}
             >
               {!error && <PreviewText />}
-            </div>
+            </ImagePreviewMask>
           )}
           <img
             src={src}
             width={width}
             height={height}
             alt={alt}
-            className={classes}
             onLoad={handleOnLoad}
             onError={handleOnError}
             ref={ref}
-            style={{ display: loading ? 'none' : 'block' }}
+            style={{
+              display: loading ? 'none' : 'block',
+              objectFit: 'cover',
+            }}
             {...rest}
           />
-        </span>
+        </ImagePreviewContainer>
       </Spin>
       {previewVisible && openPreview()}
     </>
