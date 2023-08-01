@@ -62,6 +62,7 @@
   - [x] Footer
 - [x] Image
 - [x] Input(`styled-component`)
+  - [x] Password(`styled-component`)
 - [x] InputNumber(`styled-component`)
 - [x] Message
 - [x] Space(`styled-component`)
