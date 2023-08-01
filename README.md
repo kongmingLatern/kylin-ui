@@ -68,7 +68,7 @@
 - [x] Space(`styled-component`)
 - [x] Spin(`styled-component`)
 - [x] Tag(`styled-component`)
-- [x] ThemeProvider
+- [x] ThemeProvider(`No need`)
 - [x] Typography
   - [x] Title
   - [x] Text
