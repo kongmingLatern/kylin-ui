@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { useState } from 'react'
 import { Space } from '@components/Space'
-import { Button } from '@components/Button'
+import { Button, ButtonGroup } from '@components/Button'
 import 'uno.css'
 import '../../dist/index.css'
 
@@ -120,6 +120,16 @@ export const Ghost: Story = {
     ghost: true,
   },
   render: args => <Button {...args}>Ghost</Button>,
+}
+// ***************** ButtonGroup *******************
+export const Buttongroup: Story = {
+  render: args => (
+    <ButtonGroup>
+      <Button>1</Button>
+      <Button>2</Button>
+      <Button>3</Button>
+    </ButtonGroup>
+  ),
 }
 
 export default meta
