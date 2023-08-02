@@ -24,6 +24,7 @@ export const CodeContainer = styled.code<{
     $indent,
   }) =>
     getBasicStyle(
+      true,
       type,
       $deleteLine,
       $underline,
@@ -36,6 +37,7 @@ export const CodeContainer = styled.code<{
 `
 
 export function getBasicStyle(
+  isCode = false,
   type,
   $deleteLine,
   $underline,
@@ -53,7 +55,9 @@ export function getBasicStyle(
     font-size: 85%;
     font-family: sfmono-regular, Consolas, liberation mono,
       Menlo, Courier, monospace;
-    border: 1px solid rgba(100, 100, 100, 0.2);
+    border: ${isCode
+      ? '1px solid rgba(100, 100, 100, 0.2)'
+      : 'none'};
     border-radius: 3px;
     background: ${$mark
       ? getColorByType('warning')
@@ -160,6 +164,7 @@ export const TypographyContainer = tag => styled[tag]`
     $mark,
   }) =>
     getBasicStyle(
+      false,
       type,
       $deleteLine,
       $underline,
