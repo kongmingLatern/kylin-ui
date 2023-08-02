@@ -10,6 +10,17 @@ const meta = {
 
 type Story = StoryObj<typeof meta>
 
+export const Default: Story = {
+  render: () => (
+    <>
+      <p>水平分割线</p>
+      <Divider />
+      <p>there are some text</p>
+      <Divider />
+    </>
+  ),
+}
+
 export const Type: Story = {
   render: () => (
     <>
