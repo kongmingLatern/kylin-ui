@@ -69,10 +69,10 @@
 - [x] Spin(`styled-component`)
 - [x] Tag(`styled-component`)
 - [x] ThemeProvider(`No need`)
-- [x] Typography
-  - [x] Title
-  - [x] Text
-  - [x] Paragraph
+- [x] Typography(`styled-component`)
+  - [x] Title(`styled-component`)
+  - [x] Text(`styled-component`)
+  - [x] Paragraph(`styled-component`)
 
 ### Packages
 
