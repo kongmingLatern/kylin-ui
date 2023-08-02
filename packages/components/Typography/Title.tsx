@@ -1,10 +1,10 @@
-import classNames from 'classnames'
 import { TypographyTitleProps } from './type'
-import { createElement } from 'react'
 import { NodeType } from './type/NodeType'
 import { TypographyType } from './type/BaseTypography'
-import { styled } from 'styled-components'
-import { CodeContainer } from './styled'
+import {
+  CodeContainer,
+  TypographyContainer,
+} from './styled'
 
 const Title: React.FC<TypographyType> = props => {
   return <RenderTitle {...props} />
@@ -26,8 +26,38 @@ function renderCodeElement(
   props: TypographyType,
   children
 ): JSX.Element | null {
+  const {
+    type,
+    deleteLine,
+    underline,
+    disabled,
+    italic,
+    ellipsis,
+    copyable,
+    strong,
+    indent,
+    className,
+  } = props
+
   return (
-    <CodeContainer {...props}>{children}</CodeContainer>
+    <CodeContainer
+      className={className}
+      type={type}
+      $deleteLine={deleteLine}
+      $underline={underline}
+      $disabled={disabled}
+      $italic={italic}
+      $ellipsis={ellipsis}
+      $strong={strong}
+      $indent={indent}
+      onClick={
+        copyable
+          ? handleClick(props.onClick)
+          : props.onClick
+      }
+    >
+      {children}
+    </CodeContainer>
   )
 }
 
@@ -62,36 +92,26 @@ function renderElement(props: TypographyType, children) {
 
   const level = getLevel()
   const tag = getTag(level)
+  const Container = TypographyContainer(tag)
 
-  const classes = classNames(
-    {
-      [`kylin-typography-title-h${level}`]: level,
-      [`kylin-typography-type-${type}`]: type,
-      ['kylin-typography-deleteLine']: deleteLine,
-      ['kylin-typography-underline']: underline,
-      ['kylin-typography-ellipsis']: ellipsis,
-      ['kylin-typography-disabled']: disabled,
-      ['kylin-typography-mark']: mark,
-      ['kylin-typography-italic']: italic,
-      ['kylin-typography-strong']: strong,
-      ['kylin-typography-indent']: indent,
-    },
-    className
+  return (
+    <Container
+      className={className}
+      level={level}
+      type={type}
+      $deleteLine={deleteLine}
+      $underline={underline}
+      $disabled={disabled}
+      $italic={italic}
+      $ellipsis={ellipsis}
+      $strong={strong}
+      $indent={indent}
+      $mark={mark}
+      onClick={copyable ? handleClick(onClick) : onClick}
+    >
+      {children}
+    </Container>
   )
-
-  console.log('styled[tag]', styled[tag])
-
-  const TitleNode = createElement(
-    tag,
-    {
-      className: classes !== '' ? classes : undefined,
-      onClick: copyable ? handleClick(onClick) : onClick,
-    },
-
-    children
-  )
-
-  return TitleNode
 
   function getTag(level) {
     return _type === NodeType.TITLE

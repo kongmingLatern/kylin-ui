@@ -222,3 +222,11 @@ export function getCoverWidth(width: CoverProps['size']) {
       return 'auto'
   }
 }
+
+export const getColorByType = (type?: ThemeType) => {
+  if (type) {
+    return Theme['type'][type] ?? Theme['type']['default']
+  } else {
+    return Theme['type']['default']
+  }
+}
