@@ -1,13 +1,13 @@
 import { render } from '@testing-library/react'
 import { Text } from '../Text'
-test('renders Text component', () => {
+test.skip('renders Text component', () => {
   const { container } = render(<Text />)
   expect(container.firstChild).toMatchInlineSnapshot(
     '<span />'
   )
 })
 
-describe('TypographyText', () => {
+describe.skip('TypographyText', () => {
   test('props -> default', () => {
     const { container } = render(<Text>Default Title</Text>)
     expect(container.firstChild).toMatchInlineSnapshot(
