@@ -90,6 +90,22 @@ function renderElement(props: TypographyType, children) {
     className,
   } = props
 
+  function getTag(level) {
+    return _type === NodeType.TITLE
+      ? `h${level}`
+      : _type === NodeType.TEXT
+      ? 'span'
+      : 'p' // NOTE: 该情况为 Paragraph
+  }
+
+  function getLevel() {
+    return _type === NodeType.TITLE
+      ? (props as TypographyTitleProps).level
+        ? (props as TypographyTitleProps)?.level
+        : 1
+      : undefined
+  }
+
   const level = getLevel()
   const tag = getTag(level)
   const Container = TypographyContainer(tag)
@@ -112,22 +128,6 @@ function renderElement(props: TypographyType, children) {
       {children}
     </Container>
   )
-
-  function getTag(level) {
-    return _type === NodeType.TITLE
-      ? `h${level}`
-      : _type === NodeType.TEXT
-      ? 'span'
-      : 'p' // NOTE: 该情况为 Paragraph
-  }
-
-  function getLevel() {
-    return _type === NodeType.TITLE
-      ? (props as TypographyTitleProps).level
-        ? (props as TypographyTitleProps)?.level
-        : 1
-      : undefined
-  }
 }
 
 export { Title }
