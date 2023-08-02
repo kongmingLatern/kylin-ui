@@ -20,18 +20,14 @@ export const CodeText: Story = {
 export const DeleteLine: Story = {
   render: () => (
     <>
-      <Text level={4} deleteLine>
-        This is DeleteLine Text
-      </Text>
+      <Text deleteLine>This is DeleteLine Text</Text>
     </>
   ),
 }
 export const Underline: Story = {
   render: () => (
     <>
-      <Text level={4} underline>
-        This is Underline Text
-      </Text>
+      <Text underline>This is Underline Text</Text>
     </>
   ),
 }
@@ -39,56 +35,42 @@ export const Underline: Story = {
 export const Italic: Story = {
   render: () => (
     <>
-      <Text level={4} italic>
-        This is Italic Text
-      </Text>
+      <Text italic>This is Italic Text</Text>
     </>
   ),
 }
 export const Strong: Story = {
   render: () => (
     <>
-      <Text level={4} strong>
-        This is Strong Text
-      </Text>
+      <Text strong>This is Strong Text</Text>
     </>
   ),
 }
 export const Mark: Story = {
   render: () => (
     <>
-      <Text level={4} mark>
-        This is Mark Text
-      </Text>
+      <Text mark>This is Mark Text</Text>
     </>
   ),
 }
 export const Ellipsis: Story = {
   render: () => (
     <>
-      <Text level={4} ellipsis>
-        This is Ellipsis Text
-      </Text>
+      <Text ellipsis>This is Ellipsis Text</Text>
     </>
   ),
 }
 export const Disable: Story = {
   render: () => (
     <>
-      <Text level={4} disabled>
-        This is Disable Text
-      </Text>
+      <Text disabled>This is Disable Text</Text>
     </>
   ),
 }
 export const Copyable: Story = {
   render: () => (
     <>
-      <Text
-        level={4}
-        copyable
-        onClick={e => console.log(e)}
-      >
+      <Text copyable onClick={e => console.log(e)}>
         This is Copy Text
       </Text>
     </>
