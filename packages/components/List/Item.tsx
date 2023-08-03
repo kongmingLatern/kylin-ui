@@ -1,16 +1,16 @@
 import React from 'react'
-import { ListProps } from './type'
+import { ItemProps } from './type'
 import { ItemContainer } from './styled/Item.styled'
 
-const InternalUl: React.ForwardRefRenderFunction<
+const InternalLi: React.ForwardRefRenderFunction<
   HTMLLIElement,
-  ListProps
+  ItemProps
 > = (props, ref) => {
   const { children } = props
   return <ItemContainer ref={ref}>{children}</ItemContainer>
 }
 
-const Item = React.forwardRef(InternalUl)
+const Item = React.forwardRef(InternalLi)
 
 if (process.env.NODE_ENV !== 'production') {
   Item.displayName = 'Item'
