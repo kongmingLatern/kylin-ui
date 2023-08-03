@@ -83,6 +83,11 @@ export const Icon: Story = {
     </Space>
   ),
 }
+export const Disabled: Story = {
+  render: args => (
+    <InputNumber placeholder={'disabled'} disabled />
+  ),
+}
 
 export const Step: Story = {
   render: args => (

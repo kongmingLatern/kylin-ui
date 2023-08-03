@@ -25,6 +25,11 @@ export const SearchIcon: Story = {
     <Input enterSearch placeholder={'请输入内容'} />
   ),
 }
+export const Disabled: Story = {
+  render: args => (
+    <Input disabled placeholder={'请输入内容'} />
+  ),
+}
 export const Shape: Story = {
   render: args => (
     <Space>

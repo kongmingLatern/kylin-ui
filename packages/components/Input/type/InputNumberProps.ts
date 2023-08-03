@@ -2,6 +2,7 @@ export interface InputNumberProps {
   className?: string
   width?: number | string
   height?: number | string
+  disabled?: boolean
   size?: SizeType
   shape?: 'rounded' | 'square'
   placeholder?: string

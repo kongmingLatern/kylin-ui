@@ -6,6 +6,7 @@ export interface InputProps {
   height?: number | string
   size?: SizeType
   shape?: 'rounded' | 'square'
+  disabled?: boolean
   placeholder?: string
   prefix?: React.ReactNode
   suffix?:

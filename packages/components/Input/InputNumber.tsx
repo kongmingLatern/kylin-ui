@@ -20,6 +20,7 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
     height = '30px',
     className,
     placeholder,
+    disabled = false,
     shape = 'rounded',
     max,
     min,
@@ -61,6 +62,7 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
       className={classNames(className, 'pr-0', 'py-0')}
       tabIndex={1}
       shape={shape}
+      disabled={disabled}
       onMouseOver={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
@@ -69,6 +71,7 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
         type={'number'}
         ref={inputRef}
         className={className}
+        disabled={disabled}
         placeholder={placeholder}
         defaultValue={defaultValue}
         value={value}
@@ -78,42 +81,44 @@ const InternalInputNumber: React.ForwardRefRenderFunction<
         onMouseLeave={() => setHover(false)}
         {...restProps}
       />
-      <ArrowIcon width={width} height={height}>
-        {hover && (
-          <>
-            <ArrowUp
-              id={'arrow-up'}
-              width={20}
-              color={'#ccc'}
-              className={
-                'hover:bg-[#40a9ff] hover:color-white transition'
-              }
-              onClick={handleArrowClick(
-                'add',
-                Number(step)
-              )}
-              style={{
-                height: '50%',
-                borderBottom: '1px solid #d9d9d9',
-              }}
-            />
-            <ArrowDown
-              width={20}
-              color={'#ccc'}
-              className={
-                'hover:bg-[#40a9ff] hover:color-white'
-              }
-              onClick={handleArrowClick(
-                'sub',
-                Number(step)
-              )}
-              style={{
-                height: '50%',
-              }}
-            />
-          </>
-        )}
-      </ArrowIcon>
+      {!disabled && (
+        <ArrowIcon width={width} height={height}>
+          {hover && (
+            <>
+              <ArrowUp
+                id={'arrow-up'}
+                width={20}
+                color={'#ccc'}
+                className={
+                  'hover:bg-[#40a9ff] hover:color-white transition'
+                }
+                onClick={handleArrowClick(
+                  'add',
+                  Number(step)
+                )}
+                style={{
+                  height: '50%',
+                  borderBottom: '1px solid #d9d9d9',
+                }}
+              />
+              <ArrowDown
+                width={20}
+                color={'#ccc'}
+                className={
+                  'hover:bg-[#40a9ff] hover:color-white'
+                }
+                onClick={handleArrowClick(
+                  'sub',
+                  Number(step)
+                )}
+                style={{
+                  height: '50%',
+                }}
+              />
+            </>
+          )}
+        </ArrowIcon>
+      )}
       {suffix && <Suffix>{suffix}</Suffix>}
     </InputContainer>
   )

@@ -6,13 +6,18 @@ export const InputNumberComponent = styled.input<{
   width?: InputNumberProps['width']
   height?: InputNumberProps['height']
   size?: InputNumberProps['size']
+  disabled?: InputNumberProps['disabled']
 }>`
   position: relative;
+  padding: 0.4rem 0.4rem;
   width: ${({ width }) => handleSuffix(width) || '100%'};
   height: ${({ height }) => handleSuffix(height) || 'auto'};
   border: none;
   outline: none;
   transition: all 0.25s;
+  cursor: ${({ disabled }) =>
+    disabled ? 'not-allowed' : 'text'};
+  opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
 
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {

@@ -19,6 +19,7 @@ const InternalInput: React.ForwardRefRenderFunction<
     className,
     placeholder,
     shape = 'rounded',
+    disabled = false,
     prefix,
     suffix = props?.enterSearch ? (
       <Search width={20} height={20} />
@@ -55,6 +56,7 @@ const InternalInput: React.ForwardRefRenderFunction<
     <InputContainer
       className={className}
       tabIndex={1}
+      disabled={disabled}
       shape={shape}
     >
       {prefix && <Prefix>{prefix}</Prefix>}
@@ -62,6 +64,7 @@ const InternalInput: React.ForwardRefRenderFunction<
         <InputComponent
           id={label}
           ref={ref}
+          disabled={disabled}
           placeholder={placeholder}
           onChange={handleChange}
           maxLength={limitCount}
