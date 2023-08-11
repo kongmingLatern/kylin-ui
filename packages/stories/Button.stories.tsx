@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { Space } from '@components/Space'
 import { Button, ButtonGroup } from '@components/Button'
 import 'uno.css'
-import '../../dist/index.css'
 
 const meta: any = {
   title: 'UI Component/Button',
