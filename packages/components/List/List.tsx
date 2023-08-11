@@ -7,7 +7,7 @@ const InternalList: React.ForwardRefRenderFunction<
   HTMLUListElement,
   ListProps
 > = (props, ref) => {
-  const { dataSource, children } = props
+  const { className, dataSource, children } = props
 
   if (children) {
     return (
@@ -16,9 +16,9 @@ const InternalList: React.ForwardRefRenderFunction<
   }
 
   return (
-    <ListContainer ref={ref}>
+    <ListContainer className={className} ref={ref}>
       {dataSource?.map((item, index) => {
-        return <Item key={index}>{item}</Item>
+        return <Item key={index} {...item} />
       })}
     </ListContainer>
   )
