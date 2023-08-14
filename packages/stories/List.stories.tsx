@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { List } from '@components/List'
+import { List, Item } from '@components/List'
+import { Avatar } from '@components/Avatar'
 
 const meta = {
   title: 'UI Component/List',
@@ -9,9 +10,21 @@ const meta = {
 
 type Story = StoryObj<typeof meta>
 
-export const Basic: Story =  {
-  render: () => <List>There are some text</List>,
+export const Basic: Story = {
+  render: () => (
+    <List
+      dataSource={[
+        {
+          avatar: (
+            <Avatar src="https://i.pravatar.cc/300" />
+          ),
+          title: 'Title',
+          description: 'Description',
+          extra: 'Extra',
+        },
+      ]}
+    ></List>
+  ),
 }
 
 export default meta
-
