@@ -1,7 +1,8 @@
 import React from 'react'
 import { ItemProps } from './type'
 import { ItemContainer } from './styled/Item.styled'
-import { Avatar } from '..'
+import { Title, Paragraph } from '../Typography'
+import { Avatar } from '../Avatar'
 
 const InternalLi: React.ForwardRefRenderFunction<
   HTMLLIElement,
@@ -24,7 +25,18 @@ const InternalLi: React.ForwardRefRenderFunction<
   }
   return (
     <ItemContainer ref={ref}>
-      {AvatarRender()}
+      <div className="flex items-center">
+        {AvatarRender()}
+        <main className="flex flex-col">
+          <header className="flex justify-between items-center">
+            <Title>{title}</Title>
+            <span>{extra}</span>
+          </header>
+          <main>
+            <Paragraph>{description}</Paragraph>
+          </main>
+        </main>
+      </div>
     </ItemContainer>
   )
 }
