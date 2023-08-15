@@ -9,6 +9,7 @@ import {
 } from './styled/Item.styled'
 import { Title, Paragraph } from '../Typography'
 import { Avatar } from '../Avatar'
+import { Col } from '../Grid'
 
 const InternalLi: React.ForwardRefRenderFunction<
   HTMLLIElement,
@@ -43,7 +44,9 @@ const InternalLi: React.ForwardRefRenderFunction<
         <ItemUL>
           {actions &&
             actions.map((action, index) => (
-              <li key={index}>{action}</li>
+              <Col key={index} span={24 / actions.length}>
+                {action}
+              </Col>
             ))}
         </ItemUL>
       </footer>

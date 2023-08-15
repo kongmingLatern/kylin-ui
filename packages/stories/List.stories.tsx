@@ -23,9 +23,32 @@ export const Basic: Story = {
           description: 'Description',
           extra: <a>extra</a>,
           actions: [
-            <Button key={1}>action</Button>,
-            <Button key={2}>action</Button>,
-            <Button key={3}>action</Button>,
+            <Button
+              key={1}
+              style={{
+                width: '100%',
+              }}
+            >
+              action1
+            </Button>,
+            <Button
+              type={'primary'}
+              key={2}
+              style={{
+                width: '100%',
+              }}
+            >
+              action2
+            </Button>,
+            <Button
+              type={'info'}
+              key={3}
+              style={{
+                width: '100%',
+              }}
+            >
+              action3
+            </Button>,
           ],
         },
       ]}

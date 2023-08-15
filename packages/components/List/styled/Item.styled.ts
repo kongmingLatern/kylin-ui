@@ -16,6 +16,7 @@ export const ItemBox = styled.div`
 export const ItemMain = styled.main`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `
 
 export const ItemHeader = styled.header`
