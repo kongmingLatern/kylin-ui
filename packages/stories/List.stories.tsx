@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { List, Item } from '@components/List'
 import { Avatar } from '@components/Avatar'
+import { Button } from '@components/Button'
 
 const meta = {
   title: 'UI Component/List',
@@ -20,7 +21,12 @@ export const Basic: Story = {
           ),
           title: 'Title',
           description: 'Description',
-          extra: 'Extra',
+          extra: <a>extra</a>,
+          actions: [
+            <Button key={1}>action</Button>,
+            <Button key={2}>action</Button>,
+            <Button key={3}>action</Button>,
+          ],
         },
       ]}
     ></List>
