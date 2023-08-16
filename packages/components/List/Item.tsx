@@ -15,8 +15,14 @@ const InternalLi: React.ForwardRefRenderFunction<
   HTMLLIElement,
   ItemProps
 > = (props, ref) => {
-  const { avatar, title, description, extra, actions } =
-    props
+  const {
+    avatar,
+    title,
+    description,
+    extra,
+    actions,
+    footerStyle,
+  } = props
   const AvatarRender = () => {
     return typeof avatar === 'string' ? (
       <Avatar src={avatar} />
@@ -41,7 +47,7 @@ const InternalLi: React.ForwardRefRenderFunction<
         </ItemMain>
       </ItemBox>
       <footer>
-        <ItemUL>
+        <ItemUL style={footerStyle}>
           {actions &&
             actions.map((action, index) => (
               <Col key={index} span={24 / actions.length}>

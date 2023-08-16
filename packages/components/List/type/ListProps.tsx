@@ -12,4 +12,5 @@ export interface ItemProps {
   actions?: React.ReactNode[]
   title?: React.ReactNode | string
   description?: React.ReactNode | string
+  footerStyle?: React.CSSProperties
 }
