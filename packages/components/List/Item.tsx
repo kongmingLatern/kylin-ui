@@ -5,6 +5,7 @@ import {
   ItemContainer,
   ItemHeader,
   ItemMain,
+  ItemMainParagraph,
   ItemUL,
 } from './styled/Item.styled'
 import { Title, Paragraph } from '../Typography'
@@ -42,7 +43,7 @@ const InternalLi: React.ForwardRefRenderFunction<
             {extra}
           </ItemHeader>
           <main className="kylin-description">
-            <Paragraph>{description}</Paragraph>
+            <Paragraph ellipsis>{description}</Paragraph>
           </main>
         </ItemMain>
       </ItemBox>

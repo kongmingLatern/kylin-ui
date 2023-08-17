@@ -20,7 +20,8 @@ export const Basic: Story = {
             <Avatar src="https://i.pravatar.cc/300" />
           ),
           title: 'Title',
-          description: 'Description',
+          description:
+            'De123123123123123123123123123123123123333333333333333333scription',
           extra: <a>extra</a>,
           actions: [
             <Button

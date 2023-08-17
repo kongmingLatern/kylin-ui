@@ -25,6 +25,11 @@ export const ItemHeader = styled.header`
   align-items: center;
 `
 
+export const ItemMainParagraph = styled.main`
+  white-space: nowrap;
+  text-overflow: ellipsis;
+`
+
 export const ItemUL = styled.footer`
   display: flex;
   justify-content: space-between;
