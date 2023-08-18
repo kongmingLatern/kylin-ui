@@ -5,7 +5,6 @@ import {
   ItemContainer,
   ItemHeader,
   ItemMain,
-  ItemMainParagraph,
   ItemUL,
 } from './styled/Item.styled'
 import { Title, Paragraph } from '../Typography'

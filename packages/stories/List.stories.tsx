@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { List, Item } from '@components/List'
+import { List } from '@components/List'
 import { Avatar } from '@components/Avatar'
-import { Button } from '@components/Button'
 import { Heart, MessageCircle, Star } from '@packages/icon'
 
 const meta = {
