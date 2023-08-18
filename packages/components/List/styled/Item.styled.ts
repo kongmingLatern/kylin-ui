@@ -32,8 +32,8 @@ export const ItemMainParagraph = styled.main`
 
 export const ItemUL = styled.footer`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  margin-top: 0.5rem;
   & li {
     list-style: none;
   }

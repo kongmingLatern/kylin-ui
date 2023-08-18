@@ -51,7 +51,13 @@ const InternalLi: React.ForwardRefRenderFunction<
         <ItemUL style={footerStyle}>
           {actions &&
             actions.map((action, index) => (
-              <Col key={index} span={24 / actions.length}>
+              <Col
+                key={index}
+                style={{
+                  alignItems: 'center',
+                  marginRight: '.5rem',
+                }}
+              >
                 {action}
               </Col>
             ))}
