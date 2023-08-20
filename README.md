@@ -78,6 +78,8 @@
 ### Packages
 
 - [x] Cli
+- [x] Component
+- [x] Hooks
 - [x] Icon
 - [x] Preset
 - [x] Shared
