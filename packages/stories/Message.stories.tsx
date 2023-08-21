@@ -1,20 +1,32 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { message } from '@components/Message'
+import { message, MessageList } from '@components/Message'
 import { Button } from '@components/Button'
+import { Space } from '@components/Space'
 
 const meta = {
   title: 'UI Component/Message',
-  component: Button,
+  component: MessageList,
   tags: ['autodocs'],
-} satisfies Meta<typeof Button>
+} satisfies Meta<typeof MessageList>
 
 type Story = StoryObj<typeof meta>
 
 export const Basic: Story = {
   render: () => (
-    <Button onClick={() => message.success('成功')}>
-      提示
-    </Button>
+    <Space>
+      <Button type='success' onClick={() => message.success('成功')}>
+        成功提示
+      </Button>
+      <Button type='error' onClick={() => message.error('失败')}>
+        失败提示
+      </Button>
+      <Button type='info' onClick={() => message.info('提示')}>
+        提示
+      </Button>
+      <Button ghost onClick={() => message.warn('警告')}>
+        警告提示
+      </Button>
+    </Space>
   ),
 }
 
