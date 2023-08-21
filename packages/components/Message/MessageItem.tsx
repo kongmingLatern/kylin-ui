@@ -2,6 +2,10 @@ import styles from './style/message.module.css'
 import classNames from 'classnames'
 import { MessageListProps, MessageType } from './type'
 import { CheckCircle, Info, XOctagon } from '@packages/icon'
+import {
+  MessageIconContainer,
+  MessageListContainer,
+} from './styled'
 
 export function MessageItem({
   onRemove,
@@ -37,42 +41,21 @@ export function MessageItem({
         )
     }
   }
-  function getColorByType() {
-    switch (type) {
-      case MessageType.Success:
-        return 'text-black'
-      case MessageType.Error:
-        return 'text-#ff4d4f'
-      case MessageType.Warn:
-        return 'text-[#382800]'
-      case MessageType.Info:
-        return 'text-[#1769aa]'
-    }
-  }
-
   setTimeout(() => {
     onRemove?.(id)
   }, 3000)
 
   return (
-    <div
-      className={classNames(
-        'flex',
-        'j-a-c',
-        'shadow-lg',
-        'transform-gpu',
-        getColorByType(),
-        styles.move,
-        'px-3',
-        'py-4'
-      )}
+    <MessageListContainer
+      type={type}
+      className={classNames(styles.move)}
     >
-      <span className="flex">
-        <span className="mr-2 flex items-center">
+      <span style={{ display: 'flex' }}>
+        <MessageIconContainer>
           {showIcon()}
-        </span>
+        </MessageIconContainer>
         {content}
       </span>
-    </div>
+    </MessageListContainer>
   )
 }

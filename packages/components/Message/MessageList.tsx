@@ -7,6 +7,7 @@ import {
 import classNames from 'classnames'
 import { MessageItem } from './MessageItem'
 import ReactDOM from 'react-dom/client'
+import { MessageContainer } from './styled'
 
 function init() {
   const messageModelContainer =
@@ -64,15 +65,7 @@ const MessageList = () => {
   }
 
   return (
-    <div
-      className={classNames(
-        'fixed',
-        'top-[8px]',
-        'left-[50%]',
-        'translate-x-[-50%]',
-        'text-center'
-      )}
-    >
+    <MessageContainer>
       {Object.keys(messageList).map(key => {
         const item = messageList[key]
         return (
@@ -85,7 +78,7 @@ const MessageList = () => {
           />
         )
       })}
-    </div>
+    </MessageContainer>
   )
 }
 
