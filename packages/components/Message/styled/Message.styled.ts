@@ -12,11 +12,15 @@ export const MessageContainer = styled.div`
 export const MessageListContainer = styled.div<{
   type?: MessageType
 }>`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px 2px rgba(0, 0, 0, 0.1);
   will-change: transform;
+  z-index: 9999;
+  background-color: #fff;
+  margin-bottom: 1rem;
 
   color: ${({ type }) => {
     switch (type) {
@@ -37,4 +41,5 @@ export const MessageIconContainer = styled.span`
   display: flex;
   align-items: center;
   margin-right: 2rem;
+  z-index: 9999;
 `
