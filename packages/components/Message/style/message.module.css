@@ -1,6 +1,6 @@
 .move {
-  transition: all 500s;
-  animation: messageMove 500s ease-in-out alternate;
+  transition: all 5s;
+  animation: messageMove 5s ease-in-out alternate;
   -moz-animation: messageMove 5s ease-in-out; /* Firefox */
   -webkit-animation: messageMove 5s ease-in-out; /* Safari 和 Chrome */
   -o-animation: messageMove 5s ease-in-out; /* Opera */

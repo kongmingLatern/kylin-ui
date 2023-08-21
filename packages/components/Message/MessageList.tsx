@@ -4,7 +4,6 @@ import {
   MessageListProps,
   MessageType,
 } from './type'
-import classNames from 'classnames'
 import { MessageItem } from './MessageItem'
 import ReactDOM from 'react-dom/client'
 import { MessageContainer } from './styled'

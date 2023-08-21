@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { MessageProps, MessageType } from '../type'
+import { MessageType } from '../type'
 
 export const MessageContainer = styled.div`
   position: fixed;
@@ -30,7 +30,7 @@ export const MessageListContainer = styled.div<{
         return '#1769aa'
     }
   }};
-  padding: 1rem 0.75rem;
+  padding: 9px 12px;
 `
 
 export const MessageIconContainer = styled.span`
