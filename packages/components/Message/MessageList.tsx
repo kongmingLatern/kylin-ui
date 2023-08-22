@@ -31,12 +31,29 @@ const messageList: { [key: string]: MessageListProps } = {}
 // 消息列表组件
 const MessageList = () => {
   const [flagId, setFlagId] = useState(0)
+  function addMessage(
+    type,
+    content,
+    duration?
+  ): Record<string, MessageListProps> {
+    const id = `${++incrementId}`
+    messageList[id] = {
+      id,
+      type,
+      content,
+      duration,
+    }
+    setFlagId(flagId + 1)
+    return messageList
+  }
   const removeById = (id: string) => {
     delete messageList[id]
     setFlagId(flagId + 1)
   }
 
-  registerMessage(flagId, setFlagId)
+  const _message = (type, content, duration?) =>
+    addMessage(type, content, duration)
+  registerMessage(_message)
 
   return (
     <MessageContainer>
@@ -60,21 +77,7 @@ const MessageList = () => {
 initMessageDOM()
 export { MessageList, message }
 
-function registerMessage(flagId, setFlagId) {
-  function createMessageInstance(type, content, duration?) {
-    const id = `${++incrementId}`
-    messageList[id] = {
-      id,
-      type,
-      content,
-      duration,
-    }
-    setFlagId(flagId + 1)
-    return messageList
-  }
-  const _message = (type, content, duration?) =>
-    createMessageInstance(type, content, duration)
-
+function registerMessage(_message) {
   for (const key in MessageType) {
     message[key] = (content, duration?: number) => {
       _message(MessageType[key], content, duration)
