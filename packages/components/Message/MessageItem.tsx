@@ -8,7 +8,7 @@ import {
 } from './styled'
 function showIcon(type: MessageType) {
   switch (type) {
-    case MessageType.Success:
+    case MessageType.success:
       return (
         <CheckCircle
           color="#52c41a"
@@ -16,13 +16,13 @@ function showIcon(type: MessageType) {
           height={16}
         />
       )
-    case MessageType.Error:
+    case MessageType.error:
       return (
         <XOctagon color="#ff4d4f" width={16} height={16} />
       )
-    case MessageType.Warn:
+    case MessageType.warn:
       return <Info color="#faad14" width={16} height={16} />
-    case MessageType.Info:
+    case MessageType.info:
       return <Info color="#1677ff" width={16} height={16} />
   }
 }

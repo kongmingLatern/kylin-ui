@@ -9,10 +9,10 @@ export type Message = {
 
 // 消息的类型枚举
 export enum MessageType {
-  Success = 'success',
-  Error = 'error',
-  Warn = 'warn',
-  Info = 'info',
+  success = 'success',
+  error = 'error',
+  warn = 'warn',
+  info = 'info',
 }
 
 // 消息组件参数

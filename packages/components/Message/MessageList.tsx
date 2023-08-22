@@ -75,22 +75,9 @@ function registerMessage(flagId, setFlagId) {
   const _message = (type, content, duration?) =>
     createMessageInstance(type, content, duration)
 
-  message.success = (
-    content: string,
-    duration?: number
-  ) => {
-    _message(MessageType.Success, content, duration)
-  }
-
-  message.error = (content: string, duration?: number) => {
-    _message(MessageType.Error, content, duration)
-  }
-
-  message.warn = (content: string, duration?: number) => {
-    _message(MessageType.Warn, content, duration)
-  }
-
-  message.info = (content: string, duration?: number) => {
-    _message(MessageType.Info, content, duration)
+  for (const key in MessageType) {
+    message[key] = (content, duration?: number) => {
+      _message(MessageType[key], content, duration)
+    }
   }
 }
