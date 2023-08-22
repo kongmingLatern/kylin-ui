@@ -8,7 +8,7 @@ import { MessageItem } from './MessageItem'
 import ReactDOM from 'react-dom/client'
 import { MessageContainer } from './styled'
 
-function init() {
+function initMessageDOM() {
   const messageModelContainer =
     document.createElement('div')
   messageModelContainer.className =
@@ -31,37 +31,12 @@ const messageList: { [key: string]: MessageListProps } = {}
 // 消息列表组件
 const MessageList = () => {
   const [flagId, setFlagId] = useState(0)
-
   const removeById = (id: string) => {
     delete messageList[id]
     setFlagId(flagId + 1)
   }
 
-  const _message = (type: MessageType, content: string) => {
-    const id = `${++incrementId}`
-    messageList[id] = {
-      id: id,
-      type: type,
-      content: content,
-    }
-    setFlagId(flagId + 1)
-  }
-
-  message.success = (content: string) => {
-    _message(MessageType.Success, content)
-  }
-
-  message.error = (content: string) => {
-    _message(MessageType.Error, content)
-  }
-
-  message.warn = (content: string) => {
-    _message(MessageType.Warn, content)
-  }
-
-  message.info = (content: string) => {
-    _message(MessageType.Info, content)
-  }
+  registerMessage(flagId, setFlagId)
 
   return (
     <MessageContainer>
@@ -73,6 +48,7 @@ const MessageList = () => {
             id={item.id}
             type={item.type}
             content={item.content}
+            duration={item.duration}
             onRemove={removeById}
           />
         )
@@ -81,5 +57,40 @@ const MessageList = () => {
   )
 }
 
-init()
+initMessageDOM()
 export { MessageList, message }
+
+function registerMessage(flagId, setFlagId) {
+  function createMessageInstance(type, content, duration?) {
+    const id = `${++incrementId}`
+    messageList[id] = {
+      id,
+      type,
+      content,
+      duration,
+    }
+    setFlagId(flagId + 1)
+    return messageList
+  }
+  const _message = (type, content, duration?) =>
+    createMessageInstance(type, content, duration)
+
+  message.success = (
+    content: string,
+    duration?: number
+  ) => {
+    _message(MessageType.Success, content, duration)
+  }
+
+  message.error = (content: string, duration?: number) => {
+    _message(MessageType.Error, content, duration)
+  }
+
+  message.warn = (content: string, duration?: number) => {
+    _message(MessageType.Warn, content, duration)
+  }
+
+  message.info = (content: string, duration?: number) => {
+    _message(MessageType.Info, content, duration)
+  }
+}

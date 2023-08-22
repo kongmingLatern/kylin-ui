@@ -20,6 +20,7 @@ export type MessageListProps = {
   id: string
   type: MessageType
   content: string
+  duration?: number
   onRemove?: (id: string) => void
 }
 
