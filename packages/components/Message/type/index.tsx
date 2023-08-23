@@ -1,10 +1,10 @@
 export * from './MessageProps'
 // 消息对象类型
 export type Message = {
-  success: (message: string) => void
-  error: (message: string) => void
-  warn: (message: string) => void
-  info: (message: string) => void
+  success: (message: string, duration?: number) => void
+  error: (message: string, duration?: number) => void
+  warn: (message: string, duration?: number) => void
+  info: (message: string, duration?: number) => void
 }
 
 // 消息的类型枚举
