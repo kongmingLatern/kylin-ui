@@ -14,13 +14,22 @@ type Story = StoryObj<typeof meta>
 export const Basic: Story = {
   render: () => (
     <Space>
-      <Button type='success' onClick={() => message.success('成功')}>
+      <Button
+        type="success"
+        onClick={() => message.success('成功')}
+      >
         成功提示
       </Button>
-      <Button type='error' onClick={() => message.error('失败')}>
+      <Button
+        type="error"
+        onClick={() => message.error('失败')}
+      >
         失败提示
       </Button>
-      <Button type='info' onClick={() => message.info('提示')}>
+      <Button
+        type="info"
+        onClick={() => message.info('提示')}
+      >
         提示
       </Button>
       <Button ghost onClick={() => message.warn('警告')}>
@@ -30,4 +39,16 @@ export const Basic: Story = {
   ),
 }
 
+export const Duration: Story = {
+  render: () => (
+    <Space>
+      <Button
+        type="success"
+        onClick={() => message.success('成功', 30000)}
+      >
+        成功提示
+      </Button>
+    </Space>
+  ),
+}
 export default meta

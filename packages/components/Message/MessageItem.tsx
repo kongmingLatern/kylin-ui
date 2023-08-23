@@ -1,5 +1,4 @@
 import styles from './style/message.module.css'
-import classNames from 'classnames'
 import { MessageListProps, MessageType } from './type'
 import { CheckCircle, Info, XOctagon } from '@packages/icon'
 import {
@@ -38,10 +37,7 @@ export function MessageItem({
   }, duration)
 
   return (
-    <MessageListContainer
-      type={type}
-      className={classNames(styles.move)}
-    >
+    <MessageListContainer type={type} duration={duration}>
       <span style={{ display: 'flex' }}>
         <MessageIconContainer>
           {showIcon(type)}

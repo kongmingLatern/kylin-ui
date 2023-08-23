@@ -1,5 +1,4 @@
 .move {
-  transition: all 5s;
   animation: messageMove 5s ease-in-out alternate;
   -moz-animation: messageMove 5s ease-in-out; /* Firefox */
   -webkit-animation: messageMove 5s ease-in-out; /* Safari 和 Chrome */

@@ -1,4 +1,4 @@
-import { styled } from 'styled-components'
+import { keyframes, styled } from 'styled-components'
 import { MessageType } from '../type'
 
 export const MessageContainer = styled.div`
@@ -8,9 +8,35 @@ export const MessageContainer = styled.div`
   transform: translateX(-50%);
   text-align: center;
 `
+const rotate = keyframes`
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
 
+    10% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+
+    40% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+
+    70% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+`
 export const MessageListContainer = styled.div<{
   type?: MessageType
+  duration: number
 }>`
   position: relative;
   display: flex;
@@ -21,6 +47,15 @@ export const MessageListContainer = styled.div<{
   z-index: 9999;
   background-color: #fff;
   margin-bottom: 1rem;
+
+  animation: ${rotate} ${({ duration }) => duration / 1000}s
+    ease-in-out;
+  -moz-animation: ${({ duration }) => duration / 1000}s
+    ease-in-out ${rotate}; /* Firefox */
+  -webkit-animation: ${rotate}
+    ${({ duration }) => duration / 1000}s ease-in-out; /* Safari 和 Chrome */
+  -o-animation: ${({ duration }) => duration / 1000}s
+    ease-in-out ${rotate}; /* Opera */
 
   color: ${({ type }) => {
     switch (type) {
