@@ -24,13 +24,13 @@ export const MessageListContainer = styled.div<{
 
   color: ${({ type }) => {
     switch (type) {
-      case MessageType.Success:
+      case MessageType.success:
         return '#000'
-      case MessageType.Error:
+      case MessageType.error:
         return '#ff4d4f'
-      case MessageType.Warn:
+      case MessageType.warn:
         return '#382800'
-      case MessageType.Info:
+      case MessageType.info:
         return '#1769aa'
     }
   }};
