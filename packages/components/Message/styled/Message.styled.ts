@@ -48,13 +48,14 @@ export const MessageListContainer = styled.div<{
   background-color: #fff;
   margin-bottom: 1rem;
 
-  animation: ${rotate} ${({ duration }) => duration / 1000}s
-    ease-in-out;
-  -moz-animation: ${({ duration }) => duration / 1000}s
+  animation: ${rotate}
+    ${({ duration }) => duration / 1000 + 2}s ease-in-out;
+  -moz-animation: ${({ duration }) =>
+      duration / 1000 + 2000}s
     ease-in-out ${rotate}; /* Firefox */
   -webkit-animation: ${rotate}
-    ${({ duration }) => duration / 1000}s ease-in-out; /* Safari 和 Chrome */
-  -o-animation: ${({ duration }) => duration / 1000}s
+    ${({ duration }) => duration / 1000 + 2}s ease-in-out; /* Safari 和 Chrome */
+  -o-animation: ${({ duration }) => duration / 1000 + 2}s
     ease-in-out ${rotate}; /* Opera */
 
   color: ${({ type }) => {

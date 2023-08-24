@@ -1,4 +1,3 @@
-import styles from './style/message.module.css'
 import { MessageListProps, MessageType } from './type'
 import { CheckCircle, Info, XOctagon } from '@packages/icon'
 import {
