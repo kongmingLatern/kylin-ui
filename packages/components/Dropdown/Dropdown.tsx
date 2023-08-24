@@ -5,8 +5,20 @@ const InternalDropdown: React.ForwardRefRenderFunction<
   HTMLDivElement,
   DropdownProps
 > = (props, ref) => {
-  const { children } = props
-  return <div ref={ref}>{children}</div>
+  const { menu = [], children } = props
+
+  function Children() {
+    return <>children</>
+  }
+
+  const MenuList = menu.map(i => (
+    <div key={i.key}>
+      {i?.icon}
+      <span>{i.label}</span>
+    </div>
+  ))
+
+  return <Children></Children>
 }
 
 const Dropdown = React.forwardRef(InternalDropdown)
