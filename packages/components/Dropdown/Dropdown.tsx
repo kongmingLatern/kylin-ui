@@ -8,7 +8,7 @@ const InternalDropdown: React.ForwardRefRenderFunction<
   const { menu = [], children } = props
 
   function Children() {
-    return <>children</>
+    return <>{children}</>
   }
 
   const MenuList = menu.map(i => (
