@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { DropdownProps } from './type'
 
 const InternalDropdown: React.ForwardRefRenderFunction<
@@ -8,7 +8,7 @@ const InternalDropdown: React.ForwardRefRenderFunction<
   const { menu = [], children } = props
 
   function Children() {
-    return <>{children}</>
+    return <div className="relative">{children}</div>
   }
 
   const MenuList = menu.map(i => (
