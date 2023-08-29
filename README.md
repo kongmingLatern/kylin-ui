@@ -61,6 +61,7 @@
   - [x] Content(`No need`)
   - [x] Footer(`No need`)
 - [x] List(`styled-component`)
+  - [x] Item(`styled-component`)
 - [x] Image(`styled-component`)
 - [x] Input(`styled-component`)
   - [x] Password(`styled-component`)
