@@ -34,6 +34,7 @@ export const CodeContainer = styled.code<{
       $strong,
       $indent
     )}
+  background: #f7f7f7;
 `
 
 export function getBasicStyle(
@@ -49,7 +50,7 @@ export function getBasicStyle(
   $mark?
 ) {
   return css`
-    margin: 0 0.2em;
+    margin: 0;
     padding-inline: 0.4em;
     padding-block: 0.2em 0.1em;
     font-size: 85%;
@@ -70,7 +71,7 @@ export function getBasicStyle(
     )};
     font-style: ${$italic ? 'italic' : 'normal'};
 
-    font-weight: ${$strong ? 'bold' : 'normal'};
+    font-weight: ${$strong ? '500' : 'normal'};
 
     ${$ellipsis && getEllipsis(!!$ellipsis)};
 
