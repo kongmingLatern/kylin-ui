@@ -5,11 +5,13 @@ import {
   ItemContainer,
   ItemHeader,
   ItemMain,
+  ItemContent,
   ItemUL,
 } from './styled/Item.styled'
 import { Title, Paragraph } from '../Typography'
 import { Avatar } from '../Avatar'
 import { Col } from '../Grid'
+import { Space } from '../Space'
 
 const InternalLi: React.ForwardRefRenderFunction<
   HTMLLIElement,
@@ -36,30 +38,36 @@ const InternalLi: React.ForwardRefRenderFunction<
         {AvatarRender()}
         <ItemMain>
           <ItemHeader>
-            <Title level={3} strong>
-              {title}
-            </Title>
+            <ItemContent>
+              <Title level={3} strong>
+                {title}
+              </Title>
+              <main className="kylin-description">
+                <Paragraph ellipsis>
+                  {description}
+                </Paragraph>
+              </main>
+            </ItemContent>
             {extra}
           </ItemHeader>
-          <main className="kylin-description">
-            <Paragraph ellipsis>{description}</Paragraph>
-          </main>
         </ItemMain>
       </ItemBox>
       <footer>
         <ItemUL style={footerStyle}>
-          {actions &&
-            actions.map((action, index) => (
-              <Col
-                key={index}
-                style={{
-                  alignItems: 'center',
-                  marginRight: '.5rem',
-                }}
-              >
-                {action}
-              </Col>
-            ))}
+          <Space size={20}>
+            {actions &&
+              actions.map((action, index) => (
+                <Col
+                  key={index}
+                  style={{
+                    alignItems: 'center',
+                    marginRight: '.5rem',
+                  }}
+                >
+                  {action}
+                </Col>
+              ))}
+          </Space>
         </ItemUL>
       </footer>
     </ItemContainer>

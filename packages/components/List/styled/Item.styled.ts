@@ -15,7 +15,6 @@ export const ItemBox = styled.div`
 export const ItemMain = styled.main`
   display: flex;
   flex-direction: column;
-  width: 100%;
 `
 
 export const ItemHeader = styled.header`
@@ -31,4 +30,10 @@ export const ItemUL = styled.footer`
   & li {
     list-style: none;
   }
+`
+
+export const ItemContent = styled.main`
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
 `
