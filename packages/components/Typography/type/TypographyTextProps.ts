@@ -21,4 +21,5 @@ export interface TypographyTextProps
     | 'warning'
     | 'info'
     | 'error'
+    | 'description'
 }

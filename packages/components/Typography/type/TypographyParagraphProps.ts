@@ -14,6 +14,7 @@ export interface TypographyParagraphProps
     | 'warning'
     | 'info'
     | 'error'
+    | 'description'
 
   /**
    * @description 首行缩进

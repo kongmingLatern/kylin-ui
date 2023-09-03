@@ -18,4 +18,5 @@ export interface TypographyTitleProps
     | 'warning'
     | 'info'
     | 'error'
+    | 'description'
 }

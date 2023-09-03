@@ -1,4 +1,7 @@
 import { styled } from 'styled-components'
-import { ListProps } from '../type'
 
-export const ListContainer = styled.ul``
+export const ListContainer = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`

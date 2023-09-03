@@ -9,6 +9,7 @@ export const theme = {
     warning: '#e67e22',
     danger: '#e74c3c',
     error: '#e74c3c',
+    description: '#00000073'
   },
 
   gradient: {
