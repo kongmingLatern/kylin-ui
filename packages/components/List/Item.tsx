@@ -21,6 +21,7 @@ const InternalLi: React.ForwardRefRenderFunction<
     avatar,
     title,
     description,
+    content,
     extra,
     actions,
     footerStyle,
@@ -43,10 +44,11 @@ const InternalLi: React.ForwardRefRenderFunction<
                 {title}
               </Title>
               <main className="kylin-description">
-                <Paragraph ellipsis>
+                <Paragraph type="description">
                   {description}
                 </Paragraph>
               </main>
+              {content && <Paragraph>{content}</Paragraph>}
             </ItemContent>
             {extra}
           </ItemHeader>

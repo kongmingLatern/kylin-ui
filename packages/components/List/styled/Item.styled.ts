@@ -2,9 +2,10 @@ import { styled } from 'styled-components'
 
 export const ItemContainer = styled.li`
   list-style: none;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
+  border-block-end: 1px solid rgba(5, 5, 5, 0.06);
 `
 
 export const ItemBox = styled.div`
