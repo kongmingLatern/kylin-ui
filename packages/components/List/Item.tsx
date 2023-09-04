@@ -49,29 +49,27 @@ const InternalLi: React.ForwardRefRenderFunction<
                 </Paragraph>
               </main>
               {content && <Paragraph>{content}</Paragraph>}
+              <ItemUL style={footerStyle}>
+                <Space size={20}>
+                  {actions &&
+                    actions.map((action, index) => (
+                      <Col
+                        key={index}
+                        style={{
+                          alignItems: 'center',
+                          marginRight: '.5rem',
+                        }}
+                      >
+                        {action}
+                      </Col>
+                    ))}
+                </Space>
+              </ItemUL>
             </ItemContent>
             {extra}
           </ItemHeader>
         </ItemMain>
       </ItemBox>
-      <footer>
-        <ItemUL style={footerStyle}>
-          <Space size={20}>
-            {actions &&
-              actions.map((action, index) => (
-                <Col
-                  key={index}
-                  style={{
-                    alignItems: 'center',
-                    marginRight: '.5rem',
-                  }}
-                >
-                  {action}
-                </Col>
-              ))}
-          </Space>
-        </ItemUL>
-      </footer>
     </ItemContainer>
   )
 }
