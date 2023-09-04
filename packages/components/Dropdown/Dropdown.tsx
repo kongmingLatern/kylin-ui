@@ -1,24 +1,40 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { DropdownProps } from './type'
+import classNames from 'classnames'
 
 const InternalDropdown: React.ForwardRefRenderFunction<
   HTMLDivElement,
   DropdownProps
-> = (props, ref) => {
+> = props => {
   const { menu = [], children } = props
 
-  function Children() {
-    return <div className="relative">{children}</div>
-  }
+  const child = React.Children.only(
+    children
+  ) as React.ReactElement<any>
+  console.log('-----child', child)
 
-  const MenuList = menu.map(i => (
-    <div key={i.key}>
-      {i?.icon}
-      <span>{i.label}</span>
-    </div>
-  ))
+  const DropdownTrigger = ({ children }) =>
+    React.cloneElement(
+      child,
+      {
+        className: classNames(
+          'relative',
+          child.props.className
+        ),
+      },
+      [child.props.children, children]
+    )
 
-  return <Children></Children>
+  return (
+    <DropdownTrigger>
+      {menu.map(i => (
+        <div key={i.key}>
+          {i?.icon}
+          <span>{i.label}</span>
+        </div>
+      ))}
+    </DropdownTrigger>
+  )
 }
 
 const Dropdown = React.forwardRef(InternalDropdown)
