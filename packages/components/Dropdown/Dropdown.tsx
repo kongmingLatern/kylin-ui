@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { DropdownProps } from './type'
 import classNames from 'classnames'
+import { MenuContainer, MenuItemContainer } from './styled'
 
 const InternalDropdown: React.ForwardRefRenderFunction<
   HTMLDivElement,
@@ -8,31 +9,46 @@ const InternalDropdown: React.ForwardRefRenderFunction<
 > = props => {
   const { menu = [], children } = props
 
+  const [mouseOver, setMouseOver] = useState(false)
+
   const child = React.Children.only(
     children
   ) as React.ReactElement<any>
-  console.log('-----child', child)
 
   const DropdownTrigger = ({ children }) =>
     React.cloneElement(
       child,
       {
-        className: classNames(
-          'relative',
-          child.props.className
-        ),
+        className: classNames(child.props.className),
+        style: { position: 'relative' },
+        onMouseOver: () => {
+          setMouseOver(true)
+        },
+        onMouseLeave: () => {
+          setMouseOver(false)
+        },
       },
       [child.props.children, children]
     )
 
   return (
     <DropdownTrigger>
-      {menu.map(i => (
-        <div key={i.key}>
-          {i?.icon}
-          <span>{i.label}</span>
-        </div>
-      ))}
+      {
+        <MenuContainer mouseOver={mouseOver}>
+          {menu.map(i => (
+            <MenuItemContainer
+              key={i.key}
+              style={{
+                background: '#f4f4f4',
+                zIndex: 10,
+              }}
+            >
+              {i?.icon}
+              <span>{i.label}</span>
+            </MenuItemContainer>
+          ))}
+        </MenuContainer>
+      }
     </DropdownTrigger>
   )
 }

@@ -13,7 +13,13 @@ type Story = StoryObj<typeof meta>
 export const Basic: Story = {
   render: () => (
     <Dropdown
-      menu={[{ key: '1', icon: <Star />, label: '星' }]}
+      menu={[
+        {
+          key: '1',
+          icon: <Star width={20} />,
+          label: '星',
+        },
+      ]}
     >
       <span>There are some text</span>
     </Dropdown>
