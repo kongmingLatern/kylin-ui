@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { DropdownProps } from './type'
 import classNames from 'classnames'
 import { MenuContainer, MenuItemContainer } from './styled'
@@ -9,8 +9,6 @@ const InternalDropdown: React.ForwardRefRenderFunction<
   DropdownProps
 > = props => {
   const { menu = [], children } = props
-
-  const [mouseOver, setMouseOver] = useState(false)
 
   const child = React.Children.only(
     children
@@ -25,28 +23,20 @@ const InternalDropdown: React.ForwardRefRenderFunction<
           'kylin-dropdown'
         ),
         style: { position: 'relative' },
-        onMouseOver: () => {
-          setMouseOver(true)
-        },
-        onMouseLeave: () => {
-          setMouseOver(false)
-        },
       },
       [child.props.children, children]
     )
 
   return (
     <DropdownTrigger>
-      {
-        <MenuContainer className="kylin-dropdown-menu">
-          {menu.map(i => (
-            <MenuItemContainer key={i.key}>
-              {i?.icon}
-              <span>{i.label}</span>
-            </MenuItemContainer>
-          ))}
-        </MenuContainer>
-      }
+      <MenuContainer className="kylin-dropdown-menu">
+        {menu.map(i => (
+          <MenuItemContainer key={i.key}>
+            {i?.icon}
+            <span>{i.label}</span>
+          </MenuItemContainer>
+        ))}
+      </MenuContainer>
     </DropdownTrigger>
   )
 }

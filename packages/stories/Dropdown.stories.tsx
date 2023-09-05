@@ -19,6 +19,10 @@ export const Basic: Story = {
           icon: <Star width={20} />,
           label: '星',
         },
+        {
+          key: '2',
+          label: '退出登陆',
+        },
       ]}
     >
       <span>There are some text</span>
