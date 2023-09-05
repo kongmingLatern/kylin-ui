@@ -59,6 +59,7 @@ export const Type: Story = {
           key: '223',
           type: 'disabled',
           label: 'disabled',
+          disabled: true,
         },
         {
           key: '2223',

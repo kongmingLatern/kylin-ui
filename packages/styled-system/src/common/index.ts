@@ -252,3 +252,5 @@ export const getColorByType = (type?: ThemeType) => {
     return Theme['type']['default']
   }
 }
+
+export * from './disabled'

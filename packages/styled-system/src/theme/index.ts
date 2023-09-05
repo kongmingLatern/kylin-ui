@@ -56,4 +56,5 @@ export const theme = {
     rounded: '0.25rem',
     circle: '50%',
   },
+
 }

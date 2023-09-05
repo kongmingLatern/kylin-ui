@@ -1,8 +1,9 @@
-import { styled } from 'styled-components'
+import { styled, css } from 'styled-components'
 import { ButtonProps } from '@components/Button'
 import {
   getBackground,
   getColor,
+  setDisabled,
 } from '@packages/styled-system'
 import { DropdownProps } from '../type'
 
@@ -14,19 +15,33 @@ export const MenuItemContainer = styled.li<{
     | 'disabled'
     | 'warning'
     | 'danger'
+
+  disabled?: boolean
 }>`
-  transition: all 0.1s;
+  transition: all 0.2s;
   min-height: 30px;
   padding: 0 16px;
   list-style: none;
   display: flex;
   align-items: center;
   z-index: 10;
-  &:hover {
-    color: ${({ type }) => getColor({ type })};
-    background-color: ${({ type }) =>
-      getBackground({ type })};
-  }
+
+  ${({ disabled }) =>
+    !disabled
+      ? css<{
+          type?:
+            | ButtonProps['type']
+            | 'disabled'
+            | 'warning'
+            | 'danger'
+        }>`
+          &:hover {
+            color: ${({ type }) => getColor({ type })};
+            background-color: ${({ type }) =>
+              getBackground({ type })};
+          }
+        `
+      : setDisabled()}
 `
 
 export const MenuContainer = styled.ul<{

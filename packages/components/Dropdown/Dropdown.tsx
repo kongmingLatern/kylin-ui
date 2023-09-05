@@ -35,6 +35,7 @@ const InternalDropdown: React.ForwardRefRenderFunction<
           <MenuItemContainer
             type={i.type}
             key={i.key}
+            disabled={i.disabled}
             {...i.options}
           >
             <Space size={2} align={'center'}>
