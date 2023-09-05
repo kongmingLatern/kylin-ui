@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { DropdownProps } from './type'
 import classNames from 'classnames'
 import { MenuContainer, MenuItemContainer } from './styled'
+import './css/index.scss'
 
 const InternalDropdown: React.ForwardRefRenderFunction<
   HTMLDivElement,
@@ -19,7 +20,10 @@ const InternalDropdown: React.ForwardRefRenderFunction<
     React.cloneElement(
       child,
       {
-        className: classNames(child.props.className),
+        className: classNames(
+          child.props.className,
+          'kylin-dropdown'
+        ),
         style: { position: 'relative' },
         onMouseOver: () => {
           setMouseOver(true)
@@ -34,15 +38,9 @@ const InternalDropdown: React.ForwardRefRenderFunction<
   return (
     <DropdownTrigger>
       {
-        <MenuContainer mouseOver={mouseOver}>
+        <MenuContainer className="kylin-dropdown-menu">
           {menu.map(i => (
-            <MenuItemContainer
-              key={i.key}
-              style={{
-                background: '#f4f4f4',
-                zIndex: 10,
-              }}
-            >
+            <MenuItemContainer key={i.key}>
               {i?.icon}
               <span>{i.label}</span>
             </MenuItemContainer>

@@ -7,14 +7,14 @@ export const MenuItemContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #f4f4f4;
+  z-index: 10;
 `
 
-export const MenuContainer = styled.div<{
-  mouseOver?: boolean
-}>`
+export const MenuContainer = styled.div`
   position: absolute;
   right: 0;
   bottom: -30;
-  opacity: ${({ mouseOver }) => (mouseOver ? 1 : 0)};
+  opacity: 1;
   transition: all 0.5s;
 `

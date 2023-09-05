@@ -1,0 +1,10 @@
+.kylin-dropdown {
+  .kylin-dropdown-menu {
+    transition: all 0.2s;
+    opacity: 0;
+  }
+
+  &:hover .kylin-dropdown-menu {
+    opacity: 1;
+  }
+}
