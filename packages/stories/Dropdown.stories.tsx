@@ -20,7 +20,9 @@ export const Basic: Story = {
           label: '星',
         },
         {
+          type: 'error',
           key: '2',
+          icon: <Star width={20} />,
           label: '退出登陆',
         },
       ]}

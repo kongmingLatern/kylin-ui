@@ -1,9 +1,15 @@
 import { styled } from 'styled-components'
-import { DropdownProps } from './type'
+import { ButtonProps } from '@components/Button'
+import {
+  getBackground,
+  getColor,
+} from '@packages/styled-system'
 
 export const DropdownContainer = styled.div``
 
-export const MenuItemContainer = styled.li`
+export const MenuItemContainer = styled.li<{
+  type?: ButtonProps['type']
+}>`
   transition: all 0.2s;
   padding: 0 16px;
   list-style: none;
@@ -11,7 +17,9 @@ export const MenuItemContainer = styled.li`
   align-items: center;
   z-index: 10;
   &:hover {
-    background-color: #f89301;
+    color: ${({ type }) => getColor({ type })};
+    background-color: ${({ type }) =>
+      getBackground({ type })};
   }
 `
 

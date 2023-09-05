@@ -3,6 +3,7 @@ import { DropdownProps } from './type'
 import classNames from 'classnames'
 import { MenuContainer, MenuItemContainer } from './styled'
 import './css/index.scss'
+import { Space } from '..'
 
 const InternalDropdown: React.ForwardRefRenderFunction<
   HTMLDivElement,
@@ -31,9 +32,11 @@ const InternalDropdown: React.ForwardRefRenderFunction<
     <DropdownTrigger>
       <MenuContainer className="kylin-dropdown-menu">
         {menu.map(i => (
-          <MenuItemContainer key={i.key}>
-            {i?.icon}
-            <span>{i.label}</span>
+          <MenuItemContainer type={i.type} key={i.key}>
+            <Space size={8}>
+              {i?.icon}
+              <span>{i.label}</span>
+            </Space>
           </MenuItemContainer>
         ))}
       </MenuContainer>
