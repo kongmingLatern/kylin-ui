@@ -9,7 +9,11 @@ import { DropdownProps } from '../type'
 export const DropdownContainer = styled.div``
 
 export const MenuItemContainer = styled.li<{
-  type?: ButtonProps['type']
+  type?:
+    | ButtonProps['type']
+    | 'disabled'
+    | 'warning'
+    | 'danger'
 }>`
   transition: all 0.1s;
   min-height: 30px;

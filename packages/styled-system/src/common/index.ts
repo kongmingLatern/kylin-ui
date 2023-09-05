@@ -42,7 +42,11 @@ export function getBackground({
   gradient,
   background,
 }: {
-  type?: ButtonProps['type']
+  type?:
+    | ButtonProps['type']
+    | 'disabled'
+    | 'warning'
+    | 'danger'
   gradient?: 'aquamarine' | 'orange' | 'red' | 'blue'
   background?: string | null
 }) {
@@ -59,7 +63,11 @@ export function getColor({
   type,
   background,
 }: {
-  type?: ButtonProps['type']
+  type?:
+    | ButtonProps['type']
+    | 'disabled'
+    | 'warning'
+    | 'danger'
   background?: string | null
 }) {
   if (background === null) return
