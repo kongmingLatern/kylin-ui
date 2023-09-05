@@ -45,11 +45,11 @@ export const MenuItemContainer = styled.li<{
 `
 
 export const MenuContainer = styled.ul<{
-  offset?: DropdownProps['offset']
+  offset: DropdownProps['offset']
 }>`
   position: absolute;
-  right: ${({ offset }) => (offset && offset[0]) || 0};
-  bottom: ${({ offset }) => (offset && offset[1]) || -30};
+  right: ${({ offset }) => offset && offset[0]};
+  top: ${({ offset }) => offset && offset[1]};
   opacity: 1;
   transition: all 0.5s;
   margin: 0;

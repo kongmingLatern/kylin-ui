@@ -9,7 +9,11 @@ const InternalDropdown: React.ForwardRefRenderFunction<
   HTMLDivElement,
   DropdownProps
 > = props => {
-  const { menu = [], children } = props
+  const {
+    menu = [],
+    offset = ['0%', '110%'],
+    children,
+  } = props
 
   const child = React.Children.only(
     children
@@ -30,7 +34,10 @@ const InternalDropdown: React.ForwardRefRenderFunction<
 
   return (
     <DropdownTrigger>
-      <MenuContainer className="kylin-dropdown-menu">
+      <MenuContainer
+        className="kylin-dropdown-menu"
+        offset={offset}
+      >
         {menu.map(i => (
           <MenuItemContainer
             type={i.type}
