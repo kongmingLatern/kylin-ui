@@ -32,7 +32,11 @@ const InternalDropdown: React.ForwardRefRenderFunction<
     <DropdownTrigger>
       <MenuContainer className="kylin-dropdown-menu">
         {menu.map(i => (
-          <MenuItemContainer type={i.type} key={i.key}>
+          <MenuItemContainer
+            type={i.type}
+            key={i.key}
+            {...i.options}
+          >
             <Space size={2} align={'center'}>
               {i?.icon}
               <span>{i.label}</span>

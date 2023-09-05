@@ -6,4 +6,5 @@ export interface MenuType {
   label: React.ReactNode
   icon?: React.ReactNode
   disabled?: boolean
+  options?: Record<string, any>
 }

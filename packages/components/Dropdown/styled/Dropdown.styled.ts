@@ -11,7 +11,8 @@ export const DropdownContainer = styled.div``
 export const MenuItemContainer = styled.li<{
   type?: ButtonProps['type']
 }>`
-  transition: all 0.2s;
+  transition: all 0.1s;
+  min-height: 30px;
   padding: 0 16px;
   list-style: none;
   display: flex;
