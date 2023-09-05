@@ -55,6 +55,20 @@ export function getBackground({
   return Theme['type'][type!] ?? Theme['type']['default']
 }
 
+export function getColor({
+  type,
+  background,
+}: {
+  type?: ButtonProps['type']
+  background?: string | null
+}) {
+  if (background === null) return
+  if (background) {
+    return background
+  }
+  return Theme['color'][type!] ?? Theme['color']['default']
+}
+
 /**
  * @description 根据size获取 padding
  * @param size  number | 'small' | 'middle' | 'large'

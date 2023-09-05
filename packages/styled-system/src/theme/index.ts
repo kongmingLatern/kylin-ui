@@ -9,7 +9,19 @@ export const theme = {
     warning: '#e67e22',
     danger: '#e74c3c',
     error: '#e74c3c',
-    description: '#00000073'
+    description: '#00000073',
+  },
+
+  color: {
+    default: '#fff',
+    primary: '#fff',
+    secondary: '#fff',
+    success: '#000000',
+    info: '#000000',
+    disabled: '#00000040',
+    warning: '#fff',
+    danger: '#fff',
+    error: '#fff',
   },
 
   gradient: {
