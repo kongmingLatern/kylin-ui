@@ -4,6 +4,7 @@ import {
   getBackground,
   getColor,
 } from '@packages/styled-system'
+import { DropdownProps } from '../type'
 
 export const DropdownContainer = styled.div``
 
@@ -23,10 +24,12 @@ export const MenuItemContainer = styled.li<{
   }
 `
 
-export const MenuContainer = styled.ul`
+export const MenuContainer = styled.ul<{
+  offset?: DropdownProps['offset']
+}>`
   position: absolute;
-  right: 0;
-  bottom: -30;
+  right: ${({ offset }) => (offset && offset[0]) || 0};
+  bottom: ${({ offset }) => (offset && offset[1]) || -30};
   opacity: 1;
   transition: all 0.5s;
   margin: 0;
