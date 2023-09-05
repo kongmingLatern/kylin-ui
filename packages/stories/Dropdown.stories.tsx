@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Dropdown } from '@components/Dropdown'
 import { Star } from '@packages/icon'
+import { Space } from '@components/Space'
+import { Button } from '@components/Button'
 
 const meta = {
   title: 'UI Component/Dropdown',
@@ -80,6 +82,63 @@ export const Type: Story = {
     >
       <span>Here are some type items</span>
     </Dropdown>
+  ),
+}
+export const Position: Story = {
+  render: () => (
+    <Space direction="vertical" size={100}>
+      <Dropdown
+        position="bottom-left"
+        menu={[
+          {
+            key: '1',
+            icon: <Star width={20} />,
+            label: '星',
+          },
+        ]}
+      >
+        <Button>bottom-left</Button>
+      </Dropdown>
+
+      <Dropdown
+        position="bottom-right"
+        menu={[
+          {
+            key: '1',
+            icon: <Star width={20} />,
+            label: '星',
+          },
+        ]}
+      >
+        <Button>bottom-right</Button>
+      </Dropdown>
+
+      <Dropdown
+        position="top-right"
+        menu={[
+          {
+            key: '1',
+            icon: <Star width={20} />,
+            label: '星',
+          },
+        ]}
+      >
+        <Button>top-right</Button>
+      </Dropdown>
+
+      <Dropdown
+        position="top-left"
+        menu={[
+          {
+            key: '1',
+            icon: <Star width={20} />,
+            label: '星',
+          },
+        ]}
+      >
+        <Button>top-left</Button>
+      </Dropdown>
+    </Space>
   ),
 }
 

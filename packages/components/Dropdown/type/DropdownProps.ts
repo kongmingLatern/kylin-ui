@@ -4,4 +4,5 @@ export interface DropdownProps {
   children?: React.ReactNode
   menu?: MenuType[]
   offset?: string[] | number[]
+  position?: 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right'
 }

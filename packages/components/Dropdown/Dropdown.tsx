@@ -12,6 +12,7 @@ const InternalDropdown: React.ForwardRefRenderFunction<
   const {
     menu = [],
     offset = ['0%', '110%'],
+    position,
     children,
   } = props
 
@@ -36,6 +37,7 @@ const InternalDropdown: React.ForwardRefRenderFunction<
     <DropdownTrigger>
       <MenuContainer
         className="kylin-dropdown-menu"
+        position={position}
         offset={offset}
       >
         {menu.map(i => (
