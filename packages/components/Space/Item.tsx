@@ -28,7 +28,9 @@ export default function Item({
     supportFlexGap,
   } = React.useContext(SpaceContext)
 
-  let style: React.CSSProperties = {}
+  let style: React.CSSProperties = {
+    display: 'flex',
+  }
 
   // NOTE:这里是不支持flex的情况下
   if (!supportFlexGap) {
