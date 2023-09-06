@@ -3,6 +3,7 @@ import { theme as Theme } from '../theme'
 import { SpaceProps } from '@components/Space/type'
 import { CoverProps } from '@components/Card/type'
 import { ButtonProps } from '@components/Button'
+import { CommonThemeType } from '@components/helpers'
 
 /**
  * @description 根据type, gradient, background 获取背景色
@@ -63,11 +64,7 @@ export function getColor({
   type,
   background,
 }: {
-  type?:
-    | ButtonProps['type']
-    | 'disabled'
-    | 'warning'
-    | 'danger'
+  type?: CommonThemeType
   background?: string | null
 }) {
   if (background === null) return

@@ -1,12 +1,8 @@
-import { ButtonProps } from '@components/Button'
+import { CommonThemeType } from '@components/helpers'
 
 export interface MenuType {
   key: string | number
-  type?:
-    | ButtonProps['type']
-    | 'disabled'
-    | 'warning'
-    | 'danger'
+  type?: CommonThemeType
   label: React.ReactNode
   icon?: React.ReactNode
   disabled?: boolean

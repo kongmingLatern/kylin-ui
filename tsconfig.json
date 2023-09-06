@@ -35,7 +35,8 @@
     "src",
     "packages/**/*",
     "packages/shared/",
-    "scripts/**/*"
+    "scripts/**/*",
+    "packages/components/helpers/index.d.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
