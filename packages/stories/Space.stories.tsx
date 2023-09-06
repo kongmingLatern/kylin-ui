@@ -122,7 +122,7 @@ export const Align: Story = {
 export const Split: Story = {
   render: args => (
     <>
-      <Space split={<Divider type="vertical" />}>
+      <Space split={<Divider color='blue' type="vertical" />}>
         <Button>分隔符</Button>
         <Button>分隔符</Button>
         <Button>分隔符</Button>
@@ -135,7 +135,8 @@ export const Split: Story = {
         direction="vertical"
         split={
           <Divider
-            style={{ width: '100%', color: '#ccc' }}
+            color="red"
+            style={{ width: '100%' }}
           ></Divider>
         }
       >

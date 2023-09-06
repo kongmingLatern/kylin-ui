@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import React from 'react'
 import { DividerProps } from './type'
 import {
@@ -15,7 +14,8 @@ const Divider = React.forwardRef<
     orientation = 'center',
     orientationMargin,
     dashed,
-    plain,
+    color = '#e8e8e8',
+    // plain,
     children,
     ...rest
   } = props
@@ -26,17 +26,17 @@ const Divider = React.forwardRef<
   const hasCustomMarginRight =
     orientation === 'right' && orientationMargin != null
 
-  const classes = classNames({
-    [`kylin-divider`]: true,
-    [`kylin-divider-with-text-${orientation}`]: hasChildren,
-    [`kylin-divider-dashed`]: !!dashed,
-    [`kylin-divider-plain`]: !!plain,
-    [`kylin-divider-no-default-orientation-margin-left`]:
-      hasCustomMarginLeft,
-    [`kylin-divider-no-default-orientation-margin-right`]:
-      hasCustomMarginRight,
-    [`kylin-divider-${type}`]: !!type,
-  })
+  // const classes = classNames({
+  //   [`kylin-divider`]: true,
+  //   [`kylin-divider-with-text-${orientation}`]: hasChildren,
+  //   [`kylin-divider-dashed`]: !!dashed,
+  //   [`kylin-divider-plain`]: !!plain,
+  //   [`kylin-divider-no-default-orientation-margin-left`]:
+  //     hasCustomMarginLeft,
+  //   [`kylin-divider-no-default-orientation-margin-right`]:
+  //     hasCustomMarginRight,
+  //   [`kylin-divider-${type}`]: !!type,
+  // })
 
   const memoizedOrientationMargin = React.useMemo<
     string | number
@@ -60,6 +60,7 @@ const Divider = React.forwardRef<
   }
   return (
     <DividerContainer
+      color={color}
       ref={ref}
       type={type}
       orientation={orientation}
@@ -70,7 +71,7 @@ const Divider = React.forwardRef<
       {...rest}
       role="separator"
     >
-      {children && type !== 'vertical' && (
+      {hasChildren && type !== 'vertical' && (
         <DividerInnerText style={innerStyle}>
           {children}
         </DividerInnerText>

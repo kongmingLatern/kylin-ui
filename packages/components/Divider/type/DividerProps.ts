@@ -6,4 +6,5 @@ export interface DividerProps
   plain?: boolean
   style?: React.CSSProperties
   type?: 'horizontal' | 'vertical'
+  color?: string
 }

@@ -2,6 +2,7 @@ import { css, styled } from 'styled-components'
 import { DividerProps } from '../type'
 
 export const DividerContainer = styled.div<{
+  color?: DividerProps['color']
   type?: DividerProps['type']
   orientation?: DividerProps['orientation']
   $dashed?: DividerProps['dashed']
@@ -16,7 +17,7 @@ export const DividerContainer = styled.div<{
   align-items: center;
   overflow: hidden;
 
-  ${({ orientation }) =>
+  ${({ color, orientation }) =>
     orientation &&
     css`
       position: relative;
@@ -28,14 +29,13 @@ export const DividerContainer = styled.div<{
       font-variant: tabular-nums;
       line-height: 1;
       white-space: nowrap;
-      color: rgba(0, 0, 0, 0.45);
-      ${getOrientation(orientation)}
+      ${getOrientation(color, orientation)}
     `}
 
-  ${({ $dashed }) =>
+  ${({ color, $dashed }) =>
     $dashed &&
     css`
-      border-top: 1px dashed #e8e8e8;
+      border-top: 1px dashed ${color};
     `}
 
 
@@ -45,24 +45,24 @@ export const DividerContainer = styled.div<{
       border: none;
     `}
 
-  ${({ $orientationLeft }) =>
+  ${({ color, $orientationLeft }) =>
     $orientationLeft &&
     css`
       &::before {
         content: '';
         width: 0%;
         height: 1px;
-        background: #e8e8e8;
+        background: ${color};
       }
       &::after {
         content: '';
         width: 95%;
         height: 1px;
-        background: #e8e8e8;
+        background: ${color};
       }
     `}
 
-  ${({ $orientationRight }) =>
+  ${({ color, $orientationRight }) =>
     $orientationRight &&
     css`
       &::before {
@@ -70,18 +70,18 @@ export const DividerContainer = styled.div<{
         width: 95%;
         height: 1px;
         margin-right: 8px;
-        background: #e8e8e8;
+        background: ${color};
       }
       &::after {
         content: '';
         width: 5%;
         height: 1px;
-        background: #e8e8e8;
+        background: ${color};
       }
     `}
 
 
-  ${({ type }) => {
+  ${({ color, type }) => {
     switch (type) {
       case 'horizontal':
         return css`
@@ -92,7 +92,7 @@ export const DividerContainer = styled.div<{
           display: inline-block;
           height: 1.1rem;
           border-top: 0;
-          border-left: 1px solid #e8e8e8;
+          border-left: 1px solid ${color};
           margin: 0 0.5rem;
           padding: 0;
         `
@@ -112,6 +112,7 @@ export const DividerInnerText = styled.span`
 `
 
 function getOrientation(
+  color: DividerProps['color'],
   position: DividerProps['orientation']
 ) {
   switch (position) {
@@ -120,27 +121,14 @@ function getOrientation(
         &::before {
           content: '';
           flex: 1;
-          border-top: 1px solid #e8e8e8;
+          border-top: 1px solid ${color};
         }
 
         &::after {
           content: '';
           flex: 1;
-          border-top: 1px solid #e8e8e8;
+          border-top: 1px solid ${color};
         }
-        /* &::before {
-          content: '';
-          width: 5%;
-          height: 1px;
-          margin-right: 8px;
-          background: #e8e8e8;
-        }
-        &::after {
-          content: '';
-          width: 95%;
-          height: 1px;
-          background: #e8e8e8;
-        } */
       `
     case 'left':
       return css`
@@ -149,13 +137,13 @@ function getOrientation(
           width: 5%;
           height: 1px;
           margin-right: 8px;
-          background: #e8e8e8;
+          background: ${color};
         }
         &::after {
           content: '';
           width: 95%;
           height: 1px;
-          background: #e8e8e8;
+          background: ${color};
         }
       `
     case 'right':
@@ -165,13 +153,13 @@ function getOrientation(
           width: 95%;
           height: 1px;
           margin-right: 8px;
-          background: #e8e8e8;
+          background: ${color};
         }
         &::after {
           content: '';
           width: 5%;
           height: 1px;
-          background: #e8e8e8;
+          background: ${color};
         }
       `
     default:
@@ -179,13 +167,13 @@ function getOrientation(
         &::before {
           content: '';
           flex: 1;
-          border-top: 1px solid #e8e8e8;
+          border-top: 1px solid ${color};
         }
 
         &::after {
           content: '';
           flex: 1;
-          border-top: 1px solid #e8e8e8;
+          border-top: 1px solid ${color};
         }
       `
   }
