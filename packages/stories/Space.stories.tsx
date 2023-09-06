@@ -121,12 +121,30 @@ export const Align: Story = {
 
 export const Split: Story = {
   render: args => (
-    <Space split={<Divider type="vertical" />}>
-      <Button>分隔符</Button>
-      <Button>分隔符</Button>
-      <Button>分隔符</Button>
-      <Button>分隔符</Button>
-    </Space>
+    <>
+      <Space split={<Divider type="vertical" />}>
+        <Button>分隔符</Button>
+        <Button>分隔符</Button>
+        <Button>分隔符</Button>
+        <Button>分隔符</Button>
+      </Space>
+
+      <Divider />
+
+      <Space
+        direction="vertical"
+        split={
+          <Divider
+            style={{ width: '100%', color: '#ccc' }}
+          ></Divider>
+        }
+      >
+        <Button>分隔符</Button>
+        <Button>分隔符</Button>
+        <Button>分隔符</Button>
+        <Button>分隔符</Button>
+      </Space>
+    </>
   ),
 }
 export const Wrap: Story = {

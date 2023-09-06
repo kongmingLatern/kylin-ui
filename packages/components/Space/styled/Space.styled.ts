@@ -10,7 +10,7 @@ export const SpaceContainer = styled.div<{
   direction?: SpaceProps['direction']
   align?: SpaceProps['align']
 }>`
-  display: flex;
+  display: inline-flex;
   justify-content: ${({ justify }) => formatBy(justify)};
   align-items: ${({ align }) => formatBy(align)};
   flex-direction: ${({ direction }) =>
@@ -18,6 +18,6 @@ export const SpaceContainer = styled.div<{
 `
 
 export const SpaceSplit = styled.span`
-  border-right: 1px solid var(--border-color);
-  margin-right: 1rem;
+  /* border-right: 1px solid #bdc3c7;
+  margin-right: 1rem; */
 `
