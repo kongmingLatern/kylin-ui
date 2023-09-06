@@ -2,7 +2,14 @@ import { MenuType } from './MenuType'
 export interface DropdownProps {
   className?: string
   children?: React.ReactNode
-  menu?: MenuType[]
+  menu?: Partial<
+    Record<'items', MenuType[]> &
+      Record<'onClick', (key: string | number) => void>
+  >
   offset?: string[] | number[]
-  position?: 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right'
+  position?:
+    | 'bottom-left'
+    | 'bottom-right'
+    | 'top-left'
+    | 'top-right'
 }

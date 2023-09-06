@@ -151,18 +151,18 @@ export const Split: Story = {
 export const Wrap: Story = {
   render: args => (
     <Space wrap>
-      <Button>Wrap</Button>
-      <Button>Wrap</Button>
-      <Button>Wrap</Button>
-      <Button>Wrap</Button>
-      <Button>Wrap</Button>
-      <Button>Wrap</Button>
-      <Button>Wrap</Button>
-      <Button>Wrap</Button>
-      <Button>Wrap</Button>
-      <Button>Wrap</Button>
-      <Button>Wrap</Button>
-      <Button>Wrap</Button>
+      <Button>Wrap1</Button>
+      <Button>Wrap2</Button>
+      <Button>Wrap3</Button>
+      <Button>Wrap4</Button>
+      <Button>Wrap5</Button>
+      <Button>Wrap6</Button>
+      <Button>Wrap7</Button>
+      <Button>Wrap8</Button>
+      <Button>Wrap9</Button>
+      <Button>Wrap10</Button>
+      <Button>Wrap11</Button>
+      <Button>Wrap12</Button>
     </Space>
   ),
 }

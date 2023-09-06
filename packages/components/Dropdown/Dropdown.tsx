@@ -1,5 +1,5 @@
 import React from 'react'
-import { DropdownProps } from './type'
+import { DropdownProps, MenuType } from './type'
 import classNames from 'classnames'
 import { MenuContainer, MenuItemContainer } from './styled'
 import './css/index.scss'
@@ -10,7 +10,7 @@ const InternalDropdown: React.ForwardRefRenderFunction<
   DropdownProps
 > = props => {
   const {
-    menu = [],
+    menu = { items: [] },
     offset = ['0%', '110%'],
     position,
     children,
@@ -29,6 +29,7 @@ const InternalDropdown: React.ForwardRefRenderFunction<
           'kylin-dropdown'
         ),
         style: { position: 'relative' },
+        ...child.props,
       },
       [child.props.children, children]
     )
@@ -40,11 +41,16 @@ const InternalDropdown: React.ForwardRefRenderFunction<
         position={position}
         offset={offset}
       >
-        {menu.map(i => (
+        {(menu.items as MenuType[]).map((i: MenuType) => (
           <MenuItemContainer
             type={i.type}
             key={i.key}
             disabled={i.disabled}
+            onClick={e => {
+              e.preventDefault()
+              e.stopPropagation()
+              menu.onClick?.(i.key)
+            }}
             {...i.options}
           >
             <Space size={2} align={'center'}>
