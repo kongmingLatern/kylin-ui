@@ -1,10 +1,25 @@
 {
   "name": "kylin-ui",
-  "private": true,
-  "version": "0.0.0",
-  "main": "dist/index.js",
+  "private": false,
+  "version": "0.0.1",
+  "description": "A React UI library for some developers to develop quickly",
+  "title": "Kylin UI",
+  "license": "MIT",
+  "keywords": [
+    "kylin",
+    "component",
+    "components",
+    "ui",
+    "framework",
+    "frontend",
+    "react",
+    "react-component"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.es.js",
   "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
   "type": "module",
   "exports": {
     "require": "./dist/index.js",
