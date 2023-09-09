@@ -1,7 +1,7 @@
 {
-  "name": "kylin-ui",
+  "name": "kylin-ui-component",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A React UI library for some developers to develop quickly",
   "title": "Kylin UI",
   "license": "MIT",
@@ -25,6 +25,7 @@
     "require": "./dist/index.js",
     "import": "./dist/index.es.js"
   },
+  "types": "dist/types/index.es.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
